@@ -34,6 +34,29 @@
                 margin-right: 2em;
             }
 
+            code {
+                display:block;
+                width: auto;
+                height: auto;
+                white-space: pre-wrap;
+                background: hsl(220, 80%, 90%);
+            }
+
+            pre {
+                width: auto;
+                height: auto;
+                white-space: pre-wrap;
+                background: hsl(30,80%,90%);
+                background: hsl(220, 80%, 90%);
+            }
+
+            /*img{
+                width:60px;
+                height:auto;
+            }*/
+
+            
+
         </style>
         <script>
         
@@ -47,15 +70,42 @@
             <legend>Let's Go...</legend>
             <p>This site will really be 'the full 8 bits'</p>
         </fieldset>
-        <fieldset>
-            <legend>You're In...</legend>
-            <h2>Recently Earned in the Codewars:</h2> 
-            <p>Badges of my &quot;Commercially Useful <s>Addiction to</s> <s>Obsession with</s>  Coding Hobby&quot;...</p>    
-            
-            <img src="https://www.codewars.com/users/sudo256/badges/large" alt="Current Codewars badge of glory">
-            <img src="https://www.codewars.com/users/sudo256/badges/small" alt="Current Codewars badge of glory">
-            <img src="https://www.codewars.com/users/sudo256/badges/micro" alt="Current Codewars badge of glory">
-        </fieldset>
+        <article>
+            <fieldset>
+                <legend>Codewars Glory...</legend>
+                <h2>Recently Earned in the Codewars:</h2> 
+                <p>A badge of my &quot;Commercially Useful <s>Addiction to</s> <s>Obsession with</s>  Coding Hobby&quot;...</p>    
+                <section>
+                    <img src="https://www.codewars.com/users/sudo256/badges/large" alt="A Large Badge with a number and colour" width="auto" height="auto">
+                </section>                
+            </fieldset>
+        </article>
+        <article id="codewars_solution">
+            <fieldset>
+                <legend>Latest Codewars solution...</legend>
+                <h2>This solution to the most recently posted Codewars challenge can be viewed here for 48 hours after discovery:</h2> 
+                <section>
+                    <pre><code>
+// 8 kyu
+function check(arr, val){
+    // test whether value val is an element of array arr
+    const contains = arr.includes(val);
+    return contains;
+}
+                    </code></pre>
+                </section>                
+            </fieldset>
+        </article>
+        <article id="hackerrank_solution">
+            <fieldset>
+                <legend>Latest Hackerrank solution...</legend>
+                <h2>This solution can be viewed for 24 hours after discovery:</h2> 
+                <p></p>    
+                <section>
+                </section>                
+            </fieldset>
+        </article>
+        
         
 
         
