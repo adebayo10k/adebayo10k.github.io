@@ -1,6 +1,9 @@
 //document.write("Welcome, you have Javascript on.")
 
-const codeText = `
+// here I fake my own own expiry
+
+
+    const codeText = `
 // 8 kyu
 function check(arr, val){
     // test whether value val is an element of array arr
@@ -9,12 +12,18 @@ function check(arr, val){
 }
 `;
 
-const dmTest = `
+
+    const nosf = `
 <strong>THIS SOLUTION HAS NOW &lsquo;EXPIRED&rsquo;</strong>.
 YOU&apos;RE VERY WELCOME TO DM ME IF YOU&apos;RE   
 ALSO INTO PROGRESSING BY SOCIAL CODING.
 
-`;
+`; 
+
+
+
+
+
 
 let code_text = document.getElementById("code_text");
 let show_button = document.querySelector(".show_button");
@@ -44,3 +53,4 @@ show_button.addEventListener("click", function(){
 
 //-----------------------------------------------
 
+// 2020-05-02T09:11:39.299Z     
