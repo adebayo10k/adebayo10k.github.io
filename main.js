@@ -1,28 +1,42 @@
 //document.write("Welcome, you have Javascript on.")
 
-// here I fake my own own expiry
+// here I fake my own own expiry using ms Date() arithmetic
+const daily_ms = 1E+3*Math.pow(60,2)*24;
+let expiry_date = new Date(2020, 5, 12, 5, 22, 0); // zero based month, DST accounted
+let current_date = new Date();
 
+let days_left = Math.floor( (expiry_date.getTime() - current_date.getTime()) / daily_ms);
+let expiry_lapse_days = 0;
+let codeText = "";
 
-    const codeText = `
-// 8 kyu
-function check(arr, val){
-    // test whether value val is an element of array arr
-    const contains = arr.includes(val);
-    return contains;
+if (days_left >= 0){
+    // not yet expired
+    // set up strings
+    codeText += `
+    // NOTE: This solution expires in ${days_left} days.
+    `;
+
+    codeText += `
+    // 8 kyu
+    function check(arr, val){
+        // test whether value val is an element of array arr
+        const contains = arr.includes(val);
+        return contains;
+    }
+    `;    
 }
-`;
-
-
-    const nosf = `
-<strong>THIS SOLUTION HAS NOW &lsquo;EXPIRED&rsquo;</strong>.
-YOU&apos;RE VERY WELCOME TO DM ME IF YOU&apos;RE   
-ALSO INTO PROGRESSING BY SOCIAL CODING.
-
-`; 
-
-
-
-
+else{
+    // expired
+    expiry_lapse_days = Math.abs(days_left);
+    // set up strings
+    codeText = `
+    <strong>THIS SOLUTION &lsquo;EXPIRED&rsquo; ${expiry_lapse_days} sols ago</strong>.
+    YOU&apos;RE VERY WELCOME TO DM ME IF YOU&apos;RE   
+    ALSO INTO PROGRESSING BY SOCIAL CODING.
+    
+    `;     
+}
+// everything to functions
 
 
 let code_text = document.getElementById("code_text");
