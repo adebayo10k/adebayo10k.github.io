@@ -6,15 +6,15 @@ let expiry_date = new Date(2020, 4, 5, 11, 22, 1, 972); // zero based month, UTC
 let current_date = new Date();
 
 let days_left = Math.floor( (expiry_date.getTime() - current_date.getTime()) / daily_ms);
-let expiry_lapse_days = 0;
+const plurosity = Math.abs(days_left) != 1;
+let expiry_lapse_days = days_left < 0 ? Math.abs(days_left) : null;
+
 let codeText = "";
 
-if (days_left >= 0){
-    // not yet expired
+if (days_left >= 0){ // not yet expired    
     // set up strings
     codeText += `
-// NOTE: This solution expires in ${days_left} days.
-    `;
+// NOTE: This solution expires in ${days_left} ${(plurosity ? "days" : "day")}`;
     codeText += `
 // 6 kyu
 function findNb(m){
@@ -37,12 +37,10 @@ function findNb(m){
 }// end function
     `;    
 }
-else{
-    // expired
-    expiry_lapse_days = Math.abs(days_left);
+else{ // expired    
     // set up strings
     codeText = `
-    <strong>THIS SOLUTION &lsquo;EXPIRED&rsquo; ${expiry_lapse_days} sols ago</strong>.
+    <strong>THIS SOLUTION &lsquo;EXPIRED&rsquo; ${expiry_lapse_days} ${(plurosity ? "sols" : "sol")} ago</strong>.
     YOU&apos;RE VERY WELCOME TO DM ME IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING.
     
     `;     
