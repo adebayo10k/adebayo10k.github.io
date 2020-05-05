@@ -1,21 +1,77 @@
-//document.write("Welcome, you have Javascript on.")
-
 // here I fake my own expiry 
-const daily_ms = 1E+3*Math.pow(60,2)*24;
-let expiry_date = new Date(2020, 4, 5, 11, 22, 1, 972); // zero based month, UTC accounted
-let current_date = new Date();
 
-let days_left = Math.floor( (expiry_date.getTime() - current_date.getTime()) / daily_ms);
-const plurosity = Math.abs(days_left) != 1;
-let expiry_lapse_days = days_left < 0 ? Math.abs(days_left) : null;
+function Solution (latestCode, expiryDate, codeBlockElemID, showBtnElemID){
+    this.latestCode = latestCode;
+    this.expiryDate = expiryDate;
+    this.codeBlockElemID = codeBlockElemID;
+    this.showBtnElemID = showBtnElemID;
+    daily_ms = 1E+3*Math.pow(60,2)*24;
+    currentDate = new Date();
+    this.daysLeft = Math.floor( (this.expiryDate.getTime() - currentDate.getTime()) / daily_ms );
+    this.plurosity = Math.abs(this.daysLeft) != 1;
+    this.expiryLapseDays = this.daysLeft < 0 ? Math.abs(this.daysLeft) : null;
 
-let codeText = "";
+    this.codeBlockElem = document.getElementById(this.codeBlockElemID); //;
+    this.showBtnElem = document.getElementById(this.showBtnElemID); // ;
 
-if (days_left >= 0){ // not yet expired    
-    // set up strings
-    codeText += `
-// NOTE: This solution expires in ${days_left} ${(plurosity ? "days" : "day")}`;
-    codeText += `
+    this.codeText = "";
+
+    expiredCodeText = `
+<strong>THIS SOLUTION &lsquo;EXPIRED&rsquo; ${this.expiryLapseDays} ${(this.plurosity ? "sols" : "sol")} ago</strong>.
+YOU&apos;RE WELCOME TO DM ME IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING.
+                
+                `;
+
+    this.setCodeText = function (){
+        if (this.daysLeft >= 0){ // not yet expired    
+            this.codeText += `
+// NOTE: This solution expires in ${this.daysLeft} ${(this.plurosity ? "days" : "day")}`;
+            this.codeText += this.latestCode;    
+        }
+        else{ // expired
+            this.codeText = expiredCodeText;  
+            /*codeText = `
+<strong>THIS SOLUTION &lsquo;EXPIRED&rsquo; ${this.expiryLapseDays} ${(this.plurosity ? "sols" : "sol")} ago</strong>.
+YOU&apos;RE WELCOME TO DM ME IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING.
+            
+            `;  */   
+        }
+    };  
+
+    this.displayCode = function (flag){
+        if (flag) {
+            this.codeBlockElem.innerHTML = this.codeText;
+            this.showBtnElem.setAttribute("value", "hide code");
+        }
+        else {
+            this.codeBlockElem.innerHTML = "";
+            this.showBtnElem.setAttribute("value", "show code");
+        }
+    };
+
+    this.switchDisplay = function(){
+        if (this.codeBlockElem.innerHTML == ""){
+            this.displayCode(true);
+        }
+        else{
+            this.displayCode(false);
+        }
+    };
+
+    // set initial state
+    this.showBtnElem.addEventListener("click", () => {this.switchDisplay()});
+    this.setCodeText();
+    this.displayCode(false); 
+    
+
+} // end constructor function
+
+
+//-------------------------------------V EDIT V----------------------------------------------------
+const cwCodeBlockElemID = "code_frag_block_cw";
+const cwShowBtnElemID = "show_btn_cw";
+let latestCWexpiryDate = new Date(2020, 4, 5, 13, 48, 1, 972); // zero based month, UTC accounted
+let latestCWcode = `
 // 6 kyu
 function findNb(m){
 
@@ -35,64 +91,84 @@ function findNb(m){
     return -1; 
 
 }// end function
-    `;    
-}
-else{ // expired    
-    // set up strings
-    codeText = `
-    <strong>THIS SOLUTION &lsquo;EXPIRED&rsquo; ${expiry_lapse_days} ${(plurosity ? "sols" : "sol")} ago</strong>.
-    YOU&apos;RE VERY WELCOME TO DM ME IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING.
-    
-    `;     
-}
+    `;
 
-let codeBlockElemCw = document.getElementById("code_frag_block_cw"); // codeBlockElemCw, code_frag_block_cw
-let showBtnElemCw = document.getElementById("show_btn_cw"); // use id show_btn_cw
+//-------------------------------------^ EDIT ^----------------------------------------------------
 
-// 
-let showCode = function (flag) {
-    if (flag) {
-        codeBlockElemCw.innerHTML = codeText;
-        showBtnElemCw.setAttribute("value", "hide code");
-    }
-    else {
-        codeBlockElemCw.innerHTML = "";
-        showBtnElemCw.setAttribute("value", "show code");
-    }
-};
-
-showCode(false);
-
-// in functional, we'll have to pass the related button and codeblockelem objects in 
-// in oo, we'd just pass ref to a cwSolution or hrSolution object  and access its' button and cbe properties as required
-showBtnElemCw.addEventListener("click", function(){
-    if (codeBlockElemCw.innerHTML == ""){
-        showCode(true);
-    }
-    else{
-        showCode(false);
-    }
-});
-
-//-----------------------------------------------------------------------------------------
+let latestCWsolution = new Solution(latestCWcode, latestCWexpiryDate, cwCodeBlockElemID, cwShowBtnElemID);
 /*
-// define generic solution object
-let Solution = function(){}
-// define cWsolution object
-let CWsolution = function(){
-    __proto__ : Solution;
+for (let key in latestCWsolution){
+    console.log(key);
 }
-// define hRsolution object
-let HRsolution = function(){
-    __proto__ : Solution;    
+const keys = Object.keys(latestCWsolution.__proto__); // array returned
+console.log(keys);
+*/
+
+
+//-------------------------------------V EDIT V----------------------------------------------------
+const hrCodeBlockElemID = "code_frag_block_hr";
+const hrShowBtnElemID = "show_btn_hr";
+let latestHRexpiryDate = new Date(2020, 4, 12, 11, 48, 1, 972); // zero based month, UTC accounted
+let latestHRcode = `
+// 
+// IMPLEMENTS RESOLVED RELATIONSHIP BETWEEN n AND RESULT
+// result = n^2/2
+function game(n){ 
+
+    // PART 0: CALCULATE THE TOTAL IN DECIMAL FORM:
+
+    const size = n;
+    // :)
+    chessboardTotal = (Math.pow(size,2))/2;      
+   
+    // PART 1: CONVERT THE DECIMAL TOTAL INTO SIMPLIFIED, PROPER OR IMPROPER FRACTION:
+
+    // if decimal part exists, separate whole (even when zero) and decimal
+    let wholePart = Math.floor(chessboardTotal);
+    let decimalPart = chessboardTotal - wholePart;
+    //console.log("wholePart: " + wholePart + ", decimalPart: " + decimalPart);
+    // 0. get decimal part rounded to 1 d.p...
+        // if rounds to 1.0, ...add to whole and return [whole]
+        // if rounds to 0.0 (or did not exist), ...return [whole]    
+    decimalPart = Math.round((decimalPart*10))/10;
+    if (decimalPart == 0){
+        return [wholePart];
+    }
+    if (decimalPart == 1){
+        return [wholePart + decimalPart];
+    }
+    // 1. use 1 d.p decimal to return num and denom of a fraction
+    let testDenominator = 1;
+    while ((decimalPart*testDenominator) % 1 !== 0){
+        testDenominator++;
+    }
+    let decimalPartNumerator = decimalPart*testDenominator;
+    let decimalPartDenominator = testDenominator;
+    // 2. create improper (or proper if wholePart is zero) fraction and return array [num, denom]
+    let resultNumerator = (wholePart*decimalPartDenominator)+decimalPartNumerator;
+    let resultDenominator = decimalPartDenominator;
+
+    return [resultNumerator, resultDenominator];    
+
+}// end function
+    `;
+
+//-------------------------------------^ EDIT ^----------------------------------------------------
+
+let latestHRSolution = new Solution(latestHRcode, latestHRexpiryDate, hrCodeBlockElemID, hrShowBtnElemID);
+
+/*
+for (let key in latestHRSolution){
+    console.log(key);
 }
 */
+
+//-----------------------------------------------------------------------------------------
 // TODO:  
-// adds finally privacy comment text 
-// adds code to separate cw and hr functions
-// refactors everything to functions 
 // adds code to try-catch blocks 
-// rewrites using object-oriented approach
+// to display arbitrary number of concurrent solution article objects ????
+
+
 
 /*
 FINALLY, SOME PRIVACY...
