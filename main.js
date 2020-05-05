@@ -1,5 +1,5 @@
 // here I fake my own expiry 
-
+// generalised constructor function for codewars and hackerrank solution objects
 function Solution (latestCode, expiryDate, codeBlockElemID, showBtnElemID){
     this.latestCode = latestCode;
     this.expiryDate = expiryDate;
@@ -21,7 +21,7 @@ function Solution (latestCode, expiryDate, codeBlockElemID, showBtnElemID){
 YOU&apos;RE WELCOME TO DM ME IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING.
                 
                 `;
-
+    // set the code or message that will be displayed when button is pressed
     this.setCodeText = function (){
         if (this.daysLeft >= 0){ // not yet expired    
             this.codeText += `
@@ -29,15 +29,10 @@ YOU&apos;RE WELCOME TO DM ME IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING
             this.codeText += this.latestCode;    
         }
         else{ // expired
-            this.codeText = expiredCodeText;  
-            /*codeText = `
-<strong>THIS SOLUTION &lsquo;EXPIRED&rsquo; ${this.expiryLapseDays} ${(this.plurosity ? "sols" : "sol")} ago</strong>.
-YOU&apos;RE WELCOME TO DM ME IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING.
-            
-            `;  */   
+            this.codeText = expiredCodeText;            
         }
     };  
-
+    // display or hide the code or message, based on toggle switch position
     this.displayCode = function (flag){
         if (flag) {
             this.codeBlockElem.innerHTML = this.codeText;
@@ -48,7 +43,7 @@ YOU&apos;RE WELCOME TO DM ME IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING
             this.showBtnElem.setAttribute("value", "show code");
         }
     };
-
+    // toggle switch based on existing state of this object
     this.switchDisplay = function(){
         if (this.codeBlockElem.innerHTML == ""){
             this.displayCode(true);
@@ -58,7 +53,7 @@ YOU&apos;RE WELCOME TO DM ME IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING
         }
     };
 
-    // set initial state
+    // set initial state of this object
     this.showBtnElem.addEventListener("click", () => {this.switchDisplay()});
     this.setCodeText();
     this.displayCode(false); 
@@ -68,6 +63,7 @@ YOU&apos;RE WELCOME TO DM ME IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING
 
 
 //-------------------------------------V EDIT V----------------------------------------------------
+// arguments for codewars object instantiation
 const cwCodeBlockElemID = "code_frag_block_cw";
 const cwShowBtnElemID = "show_btn_cw";
 let latestCWexpiryDate = new Date(2020, 4, 5, 13, 48, 1, 972); // zero based month, UTC accounted
@@ -94,7 +90,7 @@ function findNb(m){
     `;
 
 //-------------------------------------^ EDIT ^----------------------------------------------------
-
+// create a codewars solution object
 let latestCWsolution = new Solution(latestCWcode, latestCWexpiryDate, cwCodeBlockElemID, cwShowBtnElemID);
 /*
 for (let key in latestCWsolution){
@@ -106,6 +102,7 @@ console.log(keys);
 
 
 //-------------------------------------V EDIT V----------------------------------------------------
+// arguments for hackerrank object instantiation
 const hrCodeBlockElemID = "code_frag_block_hr";
 const hrShowBtnElemID = "show_btn_hr";
 let latestHRexpiryDate = new Date(2020, 4, 12, 11, 48, 1, 972); // zero based month, UTC accounted
@@ -154,7 +151,7 @@ function game(n){
     `;
 
 //-------------------------------------^ EDIT ^----------------------------------------------------
-
+// create an hackerrank solution object
 let latestHRSolution = new Solution(latestHRcode, latestHRexpiryDate, hrCodeBlockElemID, hrShowBtnElemID);
 
 /*
