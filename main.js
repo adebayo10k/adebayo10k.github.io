@@ -18,7 +18,7 @@ function Solution (latestCode, expiryDate, codeBlockElemID, showBtnElemID){
 
     expiredCodeText = `
 <strong>THIS SOLUTION &lsquo;EXPIRED&rsquo; ${this.expiryLapseDays} ${(this.plurosity ? "sols" : "sol")} ago</strong>.
-YOU&apos;RE WELCOME TO DM ME IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING.
+IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING, DM ME TODAY.
                 
                 `;
     // set the code or message that will be displayed when button is pressed
@@ -66,26 +66,31 @@ YOU&apos;RE WELCOME TO DM ME IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING
 // arguments for codewars object instantiation
 const cwCodeBlockElemID = "code_frag_block_cw";
 const cwShowBtnElemID = "show_btn_cw";
-let latestCWexpiryDate = new Date(2020, 4, 5, 13, 48, 1, 972); // zero based month, UTC accounted
+let latestCWexpiryDate = new Date(2020, 4, 11, 18, 00, 0, 000); // zero based month, UTC accounted
 let latestCWcode = `
 // 6 kyu
-function findNb(m){
 
-    const testVol = m;
-    let n = 1;
-    let currentVol = 0; let totalVol = 0;
-
-    // so from top of building...
-    while (totalVol < testVol){
-        currentVol = Math.pow(n,3);        
-        totalVol += currentVol;
-        if (totalVol == testVol){        
-            return n;
-        }
-        n++;
+function encryptThis(clearTextSentence){
+    let cipherTextWord = "";
+    let cipherTextSentence = "";
+    const clearTextArr = clearTextSentence.split(" ");
+    
+    const encryptWord = clearTextWord => {
+        let cipherText = "";        
+        
+        cipherText =
+        clearTextWord.length == 1 ? \`\${clearTextWord.codePointAt(0)}\`
+        :   clearTextWord.length == 2 ? \`\${clearTextWord.codePointAt(0)}\${clearTextWord.charAt(clearTextWord.length-1)}\`
+        :   \`\${clearTextWord.codePointAt(0)}\${clearTextWord.charAt(clearTextWord.length-1)}\${clearTextWord.substring(2,clearTextWord.length-1)}\${clearTextWord.charAt(1)}\`;
+        return cipherText;
     }
-    return -1; 
-
+    
+    
+    for (let key in clearTextArr){
+        cipherTextWord = key < clearTextArr.length-1 ? \`\${encryptWord(clearTextArr[key])} \` : \`\${encryptWord(clearTextArr[key])}\`;
+        cipherTextSentence += cipherTextWord;
+    }
+    return cipherTextSentence;
 }// end function
     `;
 
@@ -105,7 +110,7 @@ console.log(keys);
 // arguments for hackerrank object instantiation
 const hrCodeBlockElemID = "code_frag_block_hr";
 const hrShowBtnElemID = "show_btn_hr";
-let latestHRexpiryDate = new Date(2020, 4, 12, 11, 48, 1, 972); // zero based month, UTC accounted
+let latestHRexpiryDate = new Date(2020, 4, 7, 11, 48, 1, 972); // zero based month, UTC accounted
 let latestHRcode = `
 // 
 // IMPLEMENTS RESOLVED RELATIONSHIP BETWEEN n AND RESULT
