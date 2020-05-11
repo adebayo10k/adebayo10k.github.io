@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="author" content="damola">
-        <meta name="description" content="Software Development Projects">
+        <meta name="description" content="Social Coding Activity">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
         <title>Software Development Projects</title>
         <style>
@@ -92,24 +92,38 @@
         </fieldset>
         <article>
             <fieldset>
-                <legend>Perhaps a few site links...</legend>
-                    <a href="social_coding.html">abc ... social coding ... xyz</a>
-                
+                <legend>Codewars Glory...</legend>
+                <h2 style="margin-bottom: 0.1em;">Recently Earned in the Codewars:</h2> 
+                <p>A badge of my &quot;<em>Almost</em> Commercially Useful Coding Hobby&quot;...</p>    
+                <section>
+                    <a href="https://www.codewars.com/users/sudo256/completed" target="_blank">
+                        <img src="https://www.codewars.com/users/sudo256/badges/large" alt="A Large Badge with a number and colour" width="auto" height="auto">
+                    </a>                    
+                </section>                
             </fieldset>
         </article>
-        <article id="">
+        <article id="codewars_solution">
             <fieldset>
-                <legend>You&apos;re in...</legend>
-                
+                <legend>Latest Codewars solution...</legend>
+                <h2>My solution to the latest Codewars challenge. Shared here for 48 hours after discovery:</h2> 
+                <section>
+                    <input class="show_button" id="show_btn_cw" type="button" value="show code" style="margin: 1em;">
+                    <pre><code id="code_frag_block_cw"></code></pre>
+                </section>                
             </fieldset>
         </article>
-        <article id="">
+        <article id="hackerrank_solution">
             <fieldset>
-                <legend>You&apos;re in....</legend>
-                
+                <legend>Latest HackerRank solution...</legend>
+                <h2>This solution could be here for around 24 hours after discovery:</h2> 
+                <section>
+                    <input class="show_button" id="show_btn_hr" type="button" value="show code" style="margin: 1em;">
+                    <pre><code id="code_frag_block_hr"></code></pre>
+                </section>                
             </fieldset>
         </article>
-  
+        
+        <script src="scripts/main.js" type="text/javascript"></script>
         
     </body>
 </html>
