@@ -7,7 +7,7 @@ body{
 }
 
 p{
-    font-size: 1.5em;
+    font-size: 1em;
     margin-top: 1px;
     padding-top: 5px;
 }
@@ -15,6 +15,11 @@ p{
 h1{
     text-align: left;
     color: darkred;
+}
+ol{
+    font-size: 1em;
+    padding-top: 1px;
+    margin-top: 1px;
 }
 
 fieldset { 
@@ -25,7 +30,7 @@ margin-bottom: 10px;
 }
 
 fieldset p{
-    display: inline-block;
+    display: block;
     margin-right: 2em;
 }
 
