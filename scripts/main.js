@@ -66,32 +66,60 @@ IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING, DM ME TOD
 // arguments for codewars object instantiation
 const cwCodeBlockElemID = "code_frag_block_cw";
 const cwShowBtnElemID = "show_btn_cw";
-let latestCWexpiryDate = new Date(2020, 4, 11, 18, 00, 0, 000); // zero based month, UTC accounted
+let latestCWexpiryDate = new Date(2020, 4, 16, 18, 00, 0, 000); // zero based month, UTC accounted
 let latestCWcode = `
 // 6 kyu
 
-function encryptThis(clearTextSentence){
-    let cipherTextWord = "";
-    let cipherTextSentence = "";
-    const clearTextArr = clearTextSentence.split(" ");
-    
-    const encryptWord = clearTextWord => {
-        let cipherText = "";        
-        
-        cipherText =
-        clearTextWord.length == 1 ? \`\${clearTextWord.codePointAt(0)}\`
-        :   clearTextWord.length == 2 ? \`\${clearTextWord.codePointAt(0)}\${clearTextWord.charAt(clearTextWord.length-1)}\`
-        :   \`\${clearTextWord.codePointAt(0)}\${clearTextWord.charAt(clearTextWord.length-1)}\${clearTextWord.substring(2,clearTextWord.length-1)}\${clearTextWord.charAt(1)}\`;
-        return cipherText;
+function decode(r){
+
+    const badMultiplierMessage = "Impossible to decode";
+    const alphaDict = { "a":0, "b":1, "c":2, "d":3, "e":4, "f":5, "g":6, "h":7, "i":8, "j":9, "k":10, "l":11, "m":12, "n":13, "o":14, "p":15, "q":16, "r":17, "s":18, "t":19, "u":20, "v":21, "w":22, "x":23, "y":24, "z":25 };
+    const alphaDictLen = Object.keys(alphaDict).length;
+    let numStr = "";
+    let encodedStr = "";
+    // separate numStr and encodedStr
+    for (let charKey in r){
+        //console.log(r[charKey]);
+        if (Number.isInteger(Number.parseInt(r[charKey]))){
+            numStr += r[charKey];
+        }
+        else{
+            encodedStr += r[charKey];
+        }
     }
-    
-    
-    for (let key in clearTextArr){
-        cipherTextWord = key < clearTextArr.length-1 ? \`\${encryptWord(clearTextArr[key])} \` : \`\${encryptWord(clearTextArr[key])}\`;
-        cipherTextSentence += cipherTextWord;
+
+    // parse numStr into multiplier number
+    const multiplier = Number.parseInt(numStr);
+
+    let decodedStr = "";
+    // decode if possible
+    for (let charKey in encodedStr){      
+        // lookup the dictionary value for the encoded character
+        let remainderVal = alphaDict[\`\${encodedStr[charKey]}\`];
+
+        // how many (number*multiplier)%26 between 0..25 will give remainderVal?
+        // if there is not exactly 1, we can't decode
+        let check = 0; let decodedValArr = [];
+        while (check < alphaDictLen){            
+            // collect decoded value(s)
+            if ((check*multiplier) % alphaDictLen == remainderVal){
+                decodedValArr.push(check);
+            }
+            check++;
+        }
+        // if not exactly 1 in range 0..alphaDictLen, fail
+        if (decodedValArr.length !== 1){
+            return badMultiplierMessage;
+        }
+        // translate value back to letter and remake string
+        for (letter in alphaDict){
+            if (alphaDict[letter] === decodedValArr[0]){
+                decodedStr += letter;
+                break; // inner for
+            }
+        }
     }
-    return cipherTextSentence;
-}// end function
+    return decodedStr;
     `;
 
 //-------------------------------------^ EDIT ^----------------------------------------------------
