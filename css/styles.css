@@ -1,9 +1,18 @@
 
 
-body{
+html{
     font-family: 'Ubuntu Mono', monospace, serif;
-    /*font-size: 2em;
-    */
+    font-size: 1em;
+    background-color: cornflowerblue;
+}
+
+body{
+    background-color:#ddd;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 1em;
+    padding: 1em;
+    border: solid black 6px;
 }
 
 p{
@@ -13,20 +22,27 @@ p{
 }
 
 h1{
-    text-align: left;
-    color: darkred;
+    font-size: 2em;
+    text-align: center;
+    color:darkred;
+    margin-top: none;
+    padding: 0.5em;
+    border: none;
 }
-ol{
+
+li{
     font-size: 1em;
     padding-top: 1px;
     margin-top: 1px;
+    line-height: 1;
+    letter-spacing: 1px;
 }
 
 fieldset { 
 background:none;
 border: green 3px solid;
 border-radius: 1em;
-margin-bottom: 10px;
+margin: 0.5em;
 }
 
 fieldset p{
