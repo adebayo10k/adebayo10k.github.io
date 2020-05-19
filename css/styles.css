@@ -3,7 +3,11 @@
 html{
     font-family: 'Ubuntu Mono', monospace, serif;
     font-size: 1em;
-    background-color: cornflowerblue;
+    /*background-color: #6495ed; cornflour blue*/
+}
+
+.configurableBackground{
+    background-color: #6495ed; /*cornflour blue*/
 }
 
 body{
@@ -17,8 +21,8 @@ body{
 
 p{
     font-size: 1em;
-    margin-top: 1px;
-    padding-top: 5px;
+    margin: 3px;
+    padding-top: 1px;
 }
 
 h1{
