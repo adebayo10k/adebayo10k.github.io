@@ -1,5 +1,5 @@
 // 
-let htmlElem = document.querySelector("html");
+//let htmlElem = document.querySelector("html");
 let bgColourParaElem = document.getElementById("colourPara");
 let bgColourInputElem = document.getElementById("bgColourPicker");
 let bgColourBtnElem = document.getElementById("bgColourBtn");
@@ -105,15 +105,31 @@ const updateAppearanceSectionsContent = (storedAppearanceSetting) => {
 };
 
 const updateStyleAllPages = () => {
+    let targetRule = null;
+    //htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;
+    let ghpStyleSheet = document.styleSheets[0];
+    console.log(ghpStyleSheet);
+    let ghpRuleList = ghpStyleSheet.cssRules ? ghpStyleSheet.cssRules : ghpStyleSheet.rules;
+    console.log(`ghpRuleList: ${ghpRuleList}`);
+    for (let i = 0; i < ghpRuleList.length; i++){
+        console.log(`ghpRuleList[i].selectorText: ${ghpRuleList[i].selectorText}`);
+        if (ghpRuleList[i].selectorText.toLowerCase() == ".configurablebackground"){
+            targetRule = ghpRuleList[i];
+            console.log(`targetRule.selectorText: ${targetRule.selectorText}`);
+            break;
+        }
+    }
 
-    htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;
+    if (targetRule){
+        targetRule.style.backgroundColor = `${localStorage.getItem("bgColour")}`;
+    }
 
 };
 
 
 //---------------------------------------------------------------------------------------------------
 // on page load...main...
-localStorage.clear();
+//localStorage.clear();
 
 let storedAppearanceSetting = getSystemState();
 console.log(storedAppearanceSetting);
@@ -138,7 +154,7 @@ updateStyleAllPages();
 
 
 //---------------------------------------------------------------------------------------------------
-
+// called when change button is pressed
 const userConfigurePage = () => {
     let currentConfig = getSystemState();
     // add a requiredConfig variable??? or not??
@@ -171,11 +187,11 @@ const userConfigurePage = () => {
         default:
             console.log("Pre try-catch failsafe. userConfigurePage switch didn't match argument");
     }; 
-
 };
 
-// on colour change button press
-//bgColourBtnElem.onclick = userConfigurePage();
+//---------------------------------------------------------------------------------------------------
+// when forget me button is pressed
+const clearUserConfiguration = () => {
 
-//
+};
 

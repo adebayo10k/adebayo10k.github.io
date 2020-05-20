@@ -1,3 +1,9 @@
+let htmlElem = document.querySelector("html");
+if (localStorage.getItem("bgColour")){
+    htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;    
+}
+
+
 // here I fake my own expiry 
 // generalised constructor function for codewars and hackerrank solution objects
 function Solution (latestCode, expiryDate, codeBlockElemID, showBtnElemID){
