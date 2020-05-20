@@ -144,49 +144,43 @@ console.log(keys);
 // arguments for hackerrank object instantiation
 const hrCodeBlockElemID = "code_frag_block_hr";
 const hrShowBtnElemID = "show_btn_hr";
-let latestHRexpiryDate = new Date(2020, 4, 7, 11, 48, 1, 972); // zero based month, UTC accounted
-let latestHRcode = `
-// 
-// IMPLEMENTS RESOLVED RELATIONSHIP BETWEEN n AND RESULT
-// result = n^2/2
-function game(n){ 
+let latestHRexpiryDate = new Date(2020, 4, 27, 18, 00, 0, 1); // zero based month, UTC accounted
+let latestHRcode = ` 
+#!/bin/bash
 
-    // PART 0: CALCULATE THE TOTAL IN DECIMAL FORM:
+# mac_regex="^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$"
+adr=$1
+function check_ip
+{
+    valid_ok=0 # 0 = success
+    ip4_test1_regex="^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$"
+    #ip4_test1_regex="^([0-9]{1,3}[\.]){3}([0-9]{1,3})$"
+       
+    if [[ $adr =~ $ip4_test1_regex ]] # test 1
+    then
+        OIFS=$IFS
+        IFS='.'
+        test_byte_array=($adr)
+        IFS=$OIFS
 
-    const size = n;
-    // :)
-    chessboardTotal = (Math.pow(size,2))/2;      
-   
-    // PART 1: CONVERT THE DECIMAL TOTAL INTO SIMPLIFIED, PROPER OR IMPROPER FRACTION:
-
-    // if decimal part exists, separate whole (even when zero) and decimal
-    let wholePart = Math.floor(chessboardTotal);
-    let decimalPart = chessboardTotal - wholePart;
-    //console.log("wholePart: " + wholePart + ", decimalPart: " + decimalPart);
-    // 0. get decimal part rounded to 1 d.p...
-        // if rounds to 1.0, ...add to whole and return [whole]
-        // if rounds to 0.0 (or did not exist), ...return [whole]    
-    decimalPart = Math.round((decimalPart*10))/10;
-    if (decimalPart == 0){
-        return [wholePart];
-    }
-    if (decimalPart == 1){
-        return [wholePart + decimalPart];
-    }
-    // 1. use 1 d.p decimal to return num and denom of a fraction
-    let testDenominator = 1;
-    while ((decimalPart*testDenominator) % 1 !== 0){
-        testDenominator++;
-    }
-    let decimalPartNumerator = decimalPart*testDenominator;
-    let decimalPartDenominator = testDenominator;
-    // 2. create improper (or proper if wholePart is zero) fraction and return array [num, denom]
-    let resultNumerator = (wholePart*decimalPartDenominator)+decimalPartNumerator;
-    let resultDenominator = decimalPartDenominator;
-
-    return [resultNumerator, resultDenominator];    
-
-}// end function
+        for byte in \${test_byte_array[@]}
+	    do              
+            if [ $byte -gt 255 ] || [[ \${byte:0:1} -eq 0 && \${#byte} > 1 ]] # test 2 
+            then
+            valid_ok=3 # 3 = failed  # bad ip
+            fi
+        done
+    else
+        valid_ok=2 # 2 = failed # bad ip
+    fi
+    
+    if [ $valid_ok -eq 0 ]
+    then
+        echo "True"
+    else
+        echo "False"
+    fi
+}
     `;
 
 //-------------------------------------^ EDIT ^----------------------------------------------------
