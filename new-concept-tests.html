@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="configurableBackground" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="damola">
+        <link rel="stylesheet" href="css/styles.css">
+        <meta name="description" content="New feature testing">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+        <title>Software Development Projects</title>
+        <script src="scripts/test-code.js" type="text/javascript" defer></script>
+    </head>
+    <body>
+        <noscript>JavaScript is off. Please enable to view full site.</noscript>
+        <div id="freezeLayer" class="freeze-layer" style="display: none;"></div>
+        <header>
+            <h1>My Really, Really Interesting Software Development Life...</h1>
+        </header>
+        
+        <fieldset>
+            <legend>Navigate this...</legend>
+            <a href="index.html">index.html</a>
+            <a href="social-coding.html">social-coding.html</a>              
+        </fieldset>
+        
+        <fieldset>
+            <legend>tests...</legend>
+            <h2>Tests:</h2> 
+            <section>
+                <button onclick="alert('This is our custom alert dialog. Press \'OK\' to close.')">Default Alert</button>
+                <button onclick="showAlertDialog()">Custom Alert</button>
+                <button onclick="handleDefaultConfirm()">Default Confirm</button>
+                <button onclick="showConfirmDialog()">Custom Confirm</button>
+            </section>                
+        </fieldset>
+        <div id="alertDialogCont" class="dlg-container">
+            <div class="dlg-header">Custom Alert Dialog</div>
+            <div id="alertDialogBody" class="dlg-body"></div>
+            <div class="dlg-footer"><a onclick="hideAlertDialog()">OK</a></div>
+        </div>
+        <div id="confirmDialogCont" class="dlg-container">
+            <div class="dlg-header">Custom Confirm Dialog</div>
+            <div id="confirmDialogBody" class="dlg-body"></div>
+            <div class="dlg-footer">
+                <a onclick="CustomConfirm.close()">Cancel</a>
+                <a onclick="CustomConfirm.affirm()">OK</a>
+            </div>
+        </div>
+         
+        
+    </body>
+</html>
