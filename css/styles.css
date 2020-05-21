@@ -130,14 +130,17 @@ pre {
     line-height: 30px;
 }
 
-.dlg-input-elem{
-    border: none;
+.dlg-input-elem{    
+    border: 1px solid #ddd;
     outline: none;
+    width: 375px;
+    height: 30px;
+    font-size: 20px;
 
 }
 
 .dlg-input-elem :focus{
-
+    box-shadow: inset 0px 0px 10px 3px #f6f6f6;
 }
 
 .dlg-footer{

@@ -64,6 +64,10 @@ const CustomConfirm = new function(){
         this.close();
     };
 
+    this.cancel = () => {
+            this.close();
+    };
+
     this.close = () => {
         let dlg = document.getElementById("confirmDialogCont");
         dlg.style.top = "-30%";
@@ -73,15 +77,86 @@ const CustomConfirm = new function(){
 };
 
 // callback function
-const doChange = () => {
-    console.log("Background now updating....")
+const doSomething = () => {
+    console.log("Background now updating....");
 };
 
+//
 const showConfirmDialog = () => {
     // create message and callback
     let msg = "Damola needs confirmation now";
-    CustomConfirm.show(msg,doChange);
+    // args passed to CustomConfirm object will have been dynamically generated
+    CustomConfirm.show(msg,doSomething);
 };
 
 //---------------------------------------------------------------------
 // prompt dialog functions
+
+// callback function
+const validateUsername = (username) => {
+    let resultBox = document.getElementById("result");
+    // all sorts of input validation...HERE.. 
+    // null from cancel button?
+    if (username != null){
+        if (username.startsWith("d")){
+            resultMsg = "damola?";
+        }
+        else{
+            resultMsg = "who are you?";
+        }
+    }
+    else{
+        resultMsg = "User cancelled input";
+    }
+    
+    console.log(resultMsg);
+    resultBox.textContent = resultMsg;
+};
+
+const handleDefaultPrompt = () => {
+    validateUsername(prompt("Give me your username"));    
+};
+
+const CustomPrompt = new function(){
+    // object scope variables assigned at object creation time
+    this.dialogInputElem = document.getElementById("promptDialogInput");
+
+    this.show = (msg, callback) => {
+        this.callback = callback;
+        let dlg = document.getElementById("promptDialogCont");
+        let dlgMessage = dlg.querySelector("#promptDialogMessage");
+        dlgMessage.textContent = msg;
+
+        this.dialogInputElem.focus();
+        dlg.style.top = "30%";
+        dlg.style.opacity = 1;
+        document.getElementById("freezeLayer").style.display = "";
+    };
+
+    this.affirm = () => {
+        this.callback(this.dialogInputElem.value);
+        this.close();
+    };
+
+    this.cancel = () => {
+        this.callback(null);
+        this.close();
+    };
+
+    this.close = () => {
+        let dlg = document.getElementById("promptDialogCont");
+        this.dialogInputElem.value = "";
+        dlg.style.top = "-30%";
+        dlg.style.opacity = 0;
+        document.getElementById("freezeLayer").style.display = "none";
+    };
+};
+
+const showPromptDialog = () => {
+    // create message and callback
+    let msg = "Username needs confirmation now";
+    // args passed to CustomPrompt object will have been dynamically generated
+    CustomPrompt.show(msg,validateUsername);
+};
+
+
