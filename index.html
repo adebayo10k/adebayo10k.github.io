@@ -8,9 +8,11 @@
         <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
         <title>Software Development Projects</title>        
         <script src="scripts/homepage-code.js" type="text/javascript" defer></script>
+        <script src="scripts/dialogs.js" type="text/javascript" defer></script>
     </head>
     <body>
-        <noscript>JavaScript is off. Please enable to view full site.</noscript> 
+        <noscript>JavaScript is off. Please enable to view full site.</noscript>
+        <div id="freezeLayer" class="freeze-layer" style="display: none;"></div> 
         <header>
             <h1>My Really, Really Interesting Software Development Life...</h1>
         </header>
@@ -57,6 +59,14 @@
                                 
             </fieldset>
         </article>
+        <div id="confirmDialogCont" class="dlg-container">
+            <div class="dlg-header">Let's discuss this...</div>
+            <div id="confirmDialogBody" class="dlg-body"></div>
+            <div class="dlg-footer">
+                <a onclick="CustomConfirm.cancel()">Cancel</a>
+                <a onclick="CustomConfirm.affirm()">OK</a>
+            </div>
+        </div>
   
         
     </body>
