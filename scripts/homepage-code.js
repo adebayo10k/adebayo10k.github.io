@@ -68,7 +68,7 @@ const setSystemState = (requestedState) => {
 // eg. change text and add forget me button if now user configured
 const updateAppearanceSectionsContent = (storedAppearanceSetting) => {
     const appearanceText1 = `
-    Make yourself at home by changing the background colour of this page. Changes should persist between browser restarts.    
+    Make yourself at home by changing the background colour being used by this site. Your browser should remember your changes restarts.    
     `;
     const appearanceText2 = `
     Your preferred background colour was set to ${localStorage.getItem("bgColour")} on ${localStorage.getItem("userChoiceDate")}. Try another whenever you like.    
