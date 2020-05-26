@@ -7,9 +7,12 @@ if (localStorage.getItem("bgColour")){
 // crude hacks until better responsive design understanding
 let screenWidth = screen.width;
 let availScreenWidth = screen.availWidth;
+let viewportWidth = document.documentElement.clientWidth;
 console.log(`screenWidth: ${screenWidth}`);
 console.log(`availScreenWidth: ${availScreenWidth}`);
 console.log(`window innerWidth: ${innerWidth}`);
+console.log(`viewport width: ${viewportWidth}`);
+
 
 // using this as workaround for no android browser console.log() problem
 let screenDataSectionElem = document.getElementById("screenDataSection");
@@ -17,14 +20,17 @@ let screenDataSectionElem = document.getElementById("screenDataSection");
 let screenWidthPara = document.createElement("p");
 let availScreenWidthPara = document.createElement("p");
 let innerWidthPara = document.createElement("p");
+let clientWidthPara = document.createElement("p");
 
 screenWidthPara.textContent = `screen width: ${screenWidth}`;
 availScreenWidthPara.textContent = `available screen width: ${availScreenWidth}`;
-innerWidthPara.textContent = `window inner width: ${innerWidth}`;
+innerWidthPara.innerHTML = `<strong>browser window current inner width: ${innerWidth}</strong>`;
+clientWidthPara.innerHTML = `<strong>client width (viewport): ${viewportWidth}</strong>`;
 
 screenDataSectionElem.appendChild(screenWidthPara);
 screenDataSectionElem.appendChild(availScreenWidthPara);
 screenDataSectionElem.appendChild(innerWidthPara);
+screenDataSectionElem.appendChild(clientWidthPara);
 
 // TODO: really should query image sizes too..
 
