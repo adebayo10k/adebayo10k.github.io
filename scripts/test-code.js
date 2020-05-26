@@ -25,7 +25,7 @@ let clientWidthPara = document.createElement("p");
 screenWidthPara.textContent = `screen width: ${screenWidth}`;
 availScreenWidthPara.textContent = `available screen width: ${availScreenWidth}`;
 innerWidthPara.innerHTML = `<strong>browser window current inner width: ${innerWidth}</strong>`;
-clientWidthPara.innerHTML = `<strong>client width (viewport): ${viewportWidth}</strong>`;
+clientWidthPara.innerHTML = `<strong>client width (visual viewport): ${viewportWidth}</strong>`;
 
 screenDataSectionElem.appendChild(screenWidthPara);
 screenDataSectionElem.appendChild(availScreenWidthPara);
