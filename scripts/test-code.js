@@ -4,6 +4,31 @@ if (localStorage.getItem("bgColour")){
     htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;    
 }
 
+// crude hacks until better responsive design understanding
+let screenWidth = screen.width;
+let availScreenWidth = screen.availWidth;
+console.log(`screenWidth: ${screenWidth}`);
+console.log(`availScreenWidth: ${availScreenWidth}`);
+console.log(`window innerWidth: ${innerWidth}`);
+
+// using this as workaround for no android browser console.log() problem
+let screenDataSectionElem = document.getElementById("screenDataSection");
+
+let screenWidthPara = document.createElement("p");
+let availScreenWidthPara = document.createElement("p");
+let innerWidthPara = document.createElement("p");
+
+screenWidthPara.textContent = `screen width: ${screenWidth}`;
+availScreenWidthPara.textContent = `available screen width: ${availScreenWidth}`;
+innerWidthPara.textContent = `window inner width: ${innerWidth}`;
+
+screenDataSectionElem.appendChild(screenWidthPara);
+screenDataSectionElem.appendChild(availScreenWidthPara);
+screenDataSectionElem.appendChild(innerWidthPara);
+
+// TODO: really should query image sizes too..
+
+
 //---------------------------------------------------------------------
 // alert dialog functions
 

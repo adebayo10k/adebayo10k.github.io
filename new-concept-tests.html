@@ -57,7 +57,7 @@
             <legend>tests...</legend>
             <h2>Tests:</h2> 
             <section>
-                <button onclick="alert('This is our custom alert dialog. Press \'OK\' to close.')">Default Alert</button>
+                <button onclick="alert('This is the default system alert dialog. Press \'OK\' to close.')">Default Alert</button>
                 <button onclick="showAlertDialog()">Custom Alert</button>
                 <button onclick="handleDefaultConfirm()">Default Confirm</button>
                 <button onclick="showConfirmDialog()">Custom Confirm</button>
@@ -67,6 +67,15 @@
             <section>
                 <div><p id="result"></p></div>
             </section>                
+        </fieldset>
+
+        <fieldset>
+            <legend>data...</legend>             
+            <section id="screenDataSection">
+                <header>
+                    <h2>Screen Data:</h2>    
+                </header>
+            </section>                           
         </fieldset>
 
         <div id="alertDialogCont" class="dlg-container">
@@ -83,7 +92,7 @@
                 <a onclick="CustomConfirm.affirm()">OK</a>
             </div>
         </div>
-        
+
         <div id="promptDialogCont" class="dlg-container">
             <div class="dlg-header">
                 <span id="promptDialogHeader">Custom Prompt Dialog</span>
