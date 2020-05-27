@@ -44,7 +44,7 @@ li{
     padding-top: 1px;
     margin-top: 1px;
     line-height: 1;
-    letter-spacing: 1px;
+    /*letter-spacing: 1px;*/
 }
 
 fieldset { 
@@ -75,7 +75,15 @@ pre {
     background: hsl(220, 80%, 90%);
 }
 
+@media all and (max-width: 600px){
+    img{
+        width: 300px;
+    }    
+}
 
+
+/*-------------------------------------------------------------*/
+/* custom button styles*/
 .show_button {
     box-shadow:inset 0px 1px 0px 0px #f5978e;
     background:linear-gradient(to bottom, #f24537 5%, darkred 100%);
@@ -101,13 +109,13 @@ pre {
     top:1px;
 }
 /*-------------------------------------------------------------*/
-/* dialog box styles*/
+/* custom dialog box styles*/
 .dlg-container{
     position: absolute;
     left: 50%;
     top: -30%;
-    transform: translateX(-50%) translateY(-50%);
-    width: 400px;
+    transform: translateX(-50%) translateY(-10%);
+    width: 300px;
     background: #fff;
     padding: 10px;
     border: 2px solid #ddd;
@@ -133,7 +141,8 @@ pre {
 .dlg-input-elem{    
     border: 1px solid #ddd;
     outline: none;
-    width: 375px;
+    /*width: 375px;*/
+    width: 90%;
     height: 30px;
     font-size: 20px;
 
