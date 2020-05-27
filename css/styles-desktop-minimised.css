@@ -4,6 +4,8 @@ html{
     font-family: 'Ubuntu Mono', monospace, serif;
     font-size: 1em;
     /*background-color: #6495ed; cornflour blue*/
+    padding-top: 4px;
+    padding-bottom: 12px;
 }
 
 .configurableBackground{
