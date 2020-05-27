@@ -22,23 +22,33 @@ body{
 p{
     font-size: 1em;
     margin: 3px;
-    padding-top: 1px;
+    padding-top: 4px;
     display: block;
-    margin-right: 2em;
 }
 
 h1{
-    font-size: 2em;
+    font-size: 1.6em;
     text-align: center;
     color:darkred;
-    margin-top: none;
-    margin-bottom: 0.5em;
-    padding: 0.5em;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 2px;
     border: none;
+    border: solid black 2px;
 }
 
 h2{
-    margin-top: 0.5em;
+    font-size: 1em;
+    text-align: left;
+    margin-top: 2px;
+    margin-bottom: 1px;
+    padding: 1px;
+    border: none;
+}
+
+ol{
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
 li{
@@ -53,6 +63,7 @@ fieldset {
 background:none;
 border: green 3px solid;
 border-radius: 1em;
+padding: 4px;
 margin: 4px;
 }
 
@@ -74,7 +85,8 @@ pre {
 
 img{
     width: 300px;
-} 
+    padding: 2px;
+}
 
 /*-------------------------------------------------------------*/
 /* custom button styles*/

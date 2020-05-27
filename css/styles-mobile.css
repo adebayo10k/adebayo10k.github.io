@@ -21,24 +21,34 @@ body{
 
 p{
     font-size: 1em;
-    margin: 3px;
-    padding-top: 1px;
+    margin: 0px;
+    margin-top: 4px;
+    padding-top: 4px;
     display: block;
-    margin-right: 2em;
 }
 
 h1{
-    font-size: 2em;
+    font-size: 1.2em;
     text-align: center;
     color:darkred;
-    margin-top: none;
-    margin-bottom: 0.5em;
-    padding: 0.5em;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 2px;
     border: none;
 }
 
 h2{
-    margin-top: 0.5em;
+    font-size: 1em;
+    text-align: left;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 1px;
+    border: none;
+}
+
+ol{
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 li{
@@ -53,6 +63,7 @@ fieldset {
 background:none;
 border: green 3px solid;
 border-radius: 1em;
+padding: 2px;
 margin: 2px;
 }
 
@@ -74,6 +85,7 @@ pre {
 
 img{
     width: 200px;
+    padding: 2px;
 }
 
 
@@ -110,7 +122,7 @@ img{
     left: 50%;
     top: -30%;
     transform: translateX(-50%) translateY(-10%);
-    width: 300px;
+    width: 200px;
     background: #fff;
     padding: 10px;
     border: 2px solid #ddd;
@@ -155,7 +167,7 @@ img{
 
 .dlg-footer a{
     display: inline-block;
-    width: 100px;
+    width: 60px;
     padding: 5px 0;
     border: 1px solid #ccc;
     border-radius: 10px;

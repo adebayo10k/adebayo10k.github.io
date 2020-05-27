@@ -22,7 +22,7 @@ body{
 p{
     font-size: 1em;
     margin: 3px;
-    padding-top: 1px;
+    padding-top: 8px;
     display: block;
     margin-right: 2em;
 }
@@ -35,10 +35,21 @@ h1{
     margin-bottom: 0.5em;
     padding: 0.5em;
     border: none;
+    border: solid black 2px;
 }
 
 h2{
-    margin-top: 0.5em;
+    font-size: 1.4em;
+    text-align: left;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    padding: 2px;
+    border: none;
+}
+
+ol{
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 
 li{
@@ -46,13 +57,13 @@ li{
     padding-top: 1px;
     margin-top: 1px;
     line-height: 1;
-    /*letter-spacing: 1px;*/
 }
 
 fieldset { 
 background:none;
 border: green 3px solid;
 border-radius: 1em;
+padding: 8px;
 margin: 6px;
 }
 
@@ -71,6 +82,11 @@ pre {
     white-space: pre-wrap;
     background: hsl(30,80%,90%);
     background: hsl(220, 80%, 90%);
+}
+
+img{
+    width: 400px;
+    padding: 4px;
 }
 
 /*-------------------------------------------------------------*/
