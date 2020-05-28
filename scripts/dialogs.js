@@ -45,7 +45,7 @@ const handleDefaultConfirm = () => {
 };
 
 const CustomConfirm = new function(){
-    this.show = (msg, srcElemTopOffset, callback) => { // 
+    this.show = (msg, callback) => { // 
         this.callback = callback;
         let dlg = document.getElementById("confirmDialogCont");
         let dlgBody = dlg.querySelector("#confirmDialogBody");
@@ -53,7 +53,10 @@ const CustomConfirm = new function(){
         // get the height of the dialog container
         //console.log(`dlgBody.offsetHeight: ${dlgBody.offsetHeight}`);
         //console.log(`calculated position: ${srcElemTopOffset-(dlgBody.offsetHeight/2)}`);
-        dlg.style.top = `${srcElemTopOffset-(dlgBody.offsetHeight/4)}px`; // 4 works better than 2 ?!?
+        //dlg.style.top = `${srcElemTopOffset-(dlgBody.offsetHeight/4)+window.pageYOffset}px`; // 4 works better than 2 ?!?
+
+        dlg.style.top = `${(document.documentElement.clientHeight/2)-(dlgBody.offsetHeight/4)+window.pageYOffset}px`; // 4 works better than 2 ?!?
+
         dlg.style.opacity = 1;        
         document.getElementById("freezeLayer").style.display = "";
     };

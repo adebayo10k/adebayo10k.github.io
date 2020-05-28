@@ -194,7 +194,7 @@ const userConfigurePage = () => {
                     console.log("user cancelled");// NO ELSE!
                 }
             };
-            CustomConfirm.show(confirmMsg,bgColourBtnElem.offsetTop,getUserResponse);             
+            CustomConfirm.show(confirmMsg,getUserResponse);             
             break;
         default:
             console.log("Pre try-catch failsafe. userConfigurePage switch didn't match argument");
@@ -221,7 +221,7 @@ const clearUserConfiguration = () => {
             console.log("user cancelled");// NO ELSE!
         }
     };
-    CustomConfirm.show(confirmMsg,forgetMeBtn.offsetTop,getUserResponse);
+    CustomConfirm.show(confirmMsg,getUserResponse);
 };
 //---------------------------------------------------------------------------------------------------
 // on page load...main...

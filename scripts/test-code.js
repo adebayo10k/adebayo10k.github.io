@@ -5,13 +5,23 @@ if (localStorage.getItem("bgColour")){
 }
 
 // crude hacks until better responsive design understanding
-let screenWidth = screen.width;
-let availScreenWidth = screen.availWidth;
-let viewportWidth = document.documentElement.clientWidth;
-console.log(`screenWidth: ${screenWidth}`);
-console.log(`availScreenWidth: ${availScreenWidth}`);
+// let screenWidth = screen.width;
+// let availScreenWidth = screen.availWidth;
+// let viewportWidth = document.documentElement.clientWidth;
+
+console.log(`screenWidth: ${screen.height}`);
+console.log(`screenWidth: ${screen.width}`);
+
+console.log(`availScreenWidth: ${screen.availHeight}`);
+console.log(`availScreenWidth: ${screen.availWidth}`);
+
+console.log(`window innerWidth: ${innerHeight}`);
 console.log(`window innerWidth: ${innerWidth}`);
-console.log(`viewport width: ${viewportWidth}`);
+
+console.log(`viewport height: ${document.documentElement.clientHeight}`);
+console.log(`viewport width: ${document.documentElement.clientWidth}`);
+
+console.log(`page Y-Offset: ${window.pageYOffset}`);
 
 
 // using this as workaround for no android browser console.log() problem
@@ -22,10 +32,10 @@ let availScreenWidthPara = document.createElement("p");
 let innerWidthPara = document.createElement("p");
 let clientWidthPara = document.createElement("p");
 
-screenWidthPara.textContent = `screen width: ${screenWidth}`;
-availScreenWidthPara.textContent = `available screen width: ${availScreenWidth}`;
+screenWidthPara.textContent = `screen width: ${screen.width}`;
+availScreenWidthPara.textContent = `available screen width: ${screen.availWidth}`;
 innerWidthPara.innerHTML = `<strong>browser window current inner width: ${innerWidth}</strong>`;
-clientWidthPara.innerHTML = `<strong>client width (visual viewport): ${viewportWidth}</strong>`;
+clientWidthPara.innerHTML = `<strong>client width (visual viewport): ${document.documentElement.clientWidth}</strong>`;
 
 screenDataSectionElem.appendChild(screenWidthPara);
 screenDataSectionElem.appendChild(availScreenWidthPara);
