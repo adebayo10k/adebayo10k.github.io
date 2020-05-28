@@ -1,5 +1,6 @@
 //---------------------------------------------------------------------
 // alert dialog functions
+// OK button only
 
 const CustomAlert = new function(){
     this.show = (msg) => {
@@ -35,6 +36,7 @@ const hideAlertDialog = () => {
 
 //---------------------------------------------------------------------
 // confirm dialog functions
+// CANCEL and OK buttons
 
 const handleDefaultConfirm = () => {
     if (confirm("Ok to change background?")){
@@ -43,13 +45,16 @@ const handleDefaultConfirm = () => {
 };
 
 const CustomConfirm = new function(){
-    this.show = (msg, callback) => {
+    this.show = (msg, srcElemTopOffset, callback) => { // 
         this.callback = callback;
         let dlg = document.getElementById("confirmDialogCont");
         let dlgBody = dlg.querySelector("#confirmDialogBody");
-        dlg.style.top = "30%";
-        dlg.style.opacity = 1;
         dlgBody.textContent = msg;
+        // get the height of the dialog container
+        //console.log(`dlgBody.offsetHeight: ${dlgBody.offsetHeight}`);
+        //console.log(`calculated position: ${srcElemTopOffset-(dlgBody.offsetHeight/2)}`);
+        dlg.style.top = `${srcElemTopOffset-(dlgBody.offsetHeight/4)}px`; // 4 works better than 2 ?!?
+        dlg.style.opacity = 1;        
         document.getElementById("freezeLayer").style.display = "";
     };
 
@@ -73,6 +78,7 @@ const CustomConfirm = new function(){
 
 //---------------------------------------------------------------------
 // prompt dialog functions
+// TEXT INPUT, CANCEL and OK buttons
 
 // callback function
 const validateUsername = (username) => {

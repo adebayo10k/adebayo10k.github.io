@@ -132,7 +132,7 @@ img{
     top:1px;
 }
 /*-------------------------------------------------------------*/
-/* custom dialog box styles*/
+/* custom dialog box styles CANCEL and OK buttons*/
 .dlg-container{
     position: absolute;
     left: 50%;

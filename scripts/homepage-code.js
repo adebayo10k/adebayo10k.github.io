@@ -159,6 +159,10 @@ const refreshSiteAppearance = () => {
 // called when change button is pressed
 const userConfigurePage = () => {
     let currentConfig = getSystemState();
+    // get the y-offset of the pressed button wrt to the body
+    // console.log(`yOffsetbgColourBtnElem: ${bgColourBtnElem.offsetTop}`);
+    // console.log(`xOffsetbgColourBtnElem: ${bgColourBtnElem.offsetLeft}`);
+
     // add a requiredConfig variable??? or not??
     //console.log(`currentConfig: ${currentConfig}`);
     switch (currentConfig){
@@ -173,7 +177,7 @@ const userConfigurePage = () => {
             //updateStyleAllPages();
             refreshSiteAppearance();         
             break;
-        case "USER_CONFIGURED" :
+        case "USER_CONFIGURED" : // in this case, get user confirmation
             //console.log(`currentConfig: ${currentConfig}`);            
             let confirmMsg = `Your site background colour is currently ${localStorage.getItem("bgColour")}. Looks like you're changing it to ${bgColourInputElem.value}. Is that OK?`;
 
@@ -190,15 +194,20 @@ const userConfigurePage = () => {
                     console.log("user cancelled");// NO ELSE!
                 }
             };
-            CustomConfirm.show(confirmMsg,getUserResponse);             
+            CustomConfirm.show(confirmMsg,bgColourBtnElem.offsetTop,getUserResponse);             
             break;
         default:
             console.log("Pre try-catch failsafe. userConfigurePage switch didn't match argument");
     }; 
 };
 //---------------------------------------------------------------------------------------------------
-// when forget me button is pressed
+// when forget me button is pressed, get user confirmation
 const clearUserConfiguration = () => {
+
+    // get the y-offset of the pressed button wrt to the body
+    // console.log(`yOffsetforgetMeBtn: ${forgetMeBtn.offsetTop}`);
+    // console.log(`xOffsetforgetMeBtn: ${forgetMeBtn.offsetLeft}`);
+
     let confirmMsg = `Your browser (not you) will now be plugged back into the Matrix, so all your background colour preferences for this site will be forgotten. Is that OK?`;
 
     // callback function
@@ -212,7 +221,7 @@ const clearUserConfiguration = () => {
             console.log("user cancelled");// NO ELSE!
         }
     };
-    CustomConfirm.show(confirmMsg,getUserResponse);
+    CustomConfirm.show(confirmMsg,forgetMeBtn.offsetTop,getUserResponse);
 };
 //---------------------------------------------------------------------------------------------------
 // on page load...main...
