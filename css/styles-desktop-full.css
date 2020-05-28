@@ -7,7 +7,7 @@ html{
     padding-bottom: 12px;
 }
 
-.configurableBackground{
+.configurable-background{
     background-color: #6495ed; /*cornflour blue*/
 }
 
@@ -102,7 +102,7 @@ img{
 
 /*-------------------------------------------------------------*/
 /* custom button styles*/
-.show_button {
+.show-button {
     box-shadow:inset 0px 1px 0px 0px #f5978e;
     background:linear-gradient(to bottom, #f24537 5%, darkred 100%);
     background-color: darkred;
@@ -118,11 +118,11 @@ img{
     text-decoration:none;
     text-shadow:0px 1px 0px #961108;
 }
-.show_button:hover {
+.show-button:hover {
     background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
     background-color:darkred;
 }
-.show_button:active {
+.show-button:active {
     position:relative;
     top:1px;
 }

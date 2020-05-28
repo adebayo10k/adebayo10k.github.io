@@ -3,7 +3,6 @@ if (localStorage.getItem("bgColour")){
     htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;    
 }
 
-
 // here I fake my own expiry 
 // generalised constructor function for codewars and hackerrank solution objects
 function Solution (latestCode, expiryDate, codeBlockElemID, showBtnElemID){
@@ -70,8 +69,8 @@ IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING, DM ME TOD
 
 //-------------------------------------V EDIT V----------------------------------------------------
 // arguments for codewars object instantiation
-const cwCodeBlockElemID = "code_frag_block_cw";
-const cwShowBtnElemID = "show_btn_cw";
+const cwCodeBlockElemID = "codeFragBlockCW";
+const cwShowBtnElemID = "showBtnCW";
 let latestCWexpiryDate = new Date(2020, 4, 16, 18, 00, 0, 000); // zero based month, UTC accounted
 let latestCWcode = `
 // 6 kyu
@@ -142,8 +141,8 @@ console.log(keys);
 
 //-------------------------------------V EDIT V----------------------------------------------------
 // arguments for hackerrank object instantiation
-const hrCodeBlockElemID = "code_frag_block_hr";
-const hrShowBtnElemID = "show_btn_hr";
+const hrCodeBlockElemID = "codeFragBlockHR";
+const hrShowBtnElemID = "showBtnHR";
 let latestHRexpiryDate = new Date(2020, 4, 27, 18, 00, 0, 1); // zero based month, UTC accounted
 let latestHRcode = ` 
 #!/bin/bash

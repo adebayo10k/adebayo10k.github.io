@@ -118,7 +118,7 @@ const updateStyleAllPages = () => {
    // console.log(`ghpRuleList: ${ghpRuleList}`);
    // for (let i = 0; i < ghpRuleList.length; i++){
    //     console.log(`ghpRuleList[i].selectorText: ${ghpRuleList[i].selectorText}`);
-   //     if (ghpRuleList[i].selectorText.toLowerCase() == ".configurablebackground"){
+   //     if (ghpRuleList[i].selectorText.toLowerCase() == ".configurable-background"){
    //         targetRule = ghpRuleList[i];
    //         console.log(`targetRule.selectorText: ${targetRule.selectorText}`);
    //         break;
@@ -199,7 +199,7 @@ const userConfigurePage = () => {
 //---------------------------------------------------------------------------------------------------
 // when forget me button is pressed
 const clearUserConfiguration = () => {
-    let confirmMsg = `Your browser (not you) will now be plugged back into the Matrix. All background colour preferences will be forgotten. Is that OK?`;
+    let confirmMsg = `Your browser (not you) will now be plugged back into the Matrix, so all your background colour preferences for this site will be forgotten. Is that OK?`;
 
     // callback function
     const getUserResponse = (response) => {
