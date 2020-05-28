@@ -48,7 +48,7 @@ h2{
     border: none;
 }
 
-ol{
+ul, ol{
     margin-top: 6px;
     margin-bottom: 6px;
 }
@@ -58,6 +58,11 @@ li{
     padding-top: 1px;
     margin-top: 1px;
     line-height: 1;
+}
+
+ul li{
+    display: inline;
+    list-style-type: none;
 }
 
 fieldset { 
