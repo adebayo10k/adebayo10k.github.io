@@ -4,10 +4,7 @@ if (localStorage.getItem("bgColour")){
     htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;    
 }
 
-// crude hacks until better responsive design understanding
-// let screenWidth = screen.width;
-// let availScreenWidth = screen.availWidth;
-// let viewportWidth = document.documentElement.clientWidth;
+// output some data needed to test responsive design implementation
 
 console.log(`screenWidth: ${screen.height}`);
 console.log(`screenWidth: ${screen.width}`);
@@ -22,6 +19,7 @@ console.log(`viewport height: ${document.documentElement.clientHeight}`);
 console.log(`viewport width: ${document.documentElement.clientWidth}`);
 
 console.log(`page Y-Offset: ${window.pageYOffset}`);
+console.log(`page X-Offset: ${window.pageXOffset}`);
 
 
 // using this as workaround for no android browser console.log() problem
@@ -47,6 +45,7 @@ screenDataSectionElem.appendChild(clientWidthPara);
 
 //---------------------------------------------------------------------
 // alert dialog functions
+// OK button only
 
 const CustomAlert = new function(){
     this.show = (msg) => {
@@ -82,6 +81,7 @@ const hideAlertDialog = () => {
 
 //---------------------------------------------------------------------
 // confirm dialog functions
+// CANCEL and OK buttons
 
 const handleDefaultConfirm = () => {
     if (confirm("Ok to change background?")){
@@ -132,6 +132,7 @@ const showConfirmDialog = () => {
 
 //---------------------------------------------------------------------
 // prompt dialog functions
+// TEXT INPUT, CANCEL and OK buttons
 
 // callback function
 const validateUsername = (username) => {

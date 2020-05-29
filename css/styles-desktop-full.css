@@ -114,6 +114,13 @@ img{
     padding: 4px;
 }
 
+figure{
+    margin-left: 8px;
+}
+
+figcaption{
+    font-size: 0.8em;
+}
 /*-------------------------------------------------------------*/
 /* custom button styles*/
 .show-button {
