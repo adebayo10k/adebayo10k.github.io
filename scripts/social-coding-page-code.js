@@ -71,60 +71,27 @@ IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING, DM ME TOD
 // arguments for codewars object instantiation
 const cwCodeBlockElemID = "codeFragBlockCW";
 const cwShowBtnElemID = "showBtnCW";
-let latestCWexpiryDate = new Date(2020, 4, 16, 18, 00, 0, 000); // zero based month, UTC accounted
+let latestCWexpiryDate = new Date(2020, 5, 6, 18, 00, 0, 000); // zero based month
 let latestCWcode = `
-// 6 kyu
+// 5 kyu
+//perfect_power.js
 
-function decode(r){
-
-    const badMultiplierMessage = "Impossible to decode";
-    const alphaDict = { "a":0, "b":1, "c":2, "d":3, "e":4, "f":5, "g":6, "h":7, "i":8, "j":9, "k":10, "l":11, "m":12, "n":13, "o":14, "p":15, "q":16, "r":17, "s":18, "t":19, "u":20, "v":21, "w":22, "x":23, "y":24, "z":25 };
-    const alphaDictLen = Object.keys(alphaDict).length;
-    let numStr = "";
-    let encodedStr = "";
-    // separate numStr and encodedStr
-    for (let charKey in r){
-        //console.log(r[charKey]);
-        if (Number.isInteger(Number.parseInt(r[charKey]))){
-            numStr += r[charKey];
+function perfect_power_checker(num){
+    let baseFound = false; let baseExArr = []; let proof = "";
+    // lowest possible exponent is 2, so highest possible base is sqrt(num)
+    // lowest possible base is 2, so highest possible exponent is log2(num)
+    for (let exp = 2; exp <= Math.ceil( (Math.log(num)/Math.log(2)) ); exp += 1){
+        base = Math.round(Math.pow(num, (1/exp)));
+        if (Math.pow(base, exp) === num){
+            baseFound = true; baseExArr = [base, exp]; proof = \`\${base}^\${exp} = \${Math.pow(base, exp)}\`;
+            return baseExArr + " " + proof;
+            break;
         }
-        else{
-            encodedStr += r[charKey];
-        }
-    }
-
-    // parse numStr into multiplier number
-    const multiplier = Number.parseInt(numStr);
-
-    let decodedStr = "";
-    // decode if possible
-    for (let charKey in encodedStr){      
-        // lookup the dictionary value for the encoded character
-        let remainderVal = alphaDict[\`\${encodedStr[charKey]}\`];
-
-        // how many (number*multiplier)%26 between 0..25 will give remainderVal?
-        // if there is not exactly 1, we can't decode
-        let check = 0; let decodedValArr = [];
-        while (check < alphaDictLen){            
-            // collect decoded value(s)
-            if ((check*multiplier) % alphaDictLen == remainderVal){
-                decodedValArr.push(check);
-            }
-            check++;
-        }
-        // if not exactly 1 in range 0..alphaDictLen, fail
-        if (decodedValArr.length !== 1){
-            return badMultiplierMessage;
-        }
-        // translate value back to letter and remake string
-        for (letter in alphaDict){
-            if (alphaDict[letter] === decodedValArr[0]){
-                decodedStr += letter;
-                break; // inner for
-            }
-        }
-    }
-    return decodedStr;
+    }    
+    if (!baseFound){
+        return null;
+    }    
+} // end function
     `;
 
 //-------------------------------------^ EDIT ^----------------------------------------------------
