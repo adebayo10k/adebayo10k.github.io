@@ -53,13 +53,28 @@
             <legend>Perhaps a few changes...</legend>       
             
             <section>
-                <p id="colourPara"><strong>If you can read this, JavaScript is probably not enabled in your browser. This site is mainly about showing off with JavaScript.</strong></p>
-                <label for="bgcolour">Choose a background colour and change:</label>
+                <header>
+                    <h3>MAKE CHANGES</h3>
+                </header>
+                <p id="changeIntroPara"><strong>If you can read this, JavaScript is probably not enabled in your browser. This site is mainly about showing off with JavaScript.</strong></p>
+
+                <label for="bgcolour">Choose a background colour, then press &apos;change&apos;:</label>
                 <input type="color" class="colour" id="bgColourPicker" value="#6495ed">
                 <input onclick="userConfigurePage()" type="button" class="" id="bgColourBtn" value="change">
-            </section>     
 
-            <section id="forgetMe"></section>
+                <p id="changeSummaryPara"></p>
+            </section> 
+            
+            <hr>
+
+            <section id="forgetMe" style="display: none;">
+                <header>
+                    <h3>UNDO CHANGES</h3>
+                </header>
+                <p>Tell your browser to forget all stored data for this site, forever.</p>
+                <label for="forgetMeBtn">Take the blue pill:</label>
+                <input onclick="clearUserConfiguration()" type="button" class="" id="forgetMeBtn" value="forget me">
+            </section>
 
         </fieldset> 
 

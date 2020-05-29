@@ -1,32 +1,35 @@
 // 
 let htmlElem = document.querySelector("html");
-let bgColourParaElem = document.getElementById("colourPara");
+let changeIntroPara = document.getElementById("changeIntroPara");
+let changeSummaryPara = document.getElementById("changeSummaryPara");
 let bgColourInputElem = document.getElementById("bgColourPicker");
 let bgColourBtnElem = document.getElementById("bgColourBtn");
+let forgetMeSectionElem = document.getElementById("forgetMe");
+let forgetMeBtn = document.getElementById("forgetMeBtn");
 
 const defaultColour = "#6495ed"; //cornflower blue"#6495ed"; //cornflower blue
 
-// prepare forgetMe section elements
-let forgetMeSectionElem = document.getElementById("forgetMe");
-let forgetMePara = document.createElement("p");
-let forgetMeBtn = document.createElement("input");
-let forgetMeBtnLabel = document.createElement("label");
-let forgetMeText = document.createTextNode("...or tell your browser to forget all stored data for this site, forever.");
+// // prepare forgetMe section elements
+// let forgetMeSectionElem = document.getElementById("forgetMe");
+// let forgetMePara = document.createElement("p");
+// let forgetMeBtn = document.createElement("input");
+// let forgetMeBtnLabel = document.createElement("label");
+// let forgetMeText = document.createTextNode("...or tell your browser to forget all stored data for this site, forever.");
 
-//<p id="forgetMePara">...or forget your background colour choice forever.</p>
-forgetMePara.setAttribute("id", "forgetMePara");
-forgetMePara.appendChild(forgetMeText);
+// //<p id="forgetMePara">...or forget your background colour choice forever.</p>
+// forgetMePara.setAttribute("id", "forgetMePara");
+// forgetMePara.appendChild(forgetMeText);
 
-//<label for="forgetMe">Take the red pill:</label>
-forgetMeBtnLabel.setAttribute("for", "forgetMeBtn");
-forgetMeBtnLabel.textContent = "Take the blue pill:"; // or innerHTML =
+// //<label for="forgetMe">Take the red pill:</label>
+// forgetMeBtnLabel.setAttribute("for", "forgetMeBtn");
+// forgetMeBtnLabel.textContent = "Take the blue pill:"; // or innerHTML =
 
-//<input type="button" class="" id="forgetBtn" value="forget me">
-forgetMeBtn.setAttribute("onclick", "clearUserConfiguration()");
-forgetMeBtn.setAttribute("type", "button");
-forgetMeBtn.setAttribute("class", "");
-forgetMeBtn.setAttribute("id", "forgetBtn");
-forgetMeBtn.setAttribute("value", "forget me");
+// //<input type="button" class="" id="forgetBtn" value="forget me">
+// forgetMeBtn.setAttribute("onclick", "clearUserConfiguration()");
+// forgetMeBtn.setAttribute("type", "button");
+// forgetMeBtn.setAttribute("class", "");
+// forgetMeBtn.setAttribute("id", "forgetBtn");
+// forgetMeBtn.setAttribute("value", "forget me");
 
 //---------------------------------------------------------------------------------------------------
 
@@ -65,42 +68,59 @@ const setSystemState = (requestedState) => {
 };
 //---------------------------------------------------------------------------------------------------
 
-// eg. change text and add forget me button if now user configured
+// eg. change text and add forget me button if background is now user configured
 const updateAppearanceSectionsContent = (storedAppearanceSetting) => {
-    const appearanceText1 = `
-    Make yourself at home by changing the background colour being used by this site. Your browser should remember your changes restarts.    
+    const introText = `
+    Make yourself at home by changing the background colour being used by this site. Your browser should remember your changes between restarts.    
     `;
-    const appearanceText2 = `
-    Your preferred background colour was set to ${localStorage.getItem("bgColour")} on ${localStorage.getItem("userChoiceDate")}. Try another whenever you like.    
-    `;
+    const summaryText = `
+    Your preferred background colour was set to <strong>${localStorage.getItem("bgColour")}</strong> on <strong>${localStorage.getItem("userChoiceDate")}</strong>. Try another whenever you like.    
+    `;    
 
     switch (storedAppearanceSetting){
         case "UNSET" :
             //console.log(`storedAppearanceSetting: ${storedAppearanceSetting}`);
-            bgColourParaElem.innerHTML = appearanceText1;
+            changeIntroPara.innerHTML = introText;
+            changeIntroPara.style.display = "";
             // explicitly use the hardcoded default
             bgColourInputElem.value = defaultColour;
+            changeSummaryPara.style.display = "none";
+            forgetMeSectionElem.style.display = "none";
             break;
         case "SYSTEM_DEFAULT" :
             //console.log(`storedAppearanceSetting: ${storedAppearanceSetting}`);
-            bgColourParaElem.innerHTML = appearanceText1;
+            changeIntroPara.innerHTML = introText;
+            changeIntroPara.style.display = "";
             //bgColourInputElem.value = defaultColour;
             bgColourInputElem.value = localStorage.getItem("bgColour");
-            // remove the forget me section if displayed
-            while (forgetMeSectionElem.hasChildNodes()){
-                forgetMeSectionElem.removeChild(forgetMeSectionElem.firstChild);
-            }
+
+            changeSummaryPara.innerHTML = "";
+            changeSummaryPara.style.display = "none";
+
+            forgetMeSectionElem.style.display = "none";
+            // // remove the forget me section if displayed
+            // while (forgetMeSectionElem.childNodes.length > 1){ // more than just the header
+            //     forgetMeSectionElem.removeChild(forgetMeSectionElem.lastChild);
+            // }
             break;
         case "USER_CONFIGURED" :
             //console.log(`storedAppearanceSetting: ${storedAppearanceSetting}`);
-            bgColourParaElem.innerHTML = appearanceText2;
+            changeIntroPara.style.display = "none";
+
+            changeSummaryPara.innerHTML = summaryText;
+            changeSummaryPara.style.display = "";
+
             bgColourInputElem.value = localStorage.getItem("bgColour");
+
+            forgetMeSectionElem.style.display = "";
+
             // construct the new forgetMe section IF NOT ALREADY HERE
-            if (!forgetMeSectionElem.hasChildNodes()){
-                forgetMeSectionElem.appendChild(forgetMePara);
-                forgetMeSectionElem.appendChild(forgetMeBtnLabel);
-                forgetMeSectionElem.appendChild(forgetMeBtn); 
-            }            
+            // //if (!forgetMeSectionElem.hasChildNodes()){
+            // if (!forgetMeSectionElem.childNodes.length > 1){ // more than just the header
+            //     forgetMeSectionElem.appendChild(forgetMePara);
+            //     forgetMeSectionElem.appendChild(forgetMeBtnLabel);
+            //     forgetMeSectionElem.appendChild(forgetMeBtn); 
+            // }            
             break;
         default:
             console.log("Pre try-catch failsafe. updateAppearanceSectionsContent switch didn't match argument");
