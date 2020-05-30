@@ -58,14 +58,21 @@
 
         <fieldset>
             <legend>Let's Go...</legend>
-            <p>If we&apos;re working on a new feature branch, it means we&apos;re already familiar and comfortable with underlying concepts.</p>
-            <p>Before that, this is where we experiment with the newly discovered stuff.</p>
+            <section>
+                <header>
+                    <h3></h3>
+                </header>
+                <p>If we&apos;re working on a new feature branch, it means we&apos;re already familiar and comfortable with underlying concepts.</p>
+                <p>Before that, this is where we experiment with the newly discovered stuff.</p>
+            </section>            
         </fieldset>
         
         <fieldset>
             <legend>feature tests...</legend>
-            <h3>Tests:</h3> 
             <section>
+                <header>
+                   <h3>Tests:</h3> 
+                </header> 
                 <button onclick="alert('This is the default system alert dialog. Press \'OK\' to close.')">Default Alert</button>
                 <button onclick="showAlertDialog()">Custom Alert</button>
                 <button onclick="handleDefaultConfirm()">Default Confirm</button>
@@ -73,19 +80,27 @@
                 <button onclick="handleDefaultPrompt()">Default Prompt</button>
                 <button onclick="showPromptDialog()">Custom Prompt</button>
             </section>
+
+            <hr>
+
             <section>
+                <header>
+                    <h3>Results:</h3> 
+                 </header>
                 <div><p id="result"></p></div>
             </section>                
         </fieldset>
 
         <fieldset>
-            <legend>device data...</legend>             
+            <legend>device data...</legend>            
             <section id="screenDataSection">
                 <header>
                     <h3>Screen Data:</h3>    
                 </header>
             </section>
+
             <hr>
+            
             <section>
                 <header>
                     <h3>Device Images:</h3>    
