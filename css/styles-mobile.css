@@ -28,6 +28,25 @@ p{
     display: block;
 }
 
+.main-page h1{
+    font-size: 1.2em;
+    text-align: center;
+    color:darkred;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 2px;
+    border: none;
+}
+
+.main-page h2{
+    font-size: 1em;
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 1px;
+    border: none;
+}
+
 h1{
     font-size: 1.2em;
     text-align: center;
