@@ -104,11 +104,12 @@ img{
 
 figure{
     margin: 4px;
-    margin-left: none;
+    margin-left: 2px;
 }
 
 figcaption{
     font-size: 0.4em;
+    font-style: italic;
 }
 
 /*-------------------------------------------------------------*/
