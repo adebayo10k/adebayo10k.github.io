@@ -81,7 +81,7 @@ const updateAppearanceSectionsContent = (storedAppearanceSetting) => {
         case "UNSET" :
             //console.log(`storedAppearanceSetting: ${storedAppearanceSetting}`);
             changeIntroPara.innerHTML = introText;
-            changeIntroPara.style.display = "";
+            changeIntroPara.style.display = "block";
             // explicitly use the hardcoded default
             bgColourInputElem.value = defaultColour;
             changeSummaryPara.style.display = "none";
@@ -90,7 +90,7 @@ const updateAppearanceSectionsContent = (storedAppearanceSetting) => {
         case "SYSTEM_DEFAULT" :
             //console.log(`storedAppearanceSetting: ${storedAppearanceSetting}`);
             changeIntroPara.innerHTML = introText;
-            changeIntroPara.style.display = "";
+            changeIntroPara.style.display = "block";
             //bgColourInputElem.value = defaultColour;
             bgColourInputElem.value = localStorage.getItem("bgColour");
 
@@ -108,11 +108,11 @@ const updateAppearanceSectionsContent = (storedAppearanceSetting) => {
             changeIntroPara.style.display = "none";
 
             changeSummaryPara.innerHTML = summaryText;
-            changeSummaryPara.style.display = "";
+            changeSummaryPara.style.display = "block";
 
             bgColourInputElem.value = localStorage.getItem("bgColour");
 
-            forgetMeSectionElem.style.display = "";
+            forgetMeSectionElem.style.display = "block";
 
             // construct the new forgetMe section IF NOT ALREADY HERE
             // //if (!forgetMeSectionElem.hasChildNodes()){

@@ -61,7 +61,7 @@ const CustomConfirm = new function(){
         dlg.style.top = `${(document.documentElement.clientHeight/2)+window.pageYOffset}px`; // 
         
         dlg.style.opacity = 1;        
-        document.getElementById("freezeLayer").style.display = "";
+        document.getElementById("freezeLayer").style.display = "block";
     };
 
     this.affirm = () => {
