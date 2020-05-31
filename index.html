@@ -1,139 +1,150 @@
 <!DOCTYPE html>
 <html class="configurable-background" lang="en">
-    <head>
+  <head>
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8">
+    <meta name="author" content="damola">
+    <title>Software Development Life</title>
+		<meta name="description" content="Software Development Projects">
+		
+    <!-- Mobile Specific Metas
+  ================================================== -->
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+		 
+    <!-- CSS
+  ================================================== -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/styles-desktop-full.css" media="screen">
+      <link rel="stylesheet" href="css/styles-desktop-minimised.css" media="screen and (max-width: 800px)">
+			<link rel="stylesheet" href="css/styles-mobile.css" media="screen and (max-width: 400px)">
+			
+    <!-- Favicons
+	================================================= -->
+      <link rel="icon" href="images/favicon1.ico" type="image/x-icon"> 
+      
+    <!-- Scripts
+	================================================= -->    
+      <script src="scripts/homepage-code.js" defer></script>
+      <script src="scripts/dialogs.js" defer></script>
+  </head>
+  <body>
 
-        <!-- Basic Page Needs
-    ================================================== -->
-        <meta charset="utf-8">
-        <meta name="author" content="damola">
-        <title>Software Development Life</title>
-        <meta name="description" content="Software Development Projects">
-
-        <!-- Mobile Specific Metas
-    ================================================== -->
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- CSS
-    ================================================== --> 
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/styles-desktop-full.css" media="screen">
-        <link rel="stylesheet" href="css/styles-desktop-minimised.css" media="screen and (max-width: 800px)">
-        <link rel="stylesheet" href="css/styles-mobile.css" media="screen and (max-width: 400px)">
-
-        <!-- Favicons
-	================================================== -->
-        <link rel="icon" href="images/favicon1.ico" type="image/x-icon"> 
-        
-        <!-- Scripts
-	================================================== -->    
-        <script src="scripts/homepage-code.js" defer></script>
-        <script src="scripts/dialogs.js" defer></script>
-
-    </head>
-    <body>
-
-        <!-- Primary Page Layout
-    ================================================== -->
-    
-        <noscript>JavaScript is off. Please enable to view full site.</noscript>
-        <div id="freezeLayer" class="freeze-layer" style="display: none;"></div>
-
-        <header class="main-page">
-            <h1>My Really, Really Interesting Software Development Life...</h1>
-            <h2>START HERE</h2>
-        </header>
-
-        <fieldset>
-            <legend>Navigate this...</legend>
-            <ul>
-                <li>
-                    <a href="social-coding.html" title="the adebayo10k social coding page">codewars</a>    
-                </li>
-                <li>
-                    <a href="new-concept-tests.html" title="the adebayo10k new concepts test page">test-page</a>     
-                </li>
-            </ul>            
-        </fieldset>
-
-        <fieldset>
-            <legend>Let's Go...</legend>
-            <section>
-                <header>
-                    <h3></h3>
-                </header>
-                <p>These pages are being developed to deliver to you, 'the full 8 bits' (That&apos;s 255, FF, 377), but also to give me a place to practice web development and test stuff out.</p>
-                <p>NOTE: They haven&apos;t really been <em>designed</em> as yet, just marked up with the next element   that comes to mind.</p>
-                <p>Let&apos;s see how long that lasts.</p>
-            </section>            
-        </fieldset>
-
-        <fieldset>
-            <legend>Perhaps a few changes...</legend>       
-            
-            <section>
-                <header>
-                    <h3>MAKE CHANGES</h3>
-                </header>
-                <p id="changeIntroPara"><strong>If you can read this, JavaScript is probably not enabled in your browser. This site is mainly about showing off with JavaScript.</strong></p>
-
-                <label for="bgColourPicker">Choose a background colour, then press &apos;change&apos;:</label>
-                <input type="color" class="colour" id="bgColourPicker" value="#6495ed">
-                <input onclick="userConfigurePage()" type="button" class="" id="bgColourBtn" value="change">
-
-                <p id="changeSummaryPara"></p>
-            </section> 
-            
-            <hr>
-
-            <section id="forgetMe" style="display: none;">
-                <header>
-                    <h3>UNDO CHANGES</h3>
-                </header>
-                <p>Tell your browser to forget all stored data for this site, forever.</p>
-                <label for="forgetMeBtn">Take the blue pill:</label>
-                <input onclick="clearUserConfiguration()" type="button" class="" id="forgetMeBtn" value="forget me">
-            </section>
-
-        </fieldset> 
-
-        <fieldset>
-            <legend>You&apos;re in....</legend>
-            <section>
-                <header>
-                    <h3>Device Images:</h3>    
-                </header>
-                <figure>
-                    <img src="images/laptop-dell-personalised.jpg" alt="A dell laptop personalised with various github stickers" width="400" height="auto">
-                    <figcaption>
-                        A Dell laptop personalised with logo stickers from gitHub, Java, CentOS, VisualStudio, Git, Ubuntu, Google, MySQL and Python. Featuring Tux from Linux and Octocat from gitHub.
-                    </figcaption>
-                </figure>                
-            </section>
-        </fieldset> 
-
-          
-
-        <fieldset>
-            <legend>You&apos;re in...</legend>
-        </fieldset>
-
-        <fieldset>
-            <legend>You&apos;re in....</legend> 
-        </fieldset>
-        
-        <div id="confirmDialogCont" class="dlg-container">
-            <div class="dlg-header">Let's discuss this...</div>
-            <div id="confirmDialogBody" class="dlg-body"></div>
-            <div class="dlg-footer">
-                <a onclick="CustomConfirm.cancel()">Cancel</a>
-                <a onclick="CustomConfirm.affirm()">OK</a>
-            </div>
-        </div>
+    <!-- Primary Page Layout
+  ================================================== -->
   
-        <!-- Right Sidebar
-    ================================================== -->
-    
-    <!-- Footer
-	================================================== -->
-    </body>
+    <noscript>JavaScript is off. Please enable to view full site.</noscript>
+    <div id="freezeLayer" class="freeze-layer" style="display: none;"></div>
+    <header class="main-page">
+      <h1>My Really, Really Interesting Software Development Life...</h1>
+      <h2>START HERE</h2>
+		</header>
+		
+    <fieldset>
+      <legend>Navigate this...</legend>
+      <nav>
+        <div class="nav-icon">
+          <a href="javascript:void(0);" onclick="toggleNav()">
+              <i class="fa fa-bars"></i>                    
+          </a>
+      </div>
+      <ul>
+        <li>
+          <a href="social-coding.html" title="the adebayo10k social coding page">codewars</a>    
+        </li>
+        <li>
+          <a href="new-concept-tests.html" title="the adebayo10k new concepts test page">test-page</a>     
+        </li>
+          <li>
+              <a href="social-coding.html" title="the adebayo10k social coding page">social coding</a>    
+          </li>
+          <li>
+              <a href="social-coding.html" title="the adebayo10k social coding page">multimedia tests</a>    
+          </li>
+          <li>
+              <a href="social-coding.html" title="the adebayo10k social coding page">device tests</a>    
+          </li>
+          <li>
+              <a href="social-coding.html" title="the adebayo10k social coding page">app feature tests</a>    
+          </li>
+          <li>
+              <a href="social-coding.html" title="the adebayo10k social coding page">yoruba tests</a>    
+          </li> 
+      </ul> 
+      </nav>
+                    
+      </fieldset>
+      <fieldset>
+          <legend>Let's Go...</legend>
+          <section>
+              <header>
+                  <h3></h3>
+              </header>
+              <p>These pages are being developed to deliver to you, 'the full 8 bits' (That&apos;s 255, FF, 377), but also to give me a place to practice web development and test stuff out.</p>
+              <p>NOTE: They haven&apos;t really been <em>designed</em> as yet, just marked up with the next element   that comes to mind.</p>
+              <p>Let&apos;s see how long that lasts.</p>
+          </section>            
+      </fieldset>
+      <fieldset>
+          <legend>Perhaps a few changes...</legend>       
+          
+          <section>
+              <header>
+                  <h3>MAKE CHANGES</h3>
+              </header>
+              <p id="changeIntroPara"><strong>If you can read this, JavaScript is probably not enabled in your browser. This site is mainly about showing off with JavaScript.</strong></p>
+              <label for="bgColourPicker">Choose a background colour, then press &apos;change&apos;:</label>
+              <input type="color" class="colour" id="bgColourPicker" value="#6495ed">
+              <input onclick="userConfigurePage()" type="button" class="" id="bgColourBtn" value="change">
+              <p id="changeSummaryPara"></p>
+          </section> 
+          
+          <hr>
+          <section id="forgetMe" style="display: none;">
+              <header>
+                  <h3>UNDO CHANGES</h3>
+              </header>
+              <p>Tell your browser to forget all stored data for this site, forever.</p>
+              <label for="forgetMeBtn">Take the blue pill:</label>
+              <input onclick="clearUserConfiguration()" type="button" class="" id="forgetMeBtn" value="forget me">
+          </section>
+      </fieldset> 
+      <fieldset>
+          <legend>You&apos;re in....</legend>
+          <section>
+              <header>
+                  <h3>Device Images:</h3>    
+              </header>
+              <figure>
+                  <img src="images/laptop-dell-personalised.jpg" alt="A dell laptop personalised with various github stickers" width="400" height="auto">
+                  <figcaption>
+                      A Dell laptop personalised with logo stickers from gitHub, Java, CentOS, VisualStudio, Git, Ubuntu, Google, MySQL and Python. Featuring Tux from Linux and Octocat from gitHub.
+                  </figcaption>
+              </figure>                
+          </section>
+      </fieldset> 
+        
+      <fieldset>
+          <legend>You&apos;re in...</legend>
+      </fieldset>
+      <fieldset>
+          <legend>You&apos;re in....</legend> 
+      </fieldset>
+      
+      <div id="confirmDialogCont" class="dlg-container">
+          <div class="dlg-header">Let's discuss this...</div>
+          <div id="confirmDialogBody" class="dlg-body"></div>
+          <div class="dlg-footer">
+              <a onclick="CustomConfirm.cancel()">Cancel</a>
+              <a onclick="CustomConfirm.affirm()">OK</a>
+          </div>
+      </div>
+
+      <!-- Right Sidebar
+  ================================================== -->
+  
+  <!-- Footer
+================================================= -->
+  </body>
 </html>
