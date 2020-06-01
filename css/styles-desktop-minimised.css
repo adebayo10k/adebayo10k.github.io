@@ -88,8 +88,7 @@ nav ul{
 }
 
 nav li{
-    font-size: 1.2em;
-    /*display: inline-block;*/
+    font-size: 1em;
     list-style-type: none;
     text-align: center;
     border: 1px solid black;

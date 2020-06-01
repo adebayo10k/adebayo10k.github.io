@@ -88,13 +88,13 @@ nav ul{
 }
 
 nav li{
-    font-size: 1.4em;
-    /*display: inline; */
+    font-size: 1.2em;
     list-style-type: none;
     text-align: center;
     border: 1px solid black;
     padding: 4px;
     white-space: nowrap;
+    border-radius: 6px;
 }
 
 .nav-icon{
@@ -103,7 +103,7 @@ nav li{
 
 @media all and (max-width: 900px){
     nav li{
-       font-size: 1.2em;
+       font-size: 1em;
     }   
 }
 

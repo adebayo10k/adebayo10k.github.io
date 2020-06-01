@@ -84,11 +84,11 @@ nav ul{
     row-gap: 2px;
     padding-left: 10px;
     padding-right: 10px;
+    display: none;
 }
 
 nav li{
     font-size: 1em;
-    /*display: block;*/
     list-style-type: none;
     text-align: center;
     border: 1px solid black;
@@ -101,6 +101,10 @@ nav li{
     width: 17px;
     margin: auto;
 
+}
+
+.nav-grid.open-grid {
+    display: block;
 }
 
 fieldset { 
