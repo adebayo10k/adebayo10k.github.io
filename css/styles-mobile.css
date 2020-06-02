@@ -131,7 +131,7 @@ pre {
     background: hsl(220, 80%, 90%);
 }
 
-img{
+img, video, audio{
     width: 200px;
     padding: 2px;
 }

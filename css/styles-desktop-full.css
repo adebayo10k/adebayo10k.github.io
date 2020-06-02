@@ -142,7 +142,7 @@ pre {
     background: hsl(220, 80%, 90%);
 }
 
-img{
+img, video, audio{
     width: 400px;
     padding: 4px;
 }
@@ -159,6 +159,8 @@ figcaption{
 audio{
     border: black 2px solid;
 }
+
+
 
 /*-------------------------------------------------------------*/
 /* custom button styles*/

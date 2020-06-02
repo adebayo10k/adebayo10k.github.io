@@ -140,7 +140,7 @@ pre {
     background: hsl(220, 80%, 90%);
 }
 
-img{
+img, video, audio{
     width: 300px;
     padding: 2px;
 }
@@ -153,6 +153,7 @@ figcaption{
     font-size: 0.6em;
     font-style: italic;
 }
+
 /*-------------------------------------------------------------*/
 /* custom button styles*/
 .show-button {
