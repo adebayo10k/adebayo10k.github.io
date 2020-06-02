@@ -79,13 +79,15 @@
           <header>
             <h3>Basic embedded audio</h3>
           </header>
-          <p>A 30 second audio clip called <strong>&apos;Microwave Lunch&apos;</strong>.</p>
           <p>As a compatability exercise, a Quicktime container is entrusted with MPEG-4 AAC audio stream and OGG container format handles a Vorbis audio stream.</p>
           <audio controls>
             <source src="media/audio/microwave" type="video/mp4">
             <source src="media/audio/microwave.ogg" type="audio/x-vorbis+ogg">
               <p>Your browser doesn&apos;t seem to support HTML5 audio</p>
           </audio>
+          <figcaption>
+            A 30 second audio clip called <strong>&apos;Microwave Lunch&apos;</strong>.
+        </figcaption>
         </section>
 
         <hr>
@@ -94,15 +96,17 @@
           <header>
             <h3>Basic embedded video</h3>
           </header>
-          <p>A one minute video called <strong>&apos;They Used to Bee&apos;</strong>. (Sound is muted by default).</p>
-          <p>Camera on phone generated the original mp4 container format. H.264 video stream codec, MPEG-4 AAC audio stream codec.</p>
-          <p>I used ffmpeg to convert the original to WebM container, libopus video stream of similar video bitrate. </p>
+          <p>My camera phone generated the original mp4 container format, H.264 video stream codec, MPEG-4 AAC audio stream codec.</p>
+          <p>I used ffmpeg to convert that original file into one with WebM container and libopus video stream of similar video bitrate. </p>
           <p>Your browser has chosen whichever one of these it found acceptable.</p>
           <video width="400" height="auto" muted controls>
-            <source src="media/video/they_used_to_bee_03.mp4" type="video/mp4">
-            <source src="media/video/they_used_to_bee_03.webm" type="video/webm">
+            <source src="media/video/they_used_to_bee_04.mp4" type="video/mp4">
+            <source src="media/video/they_used_to_bee_04.webm" type="video/webm">
             <p>Your browser doesn&apos;t seem to support HTML5 video</p>
           </video>
+          <figcaption>
+            A short video called <strong>&apos;They Used to Bee&apos;</strong>. (Sound is muted by default).
+        </figcaption>
           
         </section>
 
