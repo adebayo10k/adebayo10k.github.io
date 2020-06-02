@@ -155,6 +155,11 @@ figcaption{
     font-size: 0.8em;
     font-style: italic;
 }
+
+audio{
+    border: black 2px solid;
+}
+
 /*-------------------------------------------------------------*/
 /* custom button styles*/
 .show-button {
