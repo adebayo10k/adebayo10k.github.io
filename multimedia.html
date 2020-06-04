@@ -107,12 +107,13 @@
           <h3>Basic embedded video</h3>
         </header>
         <p>My camera phone generated the original mp4 container format, H.264 video stream codec, MPEG-4 AAC audio stream codec.</p>
-        <p>FFmpeg used to convert that original file into one with WebM container and libopus video stream of similar video bitrate. </p>
+        <p>FFmpeg used to convert that original file into ones with WebM container and vp9 video stream, and OGG with theora, of similar video bitrate. </p>
         <p>Your browser has chosen whichever one of these it found acceptable.</p>
         <figure>
           <video width="400" muted controls>
-            <source src="media/video/they_used_to_bee_04.mp4" type="video/mp4">
-            <source src="media/video/they_used_to_bee_04.webm" type="video/webm">
+            <source src="media/video/they_used_to_bee_04.mp4" type="video/mp4; codecs='h264, aac'">
+            <source src="media/video/they_used_to_bee_04.webm" type="video/webm; codecs='vp9, opus'">
+              <source src="media/video/they_used_to_bee_04.ogg" type="video/ogg; codecs='theora, vorbis'">
             <p>Your browser doesn&apos;t seem to support HTML5 video</p>
           </video>
           <figcaption>
