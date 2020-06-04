@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html class="configurable-background" lang="en">
-  <head>
+  <head>        
   <!-- Basic Page Needs
   ================================================== -->
     <meta charset="utf-8">
     <meta name="author" content="damola">
     <title>Software Development Life</title>
-		<meta name="description" content="Software Development Projects">
-		
-    <!-- Mobile Specific Metas
+    <meta name="description" content="Software Development Projects">
+
+  <!-- Mobile Specific Metas
   ================================================== -->
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-		 
-    <!-- CSS
+    <meta name="viewport" content="width=360, initial-scale=1">
+
+  <!-- CSS
   ================================================== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles-desktop-full.css" media="screen">
     <link rel="stylesheet" href="css/styles-desktop-minimised.css" media="screen and (max-width: 800px)">
-	  <link rel="stylesheet" href="css/styles-mobile.css" media="screen and (max-width: 400px)">
-	
+    <link rel="stylesheet" href="css/styles-mobile.css" media="screen and (max-width: 400px)">
   <!-- Favicons
-	================================================= -->
+================================================== -->
     <link rel="icon" href="media/images/favicon1.ico" type="image/x-icon"> 
-      
+        
   <!-- Scripts
-	================================================= -->    
+================================================== -->
+    <script src="scripts/test-code.js" defer></script>
     <script src="scripts/navigation.js" defer></script>
-    <script src="scripts/dialogs.js" defer></script>
-      
+
   </head>
   <body>
 
   <!-- Primary Page Layout
-  ================================================== -->  
-    <noscript>JavaScript is off. Please enable to view full site.</noscript>
+================================================== -->
+
+	  <noscript>JavaScript is off. Please enable to view full site.</noscript>
     <div id="freezeLayer" class="freeze-layer" style="display: none;"></div>
     <header class="main-page">
       <h1>My Really, Really Interesting Software Development Life...</h1>
-      <h2>DEVICES</h2>
-		</header>
-		
+  	    <h2>WEB APPLICATION FEATURE TESTS</h2>
+    </header>
     <fieldset>
       <legend>Navigate this...</legend>
       <nav>
@@ -74,55 +73,102 @@
           <li>
             <a href="yoruba.html" title="yoruba page">yoruba testing</a>
           </li>
-
-        </ul> 
-      </nav>
+          
+        </ul>
+      </nav>                               
     </fieldset>
-  
+
     <fieldset>
       <legend>Let's Go...</legend>
       <section>
         <header>
-          <h3>NULL (LITERALLY)</h3>
+          <h3>SOME RANDOM ELEMENTS, STATS and DATA</h3>
         </header>
+        <p>If we&apos;re working on a new feature branch, it means we&apos;re already familiar and comfortable with underlying concepts.</p>
+        <p>Before that, this is where we experiment with the newly discovered stuff.</p>
       </section>            
     </fieldset>
     
     <fieldset>
-      <legend>You&apos;re in....</legend>
+      <legend>feature tests...</legend>
+      <section>
+        <header>
+          <h3>Tests:</h3> 
+        </header> 
+        <button onclick="alert('This is the default system alert dialog. Press \'OK\' to close.')">Default Alert</button>
+        <button onclick="showAlertDialog()">Custom Alert</button>
+        <button onclick="handleDefaultConfirm()">Default Confirm</button>
+        <button onclick="showConfirmDialog()">Custom Confirm</button>
+        <button onclick="handleDefaultPrompt()">Default Prompt</button>
+        <button onclick="showPromptDialog()">Custom Prompt</button>
+    	</section>
+			 
+			<hr>
+
+     	<section>
+        <header>
+          <h3>Results:</h3> 
+        </header>
+        <div><p id="result"></p></div>
+			</section>			                
+    </fieldset>
+		
+		<fieldset>
+      <legend>device data...</legend>            
+      <section id="screenDataSection">
+        <header>
+          <h3>Screen Data:</h3>    
+        </header>
+      </section>
+			
+			<hr>
+        
       <section>
         <header>
           <h3>Device Images:</h3>    
         </header>
         <figure>
-          <img src="media/images/laptop-dell-personalised.jpg" alt="A dell laptop personalised with various github stickers" width="400">
+          <img src="media/images/laptop-dell-personalised.jpg" alt="A Dell laptop personalised with various logo stickers" width="400">
           <figcaption>
             A Dell laptop personalised with logo stickers from gitHub, Java, CentOS, VisualStudio, Git, Ubuntu, Google, MySQL and Python. Featuring Tux from Linux and Octocat from gitHub.
           </figcaption>
         </figure>                
-      </section>
-    </fieldset> 
-        
-    <fieldset>
-      <legend>You&apos;re in...</legend>
+      </section>                           
     </fieldset>
-    
-    <fieldset>
-      <legend>You&apos;re in....</legend> 
-    </fieldset>
-      
+		
+		<div id="alertDialogCont" class="dlg-container">
+      <div class="dlg-header">Custom Alert Dialog</div>
+      <div id="alertDialogBody" class="dlg-body"></div>
+      <div class="dlg-footer"><a onclick="hideAlertDialog()">OK</a></div>
+		</div>
+		
     <div id="confirmDialogCont" class="dlg-container">
-      <div class="dlg-header">Let's discuss this...</div>
+      <div class="dlg-header">Custom Confirm Dialog</div>
       <div id="confirmDialogBody" class="dlg-body"></div>
       <div class="dlg-footer">
         <a onclick="CustomConfirm.cancel()">Cancel</a>
         <a onclick="CustomConfirm.affirm()">OK</a>
       </div>
+		</div>
+		
+    <div id="promptDialogCont" class="dlg-container">
+      <div class="dlg-header">
+        <span id="promptDialogHeader">Custom Prompt Dialog</span>
+      </div>
+      <div class="dlg-body">
+        <div id="promptDialogMessage"></div>
+        <input id="promptDialogInput" type="text" class="dlg-input-elem" />
+      </div>
+      <div class="dlg-footer">
+        <a onclick="CustomPrompt.cancel()">Cancel</a>
+        <a onclick="CustomPrompt.affirm()">OK</a>
+      </div>
     </div>
   <!-- Right Sidebar
 ================================================== -->
-
+    
   <!-- Footer
-================================================= -->
+================================================== -->
+        
   </body>
 </html>
