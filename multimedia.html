@@ -28,6 +28,7 @@
 	================================================= -->    
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/dialogs.js" defer></script>
+    <script src="scripts/multimedia-code.js" defer></script>
       
   </head>
   <body>
@@ -81,7 +82,53 @@
     </fieldset>
 
     <fieldset>
+      <legend>You&apos;re in....</legend>
+      
+
+      <hr>
+
+
+
+
+
+
+    </fieldset>
+
+    <fieldset>
       <legend>You&apos;re in...</legend>
+
+      <section>
+        <header>
+          <h3>Basic Embedded Images:</h3>    
+        </header>
+
+        <p>My camera phone generated the original ................. etc.</p>
+
+        <figure>
+          <img src="media/images/laptop-dell-personalised.jpg" alt="A dell laptop personalised with various github stickers" width="400">
+          <figcaption>
+            A Dell laptop personalised with logo stickers from gitHub, Java, CentOS, Visual Studio Code, Git, Ubuntu, Google, MySQL and Python. Featuring Tux from Linux and Octocat from gitHub.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img src="media/images/rubiks_cube_02.jpg" alt="A Rubiks Cube" width="400">
+          <figcaption>
+            A Rubiks Cube on a wooden floor next to a whiteboard.
+          </figcaption>
+        </figure>
+        
+        <figure>
+          <img src="media/images/raspberry_pi_3b_plus_host1_img2.jpg" alt="A powered up Raspberry Pi computer" width="400">
+          <figcaption>
+            A powered up, remotely accessible ;) Raspberry Pi 3b&plus; computer on a shelf.
+          </figcaption>
+        </figure>        
+
+      </section>
+
+      <hr>
+
       <section>
         <header>
           <h3>Basic embedded audio</h3>
@@ -125,23 +172,88 @@
 
     </fieldset>
       
-    <fieldset>
+     
+         
+    <fieldset>      
       <legend>You&apos;re in....</legend>
+
       <section>
         <header>
-          <h3>Device Images:</h3>    
+          <h3>Embedded Online Map:</h3>    
         </header>
+
+        <p>Some attributes of the iframe element ....</p>
+
         <figure>
-          <img src="media/images/laptop-dell-personalised.jpg" alt="A dell laptop personalised with various github stickers" width="400">
-          <figcaption>
-            A Dell laptop personalised with logo stickers from gitHub, Java, CentOS, Visual Studio Code, Git, Ubuntu, Google, MySQL and Python. Featuring Tux from Linux and Octocat from gitHub.
-          </figcaption>
-        </figure>                
+          <iframe class="map" id="mmediaMapEmbed01" width="100%" height="250" frameborder="0" style="border: black solid 2px; border-radius: 1em;" allowfullscreen="" aria-hidden="false" tabindex="0">
+            <p>
+              <a href="https://www.google.com/maps/place/Marienstra%C3%9Fe,+10117+Berlin,+Germany/@52.5219883,13.3799354,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851c1bd5ef659:0x89600299d695c49e!8m2!3d52.5219883!4d13.3821241">
+                Fallback link for browsers that cannot support iframes.
+              </a>
+            </p>
+          </iframe>
+        </figure>
+        <figcaption>
+          A random location in Germany. The Online Map Provider is Google Maps. Other providers include...
+        </figcaption>        
+
       </section>
-    </fieldset> 
-         
-    <fieldset>
-      <legend>You&apos;re in....</legend> 
+
+      <hr>
+
+      <section>
+        <header>
+          <h3>Embedded Online Video:</h3>    
+        </header>
+
+        <p>stream codec.</p>
+
+        <figure>
+          <iframe class="video" id="mmediaVideoEmbed01" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            <p>
+              <a href="https://www.youtube.com/watch?v=9tXsxBzGJzw">
+                Fallback link for browsers that cannot support iframes.
+              </a>
+            </p>
+          </iframe>
+                    
+        </figure>
+        <figcaption>
+          An online, beginners&apos; Yoruba language video. The Online Video Provider is Youtube. Other providers include...
+        </figcaption>        
+
+      </section>
+
+      <hr>
+
+      <section>
+        <header>
+          <h3>Embedded Online Audio:</h3>    
+        </header>
+
+        <p>stream codec.</p>
+
+        <figure>
+
+          <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/476152911&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+          
+          
+          </iframe>
+          
+          <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/playlist" title="Moments" target="_blank" style="color: #cccccc; text-decoration: none;">Moments</a> · <a href="https://soundcloud.com/playlist/sets/first-on-soundcloud" title="First On SoundCloud" target="_blank" style="color: #cccccc; text-decoration: none;">First On SoundCloud</a></div>
+                   
+          
+        </figure>
+        <figcaption>
+          An online audio playlist. The Online Audio Provider is Soundcloud. Other providers include...
+        </figcaption>        
+
+      </section>
+
+
+
+
+
     </fieldset>
       
     <div id="confirmDialogCont" class="dlg-container">

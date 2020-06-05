@@ -160,6 +160,15 @@ audio{
     border: black 2px solid;
 }
 
+.video{
+    width: 560px;
+    height: 315px;
+
+}
+
+.map iframe{
+    
+}
 
 
 /*-------------------------------------------------------------*/

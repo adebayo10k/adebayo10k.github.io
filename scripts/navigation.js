@@ -1,4 +1,4 @@
-//
+// This script is used by all pages with navigation
 let burger = document.getElementById("burger");
 console.log(burger.clientHeight);
 console.log(burger.clientWidth);

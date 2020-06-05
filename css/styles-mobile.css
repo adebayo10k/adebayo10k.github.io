@@ -146,6 +146,12 @@ figcaption{
     font-style: italic;
 }
 
+.video{
+    width: 260px;
+    height: 146px;
+
+}
+
 /*-------------------------------------------------------------*/
 /* custom button styles*/
 .show-button {

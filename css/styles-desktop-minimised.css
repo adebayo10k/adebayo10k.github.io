@@ -100,10 +100,11 @@ nav li{
     display: none;
 }
 
-@media all and (max-width: 700px){
+@media all and (max-width: 720px){
     nav li{
        font-size: 1em;
-    }   
+    }
+    
 }
 
 fieldset { 
@@ -152,6 +153,11 @@ figure{
 figcaption{
     font-size: 0.6em;
     font-style: italic;
+}
+
+.video{
+    width: 320px;
+    height: 180px;
 }
 
 /*-------------------------------------------------------------*/
