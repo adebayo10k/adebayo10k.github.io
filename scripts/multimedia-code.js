@@ -5,3 +5,8 @@ mmediaMapEmbed01.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57
 
 let mmediaVideoEmbed01 = document.getElementById("mmediaVideoEmbed01");
 mmediaVideoEmbed01.src = "https://www.youtube.com/embed/9tXsxBzGJzw";
+
+let mmediaAudioEmbed01 = document.getElementById("mmediaAudioEmbed01");
+mmediaAudioEmbed01.src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/476152911&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true";
+
+
