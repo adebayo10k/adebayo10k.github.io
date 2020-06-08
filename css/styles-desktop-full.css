@@ -268,3 +268,28 @@ audio{
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
+
+table {
+    border-collapse: collapse;
+    border: 2px solid black;
+    /*letter-spacing: 1px;*/
+    font-size: 1em;
+}
+  
+td, th {
+    border: 1px solid green;
+    padding: 10px 20px;
+}
+  
+th {
+    /*background-color: #E3F2E8;*/
+    background-color: rgb(239,239,235);
+}
+  
+td {
+    text-align: center;
+}
+  
+caption {
+    padding: 10px;
+}
