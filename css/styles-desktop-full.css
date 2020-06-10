@@ -101,10 +101,22 @@ nav li{
     display: none;
 }
 
+@media all and (max-width: 1000px){
+
+    td, th {
+        padding: 2px 4px;
+    }
+
+}
+
 @media all and (max-width: 900px){
     nav li{
        font-size: 1em;
-    }   
+    }
+    td, th {
+        padding: 2px 4px;
+    }
+
 }
 
 fieldset { 
@@ -278,7 +290,7 @@ table {
   
 td, th {
     border: 1px solid green;
-    padding: 10px 20px;
+    padding: 4px 8px;
 }
   
 th {

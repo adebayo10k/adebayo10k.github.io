@@ -3,6 +3,26 @@ let htmlElem = document.querySelector("html");
 if (localStorage.getItem("bgColour")){
     htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;    
 }
+
+let headChar = document.getElementById("headChar");
+let headUnicode = document.getElementById("headUnicode");
+let headHTML = document.getElementById("headHTML");
+let headMorse = document.getElementById("headMorse");
+let headNotes = document.getElementById("headNotes");
+let headHEX = document.getElementById("headHEX");
+let headDEC = document.getElementById("headDEC");
+
+// make table headers appropriate at page load
+if (document.documentElement.clientWidth < 800){
+    headChar.textContent = "Char";
+    headUnicode.textContent = "Unicode";
+    headHTML.textContent = "HTML Char Ref.";
+    headMorse.textContent = "Morse Code";
+    headNotes.textContent = "Notes";
+    headHEX.textContent = "HEX";
+    headDEC.textContent = "DEC";
+}
+
 //
 // assign value of iframe src attribute, and get the resource AFTER page content has loaded
 let yorubaVideoEmbed01 = document.getElementById("yorubaVideoEmbed01");

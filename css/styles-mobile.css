@@ -254,3 +254,36 @@ figcaption{
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
+
+
+table {
+    border-collapse: collapse;
+    border: 2px solid black;
+    /*letter-spacing: 1px;*/
+    font-size: 0.6em;
+}
+  
+td, th {
+    border: 1px solid green;
+    padding: 0px 4px;
+}
+  
+th {
+    /*background-color: #E3F2E8;*/
+    background-color: rgb(239,239,235);
+}
+  
+td {
+    text-align: center;
+}
+  
+caption {
+    padding: 4px;
+}
+
+.morse-field {
+    white-space: nowrap;
+    padding-left: 2px;
+    text-align: left;
+    /*border: black solid 4px;*/
+}

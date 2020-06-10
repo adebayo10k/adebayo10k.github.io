@@ -119,15 +119,15 @@
             
             <thead>
               <tr>
-                <th rowspan="2">Character</th>
-                <th colspan="2">Unicode Code Point</th>
-                <th rowspan="2">HTML Character Entity Reference</th>
-                <th rowspan="2">Morse Code</th>
-                <th rowspan="2">Notes</th>
+                <th id="headChar" rowspan="2">Character</th>
+                <th id="headUnicode" colspan="2">Unicode Code Point</th>
+                <th id="headHTML" rowspan="2">HTML Character Entity Reference</th>
+                <th id="headMorse" rowspan="2">Morse Code</th>
+                <th id="headNotes" rowspan="2">Notes</th>
               </tr>
               <tr>
-                <th>HEXIDECIMAL</th>
-                <th>DECIMAL</th>
+                <th id="headHEX" >HEXIDECIMAL</th>
+                <th id="headDEC" >DECIMAL</th>
               </tr> 
             </thead>
             <tbody id="encodingsBody">
@@ -433,7 +433,7 @@
                 <td><p>&#x00F9;</p></td>
                 <td>&amp;#x00F9;</td>
                 <td>&amp;#249;</td>
-                <td>&nbsp;</td>
+                <td>&amp;ugrave;</td>
                 <td class="morse-field"></td>
                 <td>&nbsp;</td>
               </tr>
@@ -441,7 +441,7 @@
                 <td><p>&#x00FA;</p></td>
                 <td>&amp;#x00FA;</td>
                 <td>&amp;#250;</td>
-                <td>&nbsp;</td>
+                <td>&amp;uacute;</td>
                 <td class="morse-field"></td>
                 <td>&nbsp;</td>
               </tr>
@@ -505,10 +505,7 @@
 
       </section>
     </fieldset>
-
-    <p lang="yo">
-      &#7864; &Agrave;  &#x25AA; &#x25CF;  &#x000F9; &#249; &#65; &#x0041; &#x0300;&#7692; E &#x0300;&#7885; o r &#7885; &#x0300;s &#7884;&#x0300;
-    </p> 
+   
     
     <div id="confirmDialogCont" class="dlg-container">
       <div class="dlg-header">Let's discuss this...</div>
