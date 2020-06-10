@@ -293,3 +293,10 @@ td {
 caption {
     padding: 10px;
 }
+
+.morse-field {
+    white-space: nowrap;
+    padding-left: 4px;
+    text-align: left;
+    /*border: black solid 4px;*/
+}

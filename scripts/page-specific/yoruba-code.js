@@ -3,34 +3,15 @@ let htmlElem = document.querySelector("html");
 if (localStorage.getItem("bgColour")){
     htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;    
 }
-// dot  &#x2022;
-// dash #x2501;
-
 //
 // assign value of iframe src attribute, and get the resource AFTER page content has loaded
 let yorubaVideoEmbed01 = document.getElementById("yorubaVideoEmbed01");
 yorubaVideoEmbed01.src = "https://www.youtube.com/embed/9tXsxBzGJzw";
 
-
-
-
 let encodingsBody = document.getElementById("encodingsBody");
 //let encodingsRow = encodingsBody.childNodes;
 let encodingsRow = encodingsBody.children;
 
-
-for (let i = 0; i < encodingsRow.length; i++) {
-  console.log(encodingsRow[i].children.item(1).textContent);
-  // if endsWith 
-}
-// encodingsRow.item(0);
-// encodingsRow.item(5);
-
-
-
-/*
-let morseItem = document.getElementById("");
-*/
 const yorubaMorse = {
     "x0061" : ".-", //  a
     "x00E0" : ".--.-", //    a grave   
@@ -75,11 +56,8 @@ const yorubaMorse = {
 
 const morse = {
     "dot" : "&#x2022;",
-    "dash" : "#x2501;"
+    "dash" : "&#x2501;"
 };
-
-//console.log(morse.dot);
-
 
 const createHexStringMorse = (punctString) => {
     let hexStringMorse = "";
@@ -97,29 +75,37 @@ const createHexStringMorse = (punctString) => {
     return hexStringMorse;
 };
 
-
-
-// populate morse data column
-for (let key in yorubaMorse){
-    
-    if (yorubaMorse[key] != ""){
-        console.log(key);
-        console.log(yorubaMorse[key]);
-        let hexStringMorse = createHexStringMorse(yorubaMorse[key]);
-        console.log(hexStringMorse);
-        console.log();
-        let rowMatchedOK = ? true : false; 
-
-
-
+const getMorseField = (key) => {
+    let targetString = `&#${key};`;
+    let targetMorseField = null;
+    //console.log(`targetString : ${targetString}`);
+    for (let i = 0; i < encodingsRow.length; i++) {
+        //console.log(`textcontent : ${encodingsRow[i].children.item(1).textContent}`);
+        if (encodingsRow[i].children.item(1).textContent == targetString){
+            targetMorseField = encodingsRow[i].children.item(4);
+            break;
+        }   
     }
-    
-    // create the hex string for the value
+    return targetMorseField;
+};
 
-    /* iterate over encodingsRows and if element is tr, get the value of the first child of its' first child. if that matches `&#${key};`, set the value of the 5th child (index 4?) to inner html to <p>`the value of the key<p>
-    // remember, no need to get element from document level! start from 
-    let dlgBody = dlg.querySelector("#alertDialogBody");
-    */
+
+// main : populate morse data column
+for (let key in yorubaMorse){    
+    if (yorubaMorse[key] != ""){
+        //console.log(key);
+        //console.log(yorubaMorse[key]);
+        let hexStringMorse = createHexStringMorse(yorubaMorse[key]);
+        //console.log(hexStringMorse);
+        
+        let targetMorseField = getMorseField(key);
+        //console.log(targetMorseField);
+        //console.log();
+        
+        if (targetMorseField != null){            
+            targetMorseField.innerHTML = `<p>${hexStringMorse}</p>`;
+        }
+    }
 }
 
 
