@@ -4,23 +4,15 @@ if (localStorage.getItem("bgColour")){
     htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;    
 }
 
-let headChar = document.getElementById("headChar");
-let headUnicode = document.getElementById("headUnicode");
-let headHTML = document.getElementById("headHTML");
-let headMorse = document.getElementById("headMorse");
-let headNotes = document.getElementById("headNotes");
-let headHEX = document.getElementById("headHEX");
-let headDEC = document.getElementById("headDEC");
-
 // make table headers appropriate at page load
 if (document.documentElement.clientWidth < 800){
-    headChar.textContent = "Char";
-    headUnicode.textContent = "Unicode";
-    headHTML.textContent = "HTML Char Ref.";
-    headMorse.textContent = "Morse Code";
-    headNotes.textContent = "Notes";
-    headHEX.textContent = "HEX";
-    headDEC.textContent = "DEC";
+    document.getElementById("headChar").textContent = "Char";
+    document.getElementById("headUnicode").textContent = "Unicode";
+    document.getElementById("headHTML").textContent = "HTML Char Ref.";
+    document.getElementById("headMorse").textContent = "Morse Code";
+    document.getElementById("headNotes").textContent = "Notes";
+    document.getElementById("headHEX").textContent = "HEX";
+    document.getElementById("headDEC").textContent = "DEC";
 }
 
 //
