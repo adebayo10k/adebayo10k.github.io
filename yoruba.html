@@ -103,8 +103,8 @@
           <h3>The Current Encoding of the Yoruba Language Character Set:</h3>    
         </header>
 
-        <p>The following table is being compiled to summarise current support for Yoruba language characters. It is hoped that it will inform any future suggestions for extensions to these encoding specifications in which I am interested.</p>
-        <p><em>NOTE: There exists no concept of upper or lower case in Morse Code, so I&apos;ll tabulate upper&#x002D;case characters separately.</em></p>
+        <p>The following table is being compiled to document current support for Yoruba language characters. It is hoped that it will inform any future suggestions for extensions to these few encoding specifications in which I am interested.</p>
+        <p><em>NOTE: There exists no concept of upper or lower case in Morse Code, so I&apos;ll tabulate upper&#x002D;case and auxilliary characters separately, if necessary.</em></p>
 
         <figure>
           <table>
@@ -130,22 +130,14 @@
                 <th>DECIMAL</th>
               </tr> 
             </thead>
-            <tbody>
+            <tbody id="encodingsBody">
               <tr> <!-- a -->
                 <td><p>&#x0061;</p></td>
                 <td>&amp;#x0061;</td>
                 <td>&amp;#97;</td>
                 <td>&nbsp;</td>
-                <td style="padding-left: 4px; text-align: left;">&#x2022; &#x2501;</td>
+                <td style="white-space: nowrap; padding-left: 4px; text-align: left;">&#x2501; &#x2501; &#x2501; &#x2501; &#x2501; &#x2501; &#x2501;</td>
                 <td>&nbsp;</td>
-              </tr>
-              <tr> <!-- a acute -->
-                <td><p>&#x00E1;</p></td>
-                <td>&amp;#x00E1;</td>
-                <td>&amp;#225;</td>
-                <td>&amp;aacute;</td>
-                <td style="padding-left: 4px;"></td>
-                <td>PROPOSED MORSE</td>
               </tr>
               <tr> <!-- a grave --> 
                 <td><p>&#x00E0;</p></td>
@@ -153,16 +145,26 @@
                 <td>&amp;#224;</td>
                 <td>&amp;agrave;</td>
                 <td style="padding-left: 4px;">&#x2022; &#x2501; &#x2501; &#x2022; &#x2501;</td>
-                <td>&nbsp;</td>
+                <td>NON-ENGLISH EXTENSION</td>
               </tr>
-              <tr> <!-- b --> 
+              <tr> <!-- a acute -->
+                <td><p>&#x00E1;</p></td>
+                <td>&amp;#x00E1;</td>
+                <td>&amp;#225;</td>
+                <td>&amp;aacute;</td>
+                <td style="padding-left: 4px;"></td>
+                <td></td>
+              </tr>
+              
+              <tr id="&#x0062;"> <!-- b --> 
                 <td><p>&#x0062;</p></td>
                 <td>&amp;#x0062;</td>
                 <td>&amp;#98;</td>
                 <td>&nbsp;</td>
-                <td style="padding-left: 4px;">&#x2501; &#x2022; &#x2022; &#x2022;</td>
+                <td style="padding-left: 4px;"></td><!-- &#x2501; &#x2022; &#x2022; &#x2022; --> 
                 <td>&nbsp;</td>
               </tr>
+
               <tr> <!-- d --> 
                 <td><p>&#x0064;</p></td>
                 <td>&amp;#x0064;</td>
@@ -171,14 +173,297 @@
                 <td style="padding-left: 4px;">&#x2501; &#x2022; &#x2022;</td>
                 <td>&nbsp;</td>
               </tr>
+
               <tr> <!-- e --> 
                 <td><p>&#x0065;</p></td>
                 <td>&amp;#x0065;</td>
+                <td>&amp;#101;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>              
+              <tr> <!-- e grave --> 
+                <td><p>&#x00E8;</p></td>
+                <td>&amp;#x00E8;</td>
+                <td>&amp;#232;</td>
+                <td>&amp;egrave;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr> <!-- e acute --> 
+                <td><p>&#x00E9;</p></td>
+                <td>&amp;#x00E9;</td>
+                <td>&amp;#233;</td>
+                <td>&amp;eacute;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>INCLUDED IN ITU-R</td>
+              </tr>
+              <tr> <!-- e dot --> 
+                <td><p>&#x1EB9;</p></td>
+                <td>&amp;#x1EB9;</td>
+                <td>&amp;#7865</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr> <!-- e dot grave --> 
+                <td><p>&#x0300;&#7865;</p></td>
+                <td>null</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr> <!-- e dot acute --> 
+                <td><p>&#x0301;&#7865;</p></td>
+                <td>null</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr> <!-- f --> 
+                <td><p>&#x0066;</p></td>
+                <td>&amp;#x0066;</td>
+                <td>&amp;#102;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr> <!-- g --> 
+                <td><p>&#x0067;</p></td>
+                <td>&amp;#x0067;</td>
+                <td>&amp;#103;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr> <!-- gb --> 
+                <td><p>&#x2211;&#x007B;gb&#x007D;</p></td>
+                <td>null</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr> <!-- h --> 
+                <td><p>&#x0068;</p></td>
+                <td>&amp;#x0068;</td>
+                <td>&amp;#104;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr> <!-- i --> 
+                <td><p>&#x0069;</p></td>
+                <td>&amp;#x0069;</td>
                 <td>&amp;#105;</td>
                 <td>&nbsp;</td>
                 <td style="padding-left: 4px;">&#x2022;</td>
                 <td>&nbsp;</td>
               </tr>
+              <tr> <!-- i grave --> 
+                <td><p>&#x00EC;</p></td>
+                <td>&amp;#x00EC;</td>
+                <td>&amp;#236;</td>
+                <td>&amp;igrave;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr> <!-- i acute --> 
+                <td><p>&#x00ED;</p></td>
+                <td>&amp;#x00ED;</td>
+                <td>&amp;#237;</td>
+                <td>&amp;iacute;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr> <!-- j --> 
+                <td><p>&#x006A;</p></td>
+                <td>&amp;#x006A;</td>
+                <td>&amp;#106;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr> <!-- k --> 
+                <td><p>&#x006B;</p></td>
+                <td>&amp;#x006B;</td>
+                <td>&amp;#107;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr> <!-- l --> 
+                <td><p>&#x006C;</p></td>
+                <td>&amp;#x006C;</td>
+                <td>&amp;#108;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr> <!-- m --> 
+                <td><p>&#x006D;</p></td>
+                <td>&amp;#x006D;</td>
+                <td>&amp;#109;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr> <!-- n --> 
+                <td><p>&#x006E;</p></td>
+                <td>&amp;#x006E;</td>
+                <td>&amp;#110;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr> <!-- o --> 
+                <td><p>&#x006F;</p></td>
+                <td>&amp;#x006F;</td>
+                <td>&amp;#111;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr> <!-- o grave --> 
+                <td><p>&#x00F2;</p></td>
+                <td>&amp;#x00F2;</td>
+                <td>&amp;#242;</td>
+                <td>&amp;ograve;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr> <!-- o acute--> 
+                <td><p>&#x00F3;</p></td>
+                <td>&amp;#x00F3;</td>
+                <td>&amp;#243;</td>
+                <td>&amp;oacute;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>NON-ENGLISH EXTENSION</td>
+              </tr>
+              <tr> <!-- o dot --> 
+                <td><p>&#x01ECD;</p></td>
+                <td>&amp;#x01ECD;</td>
+                <td>&amp;#7885;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr> <!-- o dot grave--> 
+                <td><p>&#x0300;&#7885;</p></td>
+                <td>null</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr> <!-- o dot acute--> 
+                <td><p>&#x0301;&#7885;</p></td>
+                <td>null</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td></td>
+              </tr>
+
+              <tr> <!-- p --> 
+                <td><p>&#x0070;</p></td>
+                <td>&amp;#x0070;</td>
+                <td>&amp;#112;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr> <!-- r --> 
+                <td><p>&#x0072;</p></td>
+                <td>&amp;#x0072;</td>
+                <td>&amp;#114;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr> <!-- s --> 
+                <td><p>&#x0073;</p></td>
+                <td>&amp;#x0073;</td>
+                <td>&amp;#115;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr> <!-- s dot --> 
+                <td><p>&#x1E63;</p></td>
+                <td>&amp;#x1E63;</td>
+                <td>&amp;#7779;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr> <!-- t --> 
+                <td><p>&#x0074;</p></td>
+                <td>&amp;#x0074;</td>
+                <td>&amp;#116;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr> <!-- u --> 
+                <td><p>&#x0075;</p></td>
+                <td>&amp;#x0075;</td>
+                <td>&amp;#117;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr> <!-- u grave --> 
+                <td><p>&#x00F9;</p></td>
+                <td>&amp;#x00F9;</td>
+                <td>&amp;#249;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr> <!-- u acute --> 
+                <td><p>&#x00FA;</p></td>
+                <td>&amp;#x00FA;</td>
+                <td>&amp;#250;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr> <!-- w --> 
+                <td><p>&#x0077;</p></td>
+                <td>&amp;#x0077;</td>
+                <td>&amp;#119;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+              <tr> <!-- y --> 
+                <td><p>&#x0079;</p></td>
+                <td>&amp;#x0079;</td>
+                <td>&amp;#121;</td>
+                <td>&nbsp;</td>
+                <td style="padding-left: 4px;">&#x2022;</td>
+                <td>&nbsp;</td>
+              </tr>
+
               
 
             </tbody>
@@ -187,7 +472,7 @@
 
         </figure>
         <figcaption>
-          Sources: Wikipedia, decodeunicode.org, psu.edu....
+          Sources: wikipedia.org, orishaimage.com, decodeunicode.org, psu.edu....
         </figcaption>        
 
       </section>
