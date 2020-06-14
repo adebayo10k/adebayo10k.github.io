@@ -20,6 +20,10 @@ if (document.documentElement.clientWidth < 800){
 let yorubaVideoEmbed01 = document.getElementById("yorubaVideoEmbed01");
 yorubaVideoEmbed01.src = "https://www.youtube.com/embed/9tXsxBzGJzw";
 
+let yorubaAudioEmbed01 = document.getElementById("yorubaAudioEmbed01");
+yorubaAudioEmbed01.src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/369438599&color=%236495ed&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true";
+
+
 let encodingsBody = document.getElementById("encodingsBody");
 //let encodingsRow = encodingsBody.childNodes;
 let encodingsRow = encodingsBody.children;
