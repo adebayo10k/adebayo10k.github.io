@@ -139,6 +139,7 @@ img, video, audio{
 figure{
     margin: 4px;
     margin-left: 2px;
+    margin-bottom: 2px;
 }
 
 figcaption{
