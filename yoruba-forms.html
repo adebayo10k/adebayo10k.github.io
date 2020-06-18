@@ -85,9 +85,10 @@
       <legend>On This Page...</legend>
       <section>
         <header>
-          <h3>&LeftAngleBracket;Test / Fake / Practice / &apos;Nothing even leaves the browser&apos; Forms&RightAngleBracket;</h3>
+          <h3>Some Test, Practice, &LeftAngleBracket;&apos;Nothing even leaves the browser&apos;&RightAngleBracket; Forms</h3>
         </header>        
-        <p>Forms created for me to practice web form client-side validation and styling - although not so much the styling. I&apos;m no designer.</p>
+        <p>Forms created for me to practice a bit of web form client-side validation and styling - although not so much the styling. I&apos;m no designer.</p>
+        <p>We imagine a fictitious group called the oguntech network...</p>
         <p></p>
       </section>            
     </fieldset>
@@ -107,20 +108,264 @@
       </section>
     </fieldset> 
         
-    <fieldset>
-      <legend>Project Volunteer Contact Form...</legend>
-      <section>
+    <!--<fieldset>
+      <legend>Project Volunteer Contact Form...</legend>-->
+      <section class="content-block">
         <header>
-          <h3>Send us some details about yourself and the skills you&apos;d like to develop on one of our projects</h3>    
-        </header>
+          <h3>Contact Enquiry Form</h3>    
+        </header>    
         
         <p></p>
 
-        <figure></figure>
-        <figcaption></figcaption>        
+        <form action="">
+          <fieldset>
+            <legend>About you...</legend>
+
+            <ul>
+              <li>
+                <label for="name">
+                  <span>name/alias</span>
+                  <input type="text" id="name" name="alias_name">
+                  <span class="error"></span>
+                </label>
+              </li>
+              <li>
+                <label for="email">
+                  <span>email</span>
+                  <input type="email" id="email" name="email">
+                  <span class="error"></span>
+                </label>
+              </li>
+              <li>
+                <label for="orishaChoice">
+                  <span>Which Orisha most inspires you?</span>
+                  <select id="orishaChoice" name="orisha">
+                    <option>Sango</option>
+                    <option>Ogun</option>
+                    <option>Oya</option>
+                    <option>I&apos;ll get back to you on that one</option>
+                    <option>None</option>
+                  </select>
+                  <span class="error"></span>
+                  <span>None of those, but I do like...</span>
+                  <input type="text" id="" name="">
+                  <span class="error"></span>
+                </label>
+              </li>
+
+            </ul>
+          </fieldset>
+
+          <hr>
+
+          <fieldset>
+            <legend>About skill sets...</legend>
+            <p>Select up to 3 skills you&apos;d like to develop and practice on an oguntech.org project</p>
+            <ul>
+              <li>
+                <label for="sd_skill">
+                  <span>Software Development Process</span>
+                  <input type="checkbox" id="sd_skill" name="sd_skill">
+                </label>
+              </li>
+              <li>
+                <label for="">
+                  <span>Algorithm Discovery</span>
+                  <input type="checkbox" id="" name="">
+                </label>
+              </li>
+              <li>
+                <label for="git_scm">
+                  <span>Git Source Control Management</span>
+                  <input type="checkbox" id="git_scm" name="git_scm">
+                </label>
+              </li>
+              <li>
+                <label for="">
+                  <span>Social Coding and Collaboration</span>
+                  <input type="checkbox" id="" name="">
+                </label>
+              </li>       
+              <li>
+                <label for="">
+                  <span>Client-side Web Development</span>
+                  <input type="checkbox" id="" name="">
+                </label>
+              </li>
+              <li>
+                <label for="">
+                  <span>Server-side Web Development</span>
+                  <input type="checkbox" id="" name="">
+                </label>
+              </li>
+              <li>
+                <label for="">
+                  <span>Image/Audio/Video Editing</span>
+                  <input type="checkbox" id="" name="">
+                </label>
+              </li>
+              <li>
+                <label for="">
+                  <span>Mobile App Development</span>
+                  <input type="checkbox" id="" name="">
+                </label>
+              </li>
+              <li>
+                <label for="">
+                  <span>Linux System Administration</span>
+                  <input type="checkbox" id="" name="">
+                </label>
+              </li>
+              <li>
+                <label for="">
+                  <span>Cloud Deployment</span>
+                  <input type="checkbox" id="" name="">
+                </label>
+              </li>
+              <li>
+                <label for="">
+                  <span>CI/CD</span>
+                  <input type="checkbox" id="" name="">
+                </label>
+              </li>
+              <li>
+                <label for="">
+                  <span>Network &amp; Information Security</span>
+                  <input type="checkbox" id="" name="">
+                </label>
+              </li>
+              <li>
+                <label for="">
+                  <span>Ethical Hacking</span>
+                  <input type="checkbox" id="" name="">
+                </label>
+              </li>
+              <li>
+                <label for="">
+                  <span>Data Analysis</span>
+                  <input type="checkbox" id="" name="">
+                </label>
+              </li>
+              <li>
+                <label for="">
+                  <span>E-Commerce Technologies</span>
+                  <input type="checkbox" id="" name="">
+                </label>
+              </li>
+              <li>
+                <label for="">
+                  <span>Business Management</span>
+                  <input type="checkbox" id="" name="">
+                </label>
+              </li>
+              
+
+            </ul>  
+
+          </fieldset>
+
+          <hr>
+
+          <fieldset>
+            <legend>More about you...</legend>
+            <h4>What else would you like gain from being involved on an oguntech project?</h4>
+            <p>
+              <label for="">
+                <span>What motivates you?</span>
+                <textarea name="" id="" cols="80" rows="6"></textarea>
+                <span class="error"></span>
+              </label>
+            </p>
+          </fieldset>
+
+          <hr>
+
+          <fieldset>
+            <legend>Show us your style...</legend>
+            <h4>Upload a short (up to 30 seconds) video clip of you using a diagram to explain, in simple terms, the role of a Certificate Authority.</h4>
+            <label for="">
+              <span>Choose a file</span>
+              <input type="file" id="" name="">
+              <span class="error"></span>
+            </label>
+          </fieldset>
+
+          <hr>
+
+          <fieldset>
+            <legend>Finally, one last question...</legend>
+            <h4>What would be the best way to communicate reliably and securely with other oguntech team members?</h4>
+            <ul>
+              <li>
+                <label for="">
+                  <span>WhatApp mobile app</span>
+                  <input type="radio" id="" name="">
+                  <span class="message"></span>
+                </label>
+              </li>
+              <li>
+                <label for="">
+                  <span>Any Cloud based, SaaS, web email service like gmail, delivered over https</span>
+                  <input type="radio" id="" name="">
+                  <span class="message"></span>
+                </label>
+              </li>
+              <li>
+                <label for="">
+                  <span>As above, but with messages encrypted by myself using an open source encryption tool, like GnuPG</span>
+                  <input type="radio" id="" name="">
+                  <span class="message"></span>
+                </label>
+              </li>              
+            </ul>            
+          </fieldset>
+          <p>
+            <button type="submit">Send your answers</button>
+          </p>
+
+        </form>       
 
       </section>
-    </fieldset>
+
+    <!--///////////////////////////////////// FORM /////////////////////////////////////////// --> 
+
+    <section class="content-block">
+      <header>
+        <h3>Team Interface Form</h3>    
+      </header>    
+      
+      <p></p>
+     
+      <form action="">
+        
+        <fieldset>
+        <legend>Create an account</legend>
+        <h4>Select an username and password</h4>
+        <ul>
+          <li>
+            <label for="username">
+              <span>username</span>
+              <input type="text" id="username" name="username">
+              <span class="error"></span>
+            </label>
+          </li>
+          <li>
+            <label for="password">
+              <span>password</span>
+              <input type="password" id="password" name="password">
+              <span class="error"></span>
+            </label>
+          </li>
+          <li>
+            <button type="submit">Create Account</button>
+          </li>
+        </ul>
+
+      </fieldset>
+
+      </form>
+
+    </section>
   
     
    

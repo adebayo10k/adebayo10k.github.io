@@ -135,7 +135,14 @@ fieldset legend{
     margin-top: none;
     margin-bottom: none;
     padding: none;
+}
 
+section.content-block{
+    border: 5px solid #6495ed;
+    border-radius: 1em;
+    padding: 4px;
+    margin: 4px;
+    margin-top: 20px;
 }
 
 
