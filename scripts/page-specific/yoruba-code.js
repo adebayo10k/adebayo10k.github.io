@@ -55,7 +55,7 @@ const yorubaMorse = {
     "x006F" : "---",  //     o          
     "x00F2" : "",  //     o grave        
     "x00F3" : "---.",  //     o acute        
-    "x01ECD" : "",  //     o dot          
+    "x1ECD" : "",  //     o dot          
     "xNoHexoDotGrave" : "",  //     o dot grave        
     "xNoHexoDotAcute" : "",  //     o dot acute        
     "x0070" : ".--.",  //     p          
