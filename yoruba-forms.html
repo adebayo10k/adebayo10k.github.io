@@ -166,6 +166,8 @@
         </p>
         <p><em>NOTE: Of course, actual email protocols would still only handle basic latin alphanumerics</em></p>
 
+    <!--///////////////////////////////////// FORM /////////////////////////////////////////// --> 
+
         <form action="">
           <fieldset>
             <legend>About you...</legend>
@@ -176,7 +178,7 @@
                   <span>name/alias</span>
                   <!-- <input type="text" id="name" name="alias_name" required autofocus minlength="1" maxlength="30" pattern="[a-zA-Z0-9]+"> --> <!-- space is U+0020 -->
                   <input type="text" id="name" name="alias_name" required autofocus minlength="3" maxlength="32" pattern="[\u0030-\u0039\u0041-\u005A\u0061-\u007A\u00C0-\u00DE\u00E0-\u00FF\u1E63\u1EB9\u1ECD\s\-\.]+"> <!-- -->
-                  <span class="error" aria-live="polite"></span>
+                  <span class="error" aria-live="polite">agsaagdamol@gmail.comdamol@gmail.comdamol</span>
                 </label>
               </li>
               <!--
@@ -228,13 +230,13 @@
                 <label for="notThoseOrisha">
                   <span>None of those, but I do like...</span>
                   <input type="text" id="notThoseOrisha" name="skill">
-                  <span class="error" aria-live="polite"></span>
+                  <span class="error" aria-live="polite">fdaf</span>
                 </label>
               </li>                
               
               <li>
                 <label for="github_url">
-                  <span>GitHub repository URL</span>
+                  <span>What&apos;s your GitHub repository URL?</span>
                   <input type="url" id="github_url" name="github_url" maxlength="59" pattern="^(https:\/\/github.com/)[A-Za-z0-9\.\-]+">
                   <span class="error" aria-live="polite"></span>
                 </label>
@@ -243,7 +245,6 @@
             </ul>
           </fieldset>
 
-          <hr>
 
           <fieldset>
             <legend>About skill sets...</legend>
@@ -351,7 +352,6 @@
 
           </fieldset>
 
-          <hr>
 
           <fieldset>
             <legend>More about you...</legend>
@@ -365,7 +365,6 @@
             </p>
           </fieldset>
 
-          <hr>
 
           <fieldset>
             <legend>Show us your style...</legend>
@@ -377,7 +376,6 @@
             </label>
           </fieldset>
 
-          <hr>
 
           <fieldset>
             <legend>Finally, one last question...</legend>
@@ -387,21 +385,21 @@
                 <label for="whatsapp">
                   <span>WhatApp mobile app</span>
                   <input type="radio" id="whatsapp" name="quiz_ans">
-                  <span class="message"></span>
+                  <span class="info_msg"></span>
                 </label>
               </li>
               <li>
                 <label for="webmail">
                   <span>Any Cloud based, SaaS, web email service like gmail, delivered over https</span>
                   <input type="radio" id="webmail" name="quiz_ans">
-                  <span class="message"></span>
+                  <span class="info_msg"></span>
                 </label>
               </li>
               <li>
                 <label for="gnupg">
                   <span>As above, but with messages encrypted by myself using an open source encryption tool, like GnuPG</span>
                   <input type="radio" id="gnupg" name="quiz_ans">
-                  <span class="message"></span>
+                  <span class="info_msg"></span>
                 </label>
               </li>              
             </ul>            
@@ -477,7 +475,7 @@
   
   <!-- Footer
 ================================================= -->
-<p>NOTE: The content of this site is not part of any serious, rigorous research. Assume my policy to be: <em>publish first, check accuracy later</em>  
+<p><em>NOTE: The content of this site is not part of any serious, rigorous research. Assume my policy to be: publish first, check accuracy later</em>  
   </p>
   </body>
 </html>

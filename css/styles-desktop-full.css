@@ -321,3 +321,46 @@ caption {
     text-align: left;
     /*border: black solid 4px;*/
 }
+/*-------------------------------------------------------------*/
+/* form styles*/
+
+form fieldset {
+    width: 60%;
+    margin: 3em auto;
+}
+
+
+
+input[type=text], input[type=email], input[type=url], select, textarea {
+    box-sizing: border-box;
+    /*-webkit-appearance: none;
+    appearance: none;*/
+    width: 60%;
+    margin: 1em auto;
+    display: block;
+}
+
+form li {
+    list-style: none;
+}
+
+.error {
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    background-color: darkred;
+    padding: 4px;
+}
+
+.info_msg {
+    box-sizing: border-box;
+}
+
+input:invalid, textarea:invalid {
+    border: darkred solid 2px;
+}
+
+input:valid, textarea:valid {
+    border: lightgreen solid 2px;
+}
