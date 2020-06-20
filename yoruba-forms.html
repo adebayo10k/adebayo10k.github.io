@@ -168,17 +168,17 @@
 
     <!--///////////////////////////////////// FORM /////////////////////////////////////////// --> 
 
-        <form action="">
-          <fieldset>
+        <form id="contact_form" action="">
+          <fieldset id="about_you_fieldset">
             <legend>About you...</legend>
 
             <ul>
               <li>
-                <label for="name">
+                <label for="alias_name">
                   <span>name/alias</span>
                   <!-- <input type="text" id="name" name="alias_name" required autofocus minlength="1" maxlength="30" pattern="[a-zA-Z0-9]+"> --> <!-- space is U+0020 -->
-                  <input type="text" id="name" name="alias_name" required autofocus minlength="3" maxlength="32" pattern="[\u0030-\u0039\u0041-\u005A\u0061-\u007A\u00C0-\u00DE\u00E0-\u00FF\u1E63\u1EB9\u1ECD\s\-\.]+"> <!-- -->
-                  <span class="error" aria-live="polite">agsaagdamol@gmail.comdamol@gmail.comdamol</span>
+                  <input type="text" id="alias_name" name="alias_name" required autofocus minlength="3" maxlength="32" pattern="[\u0030-\u0039\u0041-\u005A\u0061-\u007A\u00C0-\u00DE\u00E0-\u00FF\u1E63\u1EB9\u1ECD\s\-\.]+"> <!-- -->
+                  <span id="alias_name_errors" class="error" aria-live="polite">aamol@gmail.comdamol</span>
                 </label>
               </li>
               <!--
@@ -421,7 +421,7 @@
       
       <p></p>
      
-      <form action="">
+      <form id="team_interface_form" action="">
         
         <fieldset>
         <legend>Create an account</legend>

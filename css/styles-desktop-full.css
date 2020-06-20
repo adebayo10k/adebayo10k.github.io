@@ -353,6 +353,10 @@ form li {
     padding: 4px;
 }
 
+.error.nil {
+    visibility: hidden;
+}
+
 .info_msg {
     box-sizing: border-box;
 }
