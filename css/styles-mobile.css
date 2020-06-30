@@ -76,6 +76,8 @@ li{
     line-height: 1;
 }
 
+/*-------------------------------------------------------------*/
+/* navigation styles*/
 nav ul{
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -88,19 +90,15 @@ nav ul{
 }
 
 nav li{
-    font-size: 1em;
     list-style-type: none;
     text-align: center;
-    border: 1px solid black;
-    padding: 4px;
-    white-space: nowrap;
+    margin: 0px 4px;    
 }
 
 .nav-icon{
     display: block;
     width: 17px;
-    margin: auto;
-
+    margin: 0 auto;
 }
 
 .nav-grid.open-grid {

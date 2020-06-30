@@ -13,7 +13,9 @@ html{
 
 body{
     background-color:#ddd;
+    /*background-image: url("../media/images/yorkRdJanuary.jpg");*/
     width: 90%;
+    width: calc(90% - 2px);
     margin: auto;
     border-radius: 1em;
     padding: 6px;
@@ -26,7 +28,7 @@ p{
     padding-top: 8px;
     display: block;
     margin-right: 2em;
-    line-height: 1em;
+    line-height: 1.6em;
 }
 
 h1{
@@ -39,8 +41,20 @@ h1{
     border: none;
 }
 
+a:link {
+    color: #6495ed; /*cornflour blue*/
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+a:visited {
+    color: #000000;
+}
+
 .main-page h1{
-    border: solid black 3px;
+    border: solid rebeccapurple 6px;
     border-radius: 1em;
 }
 
@@ -76,8 +90,11 @@ li{
     padding-top: 1px;
     margin-top: 1px;
     line-height: 1;
+    /*transform: rotate(0.005turn);*/
 }
 
+/*-------------------------------------------------------------*/
+/* navigation styles*/
 nav ul{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -89,13 +106,23 @@ nav ul{
 }
 
 nav li{
-    font-size: 1.2em;
     list-style-type: none;
     text-align: center;
+    margin: 0px 4px;
+}
+
+nav li a{
+    font-size: 1.2em;
     border: 1px solid black;
     padding: 4px;
     white-space: nowrap;
     border-radius: 6px;
+    display: inline-block;
+    width: 100%;
+}
+
+nav li a:hover {
+    background-color: aquamarine;
 }
 
 .nav-icon{
@@ -290,6 +317,9 @@ audio{
     z-index: 1;
 }
 
+/*-------------------------------------------------------------*/
+/* table styles*/
+
 table {
     border-collapse: collapse;
     border: 2px solid black;
@@ -305,6 +335,10 @@ td, th {
 th {
     /*background-color: #E3F2E8;*/
     background-color: rgb(239,239,235);
+}
+
+tr:nth-child(even) {
+    background-color: #E3F2E8;
 }
   
 td {
@@ -341,7 +375,7 @@ input[type=text], input[type=email], input[type=url], select, textarea {
 }
 
 form li {
-    list-style: none;
+    list-style-type: none;
 }
 
 .error {
