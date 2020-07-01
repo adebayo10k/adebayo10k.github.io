@@ -31,6 +31,12 @@ p{
     line-height: 1.6em;
 }
 
+header.main-page {
+    background-image: url("../media/images/footpath-11.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 h1{
     font-size: 2em;
     text-align: center;
