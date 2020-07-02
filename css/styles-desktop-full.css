@@ -32,9 +32,14 @@ p{
 }
 
 header.main-page {
-    background-image: url("../media/images/footpath-11.png");
+    background-image: url("../media/images/footpath-20.png");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 1.0;
+    background-color: white;
+    border: brown 1px solid;
+    border-radius: 1em;
 }
 
 h1{
@@ -159,6 +164,7 @@ border: green 3px solid;
 border-radius: 1em;
 padding: 8px;
 margin: 6px;
+overflow: auto;
 }
 
 fieldset legend{
@@ -407,4 +413,19 @@ input:invalid, textarea:invalid {
 
 input:valid, textarea:valid {
     border: lightgreen solid 2px;
+}
+
+.vertical {
+    font-weight: bold;
+    writing-mode: vertical-rl;
+    inline-size: 300px;
+    block-size: 40vw;
+    border: 1px solid brown;
+    padding-inline-start: 20px;
+    padding-block-start: 10px;
+
+}
+.vertical > p {
+    margin: none;
+    padding: none;
 }
