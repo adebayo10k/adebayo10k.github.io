@@ -190,15 +190,15 @@ code {
     width: auto;
     height: auto;
     white-space: pre-wrap;
-    background: hsl(220, 80%, 90%);
+    background: #d1dffa;
 }
 
 pre {
     width: auto;
     height: auto;
     white-space: pre-wrap;
-    background: hsl(30,80%,90%);
-    background: hsl(220, 80%, 90%);
+    background: #fae6d1;
+    background: #d1dffa;
 }
 
 img, video, audio{
