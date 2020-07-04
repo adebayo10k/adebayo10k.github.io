@@ -93,31 +93,62 @@
       </section>            
     </fieldset>
 
-    <fieldset>
-      <legend>Perhaps A Few Changes...</legend> 
+    <section class="form-content-block">
+      <header>
+        <h3>SITE BACKGROUND COLOUR FORM</h3>    
+      </header>
 
-      <section>
-        <header>
-          <h3>MAKE CHANGES</h3>
-        </header>
-        <p id="changeIntroPara"><strong>If you can read this, JavaScript is probably not enabled in your browser. This site is mainly about showing off with JavaScript.</strong></p>
-        <label for="bgColourPicker">Choose a background colour, then press &apos;change&apos;:</label>
-        <input type="color" class="colour" id="bgColourPicker" value="#6495ed">
-        <input onclick="userConfigurePage()" type="button" class="" id="bgColourBtn" value="change">
-        <p id="changeSummaryPara"></p>
-      </section> 
-        
-      <hr>
+      <form id="background_colour" action="">
 
-      <section id="forgetMe" style="display: none;">
-        <header>
-          <h3>UNDO CHANGES</h3>
-        </header>
-        <p>Tell your browser to forget all stored data for this site, forever.</p>
-        <label for="forgetMeBtn">Take the blue pill:</label>
-        <input onclick="clearUserConfiguration()" type="button" class="" id="forgetMeBtn" value="forget me">
-      </section>
-    </fieldset>
+        <fieldset>
+          <legend>Perhaps A Few Changes...</legend> 
+
+          <section>
+            <header>
+              <h3>MAKE CHANGES</h3>
+            </header>
+            <p id="changeIntroPara"><strong>If you can read this, JavaScript is probably not enabled in your  browser.   This site is mainly about showing off with JavaScript.</strong></p>
+
+            <ul>
+              <li>
+                <label for="bgColourPicker">
+                  <div>1. Choose a new background colour</div>
+                  <input type="color" class="colour" id="bgColourPicker" value="#6495ed">
+                </label>
+              </li>
+              <li>
+                <label for="bgColourBtn">
+                  <div>2. Press this button to activate change</div>
+                  <button onclick="userConfigurePage()" type="button" class="red-button" id="bgColourBtn" value="">Change that background</button>          
+                </label>
+              </li>
+            </ul>           
+            
+            <p id="changeSummaryPara"></p>
+          </section> 
+
+          <hr>
+
+          <section id="forgetMe" style="display: none;">
+            <header>
+              <h3>UNDO CHANGES</h3>
+            </header>
+            <p>Tell your browser to forget all stored data for this site, forever.</p>
+            <ul>
+              <li>
+                <label for="forgetMeBtn">
+                  <div>Take the blue pill</div>
+                  <button onclick="clearUserConfiguration()" type="button" class="blue-button" id="forgetMeBtn" value="">Forget that background</button>
+                </label>
+              </li>
+            </ul>
+          </section>
+
+        </fieldset>
+      
+      </form>
+
+    </section>
 
     <fieldset>
       <legend>Laptop Test Image....</legend>

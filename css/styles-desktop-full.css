@@ -44,7 +44,7 @@ header.page-head {
     background-repeat: no-repeat;
     background-position: center center;
     opacity: 1.0;
-    background-color: green;
+    /*background-color: green;*/
     border: brown 1px solid;
     border-radius: 1em;
 }
@@ -185,7 +185,7 @@ fieldset legend{
     padding: none;
 }
 
-section.content-block{
+section.form-content-block{
     border: 5px solid #6495ed;
     border-radius: 1em;
     padding: 4px;
@@ -238,7 +238,7 @@ audio{
 
 /*-------------------------------------------------------------*/
 /* custom button styles*/
-.show-button {
+.red-button {
     box-shadow:inset 0px 1px 0px 0px #f5978e;
     background:linear-gradient(to bottom, #f24537 5%, darkred 100%);
     background-color: darkred;
@@ -247,21 +247,46 @@ audio{
     display: block;
     cursor:pointer;
     color:#ffffff;
-    font-family:'Ubuntu Mono', monospace, serif;;
+    font-family:'Ubuntu Mono', monospace, serif;
     font-size:18px;
     font-weight:bold;
     padding:6px 24px;
     text-decoration:none;
     text-shadow:0px 1px 0px #961108;
 }
-.show-button:hover {
+.red-button:hover {
     background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
     background-color:darkred;
 }
-.show-button:active {
+.red-button:active {
     position:relative;
     top:1px;
 }
+.blue-button {
+	box-shadow:inset 0px 39px 50px -24px #9fb4f2;
+	background:linear-gradient(to bottom, #9eb5de 5%, #476e9e 100%);
+	background-color:#9eb5de;
+	border-radius:6px;
+	border:1px solid #516296;
+	display:block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:'Ubuntu Mono', monospace, serif;
+    font-size:18px;
+    font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.blue-button:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #9eb5de 100%);
+	background-color:#476e9e;
+}
+.blue-button:active {
+	position:relative;
+	top:1px;
+}
+
 /*-------------------------------------------------------------*/
 /* custom dialog box styles CANCEL and OK buttons*/
 .dlg-container{
@@ -397,7 +422,7 @@ textarea {
 /* form reset end ^^^^^^^^^^^^^^^^^ */
 
 form fieldset {
-    width: 60%;
+    width: 90%;
     margin: 3em auto;
 }
 
@@ -407,8 +432,14 @@ input[type=text], input[type=email], input[type=url], select, textarea {
     display: block;
 }
 
+form ul {
+    margin: 0;
+    padding: 0;
+}
+
 form li {
     list-style-type: none;
+    margin: 1em auto;
 }
 
 .error {
@@ -435,6 +466,9 @@ input:invalid, textarea:invalid {
 input:valid, textarea:valid {
     border: lightgreen solid 2px;
 }
+
+/*-------------------------------------------------------------*/
+/* END */
 
 .verticalTest {
     font-weight: bold;
