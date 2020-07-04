@@ -251,6 +251,7 @@ audio{
     font-size:18px;
     font-weight:bold;
     padding:6px 24px;
+    margin: 1em;
     text-decoration:none;
     text-shadow:0px 1px 0px #961108;
 }
@@ -274,7 +275,8 @@ audio{
 	font-family:'Ubuntu Mono', monospace, serif;
     font-size:18px;
     font-weight:bold;
-	padding:6px 24px;
+    padding:6px 24px;
+    margin: 1em;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #283966;
 }
