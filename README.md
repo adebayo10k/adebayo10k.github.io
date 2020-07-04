@@ -14,5 +14,7 @@ Keep in mind it's apparently web server only, so no server-side web app code hap
 
 Let's see what emerges...
 
+Ok, looks like Yoruba - computer technology interface seems to be a main theme. Wasn't expecting that. Looks like they're feeding eachother. Hmmm...
+
 
 Thanks again to :octocat:
