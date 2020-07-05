@@ -58,6 +58,10 @@ h1{
     border: none;
 }
 
+sub, sup {
+    font-size: 0.5em;
+}
+
 a:link {
     color: #6495ed; /*cornflour blue*/
 }
@@ -371,9 +375,9 @@ audio{
 
 table {
     border-collapse: collapse;
-    border: 2px solid black;
     /*letter-spacing: 1px;*/
     font-size: 1em;
+    width: 100%;
 }
   
 td, th {
@@ -393,17 +397,32 @@ tr:nth-child(even) {
 td {
     text-align: center;
 }
+
+tfoot td {
+    text-align: left;
+    font-size: 0.8em;
+}
   
 caption {
     padding: 10px;
 }
 
-.morse-field {
+.morse-field { /* perhaps more efficient to use nth-child() to target this column, even if class has other uses */
     white-space: nowrap;
     padding-left: 4px;
     text-align: left;
-    /*border: black solid 4px;*/
 }
+
+/* left align the notes content */
+tbody tr td:nth-child(6) {
+    text-align: left;
+}
+
+colgroup col:nth-child(2) {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
 /*-------------------------------------------------------------*/
 /* form styles*/
 
@@ -428,11 +447,19 @@ form fieldset {
     margin: 3em auto;
 }
 
+input[type=color] {
+    margin: 1em;
+    padding: 1px;
+    display: block;
+}
+
 input[type=text], input[type=email], input[type=url], select, textarea {
     width: 60%;
     margin: 1em auto;
     display: block;
 }
+
+
 
 form ul {
     margin: 0;

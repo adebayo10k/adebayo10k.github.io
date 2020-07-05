@@ -127,7 +127,7 @@
             </caption>
             <colgroup>
               <col span="4">
-              <col style="border: black solid 2px;">
+              <col><!-- styled border in css -->
               <col>
             </colgroup>
             
@@ -135,7 +135,7 @@
               <tr>
                 <th scope="col" id="headChar" rowspan="2">Character</th>
                 <th scope="colgroup" id="headUnicode" colspan="2">Unicode Code Point</th>
-                <th scope="col" id="headHTML" rowspan="2">HTML Character Entity Reference</th>
+                <th scope="col" id="headHTML" rowspan="2">HTML <abbr title="Character Entity Reference">CER</abbr></th>
                 <th scope="col" id="headMorse" rowspan="2">Morse Code</th>
                 <th scope="col" id="headNotes" rowspan="2">Notes</th>
               </tr>
@@ -159,7 +159,7 @@
                 <td>&amp;#224;</td>
                 <td>&amp;agrave;</td>
                 <td class="morse-field">    </td>
-                <td>NON-ENGLISH MORSE EXTENSION</td>
+                <td>NON-ENGLISH MORSE EXTENSION<a href="#ref_1"><sup>[1]</sup></a></td>
               </tr>
               <tr> <!-- a acute -->
                 <td><p>&#x00E1;</p></td>
@@ -184,7 +184,7 @@
                 <td>&amp;#x0064;</td>
                 <td>&amp;#100;</td>
                 <td>&nbsp;</td>
-                <td class="morse-field">  </td>
+                <td class="morse-field"></td>
                 <td>&nbsp;</td>
               </tr>
 
@@ -210,7 +210,7 @@
                 <td>&amp;#233;</td>
                 <td>&amp;eacute;</td>
                 <td class="morse-field"></td>
-                <td>INCLUDED IN ITU-R MORSE</td>
+                <td>INCLUDED IN ITU-R MORSE<a href="#ref_2"><sup>[2]</sup></a></td>
               </tr>
               <tr> <!-- e dot --> 
                 <td><p>&#x1EB9;</p></td>
@@ -364,7 +364,7 @@
                 <td>&amp;#243;</td>
                 <td>&amp;oacute;</td>
                 <td class="morse-field"></td>
-                <td>NON-ENGLISH MORSE EXTENSION</td>
+                <td>NON-ENGLISH MORSE EXTENSION<a href="#ref_1"><sup>[1]</sup></a></td>
               </tr>
               <tr> <!-- o dot --> 
                 <td><p>&#x1ECD;</p></td>
@@ -476,17 +476,26 @@
                 <td>&nbsp;</td>
                 <td class="morse-field"></td>
                 <td>&nbsp;</td>
-              </tr>
-
-              
+              </tr>              
 
             </tbody>
+
+            <tfoot>
+              <tr>
+                <td colspan="6">
+                  <ol>
+                    <li id="ref_1">ref blah</li>
+                    <li id="ref_2">ref blah blah</li>
+                  </ol>
+                </td>
+              </tr>
+            </tfoot>
 
           </table>
 
         </figure>
         <figcaption>
-          Sources: <a href="https://en.wikipedia.org/wiki/Morse_code"title="Wikipedia Morse Code page" target="_blank">wikipedia.org</a>, <a href="https://www.orishaimage.com/" title="orishaimage website homepage" target="_blank">orishaimage.com</a>, <a href="https://decodeunicode.org/" title="decodeunicode website" target="_blank">decodeunicode.org</a>, <a href="http://www.personal.psu.edu/ejp10/symbolcodes/index.html" title="penn state university website legacy page" target="_blank">psu.edu</a>.
+          Sources: <a href="https://en.wikipedia.org/wiki/Morse_code"title="Wikipedia Morse Code page" target="_blank">wikipedia.org</a>, <a href="https://decodeunicode.org/" title="decodeunicode website" target="_blank">decodeunicode.org</a>, <a href="http://www.personal.psu.edu/ejp10/symbolcodes/index.html" title="penn state university website legacy page" target="_blank">psu.edu</a>.
         </figcaption>        
 
       </section>
