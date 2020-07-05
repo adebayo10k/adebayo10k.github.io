@@ -6,6 +6,7 @@ html{
     font-family: 'Ubuntu Mono', monospace, serif;
     font-size: 1em;
     /*background-color: #6495ed; cornflour blue*/
+    padding-top: 8px;
     padding-bottom: 12px;
 }
 
@@ -15,12 +16,6 @@ html{
 
 body{
     background-color:#ddd;
-    /*
-    background-image: url("../media/images/yorkRdJanuary.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    */
     width: 90%;
     width: calc(90% - 2px);
     margin: auto;
@@ -36,26 +31,6 @@ p{
     display: block;
     margin-right: 2em;
     line-height: 1.6em;
-}
-
-header.page-head {
-    background-image: url("../media/images/footpath-20.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    opacity: 1.0;
-    /*background-color: green;*/
-    border: brown 1px solid;
-    border-radius: 1em;
-}
-
-h1{
-    font-size: 2em;
-    text-align: center;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    padding: 8px;
-    border: none;
 }
 
 sub, sup {
@@ -74,8 +49,28 @@ a:visited {
     color: #000000;
 }
 
-.page-head h1{
-    border: solid rebeccapurple 6px;
+header.page-head {
+    background-image: url("../media/images/footpath-20.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 1.0;
+    border: brown 1px solid;
+    border-radius: 1em;
+}
+
+h1{
+    font-size: 2em;
+    color:darkred;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 8px;
+    border: none;
+}
+
+header.page-head h1{
+    border: solid rebeccapurple 3px;
     border-radius: 1em;
     color: #fff;
 }
@@ -89,7 +84,7 @@ h2{
     border: none;
 }
 
-.page-head h2{
+header.page-head h2{
     text-align: center;
     color: #fff; 
 }
@@ -172,12 +167,12 @@ nav li a:hover {
 }
 
 fieldset { 
-background:none;
-border: green 3px solid;
-border-radius: 1em;
-padding: 8px;
-margin: 6px;
-overflow: hidden;
+    background:none;
+    border: green 3px solid;
+    border-radius: 1em;
+    padding: 8px;
+    margin: 6px;
+    overflow: hidden;
 }
 
 fieldset legend{
@@ -196,7 +191,6 @@ section.form-content-block{
     margin: 4px;
     margin-top: 20px;
 }
-
 
 code {
     display:block;
@@ -220,9 +214,8 @@ img, video, audio{
 }
 
 figure{
-    margin-left: 8px;
+    margin: 8px;
     margin-bottom: 2px;
-    overflow: hidden;
 }
 
 figcaption{
@@ -230,16 +223,18 @@ figcaption{
     font-style: italic;
 }
 
-audio{
-    border: black 2px solid;
+.mapEmbed, .audioEmbed, .videoEmbed{
+    width: 60%;
 }
-
-.video{
-    width: 560px;
+.mapEmbed {
+    height: 250px;
+}
+.audioEmbed {
+    height: 350px;    
+}
+.videoEmbed {
     height: 315px;
-
 }
-
 /*-------------------------------------------------------------*/
 /* custom button styles*/
 .red-button {

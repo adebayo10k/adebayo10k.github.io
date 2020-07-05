@@ -13,54 +13,40 @@ html{
 }
 
 body{
-    background-color:#ddd;
     width: 94%;
-    margin: 0 auto;
-    border-radius: 1em;
     padding: 4px;
     border: solid black 4px;
 }
 
 p{
-    font-size: 1em;
     margin: 3px;
     padding-top: 4px;
-    display: block;
 }
 
 h1{
     font-size: 1.6em;
-    text-align: center;
-    color:darkred;
     margin-top: 4px;
     margin-bottom: 4px;
     padding: 6px;
-    border: none;
 }
 
-.page-head h1{
+header.page-head h1{
     border: solid black 3px;
-    border-radius: 1em;
+    border-radius: 0.6em;
 }
 
 h2{
-    font-size: 1em;
-    text-align: left;
+    font-size: 1.2em;
     margin-top: 2px;
-    margin-bottom: 1px;
+    margin-bottom: 2px;
     padding: 1px;
     border: none;
 }
 
-.page-head h2{
-    text-align: center;    
-}
-
 h3{
-    font-size: 1em;
-    text-align: left;
+    font-size: 1.1em;
     margin-top: 2px;
-    margin-bottom: 1px;
+    margin-bottom: 2px;
     padding: 1px;
     border: none;
 }
@@ -110,48 +96,22 @@ nav li a{
     
 }
 
-fieldset { 
-background:none;
-border: green 3px solid;
-border-radius: 1em;
-padding: 4px;
-margin: 4px;
+fieldset {
+    padding: 4px;
+    margin: 4px;
 }
 
 fieldset legend{
     font-size: 1em;
-    font-weight: bold;
-    color:darkred;
-    margin-top: none;
-    margin-bottom: none;
-    padding: none;
-
-}
-/*
-code {
-    display:block;
-    width: auto;
-    height: auto;
-    white-space: pre-wrap;
-    background: hsl(220, 80%, 90%);
 }
 
-pre {
-    width: auto;
-    height: auto;
-    white-space: pre-wrap;
-    background: hsl(30,80%,90%);
-    background: hsl(220, 80%, 90%);
-}
-*/
 img, video, audio{
     width: 300px;
     padding: 2px;
 }
 
 figure{
-    margin: 8px;
-    margin-bottom: 2px;
+    margin: 6px;
 }
 
 figcaption{
@@ -159,10 +119,10 @@ figcaption{
     font-style: italic;
 }
 
-.video{
-    width: 320px;
-    height: 180px;
+.mapEmbed, .audioEmbed, .videoEmbed{
+    width: 80%;
 }
+
 
 /*-------------------------------------------------------------*/
 /* custom button styles*/

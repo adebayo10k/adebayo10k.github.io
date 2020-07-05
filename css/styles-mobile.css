@@ -4,6 +4,7 @@ html{
     font-family: 'Ubuntu Mono', monospace, serif;
     font-size: 1em;
     /*background-color: #6495ed; cornflour blue*/
+    padding-top: 0px;
     padding-bottom: 12px;
 }
 
@@ -12,56 +13,38 @@ html{
 }
 
 body{
-    background-color:#ddd;
     width: 96%;
-    margin: 0 auto;
-    border-radius: 1em;
     padding: 2px;
     border: solid black 2px;
 }
 
 p{
-    font-size: 1em;
     margin: 0px;
     margin-top: 4px;
     padding-top: 4px;
-    display: block;
 }
 
 h1{
     font-size: 1.2em;
-    text-align: center;
-    color:darkred;
     margin-top: 2px;
     margin-bottom: 2px;
     padding: 4px;
-    border: none;
 }
 
-.page-head h1{
+header.page-head h1{
     border: none;/* */
 }
 
 h2{
     font-size: 1em;
-    text-align: left;
     margin-top: 2px;
     margin-bottom: 2px;
     padding: 1px;
     border: none;
-}
-
-.page-head h2{
-    text-align: center;
 }
 
 h3{
     font-size: 1em;
-    text-align: left;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    padding: 1px;
-    border: none;
 }
 
 ul, ol{
@@ -105,32 +88,16 @@ nav li{
     display: block;
 }
 
-fieldset { 
-background:none;
-border: green 3px solid;
-border-radius: 1em;
-padding: 2px;
-margin: 2px;
-}
-/*
-code {
-    display:block;
-    width: auto;
-    height: auto;
-    white-space: pre-wrap;
-    background: hsl(220, 80%, 90%);
+fieldset {
+    padding: 2px;
+    margin: 2px;
 }
 
-pre {
-    width: auto;
-    height: auto;
-    white-space: pre-wrap;
-    background: hsl(30,80%,90%);
-    background: hsl(220, 80%, 90%);
+fieldset legend{
+    font-size: 0.8em;
 }
-*/
+
 img, video, audio{
-    /*width: 240px;*/
     width: 100%;
     padding: 2px;
 }
@@ -138,7 +105,6 @@ img, video, audio{
 figure{
     margin: 4px;
     margin-left: 2px;
-    margin-bottom: 2px;
 }
 
 figcaption{
@@ -146,11 +112,10 @@ figcaption{
     font-style: italic;
 }
 
-.video{
-    width: 260px;
-    height: 146px;
-
+.mapEmbed, .audioEmbed, .videoEmbed{
+    width: 100%;
 }
+
 
 /*-------------------------------------------------------------*/
 /* custom button styles*/
