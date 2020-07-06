@@ -42,11 +42,11 @@ IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING, DM ME TOD
     this.displayCode = function (flag){
         if (flag) {
             this.codeBlockElem.innerHTML = this.codeText;
-            this.showBtnElem.setAttribute("value", "hide code");
+            this.showBtnElem.innerHTML = "hide code";
         }
         else {
             this.codeBlockElem.innerHTML = "";
-            this.showBtnElem.setAttribute("value", "show code");
+            this.showBtnElem.innerHTML = "show code";
         }
     };
     // toggle switch based on existing state of this object
