@@ -38,7 +38,7 @@ sub, sup {
 }
 
 a:link {
-    color: #6495ed; /*cornflour blue*/
+    color: #000000;
 }
 
 a:hover{
@@ -46,7 +46,7 @@ a:hover{
 }
 
 a:visited {
-    color: #000000;
+    color: #36261D;
 }
 
 header.page-head {
@@ -66,7 +66,7 @@ h1{
     margin-top: 8px;
     margin-bottom: 8px;
     padding: 8px;
-    border: none;
+    border: 0px;
 }
 
 header.page-head h1{
@@ -81,7 +81,7 @@ h2{
     margin-top: 4px;
     margin-bottom: 2px;
     padding: 2px;
-    border: none;
+    border: 0px;
 }
 
 header.page-head h2{
@@ -95,7 +95,7 @@ h3{
     margin-top: 4px;
     margin-bottom: 2px;
     padding: 2px;
-    border: none;
+    border: 0px;
 }
 
 ul, ol{
@@ -138,10 +138,17 @@ nav li a{
     border-radius: 6px;
     display: inline-block;
     width: 100%;
+    
 }
 
 nav li a:hover {
     background-color: aquamarine;
+}
+
+nav li a:visited {
+    color: #36261D;
+    /*border-color: #6495ed;
+    background-color: rgba(221, 221, 221, 0.72);;*/
 }
 
 .nav-icon{
@@ -179,8 +186,8 @@ fieldset legend{
     font-size: 1.2em;
     font-weight: bold;
     color:darkred;
-    margin-top: none;
-    margin-bottom: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
     padding: none;
 }
 
@@ -448,13 +455,11 @@ input[type=color] {
     display: block;
 }
 
-input[type=text], input[type=email], input[type=url], select, textarea {
-    width: 60%;
+input[type=text], input[type=email], input[type=url],  input[type=file],select, textarea {
+    width: 40%;
     margin: 1em auto;
     display: block;
 }
-
-
 
 form ul {
     margin: 0;
@@ -505,7 +510,7 @@ input:valid, textarea:valid {
 
 }
 .verticalTest > p {
-    margin: none;
-    padding: none;
+    padding: 0px;
+    margin: 0px;
     overflow: hidden;
 }
