@@ -81,7 +81,7 @@ nav li{
     margin: 0px 4px;
 }
 
-nav li a{
+nav li a:link{
     font-size: 1em;
 }
 

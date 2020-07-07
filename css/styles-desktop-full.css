@@ -129,8 +129,9 @@ nav li{
     margin: 0px 4px;
 }
 
-nav li a{
+nav li a:link{
     font-size: 1.2em;
+    color: darkblue;
     background-color: rgba(221, 221, 221, 0.72); /* == #ddd */
     border: 1px solid black;
     padding: 4px;
@@ -146,7 +147,7 @@ nav li a:hover {
 }
 
 nav li a:visited {
-    color: #36261D;
+    color: maroon;
     /*border-color: #6495ed;
     background-color: rgba(221, 221, 221, 0.72);;*/
 }
@@ -188,7 +189,7 @@ fieldset legend{
     color:darkred;
     margin-top: 0px;
     margin-bottom: 0px;
-    padding: none;
+    padding: 0px;
 }
 
 section.form-content-block{
@@ -228,6 +229,12 @@ figure{
 figcaption{
     font-size: 0.8em;
     font-style: italic;
+}
+
+iframe {
+    border: 2px black solid;
+    border-radius: 1em;
+    overflow: hidden;
 }
 
 .mapEmbed, .audioEmbed, .videoEmbed{
@@ -451,14 +458,24 @@ form fieldset {
 
 input[type=color] {
     margin: 1em;
-    padding: 1px;
+    padding: 2px;
     display: block;
+    border: 4px black solid;
+    box-sizing: content-box;
 }
 
-input[type=text], input[type=email], input[type=url],  input[type=file],select, textarea {
+input[type=text], input[type=email], input[type=url],  input[type=file], select, textarea {
     width: 40%;
     margin: 1em auto;
     display: block;
+}
+
+input[type=text]:invalid, input[type=email]:invalid, input[type=url]:invalid, textarea:invalid {
+    border: darkred solid 2px;
+}
+
+input[type=text]:valid, input[type=email]:valid, input[type=url]:valid, textarea:valid {
+    border: lightgreen solid 2px;
 }
 
 form ul {
@@ -488,13 +505,7 @@ form li {
     box-sizing: border-box;
 }
 
-input:invalid, textarea:invalid {
-    border: darkred solid 2px;
-}
 
-input:valid, textarea:valid {
-    border: lightgreen solid 2px;
-}
 
 /*-------------------------------------------------------------*/
 /* END */

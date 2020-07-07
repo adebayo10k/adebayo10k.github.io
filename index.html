@@ -98,7 +98,7 @@
         <h3>SITE BACKGROUND COLOUR FORM</h3>    
       </header>
 
-      <form id="background_colour" action="">
+      <form id="background_colour" action="#">
 
         <fieldset>
           <legend>Perhaps A Few Changes...</legend> 
@@ -112,13 +112,13 @@
             <ul>
               <li>
                 <label for="bgColourPicker">
-                  <div>1. Choose a new background colour</div>
+                  <span>1. Choose a new background colour</span>
                   <input type="color" class="colour" id="bgColourPicker" value="#6495ed">
                 </label>
               </li>
               <li>
                 <label for="bgColourBtn">
-                  <div>2. Press this button to activate change</div>
+                  <span>2. Press this button to activate the change:</span>
                   <button onclick="userConfigurePage()" type="button" class="red-button" id="bgColourBtn" value="">Change that background</button>          
                 </label>
               </li>
@@ -133,11 +133,11 @@
             <header>
               <h3>UNDO CHANGES</h3>
             </header>
-            <p>Tell your browser to forget all stored data for this site, forever.</p>
+            <p>Tell your web browser to forget all stored data for this site, forever.</p>
             <ul>
               <li>
                 <label for="forgetMeBtn">
-                  <div>Take the blue pill</div>
+                  <span>1. Press this button (take the blue pill):</span>
                   <button onclick="clearUserConfiguration()" type="button" class="blue-button" id="forgetMeBtn" value="">Forget that background</button>
                 </label>
               </li>
