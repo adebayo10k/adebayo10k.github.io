@@ -87,9 +87,9 @@
         <header>
           <h3>Some Test, Practice, &LeftAngleBracket;&apos;Nothing even leaves the browser&apos;&RightAngleBracket; Forms</h3>
         </header>        
-        <p>Forms created for me to practice a bit of web form client-side validation and styling - although not so much the styling. I&apos;m no designer.</p>
+        <p>Forms created for me to practice a bit of web form client-side validation and styling - although not so much of the styling.</p>
         <p>Using the fictitious group called the Oguntech network.</p>
-        <p>We&apos;re going for the live inline validation approach for fields where that makes sense.</p>
+        <p>We&apos;re going for a <strong>live inline validation</strong> approach for fields where it makes sense.</p>
       </section>            
     </fieldset>
       
@@ -115,55 +115,50 @@
         </header>    
         
         <p>Go ahead - try entering Yor&#249;b&#225; language characters (copy them in the form fields). The ones currently defined in unicode are found to be completely valid to this form.</p>
-        <p>So, these are found valid:
-          <ul>
-            <li>&#x00E0;</li>
-            <li>&#x00E1;</li>
-            <li>&#x00E8;</li>
-            <li>&#x00E9;</li>
-            <li>&#x1EB9;(research font support)</li><!-- e dot -->
-            <li>&#x00EC;</li>
-            <li>&#x00ED;</li>
-            <li>&#x00F2;</li>
-            <li>&#x00F3;</li>
-            <li>&#x01ECD;(research font support)</li><!-- o dot -->
-            <li>&#x1E63;(research font support)</li><!-- s dot --> 
-            <li>&#x00F9;</li>
-            <li>&#x00FA;</li>            
-          </ul>
-
-          <!--
-            NUMERIC RANGE
-            \u0030-\u0039 numeric 0 - 9
-
-            BASIC LATIN RANGES
-            \u0041-\u005A basic latin upper-case A-Z
-            \u0061-\u007A basic latin lower-case a-z
-
-            LATIN-1 RANGES
-            \u00C0-\u00DE  latin upper-case A-Z
-            \u00E0-\u00FF  latin lower-case a-z
-
-            ENUMERATED DOTTED UNICODES (in numeric order)
-            \u1E63  s dot
-            \u1EB9  e dot
-            \u1ECD  o dot
-            
-            \u00E0-\u00FA \u1EB9-\u1E63 space is U+0020
-          -->
-
-          <!--       
-            </p>
-            <p>But these are not:
-              <ul>
-                <li>&#x0300;&#7865;</li>
-                <li>&#x0301;&#7865;</li>
-                <li>&#x2211;&#x007B;gb&#x007D;</li>
-                <li>&#x0300;&#7885;</li>
-                <li>&#x0301;&#7885;</li>            
-              </ul>
-          -->
-        </p>
+        <p>So, would be found valid:</p>
+        <ul>
+          <li>&#x00E0;</li>
+          <li>&#x00E1;</li>
+          <li>&#x00E8;</li>
+          <li>&#x00E9;</li>
+          <li>&#x1EB9; (NOTE: investigate font support)</li><!-- e dot -->
+          <li>&#x00EC;</li>
+          <li>&#x00ED;</li>
+          <li>&#x00F2;</li>
+          <li>&#x00F3;</li>
+          <li>&#x01ECD; (NOTE: investigate font support)</li><!-- o dot -->
+          <li>&#x1E63; (NOTE: investigate font support)</li><!-- s dot --> 
+          <li>&#x00F9;</li>
+          <li>&#x00FA;</li>            
+        </ul>
+       <!--
+          NUMERIC RANGE
+          \u0030-\u0039 numeric 0 - 9
+         BASIC LATIN RANGES
+          \u0041-\u005A basic latin upper-case A-Z
+          \u0061-\u007A basic latin lower-case a-z
+         LATIN-1 RANGES
+          \u00C0-\u00DE  latin upper-case A-Z
+          \u00E0-\u00FF  latin lower-case a-z
+         ENUMERATED DOTTED UNICODES (in numeric order)
+          \u1E63  s dot
+          \u1EB9  e dot
+          \u1ECD  o dot
+          
+          \u00E0-\u00FA \u1EB9-\u1E63 space is U+0020
+        -->
+       <!--       
+          </p>
+          <p>But these are not:
+            <ul>
+              <li>&#x0300;&#7865;</li>
+              <li>&#x0301;&#7865;</li>
+              <li>&#x2211;&#x007B;gb&#x007D;</li>
+              <li>&#x0300;&#7885;</li>
+              <li>&#x0301;&#7885;</li>            
+            </ul>
+        -->
+      
         <p><em>NOTE: Of course, actual email protocols would still only handle basic latin alphanumerics</em></p>
 
     <!--///////////////////////////////////// FORM /////////////////////////////////////////// --> 
