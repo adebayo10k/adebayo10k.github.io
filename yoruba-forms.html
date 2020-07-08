@@ -173,7 +173,7 @@
                   <span>name/alias</span>
                   <!-- <input type="text" id="name" name="alias_name" required autofocus minlength="1" maxlength="30" pattern="[a-zA-Z0-9]+"> --> <!-- space is U+0020 -->
                   <input type="text" id="alias_name" name="alias_name" required autofocus minlength="3" maxlength="32" pattern="[\u0030-\u0039\u0041-\u005A\u0061-\u007A\u00C0-\u00DE\u00E0-\u00FF\u1E63\u1EB9\u1ECD\s\-\.]+"> <!-- -->
-                  <span id="alias_name_errors" class="error" aria-live="polite"></span>
+                  <span id="alias_name_errors" class="error nil" aria-live="polite"></span>
                 </label>
               </li>
               <!--
@@ -187,8 +187,8 @@
               \' matches any character
 
             LATIN-1 RANGES
-            \u00C0-\u00DE  latin upper-case A-Z
-            \u00E0-\u00FF  latin lower-case a-z
+            \u00C0-\u00DE  latin-1 upper-case A-Z
+            \u00E0-\u00FF  latin-1 lower-case a-z
 
             ENUMERATED DOTTED UNICODES (in numeric order)
             UPPER CASE
@@ -205,7 +205,7 @@
                 <label for="email">
                   <span>email</span>
                   <input type="email" id="email" name="email" required minlength="6" maxlength="48">
-                  <span class="error" aria-live="polite"></span>
+                  <span class="error nil" aria-live="polite"></span>
                 </label>
               </li>
               <li>
