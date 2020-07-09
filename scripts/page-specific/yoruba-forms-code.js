@@ -37,7 +37,11 @@ const addErrorString = (errorString) => {
 
 // add eventListeners to form inputs
 alias_name.addEventListener("input", (event) => {
+    // each event is a completely new, independent test - so clear all at start
     currentErrors = [];
+    alias_name_errors.innerHTML = "";
+    let liveErrorString = "";
+
     if (checkForEmpty(alias_name.value)){
         // pass a
         console.log("alias name was empty");
@@ -50,8 +54,12 @@ alias_name.addEventListener("input", (event) => {
     }
 
     // check whether primary regex constrain is being met
-    if (!checkAgainstPrimaryRegex(alias_name, validNameCharsetRegex)){
+    if (!checkAgainstPrimaryRegex(alias_name.value, validNameCharsetRegex)){
         addErrorString(`Oops, etwas ist vorboten.`);
+        for (char in alias_name.value){
+            console.log(alias_name.value[char]);
+            console.log(checkAgainstPrimaryRegex(alias_name.value[char], validNameCharsetRegex));
+        }
     }
 
     // reset TO EMPTY STRING: setCustomValidity("")
@@ -68,7 +76,16 @@ alias_name.addEventListener("input", (event) => {
         alias_name_errors.className = "error";
 
         console.log(currentErrors);
-        alias_name_errors.textContent = currentErrors[0];
+        for (errCount = 0; errCount < currentErrors.length; errCount++){
+            liveErrorString += `
+            ${currentErrors[errCount]}
+            `;
+            liveErrorString += `
+            `;
+        }
+        console.log(liveErrorString);
+        alias_name_errors.textContent = liveErrorString;
+        
         
     }
 
@@ -106,10 +123,11 @@ const checkForYorubaChar = (inputRef) => {
 };
 
 // generalised function for checking the content of any input against any regex
-const checkAgainstPrimaryRegex = (inputRef, primaryRegex) => {
+const checkAgainstPrimaryRegex = (inputVal, primaryRegex) => {
     let regexConstraintMet = false;
-    if (inputRef.value.match(primaryRegex)){
+    if (inputVal.match(primaryRegex)){
         regexConstraintMet = true;
+        console.log("FOUND TRUE MATCH OK");
     }
     return regexConstraintMet;
 };
