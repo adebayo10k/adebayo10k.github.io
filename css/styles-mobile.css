@@ -5,8 +5,12 @@
 html {
     font-size: 10px; /* easy HCF to work with */
 }
-p, li, table, tfoot td, button, input, select, textarea {
+p, li, button, input, select, textarea, fieldset legend {
     font-size: 1.25rem;
+}
+
+table, tfoot td {
+    font-size: 1rem;
 }
 
 sub, sup, figcaption {
@@ -18,12 +22,16 @@ h1 {
 h2 {
     font-size: 1.75rem;
 }
-h3, nav li a:link, fieldset legend {
+h3 {
     font-size: 1.25rem;
 }
 h4 {
     font-size: 1.25rem;
 }
+nav li a:link {
+    font-size: 1.25rem;
+}
+
 
 html{
     font-family: 'Ubuntu Mono', monospace, serif;

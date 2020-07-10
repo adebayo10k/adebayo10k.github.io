@@ -21,7 +21,7 @@
 html {
     font-size: 10px; /* easy HCF to work with */
 }
-p, li, table, tfoot td, button, input, select, textarea {
+p, li, table, tfoot td, button, input, select, textarea, fieldset legend {
     font-size: 1.5rem;
 }
 sub, sup, figcaption {
@@ -33,11 +33,14 @@ h1 {
 h2 {
     font-size: 2.5rem;
 }
-h3, nav li a:link, fieldset legend {
+h3 {
     font-size: 2rem;
 }
 h4 {
     font-size: 1.75rem;
+}
+nav li a:link {
+    font-size: 2rem;
 }
 
 /* |&|other font properties subsection */
@@ -263,6 +266,12 @@ figure{
     margin-bottom: 2px;
 }
 
+/* doesn't work */
+.fig-table {
+    max-width: 100%;
+    overflow-x: scroll;
+}
+
 figcaption{
     /* font-size: 0.8em; */
     font-style: italic;
@@ -271,7 +280,7 @@ figcaption{
 iframe {
     border: 2px #000 solid;
     border-radius: 1em;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .mapEmbed, .audioEmbed, .videoEmbed{
