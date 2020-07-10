@@ -13,6 +13,7 @@
 /*#008000; /*green*/
 /*#90ee90; /*lightgreen*/
 /* rgb(221, 221, 221)  == #ddd */
+/* #6495ed; cornflour blue*/
 
 /* |&|GENERAL ELEM TYPE DEFAULT STYLES */
 
@@ -89,10 +90,6 @@ p{
     display: block;
     margin-right: 2em;
     line-height: 1.6em;
-}
-
-sub, sup {
-    /* font-size: 0.5em; */
 }
 
 a:link {

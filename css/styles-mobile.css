@@ -107,6 +107,11 @@ nav li{
     display: block;
     width: 17px;
     margin: 0 auto;
+    font-size: 1.5rem;
+}
+.nav-icon a i {
+    color: #6495ed;
+    width: 100%;
 }
 
 .nav-grid.open-grid {
