@@ -1,8 +1,32 @@
 /* styles for detected mobile devices with screen width < 400px  */
 
+/* |&|font sizes subsection */
+
+html {
+    font-size: 10px; /* easy HCF to work with */
+}
+p, li, table, tfoot td, button, input, select, textarea {
+    font-size: 1.25rem;
+}
+
+sub, sup, figcaption {
+    font-size: 1rem;
+}
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.75rem;
+}
+h3, nav li a:link, fieldset legend {
+    font-size: 1.25rem;
+}
+h4 {
+    font-size: 1.25rem;
+}
+
 html{
     font-family: 'Ubuntu Mono', monospace, serif;
-    font-size: 1em;
     /*background-color: #6495ed; cornflour blue*/
     padding-top: 4px;
     padding-bottom: 12px;
@@ -25,7 +49,6 @@ p{
 }
 
 h1{
-    font-size: 1.2em;
     margin-top: 2px;
     margin-bottom: 2px;
     padding: 4px;
@@ -36,15 +59,10 @@ header.page-head h1{
 }
 
 h2{
-    font-size: 1em;
     margin-top: 2px;
     margin-bottom: 2px;
     padding: 1px;
     border: 0px;
-}
-
-h3{
-    font-size: 1em;
 }
 
 ul, ol{
@@ -53,7 +71,6 @@ ul, ol{
 }
 
 li{
-    font-size: 1em;
     padding-top: 1px;
     margin-top: 1px;
     line-height: 1;
@@ -93,10 +110,6 @@ fieldset {
     margin: 2px;
 }
 
-fieldset legend{
-    font-size: 0.8em;
-}
-
 img, video, audio{
     width: 100%;
     padding: 2px;
@@ -108,7 +121,6 @@ figure{
 }
 
 figcaption{
-    font-size: 0.6em;
     font-style: italic;
 }
 
@@ -129,7 +141,7 @@ figcaption{
     cursor:pointer;
     color:#ffffff;
     font-family:'Ubuntu Mono', monospace, serif;;
-    font-size:18px;
+    font-size:14px;
     font-weight:bold;
     padding:6px 24px;
     text-decoration:none;
@@ -222,13 +234,9 @@ figcaption{
 
 /*-------------------------------------------------------------*/
 /* table styles*/
-
-table {
-    font-size: 0.6em;
-}
   
 td, th {
-    padding: 0px 4px;
+    padding: 2px 2px;
 }  
   
 caption {

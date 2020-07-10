@@ -1,10 +1,65 @@
 /* TODO: When on server, npm install --save normalize.css */
-/* rgb(221, 221, 221)  == #ddd */
+
 /* styles for detected screens width > 600px  */
+/* Searchable section title comments in this file begin with |&| */
+
+/*#8b0000; /*darkred*/
+/*#a52a2a; /*brown*/
+/*#663399; /*rebeccapurple*/
+/*#fff; /*white*/
+/*#00008b; /*darkblue*/
+/*#000000; /*black*/
+/*#800000; /*maroon*/
+/*#008000; /*green*/
+/*#90ee90; /*lightgreen*/
+/* rgb(221, 221, 221)  == #ddd */
+
+/* |&|GENERAL ELEM TYPE DEFAULT STYLES */
+
+/* |&|font sizes subsection */
+
+html {
+    font-size: 10px; /* easy HCF to work with */
+}
+p, li, table, tfoot td, button, input, select, textarea {
+    font-size: 1.5rem;
+}
+sub, sup, figcaption {
+    font-size: 1rem;
+}
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3, nav li a:link, fieldset legend {
+    font-size: 2rem;
+}
+h4 {
+    font-size: 1.75rem;
+}
+
+/* |&|other font properties subsection */
+
+@media all and (max-width: 1000px){
+    td, th {
+        padding: 2px 4px;
+    }
+}
+
+@media all and (max-width: 900px){
+    nav li a:link{
+       font-size: 1.5rem;
+    }
+    td, th {
+        padding: 2px 4px;
+    }
+}
 
 html{
-    font-family: 'Ubuntu Mono', monospace, serif;
-    font-size: 1em;
+    font-family: 'Ubuntu Mono', 'Lucida Console', Courier, monospace, sans-serif;
+    /* font-size: 1em; */
     /*background-color: #6495ed; cornflour blue*/
     padding-top: 8px;
     padding-bottom: 12px;
@@ -25,7 +80,7 @@ body{
 }
 
 p{
-    font-size: 1em;
+    /* font-size: 1em; */
     margin: 3px;
     padding-top: 8px;
     display: block;
@@ -34,7 +89,7 @@ p{
 }
 
 sub, sup {
-    font-size: 0.5em;
+    /* font-size: 0.5em; */
 }
 
 a:link {
@@ -55,13 +110,13 @@ header.page-head {
     background-repeat: no-repeat;
     background-position: center center;
     opacity: 1.0;
-    border: brown 1px solid;
+    border: #a52a2a 1px solid; /*brown*/
     border-radius: 1em;
 }
 
 h1{
-    font-size: 2em;
-    color:darkred;
+    /* font-size: 2em; */
+    color:#8b0000; /*darkred*/
     text-align: center;
     margin-top: 8px;
     margin-bottom: 8px;
@@ -76,7 +131,7 @@ header.page-head h1{
 }
 
 h2{
-    font-size: 1.4em;
+    /* font-size: 1.4em; */
     text-align: left;
     margin-top: 4px;
     margin-bottom: 2px;
@@ -90,7 +145,7 @@ header.page-head h2{
 }
 
 h3{
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
     text-align: left;
     margin-top: 4px;
     margin-bottom: 2px;
@@ -104,7 +159,7 @@ ul, ol{
 }
 
 li{
-    font-size: 1em;
+    /* font-size: 1em; */
     padding-top: 1px;
     margin-top: 1px;
     line-height: 1;
@@ -130,10 +185,10 @@ nav li{
 }
 
 nav li a:link{
-    font-size: 1.2em;
-    color: darkblue;
+    /* font-size: 1.2em; */
+    color: #00008b; /*darkblue*/
     background-color: rgba(221, 221, 221, 0.72); /* == #ddd */
-    border: 1px solid black;
+    border: 1px solid #000000; /*black*/
     padding: 4px;
     white-space: nowrap;
     border-radius: 6px;
@@ -143,11 +198,11 @@ nav li a:link{
 }
 
 nav li a:hover {
-    background-color: aquamarine;
+    background-color: #7fffd4; /* aquamarine */
 }
 
 nav li a:visited {
-    color: maroon;
+    color: #800000; /*maroon*/
     /*border-color: #6495ed;
     background-color: rgba(221, 221, 221, 0.72);;*/
 }
@@ -156,27 +211,9 @@ nav li a:visited {
     display: none;
 }
 
-@media all and (max-width: 1000px){
-
-    td, th {
-        padding: 2px 4px;
-    }
-
-}
-
-@media all and (max-width: 900px){
-    nav li{
-       font-size: 1em;
-    }
-    td, th {
-        padding: 2px 4px;
-    }
-
-}
-
 fieldset { 
     background:none;
-    border: green 3px solid;
+    border: #008000 3px solid;
     border-radius: 1em;
     padding: 8px;
     margin: 6px;
@@ -184,9 +221,9 @@ fieldset {
 }
 
 fieldset legend{
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
     font-weight: bold;
-    color:darkred;
+    color: #8b0000; /*darkred*/
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 0px;
@@ -227,12 +264,12 @@ figure{
 }
 
 figcaption{
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
     font-style: italic;
 }
 
 iframe {
-    border: 2px black solid;
+    border: 2px #000 solid;
     border-radius: 1em;
     overflow: hidden;
 }
@@ -264,7 +301,7 @@ iframe {
     font-size:18px;
     font-weight:bold;
     padding:6px 24px;
-    margin: 1em;
+    margin: 1.5rem;
     text-decoration:none;
     text-shadow:0px 1px 0px #961108;
 }
@@ -289,7 +326,7 @@ iframe {
     font-size:18px;
     font-weight:bold;
     padding:6px 24px;
-    margin: 1em;
+    margin: 1.5rem;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #283966;
 }
@@ -385,18 +422,18 @@ iframe {
 table {
     border-collapse: collapse;
     /*letter-spacing: 1px;*/
-    font-size: 1em;
+    /* font-size: 1em; */
     width: 100%;
 }
   
 td, th {
-    border: 1px solid green;
+    border: 1px solid #008000;
     padding: 4px 8px;
 }
   
 th {
     /*background-color: #E3F2E8;*/
-    background-color: rgb(239,239,235);
+    background-color: #efefeb; /*rgb(239,239,235) */
 }
 
 tr:nth-child(even) {
@@ -409,7 +446,7 @@ td {
 
 tfoot td {
     text-align: left;
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
 }
   
 caption {
@@ -428,8 +465,8 @@ tbody tr td:nth-child(6) {
 }
 
 colgroup col:nth-child(2) {
-    border-left: 2px solid black;
-    border-right: 2px solid black;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
 }
 
 /*-------------------------------------------------------------*/
@@ -441,7 +478,7 @@ input,
 select, 
 textarea { 
   font-family: inherit; 
-  font-size: 100%; 
+  /* font-size: 100%;  */
   box-sizing: border-box; 
   padding: 0; margin: 0; 
 } 
@@ -471,11 +508,11 @@ input[type=text], input[type=email], input[type=url],  input[type=file], select,
 }
 
 input[type=text]:invalid, input[type=email]:invalid, input[type=url]:invalid, textarea:invalid {
-    border: darkred solid 2px;
+    border: #8b0000 solid 2px;
 }
 
 input[type=text]:valid, input[type=email]:valid, input[type=url]:valid, textarea:valid {
-    border: lightgreen solid 2px;
+    border: #90ee90 solid 2px; /*lightgreen*/
 }
 
 form ul {
@@ -515,7 +552,7 @@ form li {
     writing-mode: vertical-rl;
     inline-size: 300px;
     block-size: 40vw;
-    border: 4px solid brown;
+    border: 4px solid #a52a2a; /*brown*/
     padding-inline-start: 20px;
     padding-block-start: 10px;
 
@@ -525,3 +562,6 @@ form li {
     margin: 0px;
     overflow: hidden;
 }
+
+
+
