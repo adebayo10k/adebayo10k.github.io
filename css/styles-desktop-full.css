@@ -46,6 +46,12 @@ h4 {
 nav li a:link {
     font-size: 2rem;
 }
+footer {
+    font-size: 1em;
+}
+footer p {
+    font-size: inherit;
+}
 
 /* |&|other font properties subsection */
 
@@ -152,7 +158,17 @@ section header h3{
 }
 
 footer {
+    /* cascading stuff... */
+    margin: 4px;
+    padding: 8px;    
+    margin-top: 20px;
+    border-top: 4px #800000 solid;
+    border-bottom: 4px #800000 solid;
+}
 
+footer p {
+    padding: 0px;
+    margin: 0px;
 }
 
 
