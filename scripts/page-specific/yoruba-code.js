@@ -26,7 +26,7 @@ yorubaAudioEmbed01.src = "https://w.soundcloud.com/player/?url=https%3A//api.sou
 
 let encodingsBody = document.getElementById("encodingsBody");
 //let encodingsRow = encodingsBody.childNodes;
-let encodingsRow = encodingsBody.children;
+let encodingsRow = encodingsBody.children; // returns the rows of the table
 
 const yorubaMorse = {
     "x0061" : ".-", //  a
@@ -75,6 +75,8 @@ const morse = {
     "dash" : "&#x2501;"
 };
 
+// called functions ---------------------------------------------------------------
+
 const createHexStringMorse = (punctString) => {
     let hexStringMorse = "";
     for (charPos in punctString){
@@ -106,7 +108,9 @@ const getMorseField = (key) => {
 };
 
 
-// main : populate morse data column
+// main ---------------------------------------------------------------
+
+// populate morse data column
 for (let key in yorubaMorse){    
     if (yorubaMorse[key] != ""){
         //console.log(key);
@@ -118,6 +122,7 @@ for (let key in yorubaMorse){
         //console.log(targetMorseField);
         //console.log();
         
+        // just make absolutely sure that a field was matched
         if (targetMorseField != null){            
             targetMorseField.innerHTML = `<p>${hexStringMorse}</p>`;
         }
@@ -128,37 +133,7 @@ for (let key in yorubaMorse){
 
 /*
     "x00E0 : ",  //             
-    "x00E0 : ",  //             
-    "x00E0 : ",  //               
-    "x00E0 : ",  //             
-    "x00E0 : ",  //             
-    "x00E0 : ",  //               
-    "x00E0 : ",  //             
-    "x00E0 : ",  //             
-    "x00E0 : ",  //               
-    "x00E0 : ",  //             
-    "x00E0 : ",  //             
-    "x00E0 : ",  //               
-    "x00E0 : ",  //             
-    "x00E0 : ",  //             
-    "x00E0 : ",  //               
-    "x00E0 : ",  //             
-    "x00E0 : ",  //             
-    "x00E0 : ",  //               
-    "x00E0 : ",  //             
-    "x00E0 : ",  //             
-    "x00E0 : ",  //               
-    "x00E0 : ",  //             
-    "x00E0 : ",  //             
-    "x00E0 : ",  //               
-    "x00E0 : ",  //             
-    "x00E0 : ",  //             
-    "x00E0 : ",  //               
-    "x00E0 : ",  //             
-    "x00E0 : ",  //             
-    "x00E0 : ",  //               
-    "x00E0 : ",  //             
-    "x00E0 : ",  //             
+    "x00E0 : ",  //                   
     "x00E0 : ",  //               
     "x00E0 : ",  //             
     "x00E0 : ",  //              
