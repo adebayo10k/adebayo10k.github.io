@@ -104,17 +104,26 @@ p{
     /*line-height: 1.6em;*/
 }
 
+/* anchor pseudo-classes in LVHA order. Active always last */
 a:link {
     color: #000000;
 }
-
-a:hover{
-    text-decoration: none;
-}
-
 a:visited {
     color: #800000;
 }
+a:hover{
+    text-decoration: none;
+}
+/* we never remove tab-to outline without replacing it */
+a:focus {
+    background-color: aliceblue;
+    font-size: 1.2em;
+    outline: 2px solid aquamarine
+}
+a:active {
+    color: blueviolet;
+}
+
 
 header.page-head {
     background-image: url("../media/images/footpath-20.png");
@@ -217,14 +226,19 @@ nav li a:link{
     
 }
 
-nav li a:hover {
-    background-color: #7fffd4; /* aquamarine */
-}
-
 nav li a:visited {
     color: #800000; /*maroon*/
     /*border-color: #6495ed;
     background-color: rgba(221, 221, 221, 0.72);;*/
+}
+
+nav li a:hover {
+    background-color: #7fffd4; /* aquamarine */
+}
+
+nav li a:focus {
+    font-size: 1.2em; /* size slightly reduced */
+    outline: auto;
 }
 
 .nav-icon{
