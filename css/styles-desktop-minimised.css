@@ -241,6 +241,11 @@ td, th {
     padding: 2px 4px;
 }
 
+td p, th p {
+    margin: 4px 1px;
+    padding: 4px 1px;
+}
+
 caption {
     padding: 8px;
 }
