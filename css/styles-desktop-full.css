@@ -18,6 +18,37 @@
 
 /* |&|GENERAL ELEM TYPE DEFAULT STYLES */
 
+/* |&|local fonts subsection */
+
+@font-face {
+    font-family: FiraMonoReg;
+    src: url(./fonts/FiraMono-Regular.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: FiraMonoMed;
+    src: url(./fonts/FiraMono-Medium.woff) format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: FiraMonoBold;
+    src: url(./fonts/FiraMono-Bold.woff) format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+.firaMonoRegFont {
+    font-family: FiraMonoReg;
+}
+.firaMonoMedFont {
+    font-family: FiraMonoMed;
+}
+.firaMonoBoldFont {
+    font-family: FiraMonoBold;
+}
+
 /* |&|font sizes subsection */
 
 html {
@@ -315,8 +346,9 @@ nav li a:hover {
 }
 
 nav li a:focus {
-    background-color: inherit;
+    background-color: initial;
     /*font-size: 1.2em;  size slightly reduced */
+    color: #fff;
     outline: auto;
 }
 
@@ -586,7 +618,6 @@ form li {
 /* END */
 
 .verticalTest {
-    font-weight: bold;
     writing-mode: vertical-rl;
     inline-size: 300px;
     block-size: 40vw;
@@ -600,6 +631,7 @@ form li {
     margin: 0px;
     overflow: hidden;
 }
+
 
 
 
