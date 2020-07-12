@@ -86,6 +86,30 @@ li{
     /* line-height: 1;*/
 }
 
+
+fieldset {
+    padding: 2px;
+    margin: 2px;
+}
+
+img, video, audio{
+    width: 100%;
+    padding: 2px;
+}
+
+figure{
+    margin: 4px;
+    margin-left: 2px;
+}
+
+figcaption{
+    font-style: italic;
+}
+
+.mapEmbed, .audioEmbed, .videoEmbed{
+    width: 100%;
+}
+
 /*-------------------------------------------------------------*/
 /* navigation styles*/
 nav ul{
@@ -116,33 +140,14 @@ nav li{
     width: 100%;
 }
 
+.nav-icon a:focus {
+    background-color: initial;
+    outline: none;
+}
+
 .nav-grid.open-grid {
     display: block;
 }
-
-fieldset {
-    padding: 2px;
-    margin: 2px;
-}
-
-img, video, audio{
-    width: 100%;
-    padding: 2px;
-}
-
-figure{
-    margin: 4px;
-    margin-left: 2px;
-}
-
-figcaption{
-    font-style: italic;
-}
-
-.mapEmbed, .audioEmbed, .videoEmbed{
-    width: 100%;
-}
-
 
 /*-------------------------------------------------------------*/
 /* custom button styles*/
