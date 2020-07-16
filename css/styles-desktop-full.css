@@ -85,13 +85,12 @@ footer p {
 }
 
 /* |&|other font properties subsection */
-
+/*
 @media all and (max-width: 1000px){
     td, th {
         padding: 2px 4px;
     }
 }
-
 @media all and (max-width: 900px){
     nav li a:link{
        font-size: 1.5rem;
@@ -100,7 +99,7 @@ footer p {
         padding: 2px 4px;
     }
 }
-
+*/
 /* |&|GENERAL SITE-WIDE DEFAULT STYLES */
 
 html{
@@ -119,7 +118,7 @@ body{
     background-color:#ddd;
     width: 90%;
     width: calc(90% - 2px);
-    margin: auto;
+    margin: 1rem auto;
     border-radius: 1em;
     padding: 6px;
     border: solid black 6px;

@@ -26,13 +26,13 @@ h4 {
 nav li a:link{
     font-size: 1.5rem;
 }
-
+/*
 @media all and (max-width: 720px){
     nav li a:link{
        font-size: 1.5rem;
-    }
-    
+    }    
 }
+*/
 
 /* |&|GENERAL SITE-WIDE DEFAULT STYLES */
 
