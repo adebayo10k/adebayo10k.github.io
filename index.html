@@ -43,8 +43,6 @@
       <h1>My Really, Really Interesting Software Development Life...</h1>
       <h2>FOLLOW ME... WITH YOUR MIND</h2>		
 		
-      <!-- <fieldset>
-        <legend>Navigate This...</legend> -->
         <nav>
           <div class="nav-icon">
             <a href="javascript:void(0);" onclick="toggleNav()">
@@ -79,107 +77,110 @@
 
           </ul> 
         </nav>
-      <!-- </fieldset> -->
     </header>
 
-    <fieldset>
-      <legend>About These Webpages...</legend>
-      <section>
-        <header>
-          <h3>SUDO, YOU WILL LIKE WHAT I&apos;M DOING</h3>
-        </header>
-        <p>These pages are being developed to deliver to you, 'the full 8 bits' (That&apos;s 255, FF, 377), but also to give me a place to practice web development and test stuff out.</p>        
-      </section>            
-    </fieldset>
+    <main>
 
-    <section class="form-content-block">
-      <header>
-        <h3>SITE BACKGROUND COLOUR FORM</h3>    
-      </header>
+      <section class="page-content">
 
-      <form id="background_colour" action="#">
+        <section class="page-intro-para">
+          <header>
+            <h3>SUDO, YOU WILL LIKE WHAT I&apos;M DOING</h3>
+          </header>
+          <p>These pages are being developed to deliver to you, 'the full 8 bits' (That&apos;s 255, FF, 377), but also  to give me a place to practice web development and test stuff out.</p>        
+        </section>            
+  
+        <section class="site-app-card">
+          <header>
+            <h3>SITE BACKGROUND COLOUR FORM</h3>    
+          </header>
+  
+          <form id="background_colour" action="#">
+  
+            <fieldset>
+              <legend>Perhaps A Few Changes...</legend> 
+  
+              <section>
+                <header>
+                  <h3>MAKE CHANGES</h3>
+                </header>
+                <p id="changeIntroPara"><strong>If you can read this, JavaScript is probably not enabled in your    browser.   This site is mainly about showing off with JavaScript.</strong></p>
+  
+                <ul>
+                  <li>
+                    <label for="bgColourPicker">
+                      <span>1. Choose a new background colour</span>
+                      <input type="color" class="colour" id="bgColourPicker" value="#6495ed">
+                    </label>
+                  </li>
+                  <li>
+                    <label for="bgColourBtn">
+                      <span>2. Press this button to activate the change:</span>
+                      <button onclick="userConfigurePage()" type="button" class="red-button" id="bgColourBtn"   value="">Change that background</button>          
+                    </label>
+                  </li>
+                </ul>           
+  
+                <p id="changeSummaryPara"></p>
+              </section> 
+  
+              <hr>
+  
+              <section id="forgetMe" style="display: none;">
+                <header>
+                  <h3>UNDO CHANGES</h3>
+                </header>
+                <p>Tell your web browser to forget all stored data for this site, forever.</p>
+                <ul>
+                  <li>
+                    <label for="forgetMeBtn">
+                      <span>1. Press this button (take the blue pill):</span>
+                      <button onclick="clearUserConfiguration()" type="button" class="blue-button" id="forgetMeBtn"   value="">Forget that background</button>
+                    </label>
+                  </li>
+                </ul>
+              </section>
+  
+            </fieldset>
+          
+          </form>
+  
+        </section>
+  
+        <section class="project-card">
+          <header>
+            <h3>Device Images:</h3>    
+          </header>
+          <figure>
+            <img src="media/images/laptop-dell-personalised.jpg" alt="A dell laptop personalised with various github stickers" width="400">
+            <figcaption>
+              A Dell laptop personalised with logo stickers from gitHub, Java, CentOS, Visual Studio Code, Git, Ubuntu, Google, MySQL and Python. Featuring Tux from Linux and Octocat from gitHub.
+            </figcaption>
+          </figure>                
+        </section>
+          
+        <section class="project-card">
+          <div class="verticalTest">
+            <p class="firaMonoRegFont">using a local Mozilla FiraMono Regular font</p>
+            <p class="firaMonoMedFont">using a local Mozilla FiraMono Medium font</p>
+            <p class="firaMonoBoldFont">using a local Mozilla FiraMono Bold font</p>
+            <p>BLOCK SIZE REMAINS 40% OF THE VIEWPORT WIDTH (40vw) IN THIS vertical-rl TEST</p>
+            <p>DAMOLA CREATES</p>
+            <p>DAMOLA DESTROYS</p>
+          </div>
+        </section>
 
-        <fieldset>
-          <legend>Perhaps A Few Changes...</legend> 
-
-          <section>
-            <header>
-              <h3>MAKE CHANGES</h3>
-            </header>
-            <p id="changeIntroPara"><strong>If you can read this, JavaScript is probably not enabled in your  browser.   This site is mainly about showing off with JavaScript.</strong></p>
-
-            <ul>
-              <li>
-                <label for="bgColourPicker">
-                  <span>1. Choose a new background colour</span>
-                  <input type="color" class="colour" id="bgColourPicker" value="#6495ed">
-                </label>
-              </li>
-              <li>
-                <label for="bgColourBtn">
-                  <span>2. Press this button to activate the change:</span>
-                  <button onclick="userConfigurePage()" type="button" class="red-button" id="bgColourBtn" value="">Change that background</button>          
-                </label>
-              </li>
-            </ul>           
-            
-            <p id="changeSummaryPara"></p>
-          </section> 
-
-          <hr>
-
-          <section id="forgetMe" style="display: none;">
-            <header>
-              <h3>UNDO CHANGES</h3>
-            </header>
-            <p>Tell your web browser to forget all stored data for this site, forever.</p>
-            <ul>
-              <li>
-                <label for="forgetMeBtn">
-                  <span>1. Press this button (take the blue pill):</span>
-                  <button onclick="clearUserConfiguration()" type="button" class="blue-button" id="forgetMeBtn" value="">Forget that background</button>
-                </label>
-              </li>
-            </ul>
-          </section>
-
-        </fieldset>
-      
-      </form>
-
-    </section>
-
-    <fieldset>
-      <legend>Laptop Test Image....</legend>
-      <section>
-        <header>
-          <h3>Device Images:</h3>    
-        </header>
-        <figure>
-          <img src="media/images/laptop-dell-personalised.jpg" alt="A dell laptop personalised with various github stickers" width="400">
-          <figcaption>
-            A Dell laptop personalised with logo stickers from gitHub, Java, CentOS, Visual Studio Code, Git, Ubuntu, Google, MySQL and Python. Featuring Tux from Linux and Octocat from gitHub.
-          </figcaption>
-        </figure>                
       </section>
-    </fieldset> 
-        
-    <fieldset>
-      <legend>You&apos;re in...</legend>
-    </fieldset>
-    
-    <fieldset>
-      <legend>You&apos;re in....</legend> 
-      <div class="verticalTest">
-        <p class="firaMonoRegFont">using a local Mozilla FiraMono Regular font</p>
-        <p class="firaMonoMedFont">using a local Mozilla FiraMono Medium font</p>
-        <p class="firaMonoBoldFont">using a local Mozilla FiraMono Bold font</p>
-        <p>BLOCK SIZE REMAINS 40% OF THE VIEWPORT WIDTH (40vw) IN THIS vertical-rl TEST</p>
-        <p>DAMOLA CREATES</p>
-        <p>DAMOLA DESTROYS</p>
-      </div>
-    </fieldset>
-    
+
+      <aside class="sidebar">
+        <p>Platforms</p>
+        <p>Topics</p>
+        <p>Use my code</p>
+        <p>Contact me</p>
+      </aside>      
+      
+    </main>
+
     <div id="confirmDialogCont" class="dlg-container">
       <div class="dlg-header">Let's discuss this...</div>
       <div id="confirmDialogBody" class="dlg-body"></div>
