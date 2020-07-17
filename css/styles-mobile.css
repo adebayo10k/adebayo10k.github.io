@@ -113,14 +113,14 @@ figcaption{
 /*-------------------------------------------------------------*/
 /* navigation styles*/
 nav ul{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-auto-rows: minmax(20px, auto);
-    column-gap: 2px;
-    row-gap: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    display: none;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  /*grid-auto-rows: minmax(20px, auto);
+  column-gap: 2px;
+  row-gap: 2px; LAST COL STANDING!*/
+  padding-left: 10px;
+  padding-right: 10px;
+  display: none;
 }
 
 nav li{

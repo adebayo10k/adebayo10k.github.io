@@ -156,6 +156,8 @@ a:active {
 
 
 header.page-head {
+  position: sticky;
+  top: 0; 
     background-image: url("../media/images/footpath-20.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -307,13 +309,14 @@ iframe {
 /*-------------------------------------------------------------*/
 /* navigation styles*/
 nav ul{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(20px, auto);
-    column-gap: 6px;
-    row-gap: 6px;
-    padding-left: 30px;
-    padding-right: 30px;
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(20px, auto);
+  column-gap: 6px;
+  row-gap: 6px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 nav li{
