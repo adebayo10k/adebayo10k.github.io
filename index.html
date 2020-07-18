@@ -40,16 +40,16 @@
     <noscript>JavaScript is off. Please enable to view full site.</noscript>    
     <div id="freezeLayer" class="freeze-layer" style="display: none;"></div>
     <header class="page-head">
-      <h1>My Really, Really Interesting Software Development Life...</h1>
-      <h2>FOLLOW ME... WITH YOUR MIND</h2>		
+      <h1 class="toggled-heading">My Really, Really Interesting Software Development Life...</h1>
+      <h2 class="toggled-heading">FOLLOW ME... WITH YOUR MIND</h2>		
 		
       <nav>
         <div class="nav-icon">
-          <a href="javascript:void(0);" onclick="toggleNav()">
+          <a href="javascript:void(0);" onclick="toggleNav(); toggleHeadings()">
             <i class="fa fa-bars" id="burger"></i>                    
           </a>
         </div>
-        <ul class="nav-grid" id="nav-links">
+        <ul class="nav-grid open-grid" id="nav-links">
          <li>
             <a href="index.html" title="the adebayo10k homepage">homepage</a>
           </li>                    
@@ -78,9 +78,9 @@
 
         <section class="page-intro-para">
           <header>
-            <h3>SUDO, YOU WILL LIKE WHAT I&apos;M DOING</h3>
+            <h3>SUDO, MY WORKS WILL DELIGHT YOU. (... is it working?)</h3>
           </header>
-          <p>These pages are being developed to deliver to you, 'the full 8 bits' (That&apos;s 255, FF, 377), but also  to give me a place to practice web development and test stuff out.</p>        
+          <p>These pages are being developed to deliver to you, 'the full 8 bits' (That&apos;s 255, FF, 377), but also  to give me a place to practice web development. On this site you'll find a mixture of interesting little web apps for you to test out and cards that link to my projects stored on GitHub.</p>        
         </section>
         
         <section class="page-image">          
@@ -94,8 +94,11 @@
             <img src="media/images/laptop-dell-personalised.jpg" alt="A dell laptop personalised with various github stickers" width="400">
             <figcaption>
               <h3>
-                The Art of Happiness, discovered in the places of logic and reason.
+                DIY Satisfaction Injection Script. Discovered in the places of logic and reason.
               </h3>
+              <p>
+                <a href="#">algoDisco</a>                
+              </p>
               <p>
                 Developed using <a href="">ShangoTech</a> for project performance. Source control entrusted to GitHub. 
               </p> 
@@ -107,7 +110,15 @@
         <section class="project-card">          
           <figure>
             <img src="media/images/laptop-dell-personalised.jpg" alt="A dell laptop personalised with various github stickers" width="400">            
-          </figure>                
+          </figure>
+          <figcaption>
+            <h3>
+              Configurable GnuPG wrapper Linux shell program.
+            </h3>
+            <p>
+              Developed through <a href="">ShangoTech</a>, <a href="#">OgunTech</a> collaboration. 
+            </p> 
+          </figcaption>               
         </section>
   
         <section class="site-app-card">

@@ -58,7 +58,11 @@ p{
     margin: 6px;
     padding: 6px;
 }
-
+header.page-head {
+  position: sticky;
+  top: 0;
+}
+/*
 header.page-head h1{
     margin: 2px 6px;
     padding: 4px;
@@ -67,6 +71,13 @@ header.page-head h1{
 header.page-head h2{
     margin: 2px 4px;
     padding: 3px;
+}
+/* toggle headings using nav burger when sticky scrolling */
+.toggled-heading{
+  display: block;
+}
+.toggled-heading.hidden {
+  display: none;
 }
 
 /* section p and h3 left margin + padding + border set to line up */
@@ -106,6 +117,26 @@ figcaption{
 
 .mapEmbed, .audioEmbed, .videoEmbed{
     width: 80%;
+}
+/*-------------------------------------------------------------*/
+/* page header styles*/
+
+/*
+header.page-head h1{
+    margin: 2px 6px;
+    padding: 4px;
+}
+
+header.page-head h2{
+    margin: 2px 4px;
+    padding: 3px;
+}
+/* toggle headings using nav burger when sticky scrolling */
+.toggled-heading{
+  display: block;
+}
+.toggled-heading.hidden {
+  display: none;
 }
 
 /*-------------------------------------------------------------*/
