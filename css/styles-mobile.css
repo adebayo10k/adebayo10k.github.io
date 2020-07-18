@@ -73,8 +73,6 @@ section header h3{
     padding: 4px;
 }
 
-
-
 ul, ol{
     margin-top: 2px;
     margin-bottom: 2px;
@@ -85,7 +83,6 @@ li{
     margin-top: 1px;
     /* line-height: 1;*/
 }
-
 
 fieldset {
     padding: 2px;
@@ -108,6 +105,13 @@ figcaption{
 
 .mapEmbed, .audioEmbed, .videoEmbed{
     width: 100%;
+}
+
+/*-------------------------------------------------------------*/
+/* card page styles*/
+.page-content {
+  /* back to mobile screen single column */
+  display: block;
 }
 
 /*-------------------------------------------------------------*/

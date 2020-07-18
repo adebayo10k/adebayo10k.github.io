@@ -109,6 +109,13 @@ figcaption{
 }
 
 /*-------------------------------------------------------------*/
+/* card page styles*/
+main {
+  /* single column when not full desktop screen */
+  display: block;
+}
+
+/*-------------------------------------------------------------*/
 /* navigation styles*/
 nav ul{
     display: grid;
