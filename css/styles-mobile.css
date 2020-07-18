@@ -17,10 +17,10 @@ sub, sup, figcaption {
     font-size: 1rem;
 }
 h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
 }
 h3 {
     font-size: 1.5rem;
@@ -46,7 +46,7 @@ html{
 }
 
 body{
-    width: 96%;
+    width: 94%;
     padding: 2px;
     border: solid black 2px;
 }
@@ -58,12 +58,12 @@ p{
 }
 
 header.page-head h1{
-    margin: 2px;
+    margin: 2px 4px;
     padding: 4px;
 }
 
 header.page-head h2{
-    margin: 2px;
+    margin: 2px 4px;
     padding: 2px;
 }
 
@@ -147,6 +147,10 @@ nav li{
 .nav-icon a:focus {
     background-color: initial;
     outline: none;
+}
+
+.nav-grid {
+  display: none;
 }
 
 .nav-grid.open-grid {
