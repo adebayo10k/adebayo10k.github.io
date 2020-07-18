@@ -27,8 +27,7 @@
   <!-- Scripts
   ================================================= -->
     <script src="scripts/page-specific/devices-code.js" defer></script>  
-    <script src="scripts/generic-content.js" defer></script>  
-    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/generic-functions.js" defer></script>  
     <script src="scripts/dialogs.js" defer></script>
       
   </head>
@@ -39,16 +38,16 @@
     <noscript>JavaScript is off. Please enable to view full site.</noscript>
     <div id="freezeLayer" class="freeze-layer" style="display: none;"></div>
     <header class="page-head">
-      <h1>My Really, Really Interesting Software Development Life...</h1>
-      <h2>DEVICES</h2>
+      <h1 class="toggled-heading">My Really, Really Interesting Software Development Life...</h1>
+      <h2 class="toggled-heading">DEVICES</h2>
 			
         <nav>
           <div class="nav-icon">
-            <a href="javascript:void(0);" onclick="toggleNav()">
+            <a href="javascript:void(0);" onclick="toggleNav(); toggleHeadings()">
               <i class="fa fa-bars" id="burger"></i>                    
             </a>
           </div>
-          <ul class="nav-grid" id="nav-links">
+          <ul class="nav-grid open-grid" id="nav-links">
           
             <li>
               <a href="index.html" title="the adebayo10k homepage">homepage</a>
