@@ -143,7 +143,8 @@ header.page-head h2{
 /* card page styles*/
 main {
   /* single column when not full desktop screen */
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 /*-------------------------------------------------------------*/

@@ -75,7 +75,7 @@ h4 {
     font-size: 1.75rem;
 }
 nav li a:link {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 footer {
     font-size: 1em;
@@ -311,7 +311,7 @@ header.page-head h2{
 main {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 section.site-app-card, section.project-card, aside.sidebar{
@@ -325,6 +325,8 @@ section.site-app-card, section.project-card, aside.sidebar{
 .page-content {
   display: grid;
   grid-template-columns: repeat(2, minmax(160px, 1fr));
+  row-gap: 4rem;
+  column-gap: 2rem;
 }
 
 .page-intro-para {
@@ -365,7 +367,7 @@ section.project-card {
 nav ul{
   
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(20px, auto);
   column-gap: 6px;
   /*row-gap: 6px;*/

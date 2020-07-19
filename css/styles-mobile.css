@@ -113,8 +113,10 @@ header.page-head h2{
 /*-------------------------------------------------------------*/
 /* card page styles*/
 .page-content {
-  /* back to mobile screen single column */
-  display: block;
+  /* back to mobile screen single column 
+  display: block;*/
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 /*-------------------------------------------------------------*/
