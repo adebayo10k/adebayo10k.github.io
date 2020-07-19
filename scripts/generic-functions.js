@@ -5,7 +5,7 @@
 const footie = document.querySelector("footer");
 
 const generalFluff = `<p>
-NOTE: The content of this site is not serious. It is not rigorous research. Assume the authors&apos; policy to be: publish first, check accuracy later (if ever). 
+NOTE: The content of this site is not serious. It is not rigorous research. Assume the authors&apos; policy to be: publish first, check accuracy later (if ever). I don&apos;t mean my code. That should always be pretty solid.
 </p>`;
 
 footie.innerHTML = generalFluff;
