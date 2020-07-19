@@ -114,9 +114,14 @@ header.page-head h2{
 /* card page styles*/
 .page-content {
   /* back to mobile screen single column 
-  display: block;*/
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 2rem;*/
+  display: block;  
+}
+
+section.site-app-card, section.project-card, aside.sidebar{
+  margin: 4rem 2rem;
 }
 
 /*-------------------------------------------------------------*/

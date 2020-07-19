@@ -144,7 +144,9 @@ header.page-head h2{
 main {
   /* single column when not full desktop screen */
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 4rem;
+  column-gap: 2rem;
 }
 
 /*-------------------------------------------------------------*/
@@ -164,12 +166,6 @@ nav li{
     text-align: center;
     margin: 0px 4px;
 }
-
-/*
-.nav-icon{
-    display: none;
-}
-*/
 
 .nav-icon{
   display: block;
