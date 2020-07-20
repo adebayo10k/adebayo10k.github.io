@@ -68,7 +68,10 @@ const hideHeadings = () => {
 // TODO: later on, catch and handle the download failure ERROR
 if (burger.clientHeight == 0 || burger.clientWidth == 0){
   openNav();
-  showHeadings();
+  showHeadings();  
+}
+// otherwise, hide nav and headings by default
+else {
   closeNav();
   hideHeadings();
 }
