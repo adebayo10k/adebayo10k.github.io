@@ -30,6 +30,12 @@ const openNav = () => {
     //console.log(navGrid.className);
 };
 
+// hide the navigation by default
+const closeNav = () => {
+  navGrid.className = "nav-grid";
+  //console.log(navGrid.className);
+};
+
 //===========================================================================================
 // TOGGLE HEADER HEADINGS DISPLAY
 let headHeadings = document.querySelectorAll(".toggled-heading");
@@ -48,6 +54,13 @@ const showHeadings = () => {
   }
 }
 
+// hide header headings by default
+const hideHeadings = () => {
+  for (index in headHeadings) {
+    headHeadings[index].className = "toggled-heading hidden";
+  }
+}
+
 //===========================================================================================
 
 // check whether fa icon url was received.
@@ -56,4 +69,6 @@ const showHeadings = () => {
 if (burger.clientHeight == 0 || burger.clientWidth == 0){
   openNav();
   showHeadings();
+  closeNav();
+  hideHeadings();
 }

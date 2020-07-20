@@ -305,6 +305,11 @@ header.page-head h2{
     color: #fff;    
 }
 
+.page-head.pre {
+  background-image: none;
+  background-color: rebeccapurple;
+}
+
 /*-------------------------------------------------------------*/
 /* card page styles*/
 
