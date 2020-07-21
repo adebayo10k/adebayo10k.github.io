@@ -1,14 +1,21 @@
 // this script is used by all pages that need generic features and content generated for them. (like navigation, so that should maybe be in this script?)
 
 //===========================================================================================
-// FOOTER // add generic footer content
+// HEADER // add generic header content siteLogo-wide
+const siteLogo = document.getElementById("siteLogo");
+const logoText = `AlgoDiscoDev Software Engineering`;
+
+siteLogo.innerHTML = logoText;
+
+//===========================================================================================
+// FOOTER // add generic footer content siteLogo-wide
 const footie = document.querySelector("footer");
 
-const generalFluff = `<p>
-NOTE: The content of this site is not serious. It is not rigorous research. Assume the authors&apos; policy to be: publish first, check accuracy later (if ever). I don&apos;t mean my code. That should always be pretty solid.
+const footerText = `<p>
+NOTE: The content of this siteLogo is not serious. It is not rigorous research. Assume the authors&apos; policy to be: publish first, check accuracy later (if ever). I don&apos;t mean my code. That should always be pretty solid.
 </p>`;
 
-footie.innerHTML = generalFluff;
+footie.innerHTML = footerText;
 
 //===========================================================================================
 // TOGGLE NAVIGATION DISPLAY
