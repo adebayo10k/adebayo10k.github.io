@@ -144,7 +144,7 @@ const userConfigurePage = () => {
 // when forget me button is pressed, get user confirmation
 const clearUserConfiguration = () => {
 
-    let confirmMsg = `Your browser (not you) will now be plugged back into the Matrix, so all your background colour preferences for this site will be forgotten. Is that OK?`;
+    let confirmMsg = `Your browser will now forget any background colour preferences you made for this site. Is that OK?`;
 
     // callback function
     const getUserResponse = (response) => {
