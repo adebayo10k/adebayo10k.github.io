@@ -36,425 +36,405 @@
   <!-- Primary Page Layout
   ================================================== -->
   
-    <noscript>
-      <h4>JavaScript is off. Please enable to view full site.</h4>
-      <p>&#x0394; &#x03A8; &#x03A9; &#x039E;</p>
-    </noscript>
-    <div id="freezeLayer" class="freeze-layer" style="display: none;"></div>
-    <header class="page-head">
-      <h1 class="toggled-heading" id="siteLogo">AlgoDiscoDev Software Development</h1>
-      <h2 class="toggled-heading" id="pageLogo">YORUBA HTML FORM TESTS</h2>		
-	
-        <nav>
-          <div class="nav-icon">
-            <a href="javascript:void(0);" onclick="toggleNav(); toggleHeadings()">
-              <i class="fa fa-bars" id="burger"></i>                    
-            </a>
-          </div>
-          <ul class="nav-grid open-grid" id="nav-links">
-          
-            <li>
-              <a href="index.html" title="the adebayo10k homepage">homepage</a>
-            </li>                    
-            
-            <li>
-              <a href="social-coding.html" title="social coding page">social coding</a>
-            </li>          
-            
-            <li>
-              <a href="feature-trials.html" title="feature trials page">feature trials</a>
-            </li>
-            
-            <li>
-              <a href="multimedia.html" title="multimedia page">multimedia wins</a>    
-	  				</li>
-            
-            <li>
-              <a href="devices.html" title="devices page">devices path</a>
-            </li>              
-            
-            <li>
-              <a href="yoruba.html" title="yoruba page">yoruba testing</a>
-            </li>
-            
-          </ul> 
-        </nav>
-    </header>
-
-    <fieldset>
-      <legend>On This Page...</legend>
-      <section>
-        <header>
-          <h3>Some Test Forms &LeftAngleBracket;&apos;Nothing sent anywhere&apos;&RightAngleBracket;</h3>
-        </header>        
-        <p>Forms created for me to practice a bit of web form client-side validation and styling - although not so much of the styling.</p>
-        <p>Using the fictitious group called the Oguntech network.</p>
-        <p>We&apos;re going for a <strong>live inline validation</strong> approach for fields where it makes sense.</p>
-      </section>            
-    </fieldset>
-      
-    <fieldset>
-      <legend>Laptop Test Image....</legend>
-      <section>
-        <header>
-          <h3>Device Images:</h3>    
-        </header>
-        <figure>
-          <img src="media/images/laptop-dell-personalised.jpg" alt="A dell laptop personalised with various github stickers" width="400">
-            <figcaption>
-              A Dell laptop personalised with logo stickers from gitHub, Java, CentOS, Visual Studio Code, Git, Ubuntu, Google, MySQL and Python. Featuring Tux from Linux and Octocat from gitHub.
-            </figcaption>
-        </figure>                
-      </section>
-    </fieldset> 
+  <noscript>
+    <h4>JavaScript is off. Please enable to view full site.</h4>
+    <p>&#x0394; &#x03A8; &#x03A9; &#x039E;</p>
+  </noscript>
+  <div id="freezeLayer" class="freeze-layer" style="display: none;"></div>
+  <header class="page-head">
+    <h1 class="toggled-heading" id="siteLogo">AlgoDiscoDev Software Development</h1>
+    <h2 class="toggled-heading" id="pageLogo">YORUBA HTML FORM TESTS</h2>		
+      <nav>
+        <div class="nav-icon">
+          <a href="javascript:void(0);" onclick="toggleNav(); toggleHeadings()">
+            <i class="fa fa-bars" id="burger"></i>                    
+          </a>
+        </div>
+        <ul class="nav-grid open-grid" id="nav-links">
         
-    <!-- -->
-      <section class="site-app-card">
-        <header>
-          <h3>Contact Enquiry Form</h3>    
-        </header>
-        
-        <p>Go ahead - try entering Yor&#249;b&#225; language characters (copy them into the form fields). The ones currently defined in unicode are found to be completely valid to this form.</p>
-        <p>So, would be found valid:</p>
-        <ul>
-          <li>&#x00E0;</li>
-          <li>&#x00E1;</li>
-          <li>&#x00E8;</li>
-          <li>&#x00E9;</li>
-          <li>&#x1EB9; (NOTE: investigate font support)</li><!-- e dot -->
-          <li>&#x00EC;</li>
-          <li>&#x00ED;</li>
-          <li>&#x00F2;</li>
-          <li>&#x00F3;</li>
-          <li>&#x01ECD; (NOTE: investigate font support)</li><!-- o dot -->
-          <li>&#x1E63; (NOTE: investigate font support)</li><!-- s dot --> 
-          <li>&#x00F9;</li>
-          <li>&#x00FA;</li>            
-        </ul>
-       <!--
-          NUMERIC RANGE
-          \u0030-\u0039 numeric 0 - 9
-         BASIC LATIN RANGES
-          \u0041-\u005A basic latin upper-case A-Z
-          \u0061-\u007A basic latin lower-case a-z
-         LATIN-1 RANGES
-          \u00C0-\u00DE  latin upper-case A-Z
-          \u00E0-\u00FF  latin lower-case a-z
-         ENUMERATED DOTTED UNICODES (in numeric order)
-          \u1E63  s dot
-          \u1EB9  e dot
-          \u1ECD  o dot
+          <li>
+            <a href="index.html" title="the adebayo10k homepage">homepage</a>
+          </li>                    
           
-          \u00E0-\u00FA \u1EB9-\u1E63 space is U+0020
-        -->
-       <!--       
-          </p>
-          <p>But these are not:
-            <ul>
-              <li>&#x0300;&#7865;</li>
-              <li>&#x0301;&#7865;</li>
-              <li>&#x2211;&#x007B;gb&#x007D;</li>
-              <li>&#x0300;&#7885;</li>
-              <li>&#x0301;&#7885;</li>            
-            </ul>
-        -->
-      
-        <p><em>NOTE: Of course, actual email protocols would still only handle basic latin alphanumerics</em></p>
-
-    <!--///////////////////////////////////// FORM /////////////////////////////////////////// --> 
-
-        <form id="contact_form" action="#" novalidate>
-          <fieldset id="about_you_fieldset">
-            <legend>About you...</legend>
-
-            <ul>
-              <li>
-                <label for="alias_name">
-                  <span>name/alias</span>
-                  <!-- <input type="text" id="name" name="alias_name" required autofocus minlength="1" maxlength="30" pattern="[a-zA-Z0-9]+"> --> <!-- space is U+0020 -->
-                  <input type="text" id="alias_name" name="alias_name" required autofocus minlength="3" maxlength="32"> <!--pattern="[\u0030-\u0039\u0041-\u005A\u0061-\u007A\u00C0-\u00DE\u00E0-\u00FF\u1E63\u1EB9\u1ECD\s\-\.]+"   -->
-                  <span id="alias_name_errors" class="error nil" aria-live="polite"></span>
-                </label>
-              </li>
-              <!--
-            NUMERIC RANGE
-            \u0030-\u0039 numeric 0 - 9
-
-            BASIC LATIN RANGES
-            \u0041-\u005A basic latin upper-case A-Z
-            \u0061-\u007A basic latin lower-case a-z
-
-              \' matches any character
-
-            LATIN-1 RANGES
-            \u00C0-\u00DE  latin-1 upper-case A-Z
-            \u00E0-\u00FF  latin-1 lower-case a-z
-
-            ENUMERATED DOTTED UNICODES (in numeric order)
-            UPPER CASE
-            
-            LOWER CASE
-            \u1E63  s dot
-            \u1EB9  e dot
-            \u1ECD  o dot
+          <li>
+            <a href="social-coding.html" title="social coding page">social coding</a>
+          </li>          
           
-            
-            \u00E0-\u00FA \u1EB9-\u1E63 space is U+0020
-          -->
-              <li>
-                <label for="email">
-                  <span>email</span>
-                  <input type="email" id="email" name="email" required minlength="6" maxlength="48">
-                  <span class="error nil" aria-live="polite"></span>
-                </label>
-              </li>
-              <li>
-                <label for="orishaChoice">
-                  <span>Which Orisha most inspires you?</span>
-                  <select id="orishaChoice" name="orisha">
-                    <option>None</option>
-                    <option>Sango</option>
-                    <option>Ogun</option>
-                    <option>Oya</option>
-                    <option>Get back to you on that one</option>
-                  </select>
-                  <span class="error" aria-live="polite"></span>
-                </label>
-              </li>
-              <li>
-                <label for="notThoseOrisha">
-                  <span>None of those, but I do like...</span>
-                  <input type="text" id="notThoseOrisha" name="skill">
-                  <span class="error" aria-live="polite">fdaf</span>
-                </label>
-              </li>                
-              
-              <li>
-                <label for="github_url">
-                  <span>What&apos;s your GitHub repository URL?</span>
-                  <input type="url" id="github_url" name="github_url" maxlength="59" pattern="^(https:\/\/github.com/)[A-Za-z0-9\.\-]+">
-                  <span class="error" aria-live="polite"></span>
-                </label>
-              </li>
+          <li>
+            <a href="feature-trials.html" title="feature trials page">feature trials</a>
+          </li>
+          
+          <li>
+            <a href="multimedia.html" title="multimedia page">multimedia wins</a>    
+ 				</li>
+          
+          <li>
+            <a href="devices.html" title="devices page">devices path</a>
+          </li>              
+          
+          <li>
+            <a href="yoruba.html" title="yoruba page">yoruba testing</a>
+          </li>
+          
+        </ul> 
+      </nav>
+  </header>
 
-            </ul>
-          </fieldset>
-
-
-          <fieldset>
-            <legend>About skill sets...</legend>
-            <p>Select at least 1 and up to 5 skills you&apos;d like to develop and practice on an Oguntech project.</p>
-            <ul>
-              <li>
-                <label for="sd_skill">
-                  <span>Software Development Process</span>
-                  <input type="checkbox" id="sd_skill" name="sd_skill">
-                </label>
-              </li>
-              <li>
-                <label for="algo_disco">
-                  <span>Algorithm Discovery</span>
-                  <input type="checkbox" id="algo_disco" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="git_scm">
-                  <span>Git Source Control Management</span>
-                  <input type="checkbox" id="git_scm" name="git_scm">
-                </label>
-              </li>
-              <li>
-                <label for="soc_cod">
-                  <span>Social Coding and Collaboration</span>
-                  <input type="checkbox" id="soc_cod" name="skill">
-                </label>
-              </li>       
-              <li>
-                <label for="cs_web_dev">
-                  <span>Client-side Web Development</span>
-                  <input type="checkbox" id="cs_web_dev" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="ss_web_dev">
-                  <span>Server-side Web Development</span>
-                  <input type="checkbox" id="ss_web_dev" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="av_edit">
-                  <span>Image/Audio/Video Editing</span>
-                  <input type="checkbox" id="av_edit" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="mob_app_dev">
-                  <span>Mobile App Development</span>
-                  <input type="checkbox" id="mob_app_dev" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="linux_sys_admin">
-                  <span>Linux System Administration</span>
-                  <input type="checkbox" id="linux_sys_admin" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="cloud_deploy">
-                  <span>Cloud Deployment</span>
-                  <input type="checkbox" id="cloud_deploy" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="ci_cd">
-                  <span>CI/CD</span>
-                  <input type="checkbox" id="ci_cd" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="network_sec">
-                  <span>Network &amp; Information Security</span>
-                  <input type="checkbox" id="network_sec" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="ethical_hack">
-                  <span>Ethical Hacking</span>
-                  <input type="checkbox" id="ethical_hack" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="data_analysis">
-                  <span>Data Analysis</span>
-                  <input type="checkbox" id="data_analysis" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="ecommerce">
-                  <span>e-Commerce, CMSs and Website Builders</span>
-                  <input type="checkbox" id="ecommerce" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="business_mgt">
-                  <span>Business Management</span>
-                  <input type="checkbox" id="business_mgt" name="skill">
-                </label>
-              </li>
-              
-
-            </ul>  
-
-          </fieldset>
-
-
-          <fieldset>
-            <legend>More about you...</legend>
-            <h4>What else would you like gain from being involved on an Oguntech project?</h4>
-            <p>
-              <label for="motivates">
-                <span>What motivates you?</span>
-                <textarea name="motives" id="motivates" cols="72" rows="4" maxlength="300"></textarea>
-                <span class="error" aria-live="polite"></span>
-              </label>
-            </p>
-          </fieldset>
-
-
-          <fieldset>
-            <legend>Show us your style...</legend>
-            <h4>Upload a short (up to 30 seconds) video clip of you using a diagram to explain, in simple terms, the role of a Certificate Authority.</h4>
-            <label for="file_upload">
-              <span>Choose a file</span>
-              <input type="file" id="file_upload" name="style_file">
-              <span class="error" aria-live="polite"></span>
-            </label>
-          </fieldset>
-
-
-          <fieldset>
-            <legend>Finally, one last question...</legend>
-            <h4>What are good ways to communicate reliably and securely with other Oguntech team members?</h4>
-            <ul>
-              <li>
-                <label for="whatsapp">
-                  <span>WhatApp mobile app</span>
-                  <input type="radio" id="whatsapp" name="quiz_ans">
-                  <span class="info_msg"></span>
-                </label>
-              </li>
-              <li>
-                <label for="webmail">
-                  <span>Any Cloud based, SaaS, web email service like gmail, delivered over https</span>
-                  <input type="radio" id="webmail" name="quiz_ans">
-                  <span class="info_msg"></span>
-                </label>
-              </li>
-              <li>
-                <label for="gnupg">
-                  <span>As above, but with messages encrypted by myself using an open source encryption tool, like GnuPG</span>
-                  <input type="radio" id="gnupg" name="quiz_ans">
-                  <span class="info_msg"></span>
-                </label>
-              </li>              
-            </ul>            
-          </fieldset>
-          <p>
-            <button type="submit">Send your answers</button>
-          </p>
-
-        </form>       
-
-      </section>
-
-    <!--///////////////////////////////////// FORM /////////////////////////////////////////// --> 
-
-    <section class="site-app-card">
+  <fieldset>
+    <legend>On This Page...</legend>
+    <section>
       <header>
-        <h3>Team Interface Form</h3>    
-      </header>    
-      
-      <p></p>
-     
-      <form id="team_interface_form" action="#">
+        <h3>Some Test Forms &LeftAngleBracket;&apos;Nothing sent anywhere&apos;&RightAngleBracket;</h3>
+      </header>        
+      <p>Forms created for us to test out some web form client-side validation and styling - although not so much of the styling.</p>
+      <p>Using the Oguntech network servcies for form content.</p>
+      <p>We&apos;re going for a <strong>live inline validation</strong> approach for fields where it makes sense.</p>
+    </section>            
+  </fieldset>    
         
-        <fieldset>
-        <legend>Create an account</legend>
-        <h4>Select an username and password</h4>
-        <ul>
-          <li>
-            <label for="username">
-              <span>username</span>
-              <input type="text" id="username" name="username" required minlength="3" maxlength="32">
-              <span class="error" aria-live="polite"></span>
-            </label>
-          </li>
-          <li>
-            <label for="password">
-              <span>password</span>
-              <input type="password" id="password" name="password" required minlength="16" maxlength="128">
-              <span class="error" aria-live="polite"></span>
-            </label>
-          </li>
-          <li>
-            <label for="repeat_password">
-              <span>repeat password</span>
-              <input type="password" id="repeat_password" name="repeat_password" required>
-              <span class="error" aria-live="polite"></span>
-            </label>
-          </li>
-          <li>
-            <button type="submit">Create Account</button>
-          </li>
-        </ul>
-
-      </fieldset>
-
-      </form>
-
-    </section>
-  
+<!-- -->
+  <section class="site-app-card monospaced">
+    <header>
+      <h3>Contact Enquiry Form</h3>    
+    </header>
     
+    <p>Go ahead - try entering Yor&#249;b&#225; language characters (copy them into the form fields). The ones currently defined in unicode are found to be completely valid to this form.</p>
+    <p>So, would be found valid:</p>
+    <ul>
+      <li>&#x00E0;</li>
+      <li>&#x00E1;</li>
+      <li>&#x00E8;</li>
+      <li>&#x00E9;</li>
+      <li>&#x1EB9;</li><!-- e dot -->
+      <li>&#x00EC;</li>
+      <li>&#x00ED;</li>
+      <li>&#x00F2;</li>
+      <li>&#x00F3;</li>
+      <li>&#x01ECD;</li><!-- o dot -->
+      <li>&#x1E63;</li><!-- s dot --> 
+      <li>&#x00F9;</li>
+      <li>&#x00FA;</li>            
+    </ul>
+   <!--
+      NUMERIC RANGE
+      \u0030-\u0039 numeric 0 - 9
+     BASIC LATIN RANGES
+      \u0041-\u005A basic latin upper-case A-Z
+      \u0061-\u007A basic latin lower-case a-z
+     LATIN-1 RANGES
+      \u00C0-\u00DE  latin upper-case A-Z
+      \u00E0-\u00FF  latin lower-case a-z
+     ENUMERATED DOTTED UNICODES (in numeric order)
+      \u1E63  s dot
+      \u1EB9  e dot
+      \u1ECD  o dot
+      
+      \u00E0-\u00FA \u1EB9-\u1E63 space is U+0020
+    -->
+   <!--       
+      </p>
+      <p>But these are not:
+        <ul>
+          <li>&#x0300;&#7865;</li>
+          <li>&#x0301;&#7865;</li>
+          <li>&#x2211;&#x007B;gb&#x007D;</li>
+          <li>&#x0300;&#7885;</li>
+          <li>&#x0301;&#7885;</li>            
+        </ul>
+    -->
+
+<!--///////////////////////////////////// FORM /////////////////////////////////////////// --> 
+  <form id="contact_form" action="#" novalidate>
+    <fieldset id="about_you_fieldset">
+      <legend>About you...</legend>
+      <ul>
+        <li>
+          <label for="alias_name">
+            <span>name/alias</span>
+            <!-- <input type="text" id="name" name="alias_name" required autofocus minlength="1" maxlength="30" pattern="[a-zA-Z0-9]+"> --> <!-- space is U+0020 -->
+            <input type="text" id="alias_name" name="alias_name" required autofocus minlength="3" maxlength="32"> <!--pattern="[\u0030-\u0039\u0041-\u005A\u0061-\u007A\u00C0-\u00DE\u00E0-\u00FF\u1E63\u1EB9\u1ECD\s\-\.]+"   -->
+            <span id="alias_name_errors" class="error nil" aria-live="polite"></span>
+          </label>
+        </li>
+        <!--
+      NUMERIC RANGE
+      \u0030-\u0039 numeric 0 - 9
+      BASIC LATIN RANGES
+      \u0041-\u005A basic latin upper-case A-Z
+      \u0061-\u007A basic latin lower-case a-z
+        \' matches any character
+      LATIN-1 RANGES
+      \u00C0-\u00DE  latin-1 upper-case A-Z
+      \u00E0-\u00FF  latin-1 lower-case a-z
+      ENUMERATED DOTTED UNICODES (in numeric order)
+      UPPER CASE
+      
+      LOWER CASE
+      \u1E63  s dot
+      \u1EB9  e dot
+      \u1ECD  o dot
+    
+      
+      \u00E0-\u00FA \u1EB9-\u1E63 space is U+0020
+    -->
+        <li>
+          <label for="email">
+            <span>email</span>
+            <input type="email" id="email" name="email" required minlength="6" maxlength="48">
+            <span class="error nil" aria-live="polite"></span>
+          </label>
+        </li>
+        <li>
+          <label for="orishaChoice">
+            <span>Which Orisha most inspires you?</span>
+            <select id="orishaChoice" name="orisha">
+              <option>None</option>
+              <option>Sango</option>
+              <option>Ogun</option>
+              <option>Oya</option>
+              <option>Get back to you on that one</option>
+            </select>
+            <span class="error" aria-live="polite"></span>
+          </label>
+        </li>
+        <li>
+          <label for="notThoseOrisha">
+            <span>None of those, but I do like...</span>
+            <input type="text" id="notThoseOrisha" name="skill">
+            <span class="error" aria-live="polite">fdaf</span>
+          </label>
+        </li>                
+        
+        <li>
+          <label for="github_url">
+            <span>What&apos;s your GitHub repository URL?</span>
+            <input type="url" id="github_url" name="github_url" maxlength="59" pattern="^(https:\/\/github.com/)[A-Za-z0-9\.\-]+">
+            <span class="error" aria-live="polite"></span>
+          </label>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>About skill sets...</legend>
+      <p>Select at least 1 and up to 5 skills you&apos;d like to develop and practice on an Oguntech project.</p>
+      <ul>
+        <li>
+          <label for="sd_skill">
+            <span>Software Development Process</span>
+            <input type="checkbox" id="sd_skill" name="sd_skill">
+          </label>
+        </li>
+        <li>
+          <label for="algo_disco">
+            <span>Algorithm Discovery</span>
+            <input type="checkbox" id="algo_disco" name="skill">
+          </label>
+        </li>
+        <li>
+          <label for="git_scm">
+            <span>Git Source Control Management</span>
+            <input type="checkbox" id="git_scm" name="git_scm">
+          </label>
+        </li>
+        <li>
+          <label for="soc_cod">
+            <span>Social Coding and Collaboration</span>
+            <input type="checkbox" id="soc_cod" name="skill">
+          </label>
+        </li>       
+        <li>
+          <label for="cs_web_dev">
+            <span>Client-side Web Development</span>
+            <input type="checkbox" id="cs_web_dev" name="skill">
+          </label>
+        </li>
+        <li>
+          <label for="ss_web_dev">
+            <span>Server-side Web Development</span>
+            <input type="checkbox" id="ss_web_dev" name="skill">
+          </label>
+        </li>
+        <li>
+          <label for="av_edit">
+            <span>Image/Audio/Video Editing</span>
+            <input type="checkbox" id="av_edit" name="skill">
+          </label>
+        </li>
+        <li>
+          <label for="mob_app_dev">
+            <span>Mobile App Development</span>
+            <input type="checkbox" id="mob_app_dev" name="skill">
+          </label>
+        </li>
+        <li>
+          <label for="linux_sys_admin">
+            <span>Linux System Administration</span>
+            <input type="checkbox" id="linux_sys_admin" name="skill">
+          </label>
+        </li>
+        <li>
+          <label for="cloud_deploy">
+            <span>Cloud Deployment</span>
+            <input type="checkbox" id="cloud_deploy" name="skill">
+          </label>
+        </li>
+        <li>
+          <label for="ci_cd">
+            <span>CI/CD</span>
+            <input type="checkbox" id="ci_cd" name="skill">
+          </label>
+        </li>
+        <li>
+          <label for="network_sec">
+            <span>Network &amp; Information Security</span>
+            <input type="checkbox" id="network_sec" name="skill">
+          </label>
+        </li>
+        <li>
+          <label for="ethical_hack">
+            <span>Ethical Hacking</span>
+            <input type="checkbox" id="ethical_hack" name="skill">
+          </label>
+        </li>
+        <li>
+          <label for="data_analysis">
+            <span>Data Analysis</span>
+            <input type="checkbox" id="data_analysis" name="skill">
+          </label>
+        </li>
+        <li>
+          <label for="ecommerce">
+            <span>e-Commerce, CMSs and Website Builders</span>
+            <input type="checkbox" id="ecommerce" name="skill">
+          </label>
+        </li>
+        <li>
+          <label for="business_mgt">
+            <span>Business Management</span>
+            <input type="checkbox" id="business_mgt" name="skill">
+          </label>
+        </li>
+        
+      </ul>  
+    </fieldset>
+    <fieldset>
+      <legend>More about you...</legend>
+      <h4>What else would you like gain from being involved on an Oguntech project?</h4>
+      <p>
+        <label for="motivates">
+          <span>What motivates you?</span>
+          <textarea name="motives" id="motivates" cols="72" rows="4" maxlength="300"></textarea>
+          <span class="error" aria-live="polite"></span>
+        </label>
+      </p>
+    </fieldset>
+    <fieldset>
+      <legend>Show us your style...</legend>
+      <h4>Upload a short (up to 30 seconds) video clip of you using a diagram to explain, in simple terms, the role of a Certificate Authority.</h4>
+      <label for="file_upload">
+        <span>Choose a file</span>
+        <input type="file" id="file_upload" name="style_file">
+        <span class="error" aria-live="polite"></span>
+      </label>
+    </fieldset>
+    <fieldset>
+      <legend>Finally, one last question...</legend>
+      <h4>What are good ways to communicate reliably and securely with other Oguntech team members?</h4>
+      <ul>
+        <li>
+          <label for="whatsapp">
+            <span>WhatApp mobile app</span>
+            <input type="radio" id="whatsapp" name="quiz_ans">
+            <span class="info_msg"></span>
+          </label>
+        </li>
+        <li>
+          <label for="webmail">
+            <span>Any Cloud based, SaaS, web email service like gmail, delivered over https</span>
+            <input type="radio" id="webmail" name="quiz_ans">
+            <span class="info_msg"></span>
+          </label>
+        </li>
+        <li>
+          <label for="gnupg">
+            <span>As above, but with messages encrypted by myself using an open source encryption tool, like GnuPG</span>
+            <input type="radio" id="gnupg" name="quiz_ans">
+            <span class="info_msg"></span>
+          </label>
+        </li>              
+      </ul>            
+    </fieldset>
+    <p>
+      <button type="submit">Send your answers</button>
+    </p>
+  </form>       
+
+  </section>
+
+  
+  <article class="hero-image-item-0">
+    <div class="hero-message-0 monospaced">
+      <h2>Hero message from the ṢàngóTech <!--&#x1E63;&#x00E0;ng&#x00F3;Tech--> Network.</h2>
+      <h2>Use a better infographic style typeface</h2>
+    </div>
+  </article> 
+<!--///////////////////////////////////// FORM /////////////////////////////////////////// --> 
+  <section class="site-app-card">
+    <header>
+      <h3>Team Interface Form</h3>    
+    </header>    
+
+    <p></p>
+  
+    <form id="team_interface_form" action="#">
+
+      <fieldset>
+      <legend>Create an account</legend>
+      <h4>Select an username and password</h4>
+      <ul>
+        <li>
+          <label for="username">
+            <span>username</span>
+            <input type="text" id="username" name="username" required minlength="3" maxlength="32">
+            <span class="error" aria-live="polite"></span>
+          </label>
+        </li>
+        <li>
+          <label for="password">
+            <span>password</span>
+            <input type="password" id="password" name="password" required minlength="16" maxlength="128">
+            <span class="error" aria-live="polite"></span>
+          </label>
+        </li>
+        <li>
+          <label for="repeat_password">
+            <span>repeat password</span>
+            <input type="password" id="repeat_password" name="repeat_password" required>
+            <span class="error" aria-live="polite"></span>
+          </label>
+        </li>
+        <li>
+          <button type="submit">Create Account</button>
+        </li>
+      </ul>
+    </fieldset>
+    </form>
+  </section>
+  
+  <fieldset>
+    <legend>Laptop Test Image....</legend>
+    <section>
+      <header>
+        <h3>Device Images:</h3>    
+      </header>
+      <figure>
+        <img src="media/images/laptop-dell-personalised.jpg" alt="A dell laptop personalised with various github stickers" width="400">
+          <figcaption>
+            A Dell laptop personalised with logo stickers from gitHub, Java, CentOS, Visual Studio Code, Git, Ubuntu, Google, MySQL and Python. Featuring Tux from Linux and Octocat from gitHub.
+          </figcaption>
+      </figure>                
+    </section>
+  </fieldset> 
    
     
     <div id="confirmDialogCont" class="dlg-container">
