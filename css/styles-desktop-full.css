@@ -49,6 +49,10 @@
     font-family: FiraMonoBold;
 }
 
+.monospaced {
+  font-family: monospace;
+}
+
 /* |&|font sizes subsection */
 
 html {
@@ -87,10 +91,9 @@ nav li a:link {
 /* |&|GENERAL SITE-WIDE DEFAULT STYLES */
 
 html{
-    font-family: 'Ubuntu Mono', 'Lucida Console', Courier, monospace, sans-serif;
-    /*background-color: #6495ed; cornflowerblue*/
-    padding-top: 8px;
-    padding-bottom: 12px;
+  font-family: 'Ubuntu Mono', monospace, sans-serif;
+  padding-top: 8px;
+  padding-bottom: 12px;
 }
 
 .configurable-background{
@@ -346,7 +349,7 @@ section.project-card {
   color: #fff;
   background-color: rgba(100, 149, 237, 0.7);
   padding: 1rem; /*10px*/
-  text-transform: uppercase;
+  text-transform: none;
   text-align: right;
 }
 .hero-image-item-1 {
@@ -367,7 +370,7 @@ section.project-card {
   color: #fff;
   background-color: rgba(100, 149, 237, 0.7);
   padding: 1rem; /*10px*/
-  text-transform: uppercase;
+  text-transform: none;
   text-align: left;
 }
 
