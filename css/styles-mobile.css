@@ -35,7 +35,7 @@ nav li a:link {
 /* |&|GENERAL SITE-WIDE DEFAULT STYLES */
 
 html{
-  font-family: 'Ubuntu Mono', monospace, sans-serif;
+  font-family: FiraSansReg, FiraMonoReg, 'Ubuntu Mono', monospace, sans-serif;
   padding-top: 4px;
   padding-bottom: 12px;
 }

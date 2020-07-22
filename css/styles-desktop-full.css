@@ -20,6 +20,8 @@
 
 /* |&|local fonts subsection */
 
+/* /////////// FiraMono fonts /////////////// */
+
 @font-face {
     font-family: FiraMonoReg;
     src: url(./fonts/FiraMono-Regular.woff) format("woff");
@@ -49,6 +51,36 @@
     font-family: FiraMonoBold;
 }
 
+/* /////////// FiraSans fonts /////////////// */
+
+@font-face {
+  font-family: FiraSansReg;
+  src: url(./fonts/FiraSans-Regular.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: FiraSansMed;
+  src: url(./fonts/FiraSans-Medium.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: FiraSansBold;
+  src: url(./fonts/FiraSans-Bold.woff) format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.firaSansRegFont {
+  font-family: FiraSansReg;
+}
+.firaSansMedFont {
+  font-family: FiraSansMed;
+}
+.firaSansBoldFont {
+  font-family: FiraSansBold;
+}
 .monospaced {
   font-family: monospace;
 }
@@ -91,7 +123,7 @@ nav li a:link {
 /* |&|GENERAL SITE-WIDE DEFAULT STYLES */
 
 html{
-  font-family: 'Ubuntu Mono', monospace, sans-serif;
+  font-family: FiraSansReg, FiraMonoReg, 'Ubuntu Mono', monospace, sans-serif;
   padding-top: 8px;
   padding-bottom: 12px;
 }

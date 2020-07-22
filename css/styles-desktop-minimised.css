@@ -38,7 +38,7 @@ nav li a:link{
 
 html{
   /*font-family: sans-serif, Courier, monospace, 'Ubuntu Mono', 'Lucida Console';*/
-  font-family: 'Ubuntu Mono', monospace, sans-serif;
+  font-family: FiraSansReg, FiraMonoReg, 'Ubuntu Mono', monospace, sans-serif;
   padding-top: 4px;
   padding-bottom: 12px;
 }
