@@ -56,7 +56,7 @@ html {
     line-height: 1.6;
     box-sizing: border-box;
 }
-p, li, table, tfoot td, button, input, select, textarea, fieldset legend {
+p, li, table, tfoot td, button, input, select, textarea, fieldset legend, footer {
     font-size: 1.5rem;
 }
 sub, sup, figcaption {
@@ -77,43 +77,24 @@ h4 {
 nav li a:link {
     font-size: 2rem;
 }
-footer {
-    font-size: 1em;
-}
-footer p {
-    font-size: inherit;
-}
 
 /* |&|other font properties subsection */
-/*
-@media all and (max-width: 1000px){
-    td, th {
-        padding: 2px 4px;
-    }
-}
-@media all and (max-width: 900px){
-    nav li a:link{
-       font-size: 1.5rem;
-    }
-    td, th {
-        padding: 2px 4px;
-    }
-}
-*/
+
+/*  ...  */
+
 /*-------------------------------------------------------------*/
 /* general styles (more specific styles follow)*/
 /* |&|GENERAL SITE-WIDE DEFAULT STYLES */
 
 html{
     font-family: 'Ubuntu Mono', 'Lucida Console', Courier, monospace, sans-serif;
-    /* font-size: 1em; */
-    /*background-color: #6495ed; cornflour blue*/
+    /*background-color: #6495ed; cornflowerblue*/
     padding-top: 8px;
     padding-bottom: 12px;
 }
 
 .configurable-background{
-    background-color: #6495ed; /*cornflour blue*/
+    background-color: #6495ed; /*cornflower blue*/
 }
 
 body{
@@ -121,19 +102,15 @@ body{
     width: 96%;
     width: calc(94% - 2px);
     margin: 1rem auto;
-    border-radius: 1em;
+    border-radius: 10px;
     padding: 6px;
     border: solid black 6px;
 }
 
 /* section p and h3 left margin + padding + border set to line up */
 p{
-    /* font-size: 1em; */
     margin: 8px;
     padding: 8px;
-    /* display: block; */
-    /* margin-right: 2em; */
-    /*line-height: 1.6em;*/
 }
 
 /* anchor pseudo-classes in LVHA order. Active always last */
@@ -172,11 +149,8 @@ ul, ol{
 }
 
 li{
-    /* font-size: 1em; */
     padding-top: 1px;
     margin-top: 1px;
-    /*line-height: 1;*/
-    /*transform: rotate(0.005turn);*/
 }
 
 fieldset { 
@@ -189,7 +163,6 @@ fieldset {
 }
 
 fieldset legend{
-    /* font-size: 1.2em; */
     font-weight: bold;
     color: #8b0000; /*darkred*/
     margin-top: 0px;
@@ -230,7 +203,6 @@ figure{
 }
 
 figcaption{
-    /* font-size: 0.8em; */
     font-style: italic;
 }
 
@@ -258,11 +230,14 @@ iframe {
 
 footer {
   /* cascading stuff... */
-  margin: 4px;
   padding: 8px;    
   margin-top: 20px;
+  margin-bottom: 0px;
   border-top: 4px #800000 solid;
-  border-bottom: 4px #800000 solid;
+  /*border-bottom: 4px #800000 solid;*/
+  border-radius: 0 0 10px 10px;
+  color: #fff;
+  background-color: #000000;
 }
 
 footer p {
@@ -320,7 +295,7 @@ header.page-head h2{
 
 main {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 2rem;
   margin: 1rem;
 }
@@ -439,7 +414,6 @@ nav li{
 }
 
 nav li a:link{
-    /* font-size: 1.2em; */
     color: #00008b; /*darkblue*/
     background-color: rgba(221, 221, 221, 0.72); /* == #ddd */
     border: 1px solid #000000; /*black*/
@@ -464,7 +438,6 @@ nav li a:hover {
 
 nav li a:focus {
     background-color: initial;
-    /*font-size: 1.2em;  size slightly reduced */
     color: #fff;
     outline: auto;
 }
@@ -606,8 +579,6 @@ nav li a:focus {
 
 table {
     border-collapse: collapse;
-    /*letter-spacing: 1px;*/
-    /* font-size: 1em; */
     width: 100%;
 }
   
@@ -631,7 +602,6 @@ td {
 
 tfoot td {
     text-align: left;
-    /* font-size: 0.8em; */
 }
   
 caption {
@@ -663,8 +633,7 @@ input,
 select, 
 textarea { 
   font-family: inherit; 
-  /* font-size: 100%;  */
-  box-sizing: border-box; 
+  /*box-sizing: border-box; */
   padding: 0; margin: 0; 
 } 
 

@@ -5,7 +5,7 @@
 html {
     font-size: 10px; /* easy HCF to work with */
 }
-p, li, table, tfoot td, button, input, select, textarea, fieldset legend {
+p, li, table, tfoot td, button, input, select, textarea, fieldset legend, footer {
     font-size: 1.25rem;
 }
 sub, sup, figcaption {
@@ -103,23 +103,22 @@ figcaption{
 header.page-head {
   position: sticky;
   top: 0;
+  background-color: #ffffff;
+  /*background-image: url("../media/images/footpath-20.png");*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 1.0;
+  border: #6495ed 0px solid;
+  border-radius: 1em;
+  padding: 0.72rem 0;
 }
-/*
-header.page-head h1{
-    margin: 2px 6px;
-    padding: 4px;
-}
-
-header.page-head h2{
-    margin: 2px 4px;
-    padding: 3px;
-}
-*/
 
 /* toggle headings using nav burger when sticky scrolling */
 .toggled-heading{
   display: block;
 }
+
 .toggled-heading.hidden {
   display: none;
 }
