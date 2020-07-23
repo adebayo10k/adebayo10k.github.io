@@ -12,7 +12,7 @@ siteLogo.innerHTML = logoText;
 const footie = document.querySelector("footer");
 
 const footerText = `<p>
-NOTE: The content of this website is not yet live. It is not rigorously researched. Assume the authors&apos; policy to be: publish first, check accuracy later (if ever). I&apos;m not talking about my code. That should always be really solid.
+NOTE: The content of this website is not yet ready for live, prime time. It is not rigorously researched. Assume the authors&apos; policy to be: publish first, check accuracy later (if ever). We&apos;re not talking about our code. That&apos;s already rock solid.
 </p>`;
 
 footie.innerHTML = footerText;
