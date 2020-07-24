@@ -28,7 +28,7 @@
 	================================================= -->    
     <script src="scripts/generic-functions.js" defer></script> 
     <script src="scripts/dialogs.js" defer></script>
-    <script src="scripts/page-specific/yoruba-forms-code.js" defer></script>
+    <script src="scripts/page-specific/yoruba-forms-code-1.js" defer></script>
       
   </head>
   <body>
@@ -47,7 +47,7 @@
       <nav>
         <div class="nav-icon">
           <a href="javascript:void(0);" onclick="toggleNav(); toggleHeadings()">
-            <i class="fa fa-bars" id="burger"></i>                    
+            <i class="fa fa-bars fa-lg" id="burger"></i>                    
           </a>
         </div>
         <ul class="nav-grid open-grid" id="nav-links">
@@ -98,7 +98,7 @@
       <h3>Contact Enquiry Form</h3>    
     </header>
     
-    <p>Go ahead - try entering Yor&#249;b&#225; language characters (copy them into the form fields). The ones currently defined in unicode are found to be completely valid to this form.</p>
+    <p>Try entering Yor&#249;b&#225; language characters (copy them into the form fields). The ones currently defined in unicode are found to be completely valid to this form.</p>
     <p>So, would be found valid:</p>
     <ul>
       <li>&#x00E0;</li>
@@ -153,8 +153,15 @@
             <span>name/alias</span>
             <!-- <input type="text" id="name" name="alias_name" required autofocus minlength="1" maxlength="30" pattern="[a-zA-Z0-9]+"> --> <!-- space is U+0020 -->
             <input type="text" id="alias_name" name="alias_name" required autofocus minlength="3" maxlength="32"> <!--pattern="[\u0030-\u0039\u0041-\u005A\u0061-\u007A\u00C0-\u00DE\u00E0-\u00FF\u1E63\u1EB9\u1ECD\s\-\.]+"   -->
-            <span id="alias_name_errors" class="error nil" aria-live="polite"></span>
+            <!-- <span id="alias_name_errors" class="error nil" aria-live="polite"></span> -->
           </label>
+          <div id="constraints">
+            <ol>
+              <li>Must be like this</li>
+              <li>Must be like that</li>
+              <li>Must be like other</li>
+            </ol>
+          </div>
         </li>
         <!--
       NUMERIC RANGE
@@ -189,8 +196,8 @@
             <span>Which Orisha most inspires you?</span>
             <select id="orishaChoice" name="orisha">
               <option>None</option>
-              <option>Sango</option>
               <option>Ogun</option>
+              <option>Sango</option>              
               <option>Oya</option>
               <option>Get back to you on that one</option>
             </select>
