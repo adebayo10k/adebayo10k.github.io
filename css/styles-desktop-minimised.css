@@ -153,14 +153,26 @@ nav li{
 }
 
 .nav-icon{
-  display: block;
-  width: 17px;
+	display: block;
+  /* define maximum container limit of clickable icon*/
+  width: 150px;
+  height: 25px;
   margin: 0 auto;
   font-size: 1.5rem;
 }
-.nav-icon a i {
+
+.nav-icon a {
+	display: flex	;
+	justify-content: space-around;
+	align-items: center;
+	/* hit zone becomes size of parent block */
+	width: inherit;
+	height: inherit;
+  
+}
+.nav-icon a i {	
   color: #6495ed;
-  width: 100%;
+  width: auto;
 }
 
 .nav-icon a:focus {

@@ -156,6 +156,7 @@ nav li{
     margin: 0px 4px;    
 }
 
+/*
 .nav-icon{
     display: block;
     width: 17px;
@@ -171,6 +172,7 @@ nav li{
     background-color: initial;
     outline: none;
 }
+*/
 
 .nav-grid {
   display: none;

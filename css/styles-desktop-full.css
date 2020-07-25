@@ -444,6 +444,7 @@ section.project-card {
 @supports (display: grid) {
   .page-content, .sidebar, .page-intro-para, section.site-app-card, section.project-card, .hero-image {
     width: auto;
+  }
 }
 
 /*-------------------------------------------------------------*/
