@@ -125,7 +125,7 @@ header.page-head {
 }
 
 /*-------------------------------------------------------------*/
-/* card page styles*/
+/* card page layout styles*/
 main {
   /* single column when not full desktop screen */
   display: grid;

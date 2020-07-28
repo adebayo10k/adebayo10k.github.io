@@ -194,7 +194,6 @@ fieldset {
     border-radius: 1em;
     padding: 8px;
     margin: 6px;
-    overflow: hidden;
 }
 
 fieldset legend{
@@ -232,7 +231,7 @@ figure{
 }
 
 /* doesn't work */
-.fig-table {
+figure.fig-table {
     max-width: 100%;
     overflow-x: scroll;
 }
@@ -327,18 +326,18 @@ header.page-head h2{
 }
 
 /*-------------------------------------------------------------*/
-/* card page styles*/
+/* card page layout styles*/
 
 main {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
   gap: 2rem;
   margin: 1rem;
 }
 
 section.site-app-card, section.project-card, aside.sidebar{
   border: 2px solid #6495ed;
-  border-radius: 1em;
+  /*border-radius: 1em;*/
   background-color: #fff;
 }
 .page-content {
@@ -371,57 +370,57 @@ section.site-app-card {
   width: 100%;
 }
 section.project-card {
-  border-radius: 0px;
   /* fallback for browsers without grid layout support */
   width: 45%;
 }
-.hero-image {
+/* an on-grid container of hero articles */
+.hero-article-container {
   grid-column: 1 / 3;
   /* fallback for browsers without grid layout support */
   display: block;
   width: 100%;
 }
-.hero-image-item-0 {
+/* has size and background properties (except an image). exists either inside container in page-content or independently in body of page, or anywhere else */
+.hero-article {
   width: 100%;
-  height: 300px;
-  background-image: url("../media/images/hero-images/rubiks-cube-02-2400.jpg");
+  height: 300px;  
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-repeat: no-repeat;  
   opacity: 1.0;
   display: flow-root;
 }
-.hero-message-0 {
-  float: right;
-  margin-left: 15px;
+
+#hero-background-cube-01 {
+  background-image: url("../media/images/hero-images/rubiks-cube-02-2400.jpg");
+  background-position: center center;
+}
+#hero-background-cube-02 {
+  background-image: url("../media/images/hero-images/rubiks-cube-03-2400.jpg");
+  background-position: left center;
+}
+#hero-background-bash-vscode-01 {
+  background-image: url("../media/images/hero-images/bash-vscode-01.jpg");
+  background-position: center center;
+}
+
+.hero-message {
   width: 40%;
   height: 280px;
   color: #fff;
   background-color: rgba(100, 149, 237, 0.7);
   padding: 1rem; /*10px*/
-  text-transform: none;
-  text-align: right;
+  text-transform: none;  
 }
-.hero-image-item-1 {
-  width: 100%;
-  height: 300px;
-  background-image: url("../media/images/hero-images/rubiks-cube-03-2400.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: left center;
-  opacity: 1.0;
-  display: flow-root;
-}
-.hero-message-1 {
+
+.message-left {
   float: left;
   margin-right: 15px;
-  width: 40%;
-  height: 280px;
-  color: #fff;
-  background-color: rgba(100, 149, 237, 0.7);
-  padding: 1rem; /*10px*/
-  text-transform: none;
   text-align: left;
+}
+.message-right {
+  float: right;
+  margin-left: 15px;
+  text-align: right;
 }
 
 .project-card figure{
@@ -634,6 +633,8 @@ nav li a:focus {
 table {
     border-collapse: collapse;
     width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
   
 td, th {
@@ -749,31 +750,13 @@ form ul {
 #constraints > ol {
   padding-left: 10px;
 }
-/*
+
 form ul li{
     list-style-type: none;
     margin: 1em auto;
 }
 
 
-.error {
-    box-sizing: border-box;
-    display: block;
-    margin: 0 auto;
-    width: 60%;
-    background-color: darkred;
-    padding: 4px;
-}
-
-.error.nil {
-    visibility: hidden;
-}
-
-.info_msg {
-    box-sizing: border-box;
-}
-
-*/
 
 /*-------------------------------------------------------------*/
 /* END */
