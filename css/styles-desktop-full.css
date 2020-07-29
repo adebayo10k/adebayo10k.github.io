@@ -308,7 +308,7 @@ header.page-head {
   border: #6495ed 0px solid; /*#800000 1px solid; maroon*/
   border-radius: 1em;
   padding: 0.72rem 0;
-  z-index: 1;
+  z-index: 1; /*staying above outside-of-normal-flow stuff */ 
 }
 
 header.page-head h1{
@@ -343,6 +343,7 @@ header.page-head h2{
 
 /*-------------------------------------------------------------*/
 /* card page layout styles*/
+/* ||GRID||LAYOUT||HERO|| */
 
 main {
   display: grid;
@@ -421,7 +422,7 @@ section.project-card {
 
 .hero-message {
   width: 40%;
-  height: 280px;
+  height: 300px;
   color: #fff;
   background-color: rgba(100, 149, 237, 0.7);
   padding: 1rem; /*10px*/
@@ -715,6 +716,7 @@ section.site-app-card#create-account-app {
   width: 100%;
   margin: 3em auto;
   max-width: 512px;
+  overflow: hidden; /* so header doesn't cover our rounded corners */
 }
 
 .form-container header {
