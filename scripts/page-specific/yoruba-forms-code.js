@@ -76,11 +76,11 @@ email.addEventListener("input", (event) => {
 
 password.addEventListener("input", (event) => {
 	doPasswordTests();
-  // now make sure password2 isn't caught out...
-  // if confirm password has already been entered and validated, it needs to be done again
+  // now let's just make sure the confirm password isn't caught out...
+  // if confirm password has already been entered once and validated, it needs to be done again
   if (!isEmpty(password2)) {
     doPasswordConfirmTests();
-  } 
+  }
 });
 
 password2.addEventListener("input", (event) => {
@@ -99,6 +99,9 @@ const doUsernameTests = () => {
   }
   else if (hasInvalidCharacters(username)) {
     setErrorFor(username, "Invalid character");
+  }
+  else if (hasWhitespaceTopOrTail(username)) {
+    setErrorFor(username, "Username cannot start or end with a space character");
   }
   else {
     setSuccessFor(username);
@@ -126,18 +129,21 @@ const doPasswordTests = () => {
   else if (isTooShort(password, password.minLength)){
     setErrorFor(password, `Need at least ${password.minLength - password.value.length} more characters.`);
   }
+  else if (hasWhitespaceTopOrTail(password)) {
+    setErrorFor(password, "Password cannot start or end with a space character");
+  }
   else {
     setSuccessFor(password);
   }
 };
 
-const doPasswordConfirmTests = () => {
-  // before validating for equality, just check that password is valid
-  if (password.parentElement.className === "form-control error") {
-    setErrorFor(password2, "Set a valid password first!");
-  }
-  else if (isEmpty(password2)){
+const doPasswordConfirmTests = () => {  
+  if (isEmpty(password2)){
     setErrorFor(password2, "Password Confirm cannot be blank");
+  }
+  // before validating for equality, just check that password is valid
+  else if (password.parentElement.className === "form-control error") {
+    setErrorFor(password2, "Set a valid password first!");
   }
   else if (password2.value !== password.value) {
     setErrorFor(password2, `Passwords do not match`);
@@ -201,6 +207,7 @@ const isTooShort = (input, minLen) => {
   return isTooShort;
 };
 
+// generalised function for checking...
 const isEmail = (input) => {
   let input_value = input.value;
   if (input_value.match(emailRegex)) {    
@@ -211,10 +218,21 @@ const isEmail = (input) => {
   }
 };
 
+// generalised function for checking...
 const hasInvalidCharacters = (input) => {
   let input_value = input.value;
-  //if (!validUsernameCharsetRegex.test(input_value)) {
   if (!input_value.match(validLatinAll)) {  
+    return true;
+  }
+  else {
+    return false;
+  }
+};
+
+// generalised function for checking...
+const hasWhitespaceTopOrTail = (input) => {
+  let input_value = input.value;
+  if (input_value.trim().length < input_value.length) {
     return true;
   }
   else {
