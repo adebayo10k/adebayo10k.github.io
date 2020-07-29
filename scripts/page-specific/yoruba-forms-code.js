@@ -58,13 +58,6 @@ form.addEventListener("submit", (event) => {
 	
 });
 
-/*const checkInputs = () => {
-  // get values from all the inputs
-  const usernameValue = username.value.trim();
-  const emailValue = email.value.trim();
-  const passwordValue = password.value.trim();
-  const password2Value = password2.value.trim();
-*/
 
 username.addEventListener("input", (event) => {
   doUsernameTests();
@@ -142,10 +135,10 @@ const doPasswordConfirmTests = () => {
     setErrorFor(password2, "Password Confirm cannot be blank");
   }
   // before validating for equality, just check that password is valid
-  else if (password.parentElement.className === "form-control error") {
+  else if (isNotValid(password)) {
     setErrorFor(password2, "Set a valid password first!");
   }
-  else if (password2.value !== password.value) {
+  else if (areNotEqual(password, password2)) {
     setErrorFor(password2, `Passwords do not match`);
   }
   else {
@@ -160,11 +153,11 @@ const doPasswordConfirmTests = () => {
 const setErrorFor = (input, message) => { 
   const formControl = input.parentElement; //.form-control
   const small = formControl.querySelector("small");
-  let constraints = "Only letters, numbers, space, dash(-) and underscore(_) allowed";
+  let constraintsTip = "Only letters, numbers, space, dash(-) and underscore(_) allowed";
 
   // add error message into small
   if (message == "Invalid character"){
-    small.innerHTML = `<abbr title="${constraints}">${message}</abbr>`;
+    small.innerHTML = `<abbr title="${constraintsTip}">${message}</abbr>`;
   }
   else {
     small.innerText = message;
@@ -233,6 +226,28 @@ const hasInvalidCharacters = (input) => {
 const hasWhitespaceTopOrTail = (input) => {
   let input_value = input.value;
   if (input_value.trim().length < input_value.length) {
+    return true;
+  }
+  else {
+    return false;
+  }
+};
+
+// generalised function for checking whether 2 inputs values are NOT strictly equal
+const areNotEqual = (input1, input2) => {
+  let input1_value = input1.value;
+  let input2_value = input2.value;
+  if (input1_value !== input2_value) {
+    return true;
+  }
+  else {
+    return false;
+  }
+};
+
+// generalised function for checking whether another input is currently INVALID
+const isNotValid = (input) => {
+  if (input.parentElement.className === "form-control error") {
     return true;
   }
   else {
