@@ -89,10 +89,19 @@ password.addEventListener("input", (event) => {
   }
   else {
     setSuccessFor(password);
-  }  
+  }
+  // now make sure password2 isn't caught out...
+  // if confirm password has already been entered and validated, it needs to be done again
+  if (!isEmpty(password2)) {
+    doPasswordConfirmTests();
+  } 
 });
 
 password2.addEventListener("input", (event) => {
+    doPasswordConfirmTests();
+});
+
+const doPasswordConfirmTests = () => {
   // before validating, just check that password is valid
   if (password.parentElement.className === "form-control error") {
     setErrorFor(password2, "Set a valid password first!");
@@ -105,10 +114,8 @@ password2.addEventListener("input", (event) => {
   }
   else {
     setSuccessFor(password2);
-  }  
-});
-
-
+  }
+};
 
 // =======================================================
 
