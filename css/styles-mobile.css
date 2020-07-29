@@ -5,7 +5,7 @@
 html {
     font-size: 10px; /* easy HCF to work with */
 }
-p, li, button, input, select, textarea, fieldset legend, footer {
+p, li, button, input, select, textarea, fieldset legend, footer, form {
     font-size: 1.25rem;
 }
 
@@ -231,4 +231,11 @@ caption {
 
 .morse-field {
     padding-left: 2px;
+}
+
+/*-------------------------------------------------------------*/
+/* form styles*/
+
+.form-container {
+    width: 100%;
 }

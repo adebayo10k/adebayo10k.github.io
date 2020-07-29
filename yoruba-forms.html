@@ -28,7 +28,7 @@
 	================================================= -->    
     <script src="scripts/generic-functions.js" defer></script> 
     <script src="scripts/dialogs.js" defer></script>
-    <script src="scripts/page-specific/yoruba-forms-code-1.js" defer></script>
+    <script src="scripts/page-specific/yoruba-forms-code.js" defer></script>
       
   </head>
   <body>
@@ -93,14 +93,14 @@
 
       <section class="page-intro-para">
         <header>
-          <h3>Some Test Forms &lobrk; They don&apos;t really work  &robrk;</h3>
+          <h3>WEB FORM APPLICATIONS - Some Test Forms &lobrk; They don&apos;t really work  &robrk;</h3>
         </header>        
         <p>Forms created for us to test out some web form client-side validation and styling - although not so much of the styling.</p>
         <p>Using the Oguntech network services for form content.</p>
         <p>We&apos;re going for a <strong>live, inline validation</strong> approach for fields where it works.</p>
         <p>Try entering Yor&#249;b&#225; language characters (copy them into the form fields). The ones currently defined in unicode are found to be completely valid to this form.</p>
-        <p>So, would be found valid:</p>
-        <ul>
+        <p>So, these should be found valid:</p>
+        <ul class="inline-list">
           <li>&#x00E0;</li>
           <li>&#x00E1;</li>
           <li>&#x00E8;</li>
@@ -126,10 +126,52 @@
         </article>        
       </div>
 
-      <section class="site-app-card">
-        <header>
-          <h3>WEB FORM APPLICATIONS</h3>    
-        </header>
+      <section class="site-app-card" id="create-account-app">
+
+        <div class="form-container">
+          <header>
+            <h2>Create an OgunTechies Account</h2>
+          </header>
+          <form class="form" id="form" action="#" novalidate>
+      
+            <div class="form-control">
+              <label for="username">Username</label>
+              <input type="text" id="username" placeholder="username" required autofocus minlength="3" maxlength="31">
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error message</small>
+            </div>
+      
+            <div class="form-control">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="email address" required>
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error message</small>
+            </div>
+      
+            <div class="form-control">
+              <label for="password">Password</label>
+              <input type="password" id="password" placeholder="your password" required minlength="8" maxlength="63">
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error message</small>
+            </div>
+      
+            <div class="form-control">
+              <label for="password2">Password Confirm</label>
+              <input type="password" id="password2" placeholder="confirm it here" required>
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error message</small>
+            </div>
+
+     
+            <button>Create Account</button>
+      
+          </form>
+      
+        </div>
 
         
 
@@ -295,7 +337,7 @@
             <span>name/alias</span>
             <!-- <input type="text" id="name" name="alias_name" required autofocus minlength="1" maxlength="30" pattern="[a-zA-Z0-9]+"> --> <!-- space is U+0020 -->
             <input type="text" id="alias_name" name="alias_name" required autofocus minlength="3" maxlength="32"> <!--pattern="[\u0030-\u0039\u0041-\u005A\u0061-\u007A\u00C0-\u00DE\u00E0-\u00FF\u1E63\u1EB9\u1ECD\s\-\.]+"   -->
-            <!-- <span id="alias_name_errors" class="error nil" aria-live="polite"></span> -->
+            <!-- <span id="alias_name_errss" class="errs nil" aria-live="polite"></span> -->
           </label>
           <div id="constraints">
             <ol>
@@ -327,10 +369,10 @@
       \u00E0-\u00FA \u1EB9-\u1E63 space is U+0020
     -->
         <li>
-          <label for="email">
+          <label for="edsmail">
             <span>email</span>
-            <input type="email" id="email" name="email" required minlength="6" maxlength="48">
-            <span class="error nil" aria-live="polite"></span>
+            <input type="email" id="emdsail" name="emasdil" required minlength="6" maxlength="48">
+            <span class="errs nil" aria-live="polite"></span>
           </label>
         </li>
         <li>
@@ -343,14 +385,14 @@
               <option>Oya</option>
               <option>Get back to you on that one</option>
             </select>
-            <span class="error" aria-live="polite"></span>
+            <span class="errs" aria-live="polite"></span>
           </label>
         </li>
         <li>
           <label for="notThoseOrisha">
             <span>None of those, but I do like...</span>
             <input type="text" id="notThoseOrisha" name="skill">
-            <span class="error" aria-live="polite">fdaf</span>
+            <span class="errs" aria-live="polite">fdaf</span>
           </label>
         </li>                
         
@@ -358,7 +400,7 @@
           <label for="github_url">
             <span>What&apos;s your GitHub repository URL?</span>
             <input type="url" id="github_url" name="github_url" maxlength="59" pattern="^(https:\/\/github.com/)[A-Za-z0-9\.\-]+">
-            <span class="error" aria-live="polite"></span>
+            <span class="errs" aria-live="polite"></span>
           </label>
         </li>
       </ul>
@@ -473,7 +515,7 @@
         <label for="motivates">
           <span>What motivates you?</span>
           <textarea name="motives" id="motivates" cols="72" rows="4" maxlength="300"></textarea>
-          <span class="error" aria-live="polite"></span>
+          <span class="errs" aria-live="polite"></span>
         </label>
       </p>
     </fieldset>
@@ -483,7 +525,7 @@
       <label for="file_upload">
         <span>Choose a file</span>
         <input type="file" id="file_upload" name="style_file">
-        <span class="error" aria-live="polite"></span>
+        <span class="errs" aria-live="polite"></span>
       </label>
     </fieldset>
     <fieldset>
@@ -528,47 +570,7 @@
     </div>
   </article> 
 <!--///////////////////////////////////// FORM /////////////////////////////////////////// --> 
-  <section class="site-app-card">
-    <header>
-      <h3>Team Interface Form</h3>    
-    </header>    
-
-    <p></p>
-  
-    <form id="team_interface_form" action="#">
-
-      <fieldset>
-      <legend>Create an account</legend>
-      <h4>Select an username and password</h4>
-      <ul>
-        <li>
-          <label for="username">
-            <span>username</span>
-            <input type="text" id="username" name="username" required minlength="3" maxlength="32">
-            <span class="error" aria-live="polite"></span>
-          </label>
-        </li>
-        <li>
-          <label for="password">
-            <span>password</span>
-            <input type="password" id="password" name="password" required minlength="16" maxlength="128">
-            <span class="error" aria-live="polite"></span>
-          </label>
-        </li>
-        <li>
-          <label for="repeat_password">
-            <span>repeat password</span>
-            <input type="password" id="repeat_password" name="repeat_password" required>
-            <span class="error" aria-live="polite"></span>
-          </label>
-        </li>
-        <li>
-          <button type="submit">Create Account</button>
-        </li>
-      </ul>
-    </fieldset>
-    </form>
-  </section>
+ 
   
   <fieldset>
     <legend>Laptop Test Image....</legend>
