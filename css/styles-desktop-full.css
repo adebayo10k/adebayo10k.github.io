@@ -137,14 +137,15 @@ html{
 }
 
 .inline-list {
-  padding-left: 20px;
+  padding-left: 20px;  
 }
 
 .inline-list li {
-  display: inline;
+  font-size: 2.5rem;
+  display: inline-block;
   list-style-type: none;
   text-align: center;
-  margin: 0px 4px;
+  margin: 10px 12px;
 }
 
 body{
@@ -386,6 +387,29 @@ section.site-app-card {
   display: block;
   width: 100%;
 }
+
+#background_colour ul {
+  padding-left: 10px;
+}
+
+#background_colour ul li {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+#background_colour ul li input[type="color"]{
+  width: 120px;
+  height: 30px;
+  margin: 20px 15px;
+  padding: 2px;
+  border: 2px solid black;
+
+}
+
+#forgetMe {
+  display: none;
+}
+
 section.project-card {
   /* fallback for browsers without grid layout support */
   width: 45%;
@@ -421,7 +445,7 @@ section.project-card {
 }
 
 .hero-message {
-  width: 40%;
+  width: 48%;
   height: 300px;
   color: #fff;
   background-color: rgba(100, 149, 237, 0.7);
