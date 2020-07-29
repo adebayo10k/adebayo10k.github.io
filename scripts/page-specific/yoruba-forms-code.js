@@ -46,50 +46,36 @@ NUMERIC RANGE
 // =======================================================
 // ADD EVENT LISTENERS TO FORM CONTROLS
 
-// form validation at submit time
+// form (re)validation at submit time
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  checkInputs();
+	//checkInputs();
+	doUsernameTests();
+	doEmailTests();
+	doPasswordTests();
+	doPasswordConfirmTests();
+	
 });
 
+/*const checkInputs = () => {
+  // get values from all the inputs
+  const usernameValue = username.value.trim();
+  const emailValue = email.value.trim();
+  const passwordValue = password.value.trim();
+  const password2Value = password2.value.trim();
+*/
+
 username.addEventListener("input", (event) => {
-  if (isEmpty(username)){
-    setErrorFor(username, "Username cannot be blank");
-  }
-  else if (isTooShort(username, username.minLength)){
-    setErrorFor(username, `Need at least ${username.minLength - username.value.length} more characters.`);
-  }
-  else if (hasInvalidCharacters(username)) {
-    setErrorFor(username, "Invalid character");
-  }
-  else {
-    setSuccessFor(username);
-  }  
+  doUsernameTests();
 });
 
 email.addEventListener("input", (event) => {
-  if (isEmpty(email)){
-    setErrorFor(email, "Email cannot be blank");
-  }
-  else if (!isEmail(email)) {
-    setErrorFor(email, "Email is not valid");
-  }
-  else {
-    setSuccessFor(email);
-  }  
+	doEmailTests();
 });
 
 password.addEventListener("input", (event) => {
-  if (isEmpty(password)){
-    setErrorFor(password, "Password cannot be blank");
-  }
-  else if (isTooShort(password, password.minLength)){
-    setErrorFor(password, `Need at least ${password.minLength - password.value.length} more characters.`);
-  }
-  else {
-    setSuccessFor(password);
-  }
+	doPasswordTests();
   // now make sure password2 isn't caught out...
   // if confirm password has already been entered and validated, it needs to be done again
   if (!isEmpty(password2)) {
@@ -101,13 +87,57 @@ password2.addEventListener("input", (event) => {
     doPasswordConfirmTests();
 });
 
+//================================================================
+// FUNCTIONS THAT CALL APPROPRIATE INPUT VALIDATIONS, THEN PASS ON THE OUTCOMES
+const doUsernameTests = () => {
+	//
+	if (isEmpty(username)){
+    setErrorFor(username, "Username cannot be blank");
+  }
+  else if (isTooShort(username, username.minLength)){
+    setErrorFor(username, `Need at least ${username.minLength - username.value.length} more characters.`);
+  }
+  else if (hasInvalidCharacters(username)) {
+    setErrorFor(username, "Invalid character");
+  }
+  else {
+    setSuccessFor(username);
+  }
+};
+
+const doEmailTests = () => {
+	//
+	if (isEmpty(email)){
+    setErrorFor(email, "Email cannot be blank");
+  }
+  else if (!isEmail(email)) {
+    setErrorFor(email, "Email is not valid");
+  }
+  else {
+    setSuccessFor(email);
+  }		
+};
+
+const doPasswordTests = () => {
+  // 
+  if (isEmpty(password)){
+    setErrorFor(password, "Password cannot be blank");
+  }
+  else if (isTooShort(password, password.minLength)){
+    setErrorFor(password, `Need at least ${password.minLength - password.value.length} more characters.`);
+  }
+  else {
+    setSuccessFor(password);
+  }
+};
+
 const doPasswordConfirmTests = () => {
-  // before validating, just check that password is valid
+  // before validating for equality, just check that password is valid
   if (password.parentElement.className === "form-control error") {
     setErrorFor(password2, "Set a valid password first!");
   }
   else if (isEmpty(password2)){
-    setErrorFor(password2, "Password cannot be blank");
+    setErrorFor(password2, "Password Confirm cannot be blank");
   }
   else if (password2.value !== password.value) {
     setErrorFor(password2, `Passwords do not match`);
@@ -118,8 +148,9 @@ const doPasswordConfirmTests = () => {
 };
 
 // =======================================================
+// SHOW ERROR OR SUCCESS ICONS AND MESSAGING
 
-// show error, error class
+// show error, add error class
 const setErrorFor = (input, message) => { 
   const formControl = input.parentElement; //.form-control
   const small = formControl.querySelector("small");
@@ -142,64 +173,6 @@ const setSuccessFor = (input) => {
   const formControl = input.parentElement; //.form-control
   formControl.className = "form-control success"
 };
-
-
-
-
-// =======================================================
-// CHECK ALL INPUTS AT SUBMIT TIME
-const checkInputs = () => {
-  // get values from all the inputs
-  const usernameValue = username.value.trim();
-  const emailValue = email.value.trim();
-  const passwordValue = password.value.trim();
-  const password2Value = password2.value.trim();
-
-  if (usernameValue === "") {    
-    setErrorFor(username, "Username cannot be blank");
-  }
-  else {    
-    setSuccessFor(username);
-  }
-
-  if (emailValue === "") {
-    setErrorFor(email, "Email cannot be blank");
-  }
-  else if (!isSubmitEmail(emailValue)) {
-    setErrorFor(email, "Email is not valid");
-  }
-  else {
-    // add success class
-    setSuccessFor(email);
-  }
-
-  if (passwordValue === ""){
-    setErrorFor(password, "Password cannot be blank");
-  }
-  else {
-    setSuccessFor(password);
-  }
-
-  if (password2Value === "") {
-    setErrorFor(password2, "Password2 cannot be blank");
-  }
-  else if (password2Value !== passwordValue) {
-    setErrorFor(password2, "Passwords do not match");
-  }
-  else {
-    setSuccessFor(password2);
-  }
-};
-
-const isSubmitEmail = (input_value) => {
-  if (input_value.match(emailRegex)) {    
-    return true;
-  }
-  else {    
-    return false;
-  }
-};
-
 // =======================================================
 
 // =======================================================
