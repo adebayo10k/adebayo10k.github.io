@@ -35,7 +35,6 @@ nav li a:link {
 /* |&|GENERAL SITE-WIDE DEFAULT STYLES */
 
 html{
-  font-family: FiraSansReg, FiraMonoReg, 'Ubuntu Mono', monospace, sans-serif;
   padding-top: 4px;
   padding-bottom: 12px;
 }
@@ -157,18 +156,18 @@ nav li{
 }
 
 /*
-.nav-icon{
+.nav-icon-container{
     display: block;
     width: 17px;
     margin: 0 auto;
     font-size: 1.5rem;
 }
-.nav-icon a i {
+nav-icon-container #nav-icon-hitzone i {
     color: #6495ed;
     width: 100%;
 }
 
-.nav-icon a:focus {
+nav-icon-container #nav-icon-hitzone:focus {
     background-color: initial;
     outline: none;
 }

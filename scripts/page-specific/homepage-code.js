@@ -9,6 +9,7 @@ let forgetMeBtn = document.getElementById("forgetMeBtn");
 
 const defaultColour = "#6495ed"; //cornflower blue"#6495ed"; //cornflower blue
 
+
 //---------------------------------------------------------------------------------------------------
 
 // find out what localeStorage currently looks like
@@ -160,6 +161,14 @@ const clearUserConfiguration = () => {
     CustomConfirm.show(confirmMsg,getUserResponse);
 };
 //---------------------------------------------------------------------------------------------------
+
+//==============================================================
+// ADD EVENT LISTENERS TO DOM ELEMENTS AND SPECIFY CALLBACK FUNCTIONS
+
+bgColourBtnElem.addEventListener("click", userConfigurePage);
+forgetMeBtn.addEventListener("click", clearUserConfiguration);
+
 // on page load...main...
 //localStorage.clear();
 refreshSiteAppearance();
+

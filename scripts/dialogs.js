@@ -35,8 +35,8 @@ const hideAlertDialog = () => {
 };
 
 //---------------------------------------------------------------------
-// confirm dialog functions
-// CANCEL and OK buttons
+// Confirm Dialog functions
+// (CANCEL and OK buttons)
 
 const handleDefaultConfirm = () => {
     if (confirm("Ok to change background?")){
@@ -50,11 +50,17 @@ const CustomConfirm = new function(){
         let dlg = document.getElementById("confirmDialogCont");
         let dlgBody = dlg.querySelector("#confirmDialogBody");
         dlgBody.textContent = msg;
+        let dlgOkBtn = document.getElementById("confirmDlgOkBtn");
+        let dlgCancelBtn = document.getElementById("confirmDlgCancelBtn");
                 
         dlg.style.top = `${(document.documentElement.clientHeight/2)+window.pageYOffset}px`; // 
         
         dlg.style.opacity = 1;        
         document.getElementById("freezeLayer").style.display = "block";
+
+        dlgOkBtn.addEventListener("click", this.affirm);
+        dlgCancelBtn.addEventListener("click", this.cancel);
+
     };
 
     this.affirm = () => {
@@ -73,6 +79,7 @@ const CustomConfirm = new function(){
         dlg.style.opacity = 0;
         document.getElementById("freezeLayer").style.display = "none";
     };
+   
 };
 
 //---------------------------------------------------------------------

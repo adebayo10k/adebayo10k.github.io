@@ -49,10 +49,8 @@
       <h2 class="toggled-heading" id="pageLogo">FOLLOW US... WITH YOUR MIND</h2>		
 		
       <nav>
-        <div class="nav-icon">
-          <a href="javascript:void(0);" onclick="toggleNav(); toggleHeadings()">
-            <i class="fa fa-bars fa-lg" id="burger" aria-hidden="true"></i>                    
-          </a>
+        <div class="nav-icon-container">
+          <div id="nav-icon-hitzone"><i class="fa fa-bars fa-lg" id="burger" aria-hidden="true"></i></div>
         </div>
         <ul class="nav-grid open-grid" id="nav-links">
          <li>
@@ -160,7 +158,7 @@
                   <li>
                     <label for="bgColourBtn">
                       <span>2. Press this button to activate the change:</span>
-                      <button onclick="userConfigurePage()" type="button" class="red-button" id="bgColourBtn"   value="">Change that background</button>          
+                      <button type="button" class="red-button" id="bgColourBtn" value="">Change that background</button>          
                     </label>
                   </li>
                 </ul>           
@@ -179,7 +177,7 @@
                   <li>
                     <label for="forgetMeBtn">
                       <span>1. Press this button to forget:</span>
-                      <button onclick="clearUserConfiguration()" type="button" class="blue-button" id="forgetMeBtn"   value="">Forget that background</button>
+                      <button type="button" class="blue-button" id="forgetMeBtn" value="">Forget that background</button>
                     </label>
                   </li>
                 </ul>
@@ -329,8 +327,8 @@
       <div class="dlg-header">Let's discuss this...</div>
       <div id="confirmDialogBody" class="dlg-body"></div>
       <div class="dlg-footer">
-        <a onclick="CustomConfirm.cancel()">Cancel</a>
-        <a onclick="CustomConfirm.affirm()">OK</a>
+        <a id="confirmDlgCancelBtn">Cancel</a>
+        <a id="confirmDlgOkBtn">OK</a>
       </div>
     </div>
   <!-- Right Sidebar

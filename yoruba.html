@@ -46,10 +46,8 @@
       <h2 class="toggled-heading" id="pageLogo">yoruba tests</h2>
 	
         <nav>
-          <div class="nav-icon">
-            <a href="javascript:void(0);" onclick="toggleNav(); toggleHeadings()">
-              <i class="fa fa-bars fa-lg" id="burger" aria-hidden="true"></i>                    
-            </a>
+          <div class="nav-icon-container">
+            <div id="nav-icon-hitzone"><i class="fa fa-bars fa-lg" id="burger" aria-hidden="true"></i></div>
           </div>
           <ul class="nav-grid open-grid" id="nav-links">
 
@@ -587,8 +585,8 @@
       <div class="dlg-header">Let's discuss this...</div>
       <div id="confirmDialogBody" class="dlg-body"></div>
       <div class="dlg-footer">
-        <a onclick="CustomConfirm.cancel()">Cancel</a>
-        <a onclick="CustomConfirm.affirm()">OK</a>
+        <a id="confirmDlgCancelBtn">Cancel</a>
+        <a id="confirmDlgOkBtn">OK</a>
        </div>
     </div>
   <!-- Right Sidebar

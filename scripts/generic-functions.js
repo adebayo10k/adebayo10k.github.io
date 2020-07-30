@@ -23,7 +23,17 @@ let burger = document.getElementById("burger");
 //console.log(burger.clientHeight);
 //console.log(burger.clientWidth);
 
+let hitZone = document.getElementById("nav-icon-hitzone");
+
 let navGrid = document.getElementById("nav-links");
+
+
+// click event on hitzone that contains just the nav icon
+hitZone.addEventListener("click", (event) => {
+  toggleNav();
+  toggleHeadings();
+});
+
 
 // toggle between display styles on tablet and mobile screens
 const toggleNav = () => {   
@@ -82,3 +92,6 @@ else {
   closeNav();
   hideHeadings();
 }
+
+//===========================================================================================
+// MANAGE HERO MESSAGES

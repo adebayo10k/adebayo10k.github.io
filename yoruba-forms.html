@@ -45,10 +45,8 @@
     <h1 class="toggled-heading" id="siteLogo">AlgoDiscoDev Software Development</h1>
     <h2 class="toggled-heading" id="pageLogo">YORUBA HTML FORM TESTS</h2>		
       <nav>
-        <div class="nav-icon">
-          <a href="javascript:void(0);" onclick="toggleNav(); toggleHeadings()">
-            <i class="fa fa-bars fa-lg" id="burger" aria-hidden="true"></i>                    
-          </a>
+        <div class="nav-icon-container">
+          <div id="nav-icon-hitzone"><i class="fa fa-bars fa-lg" id="burger" aria-hidden="true"></i></div>
         </div>
         <ul class="nav-grid open-grid" id="nav-links">
         
@@ -93,7 +91,7 @@
 
       <section class="page-intro-para">
         <header>
-          <h3>WEB FORM APPS - &lobrk; Test them however... they don&apos;t do anything yet &robrk;</h3>
+          <h3>WEB FORM APPS - &lobrk; Test them however you want... they don&apos;t do anything yet &robrk;</h3>
         </header>        
         <p>Forms created for us to test out some web form client-side validation and styling - although not so much of the styling.</p>
         <p>Using the Oguntech network services for form content.</p>
@@ -136,7 +134,7 @@
       
             <div class="form-control">
               <label for="username">Username</label>
-              <input type="text" id="username" placeholder="your username" required autofocus minlength="3" maxlength="31">
+              <input type="text" id="username" placeholder="oruko e" required autofocus minlength="3" maxlength="31">
               <i class="fa fa-check-circle" aria-hidden="true"></i>
               <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
               <small>Error message</small>
@@ -167,7 +165,7 @@
             </div>
 
      
-            <button>Create Account</button>
+            <button type="button">Create Account</button>
       
           </form>
       
@@ -493,8 +491,8 @@
       <div class="dlg-header">Let's discuss this...</div>
       <div id="confirmDialogBody" class="dlg-body"></div>
       <div class="dlg-footer">
-        <a onclick="CustomConfirm.cancel()">Cancel</a>
-        <a onclick="CustomConfirm.affirm()">OK</a>
+        <a id="confirmDlgCancelBtn">Cancel</a>
+        <a id="confirmDlgOkBtn">OK</a>
        </div>
     </div>
   <!-- Right Sidebar
