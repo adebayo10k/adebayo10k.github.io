@@ -91,7 +91,8 @@ const doUsernameTests = () => {
     setErrorFor(username, "Username cannot be blank");
   }
   else if (isTooShort(username, username.minLength)){
-    setErrorFor(username, `Need at least ${username.minLength - username.value.length} more characters.`);
+    let charDiffPlurality = (username.minLength - username.value.length) !== 1;
+    setErrorFor(username, `Need at least ${username.minLength - username.value.length} more ${charDiffPlurality ? "characters" : "character"}.`);
   }
   else if (hasInvalidCharacters(username)) {
     setErrorFor(username, "Invalid character");
@@ -123,7 +124,8 @@ const doPasswordTests = () => {
     setErrorFor(password, "Password cannot be blank");
   }
   else if (isTooShort(password, password.minLength)){
-    setErrorFor(password, `Need at least ${password.minLength - password.value.length} more characters.`);
+    let charDiffPlurality = (password.minLength - password.value.length) !== 1;
+    setErrorFor(password, `Need at least ${password.minLength - password.value.length} more ${charDiffPlurality ? "characters" : "character"}.`);
   }
   else if (hasWhitespaceTopOrTail(password)) {
     setErrorFor(password, "Password cannot start or end with a space character");

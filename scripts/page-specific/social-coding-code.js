@@ -14,7 +14,7 @@ function Solution (latestCode, expiryDate, codeBlockElemID, showBtnElemID){
     daily_ms = 1E+3*Math.pow(60,2)*24;
     currentDate = new Date();
     this.daysLeft = Math.floor( (this.expiryDate.getTime() - currentDate.getTime()) / daily_ms );
-    this.plurosity = Math.abs(this.daysLeft) != 1;
+    this.daysLeftPlurality = Math.abs(this.daysLeft) !== 1;
     this.expiryLapseDays = this.daysLeft < 0 ? Math.abs(this.daysLeft) : null;
 
     this.codeBlockElem = document.getElementById(this.codeBlockElemID); //;
@@ -23,7 +23,7 @@ function Solution (latestCode, expiryDate, codeBlockElemID, showBtnElemID){
     this.codeText = "";
 
     expiredCodeText = `
-<strong>THIS SOLUTION &lsquo;EXPIRED&rsquo; ${this.expiryLapseDays} ${(this.plurosity ? "sols" : "sol")} ago</strong>.
+<strong>THIS SOLUTION &lsquo;EXPIRED&rsquo; ${this.expiryLapseDays} ${(this.daysLeftPlurality ? "sols" : "sol")} ago</strong>.
 IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING, DM ME TODAY.
                 
                 `;
@@ -31,7 +31,7 @@ IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING, DM ME TOD
     this.setCodeText = function (){
         if (this.daysLeft >= 0){ // not yet expired    
             this.codeText += `
-// NOTE: This solution expires in ${this.daysLeft} ${(this.plurosity ? "days" : "day")}`;
+// NOTE: This solution expires in ${this.daysLeft} ${(this.daysLeftPlurality ? "days" : "day")}`;
             this.codeText += this.latestCode;    
         }
         else{ // expired
