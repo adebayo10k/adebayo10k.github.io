@@ -8,11 +8,6 @@ html {
 p, li, button, input, select, textarea, fieldset legend, footer, form {
     font-size: 1.25rem;
 }
-
-table, tfoot td {
-    font-size: 1rem;
-}
-
 sub, sup, figcaption {
     font-size: 1rem;
 }
@@ -219,7 +214,11 @@ nav-icon-container #nav-icon-hitzone:focus {
 
 /*-------------------------------------------------------------*/
 /* table styles*/
-  
+
+table, table p {
+  font-size: 0.8rem;
+}
+
 td, th {
     padding: 2px 2px;
 }

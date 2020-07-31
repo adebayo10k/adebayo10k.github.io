@@ -6,7 +6,7 @@
 html {
     font-size: 10px; /* easy HCF to work with */
 }
-p, li, table, tfoot td, button, input, select, textarea, fieldset legend, footer, form{
+p, li, table, button, input, select, textarea, fieldset legend, footer, form{
     font-size: 1.25rem;
 }
 sub, sup, figcaption {
@@ -221,7 +221,11 @@ nav li{
 
 /*-------------------------------------------------------------*/
 /* table styles*/
-  
+
+table, table p{
+  font-size: 1rem;
+}
+
 td, th {
     padding: 2px 4px;
 }

@@ -96,7 +96,7 @@ html {
   line-height: 1.6;
   box-sizing: border-box; 
 }
-p, li, table, tfoot td, button, input, select, textarea, fieldset legend, footer, form {
+p, li, table, button, input, select, textarea, fieldset legend, footer, form {
     font-size: 1.5rem;
 }
 sub, sup, figcaption {
@@ -678,6 +678,10 @@ table {
     width: 100%;
     max-width: 100%;
     overflow: hidden;
+}
+
+table, table p {
+  font-size: 1.5rem;
 }
   
 td, th {
