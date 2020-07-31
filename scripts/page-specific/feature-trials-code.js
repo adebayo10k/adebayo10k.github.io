@@ -23,12 +23,12 @@ console.log(`page X-Offset: ${window.pageXOffset}`);
 
 
 // using this as workaround for the 'no android browser console.log()' problem
-let screenDataSectionElem = document.getElementById("screenDataSection");
+const screenDataSectionElem = document.getElementById("screenDataSection");
 
-let screenWidthPara = document.createElement("p");
-let availScreenWidthPara = document.createElement("p");
-let innerWidthPara = document.createElement("p");
-let clientWidthPara = document.createElement("p");
+const screenWidthPara = document.createElement("p");
+const availScreenWidthPara = document.createElement("p");
+const innerWidthPara = document.createElement("p");
+const clientWidthPara = document.createElement("p");
 
 screenWidthPara.textContent = `screen width: ${screen.width}`;
 availScreenWidthPara.textContent = `available screen width: ${screen.availWidth}`;
@@ -42,7 +42,7 @@ screenDataSectionElem.appendChild(clientWidthPara);
 
 // TODO: really should query image sizes too..
 
-let resultBox = document.getElementById("result");
+const resultBox = document.getElementById("result");
 
 //---------------------------------------------------------------------
 // alert dialog functions

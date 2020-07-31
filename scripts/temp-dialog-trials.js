@@ -4,8 +4,8 @@
 
 const CustomAlert = new function(){
     this.show = (msg) => {
-        let dlg = document.getElementById("alertDialogCont");
-        let dlgBody = dlg.querySelector("#alertDialogBody");
+        const dlg = document.getElementById("alertDialogCont");
+        const dlgBody = dlg.querySelector("#alertDialogBody");
         //dlg.style.top = "30%";
         dlg.style.top = `${(document.documentElement.clientHeight/2)+window.pageYOffset}px`; //
         dlg.style.opacity = 1;
@@ -15,7 +15,7 @@ const CustomAlert = new function(){
     };
 
     this.close = () => {
-        let dlg = document.getElementById("alertDialogCont");
+        const dlg = document.getElementById("alertDialogCont");
         dlg.style.top = "-30%";
         dlg.style.opacity = 0;
         document.getElementById("freezeLayer").style.display = "none";
@@ -41,7 +41,7 @@ const CustomPrompt = new function(){
     this.show = (msg, callback) => {
         this.callback = callback;
         let dlg = document.getElementById("promptDialogCont");
-        let dlgMessage = dlg.querySelector("#promptDialogMessage");
+        const dlgMessage = dlg.querySelector("#promptDialogMessage");
         dlgMessage.textContent = msg;
 
         this.dialogInputElem.focus();
@@ -62,7 +62,7 @@ const CustomPrompt = new function(){
     };
 
     this.close = () => {
-        let dlg = document.getElementById("promptDialogCont");
+        const dlg = document.getElementById("promptDialogCont");
         this.dialogInputElem.value = "";
         dlg.style.top = "-30%";
         dlg.style.opacity = 0;

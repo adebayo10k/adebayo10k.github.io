@@ -156,7 +156,7 @@ const doPasswordConfirmTests = () => {
 const setErrorFor = (input, message) => { 
   const formControl = input.parentElement; //.form-control
   const small = formControl.querySelector("small");
-  let constraintsTip = "Only letters, numbers, space, dash(-) and underscore(_) allowed";
+  const constraintsTip = "Only letters, numbers, space, dash(-) and underscore(_) allowed";
 
   // add error message into small
   if (message == "Invalid character"){

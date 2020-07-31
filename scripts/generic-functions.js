@@ -19,13 +19,13 @@ footie.innerHTML = footerText;
 
 //===========================================================================================
 // TOGGLE NAVIGATION DISPLAY
-let burger = document.getElementById("burger");
+const burger = document.getElementById("burger");
 //console.log(burger.clientHeight);
 //console.log(burger.clientWidth);
 
-let hitZone = document.getElementById("nav-icon-hitzone");
+const hitZone = document.getElementById("nav-icon-hitzone");
 
-let navGrid = document.getElementById("nav-links");
+const navGrid = document.getElementById("nav-links");
 
 
 // click event on hitzone that contains just the nav icon
@@ -55,7 +55,7 @@ const closeNav = () => {
 
 //===========================================================================================
 // TOGGLE HEADER HEADINGS DISPLAY
-let headHeadings = document.querySelectorAll(".toggled-heading");
+const headHeadings = document.querySelectorAll(".toggled-heading");
 //console.log(headHeadings);
 
 // toggle between display styles on tablet and mobile screens

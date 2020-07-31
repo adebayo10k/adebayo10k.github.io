@@ -1,11 +1,11 @@
 // 
 const htmlElem = document.querySelector("html");
-let changeIntroPara = document.getElementById("changeIntroPara");
-let changeSummaryPara = document.getElementById("changeSummaryPara");
-let bgColourInputElem = document.getElementById("bgColourPicker");
-let bgColourBtnElem = document.getElementById("bgColourBtn");
-let forgetMeSectionElem = document.getElementById("forgetMe");
-let forgetMeBtn = document.getElementById("forgetMeBtn");
+const changeIntroPara = document.getElementById("changeIntroPara");
+const changeSummaryPara = document.getElementById("changeSummaryPara");
+const bgColourInputElem = document.getElementById("bgColourPicker");
+const bgColourBtnElem = document.getElementById("bgColourBtn");
+const forgetMeSectionElem = document.getElementById("forgetMe");
+const forgetMeBtn = document.getElementById("forgetMeBtn");
 
 const defaultColour = "#6495ed"; //cornflower blue"#6495ed"; //cornflower blue
 
@@ -145,7 +145,7 @@ const userConfigurePage = () => {
 // when forget me button is pressed, get user confirmation
 const clearUserConfiguration = () => {
 
-    let confirmMsg = `Your browser will now forget any background colour preferences you made for this site. Is that OK?`;
+    const confirmMsg = `Your browser will now forget any background colour preferences you made for this site. Is that OK?`;
 
     // callback function
     const getUserResponse = (response) => {

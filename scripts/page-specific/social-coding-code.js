@@ -72,8 +72,8 @@ IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING, DM ME TOD
 // arguments for codewars object instantiation
 const cwCodeBlockElemID = "codeFragBlockCW";
 const cwShowBtnElemID = "showBtnCW";
-let latestCWexpiryDate = new Date(2020, 5, 6, 18, 00, 0, 000); // zero based month
-let latestCWcode = `
+let latestCWexpiryDate = new Date(2020, 8, 6, 18, 00, 0, 000); // zero based month
+const latestCWcode = `
 // 5 kyu
 //perfect_power.js
 
@@ -112,7 +112,7 @@ console.log(keys);
 const hrCodeBlockElemID = "codeFragBlockHR";
 const hrShowBtnElemID = "showBtnHR";
 let latestHRexpiryDate = new Date(2020, 4, 27, 18, 00, 0, 1); // zero based month, UTC accounted
-let latestHRcode = ` 
+const latestHRcode = ` 
 #!/bin/bash
 
 # mac_regex="^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$"

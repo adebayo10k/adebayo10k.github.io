@@ -4,8 +4,8 @@
 
 const CustomAlert = new function(){
     this.show = (msg) => {
-        let dlg = document.getElementById("alertDialogCont");
-        let dlgBody = dlg.querySelector("#alertDialogBody");
+        const dlg = document.getElementById("alertDialogCont");
+        const dlgBody = dlg.querySelector("#alertDialogBody");
         dlg.style.top = "30%";
         dlg.style.opacity = 1;
         dlgBody.textContent = msg;
@@ -14,7 +14,7 @@ const CustomAlert = new function(){
     };
 
     this.close = () => {
-        let dlg = document.getElementById("alertDialogCont");
+        const dlg = document.getElementById("alertDialogCont");
         dlg.style.top = "-30%";
         dlg.style.opacity = 0;
         document.getElementById("freezeLayer").style.display = "none";
@@ -47,11 +47,11 @@ const handleDefaultConfirm = () => {
 const CustomConfirm = new function(){
     this.show = (msg, callback) => { // 
         this.callback = callback;
-        let dlg = document.getElementById("confirmDialogCont");
-        let dlgBody = dlg.querySelector("#confirmDialogBody");
+        const dlg = document.getElementById("confirmDialogCont");
+        const dlgBody = dlg.querySelector("#confirmDialogBody");
         dlgBody.textContent = msg;
-        let dlgOkBtn = document.getElementById("confirmDlgOkBtn");
-        let dlgCancelBtn = document.getElementById("confirmDlgCancelBtn");
+        const dlgOkBtn = document.getElementById("confirmDlgOkBtn");
+        const dlgCancelBtn = document.getElementById("confirmDlgCancelBtn");
                 
         dlg.style.top = `${(document.documentElement.clientHeight/2)+window.pageYOffset}px`; // 
         
@@ -74,7 +74,7 @@ const CustomConfirm = new function(){
     };
 
     this.close = () => {
-        let dlg = document.getElementById("confirmDialogCont");
+        const dlg = document.getElementById("confirmDialogCont");
         dlg.style.top = "-30%";
         dlg.style.opacity = 0;
         document.getElementById("freezeLayer").style.display = "none";
@@ -88,7 +88,7 @@ const CustomConfirm = new function(){
 
 // callback function
 const validateUsername = (username) => {
-    let resultBox = document.getElementById("result");
+    const resultBox = document.getElementById("result");
     // TODO: all sorts of input validation...HERE.. 
     if (username != null){
         if (username.startsWith("d")){
@@ -114,8 +114,8 @@ const CustomPrompt = new function(){
 
     this.show = (msg, callback) => {
         this.callback = callback;
-        let dlg = document.getElementById("promptDialogCont");
-        let dlgMessage = dlg.querySelector("#promptDialogMessage");
+        const dlg = document.getElementById("promptDialogCont");
+        const dlgMessage = dlg.querySelector("#promptDialogMessage");
         dlgMessage.textContent = msg;
 
         this.dialogInputElem.focus();
@@ -135,7 +135,7 @@ const CustomPrompt = new function(){
     };
 
     this.close = () => {
-        let dlg = document.getElementById("promptDialogCont");
+        const dlg = document.getElementById("promptDialogCont");
         this.dialogInputElem.value = "";
         dlg.style.top = "-30%";
         dlg.style.opacity = 0;
@@ -145,7 +145,7 @@ const CustomPrompt = new function(){
 
 const showPromptDialog = () => {
     // create message and callback
-    let msg = "Username needs confirmation now";
+    const msg = "Username needs confirmation now";
     // args passed to CustomPrompt object will have been dynamically generated
     CustomPrompt.show(msg,validateUsername);
 };
