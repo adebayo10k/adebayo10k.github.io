@@ -1,5 +1,5 @@
 // 
-let htmlElem = document.querySelector("html");
+const htmlElem = document.querySelector("html");
 let changeIntroPara = document.getElementById("changeIntroPara");
 let changeSummaryPara = document.getElementById("changeSummaryPara");
 let bgColourInputElem = document.getElementById("bgColourPicker");

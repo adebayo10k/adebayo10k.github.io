@@ -1,5 +1,5 @@
 // consult storage for latest background settings
-let htmlElem = document.querySelector("html");
+const htmlElem = document.querySelector("html");
 if (localStorage.getItem("bgColour")){
     htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;    
 }
@@ -54,7 +54,10 @@ form.addEventListener("submit", (event) => {
 	doUsernameTests();
 	doEmailTests();
 	doPasswordTests();
-	doPasswordConfirmTests();
+  doPasswordConfirmTests();
+  
+  // reset the form
+  // give focus to first input field
 	
 });
 
