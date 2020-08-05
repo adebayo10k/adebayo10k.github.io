@@ -11,7 +11,7 @@ if (localStorage.getItem("bgColour")){
 // Single error line still only displays the first encountered error, even when >1 exist
 // User still doesn't know field requirements and constraints in advance
 
-const form = document.getElementById("form");
+const form = document.getElementById("createAccountForm");
 // the input elements themselves...
 const username = document.getElementById("username");
 const email = document.getElementById("email");

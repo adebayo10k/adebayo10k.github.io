@@ -95,3 +95,33 @@ else {
 
 //===========================================================================================
 // MANAGE HERO MESSAGES
+
+const heroImg_0 = "";
+const heroImg_1 = "../media/images/hero-images/rubiks-cube-02-2400.jpg";
+const heroImg_2 = "../media/images/hero-images/rubiks-cube-03-2400.jpg";
+const heroImg_3 = "../media/images/hero-images/bash-vscode-01-1250.jpg";
+
+const heroMsg_0 = `""`;
+const heroMsg_1 = `"Build great stuff that you genuinely care about"`;
+const heroMsg_2 = `"If you don't feel passionately... seriously, don't bother."`;
+const heroMsg_3 = `"Computer Technology, Yoruba Context. Let's Go!"`;
+const heroMsg_4 = `"Build stuff that you actually give a s*** about."`;
+const heroMsg_5 = `"Poor code is worse that no code"`;
+const heroMsg_6 = `"A language fit to support all concepts - both new and old"`;
+const heroMsg_7 = `"Our Philosophies are our foundations."`;
+const heroMsg_8 = `"When you're done with"`;
+const heroMsg_9 = `""`;
+
+
+// homepage
+
+const img5 = "";
+const img6 = "";
+
+// multimedia
+
+// social-coding
+
+// yoruba
+
+// yoruba-forms

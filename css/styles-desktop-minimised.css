@@ -134,6 +134,11 @@ main {
 
 /*-------------------------------------------------------------*/
 /* navigation styles*/
+
+.newIcon::after{
+  content: url(../media/images/favicon0.ico);
+}
+
 nav ul{
   display: grid;
   grid-template-columns: repeat(2, 1fr);

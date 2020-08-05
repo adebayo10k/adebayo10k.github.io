@@ -440,7 +440,7 @@ section.project-card {
   background-position: left center;
 }
 #hero-background-bash-vscode-01 {
-  background-image: url("../media/images/hero-images/bash-vscode-01.jpg");
+  background-image: url("../media/images/hero-images/bash-vscode-01-1250.jpg");
   background-position: center center;
 }
 
@@ -670,6 +670,8 @@ nav li a:focus {
   z-index: 2;
 }
 
+
+
 /*-------------------------------------------------------------*/
 /* table styles*/
 
@@ -729,14 +731,21 @@ colgroup col:nth-child(2) {
 /*-------------------------------------------------------------*/
 /* form styles*/
 
-section.site-app-card#create-account-app {
-  background-color: cadetblue;
+section.site-app-card.site-form {
   font-family: "FiraSansReg", monospace;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 80vh;
   margin: 0;
+}
+
+#createAccountApp {
+  background-color: cadetblue;
+}
+
+#aboutYouApp {
+  background-color: lightskyblue;
 }
 
 .form-container {
@@ -773,7 +782,7 @@ section.site-app-card#create-account-app {
   display: inline-block;
   margin-bottom: 5px;
 }
-.form-control input {  
+.form-control input, .form-control select {  
   border: 2px solid royalblue;
   border-radius: 4px;
   display: block;
@@ -782,6 +791,7 @@ section.site-app-card#create-account-app {
   padding: 10px;
   width: 100%;
 }
+
 .form-control.success input {
   border-color: palegreen;
 }
