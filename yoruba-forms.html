@@ -150,7 +150,7 @@
       
             <div class="form-control">
               <label for="password">Password</label>
-              <input type="password" id="password" placeholder="mu ọrọ igbaniwọle kan" required minlength="8" maxlength="63">
+              <input type="password" id="password" placeholder="mu ọrọ atiwọle kan" required minlength="8" maxlength="63">
               <i class="fa fa-check-circle" aria-hidden="true"></i>
               <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
               <small>Error message</small>
@@ -158,7 +158,7 @@
       
             <div class="form-control">
               <label for="password2">Password Confirm</label>
-              <input type="password" id="password2" placeholder="tun fi ọrọ igbaniwọle" required maxlength="63">
+              <input type="password" id="password2" placeholder="tun fi ọrọ atiwọle" required maxlength="63">
               <i class="fa fa-check-circle" aria-hidden="true"></i>
               <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
               <small>Error message</small>
@@ -346,6 +346,14 @@
               <small>Error message</small>
             </div>
 
+            <div class="form-control">
+              <label for="motives">Also optionally, tell us about anything else youd like to gain from being part of an OgunTech project:</label>
+              <textarea name="motives" id="motives" cols="72" rows="4" maxlength="300"></textarea>
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error message</small>
+            </div>
+
             <button type="submit">Save Changes</button>
 
           </form>
@@ -361,6 +369,47 @@
           </div>
         </article>                    
       </div>
+
+      <section class="site-app-card site-form" id="yourPublicKey">
+        <div class="form-container">
+          <header>
+            <h2>Kọkọrọ Gbangba rẹ</h2>
+            <h2>&lpar;Your Public Key&rpar;</h2>  
+          </header>
+          <form class="form" id="yourPublicKeyForm" novalidate>
+
+            <p>OgunTech team members sometimes like to communicate reliably and securely with eachother.</p>
+            <p>They also prefer to control their own encryption keys.</p>
+            <p>If you&apos;re able to generate your own GnuPG public keypair, then follow these steps:</p>
+            
+            <div class="form-control">
+              <p>1. Send us a short video (up to 10 seconds) in which both you and your gpg public key are visible together for at least a few seconds.</p>
+              
+              <label for="fileUpload">Upload Video File</label>
+              <input type="file" id="fileUpload" name="fileUpload">
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error message</small>
+            </div>
+
+            <div class="form-control">
+              <label for="keyserverURL">2. If you have one, link us to your public keyserver too:</label>
+              <input type="url" id="keyserverURL" placeholder="keyserver URL" minlength="3" maxlength="63">
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error message</small>
+            </div>
+
+            <p>3. You&apos;re now free to exchange keys and do secure comms with other members.</p>
+            <p>We&apos;re effectively acting as a pseudo-Certificate Authority, within the network!</p>
+
+            <p>Remember to check that we&apos;re on https!</p>
+            <button type="submit">Submit</button>
+
+          </form>
+        </div>        
+
+      </section> <!-- end site-app-card site-form section --> 
 
       <section class="site-app-card">
         <div class="form-container">
@@ -382,94 +431,15 @@
     
   </main>
 
-
-<!-- -->
-  <section class="site-app-card monospaced">
-    <header>
-      <h3>Contact Enquiry Form</h3>    
-    </header>
-  
-<!--///////////////////////////////////// FORM /////////////////////////////////////////// --> 
-  
-    <fieldset>
-      <legend>More about you...</legend>
-      <h4>What else would you like gain from being involved on an Oguntech project?</h4>
-      <p>
-        <label for="motivates">
-          <span>What motivates you?</span>
-          <textarea name="motives" id="motivates" cols="72" rows="4" maxlength="300"></textarea>
-          <span class="errs" aria-live="polite"></span>
-        </label>
-      </p>
-    </fieldset>
-    <fieldset>
-      <legend>Show us your style...</legend>
-      <h4>Upload a short (up to 30 seconds) video clip of you using a diagram to explain, in simple terms, the role of a Certificate Authority.</h4>
-      <label for="file_upload">
-        <span>Choose a file</span>
-        <input type="file" id="file_upload" name="style_file">
-        <span class="errs" aria-live="polite"></span>
-      </label>
-    </fieldset>
-    <fieldset>
-      <legend>Finally, one last question...</legend>
-      <h4>What are good ways to communicate reliably and securely with other Oguntech team members?</h4>
-      <ul>
-        <li>
-          <label for="whatsapp">
-            <span>WhatApp mobile app</span>
-            <input type="radio" id="whatsapp" name="quiz_ans">
-            <span class="info_msg"></span>
-          </label>
-        </li>
-        <li>
-          <label for="webmail">
-            <span>Any Cloud based, SaaS, web email service like gmail, delivered over https</span>
-            <input type="radio" id="webmail" name="quiz_ans">
-            <span class="info_msg"></span>
-          </label>
-        </li>
-        <li>
-          <label for="gnupg">
-            <span>As above, but with messages encrypted by myself using an open source encryption tool, like GnuPG</span>
-            <input type="radio" id="gnupg" name="quiz_ans">
-            <span class="info_msg"></span>
-          </label>
-        </li>              
-      </ul>            
-    </fieldset>
-    <p>
-      <button type="submit">Send your answers</button>
-    </p>
-  </form>       
-
-  </section>
-
   
   <article class="hero-article">
     <div class="hero-message-right monospaced">
-      <h2>Hero message from the ṢàngóTech <!--&#x1E63;&#x00E0;ng&#x00F3;Tech--> Network.</h2>
+      <h2>Hero message from the ṢàngóTech Network.</h2>
       <h2>"Build stuff that you actually give a s*** about."</h2>
     </div>
   </article> 
-<!--///////////////////////////////////// FORM /////////////////////////////////////////// --> 
  
   
-  <fieldset>
-    <legend>Laptop Test Image....</legend>
-    <section>
-      <header>
-        <h3>Device Images:</h3>    
-      </header>
-      <figure>
-        <img src="media/images/laptop-dell-personalised.jpg" alt="A dell laptop personalised with various github stickers" width="400">
-          <figcaption>
-            A Dell laptop personalised with logo stickers from gitHub, Java, CentOS, Visual Studio Code, Git, Ubuntu, Google, MySQL and Python. Featuring Tux from Linux and Octocat from gitHub.
-          </figcaption>
-      </figure>                
-    </section>
-  </fieldset> 
-   
     
     <div id="confirmDialogCont" class="dlg-container">
       <div class="dlg-header">Let's discuss this...</div>

@@ -782,7 +782,7 @@ section.site-app-card.site-form {
   display: inline-block;
   margin-bottom: 5px;
 }
-.form-control input, .form-control select {  
+.form-control input, .form-control select, .form-control textarea {  
   border: 2px solid royalblue;
   border-radius: 4px;
   display: block;
