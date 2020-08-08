@@ -86,10 +86,6 @@ figcaption{
     font-style: italic;
 }
 
-.mapEmbed, .audioEmbed, .videoEmbed{
-    width: 100%;
-}
-
 /*-------------------------------------------------------------*/
 /* page header styles*/
 
@@ -128,7 +124,7 @@ header.page-head h2{
 }
 
 section.site-app-card, section.project-card, aside.sidebar{
-  margin: 4rem 2rem;
+  margin: 4rem 0rem;
 }
 
 /*-------------------------------------------------------------*/

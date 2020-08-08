@@ -79,431 +79,437 @@
         </nav>
     </header>
 
-    <fieldset>
-      <legend>On This Page...</legend>
-      <section>
-        <header>
-          <h3>Web Dev in Yoruba Contexts</h3>
-        </header>        
-        <p>What happened when our interest in Computer Technology intersected with our developing interest in Yoruba Language, History and Culture?</p>
-        <p>Let&apos;s find out...</p>
-        <p>
-          <a href="./yoruba-forms.html">yoruba test forms page</a>
-        </p>
-      </section>            
-    </fieldset>
 
-    <article class="hero-article" id="hero-background-cube-01">
-      <div class="hero-message message-left monospaced">
-        <h2>Hero message from the ṢàngóTech <!--&#x1E63;&#x00E0;ng&#x00F3;Tech-->  Network.</h2>
-        <h2>"Computer Technology, Yoruba Contexts. Let&apos;s Go!"</h2 >
-      </div>
-    </article>
+    <main>
+
+      <section class="page-content">
+
+        <section class="page-intro-para">
+          <header>
+            <h3>Web Dev in Yoruba Contexts</h3>
+          </header>
+          <p>What happened when our interest in Computer Technology intersected with our developing interest in Yoruba Language, History and Culture?</p>
+          <p>Let&apos;s find out...</p>
+          <p>
+            <a href="./yoruba-forms.html">yoruba test forms page</a>
+          </p>
+        </section>
+
+        <div class="hero-article-container">  
+          <article class="hero-article" id="hero-background-cube-01">
+            <div class="hero-message message-right monospaced">
+              <h2>Hero message from the ṢàngóTech <!--&#x1E63;&#x00E0;ng&#x00F3;Tech--> Network.</h2>
+              <h2>"Build great stuff that you genuinely care about"</h2>
+            </div>
+          </article>        
+        </div>
+ 
+        <section class="site-app-card">
+          <header>
+            <h3>The Current Encoding of the Yoruba Language Character Set</h3>    
+          </header>
+
+          <p>The following table is being compiled to document current support for Yoruba language characters. It may help to support proposals to extend or port the encoding specifications in which we are interested.</p>
+          <p><em>NOTE: In Morse Code, there exists no concept of upper&#x002D; or lowercase, so we&apos;ll tabulate uppercase and auxilliary characters separately, if necessary.</em></p>
+
+          <figure class="fig-table monospaced">
+            <table>
+              <caption>
+                Main Yoruba Language Characters with their Unicode, HTML and Morse Encoded Representations
+              </caption>
+              <colgroup>
+                <col span="4">
+                <col><!-- styled border in css -->
+                <col>
+              </colgroup>
+
+              <thead>
+                <tr>
+                  <th scope="col" id="headChar" rowspan="2">Character</th>
+                  <th scope="colgroup" id="headUnicode" colspan="2">Unicode Code Point</th>
+                  <th scope="col" id="headHTML" rowspan="2">HTML <abbr title="Character Entity Reference">CER</abbr></th>
+                  <th scope="col" id="headMorse" rowspan="2">Morse Code</th>
+                  <th scope="col" id="headNotes" rowspan="2">Notes</th>
+                </tr>
+                <tr>
+                  <th scope="col" id="headHEX">HEXIDECIMAL</th>
+                  <th scope="col" id="headDEC">DECIMAL</th>
+                </tr> 
+              </thead>
+              <tbody id="encodingsBody">
+                <tr> <!-- a -->
+                  <td><p>&#x0061;</p></td>
+                  <td>&amp;#x0061;</td>
+                  <td>&amp;#97;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> <!-- a grave --> 
+                  <td><p>&#x00E0;</p></td>
+                  <td>&amp;#x00E0;</td>
+                  <td>&amp;#224;</td>
+                  <td>&amp;agrave;</td>
+                  <td class="morse-field"></td>
+                  <td><a href="#ref_1"><sup>[1]</sup></a></td>
+                </tr>
+                <tr> <!-- a acute -->
+                  <td><p>&#x00E1;</p></td>
+                  <td>&amp;#x00E1;</td>
+                  <td>&amp;#225;</td>
+                  <td>&amp;aacute;</td>
+                  <td class="morse-field"></td>
+                  <td></td>
+                </tr>
+
+                <tr id="&#x0062;"> <!-- b --> 
+                  <td><p>&#x0062;</p></td>
+                  <td>&amp;#x0062;</td>
+                  <td>&amp;#98;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td><!--     --> 
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- d --> 
+                  <td><p>&#x0064;</p></td>
+                  <td>&amp;#x0064;</td>
+                  <td>&amp;#100;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- e --> 
+                  <td><p>&#x0065;</p></td>
+                  <td>&amp;#x0065;</td>
+                  <td>&amp;#101;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>              
+                <tr> <!-- e grave --> 
+                  <td><p>&#x00E8;</p></td>
+                  <td>&amp;#x00E8;</td>
+                  <td>&amp;#232;</td>
+                  <td>&amp;egrave;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> <!-- e acute --> 
+                  <td><p>&#x00E9;</p></td>
+                  <td>&amp;#x00E9;</td>
+                  <td>&amp;#233;</td>
+                  <td>&amp;eacute;</td>
+                  <td class="morse-field"></td>
+                  <td><a href="#ref_2"><sup>[2]</sup></a></td>
+                </tr>
+                <tr> <!-- e dot --> 
+                  <td><p>&#x1EB9;</p></td>
+                  <td>&amp;#x1EB9;</td>
+                  <td>&amp;#7865</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> <!-- e dot grave --> 
+                  <td><p>&#x0300;&#7865;</p></td>
+                  <td>undefined</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> <!-- e dot acute --> 
+                  <td><p>&#x0301;&#7865;</p></td>
+                  <td>undefined</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- f --> 
+                  <td><p>&#x0066;</p></td>
+                  <td>&amp;#x0066;</td>
+                  <td>&amp;#102;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- g --> 
+                  <td><p>&#x0067;</p></td>
+                  <td>&amp;#x0067;</td>
+                  <td>&amp;#103;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> <!-- gb --> 
+                  <td><p>&#x2211;&#x007B;gb&#x007D;</p></td>
+                  <td>undefined</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- h --> 
+                  <td><p>&#x0068;</p></td>
+                  <td>&amp;#x0068;</td>
+                  <td>&amp;#104;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- i --> 
+                  <td><p>&#x0069;</p></td>
+                  <td>&amp;#x0069;</td>
+                  <td>&amp;#105;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> <!-- i grave --> 
+                  <td><p>&#x00EC;</p></td>
+                  <td>&amp;#x00EC;</td>
+                  <td>&amp;#236;</td>
+                  <td>&amp;igrave;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> <!-- i acute --> 
+                  <td><p>&#x00ED;</p></td>
+                  <td>&amp;#x00ED;</td>
+                  <td>&amp;#237;</td>
+                  <td>&amp;iacute;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- j --> 
+                  <td><p>&#x006A;</p></td>
+                  <td>&amp;#x006A;</td>
+                  <td>&amp;#106;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- k --> 
+                  <td><p>&#x006B;</p></td>
+                  <td>&amp;#x006B;</td>
+                  <td>&amp;#107;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- l --> 
+                  <td><p>&#x006C;</p></td>
+                  <td>&amp;#x006C;</td>
+                  <td>&amp;#108;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- m --> 
+                  <td><p>&#x006D;</p></td>
+                  <td>&amp;#x006D;</td>
+                  <td>&amp;#109;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- n --> 
+                  <td><p>&#x006E;</p></td>
+                  <td>&amp;#x006E;</td>
+                  <td>&amp;#110;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- o --> 
+                  <td><p>&#x006F;</p></td>
+                  <td>&amp;#x006F;</td>
+                  <td>&amp;#111;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> <!-- o grave --> 
+                  <td><p>&#x00F2;</p></td>
+                  <td>&amp;#x00F2;</td>
+                  <td>&amp;#242;</td>
+                  <td>&amp;ograve;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> <!-- o acute--> 
+                  <td><p>&#x00F3;</p></td>
+                  <td>&amp;#x00F3;</td>
+                  <td>&amp;#243;</td>
+                  <td>&amp;oacute;</td>
+                  <td class="morse-field"></td>
+                  <td><a href="#ref_1"><sup>[1]</sup></a></td>
+                </tr>
+                <tr> <!-- o dot --> 
+                  <td><p>&#x1ECD;</p></td>
+                  <td>&amp;#x01ECD;</td>
+                  <td>&amp;#7885;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> <!-- o dot grave--> 
+                  <td><p>&#x0300;&#7885;</p></td>
+                  <td>undefined</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> <!-- o dot acute--> 
+                  <td><p>&#x0301;&#7885;</p></td>
+                  <td>undefined</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td></td>
+                </tr>
+
+                <tr> <!-- p --> 
+                  <td><p>&#x0070;</p></td>
+                  <td>&amp;#x0070;</td>
+                  <td>&amp;#112;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- r --> 
+                  <td><p>&#x0072;</p></td>
+                  <td>&amp;#x0072;</td>
+                  <td>&amp;#114;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- s --> 
+                  <td><p>&#x0073;</p></td>
+                  <td>&amp;#x0073;</td>
+                  <td>&amp;#115;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> <!-- s dot --> 
+                  <td><p>&#x1E63;</p></td>
+                  <td>&amp;#x1E63;</td>
+                  <td>&amp;#7779;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- t --> 
+                  <td><p>&#x0074;</p></td>
+                  <td>&amp;#x0074;</td>
+                  <td>&amp;#116;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- u --> 
+                  <td><p>&#x0075;</p></td>
+                  <td>&amp;#x0075;</td>
+                  <td>&amp;#117;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> <!-- u grave --> 
+                  <td><p>&#x00F9;</p></td>
+                  <td>&amp;#x00F9;</td>
+                  <td>&amp;#249;</td>
+                  <td>&amp;ugrave;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> <!-- u acute --> 
+                  <td><p>&#x00FA;</p></td>
+                  <td>&amp;#x00FA;</td>
+                  <td>&amp;#250;</td>
+                  <td>&amp;uacute;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- w --> 
+                  <td><p>&#x0077;</p></td>
+                  <td>&amp;#x0077;</td>
+                  <td>&amp;#119;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> <!-- y --> 
+                  <td><p>&#x0079;</p></td>
+                  <td>&amp;#x0079;</td>
+                  <td>&amp;#121;</td>
+                  <td>&nbsp;</td>
+                  <td class="morse-field"></td>
+                  <td>&nbsp;</td>
+                </tr>              
+
+              </tbody>
+
+              <tfoot>
+                <tr>
+                  <td colspan="6">
+                    <ol>
+                      <li id="ref_1">NON-ENGLISH MORSE EXTENSION</li>
+                      <li id="ref_2">INCLUDED IN ITU-R MORSE</li>
+                    </ol>
+                  </td>
+                </tr>
+              </tfoot>
+
+            </table>
+
+            <figcaption>
+              Sources: <a href="https://en.wikipedia.org/wiki/Morse_code" title="Wikipedia Morse Code page" target="_blank">wikipedia.org</a>, <a href="https://decodeunicode.org/" title="decodeunicode website" target="_blank">decodeunicode.org</a>, <a href="http://www.personal.psu.edu/ejp10/symbolcodes/index.html" title="penn state university website legacy page" target="_blank">psu.edu</a>.
+            </figcaption>
+
+          </figure>
+
+          
+          
+        </section>
         
-    <fieldset>
-      <legend>Yoruba Character Encodings Tables...</legend>
-      <section>
-        <header>
-          <h3>The Current Encoding of the Yoruba Language Character Set:</h3>    
-        </header>
-
-        <p>The following table is being compiled to document current support for Yoruba language characters. It may help to support proposals to extend or port the encoding specifications in which we are interested.</p>
-        <p><em>NOTE: In Morse Code, there exists no concept of upper&#x002D; or lowercase, so we&apos;ll tabulate uppercase and auxilliary characters separately, if necessary.</em></p>
-
-        <figure class="fig-table monospaced">
-          <table>
-            <caption>
-              Main Yoruba Language Characters with their Unicode, HTML and Morse Encoded Representations
-            </caption>
-            <colgroup>
-              <col span="4">
-              <col><!-- styled border in css -->
-              <col>
-            </colgroup>
-            
-            <thead>
-              <tr>
-                <th scope="col" id="headChar" rowspan="2">Character</th>
-                <th scope="colgroup" id="headUnicode" colspan="2">Unicode Code Point</th>
-                <th scope="col" id="headHTML" rowspan="2">HTML <abbr title="Character Entity Reference">CER</abbr></th>
-                <th scope="col" id="headMorse" rowspan="2">Morse Code</th>
-                <th scope="col" id="headNotes" rowspan="2">Notes</th>
-              </tr>
-              <tr>
-                <th scope="col" id="headHEX" >HEXIDECIMAL</th>
-                <th scope="col" id="headDEC" >DECIMAL</th>
-              </tr> 
-            </thead>
-            <tbody id="encodingsBody">
-              <tr> <!-- a -->
-                <td><p>&#x0061;</p></td>
-                <td>&amp;#x0061;</td>
-                <td>&amp;#97;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr> <!-- a grave --> 
-                <td><p>&#x00E0;</p></td>
-                <td>&amp;#x00E0;</td>
-                <td>&amp;#224;</td>
-                <td>&amp;agrave;</td>
-                <td class="morse-field"></td>
-                <td><a href="#ref_1"><sup>[1]</sup></a></td>
-              </tr>
-              <tr> <!-- a acute -->
-                <td><p>&#x00E1;</p></td>
-                <td>&amp;#x00E1;</td>
-                <td>&amp;#225;</td>
-                <td>&amp;aacute;</td>
-                <td class="morse-field"></td>
-                <td></td>
-              </tr>
-              
-              <tr id="&#x0062;"> <!-- b --> 
-                <td><p>&#x0062;</p></td>
-                <td>&amp;#x0062;</td>
-                <td>&amp;#98;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td><!--     --> 
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- d --> 
-                <td><p>&#x0064;</p></td>
-                <td>&amp;#x0064;</td>
-                <td>&amp;#100;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- e --> 
-                <td><p>&#x0065;</p></td>
-                <td>&amp;#x0065;</td>
-                <td>&amp;#101;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>              
-              <tr> <!-- e grave --> 
-                <td><p>&#x00E8;</p></td>
-                <td>&amp;#x00E8;</td>
-                <td>&amp;#232;</td>
-                <td>&amp;egrave;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr> <!-- e acute --> 
-                <td><p>&#x00E9;</p></td>
-                <td>&amp;#x00E9;</td>
-                <td>&amp;#233;</td>
-                <td>&amp;eacute;</td>
-                <td class="morse-field"></td>
-                <td><a href="#ref_2"><sup>[2]</sup></a></td>
-              </tr>
-              <tr> <!-- e dot --> 
-                <td><p>&#x1EB9;</p></td>
-                <td>&amp;#x1EB9;</td>
-                <td>&amp;#7865</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr> <!-- e dot grave --> 
-                <td><p>&#x0300;&#7865;</p></td>
-                <td>undefined</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr> <!-- e dot acute --> 
-                <td><p>&#x0301;&#7865;</p></td>
-                <td>undefined</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- f --> 
-                <td><p>&#x0066;</p></td>
-                <td>&amp;#x0066;</td>
-                <td>&amp;#102;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- g --> 
-                <td><p>&#x0067;</p></td>
-                <td>&amp;#x0067;</td>
-                <td>&amp;#103;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr> <!-- gb --> 
-                <td><p>&#x2211;&#x007B;gb&#x007D;</p></td>
-                <td>undefined</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- h --> 
-                <td><p>&#x0068;</p></td>
-                <td>&amp;#x0068;</td>
-                <td>&amp;#104;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- i --> 
-                <td><p>&#x0069;</p></td>
-                <td>&amp;#x0069;</td>
-                <td>&amp;#105;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr> <!-- i grave --> 
-                <td><p>&#x00EC;</p></td>
-                <td>&amp;#x00EC;</td>
-                <td>&amp;#236;</td>
-                <td>&amp;igrave;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr> <!-- i acute --> 
-                <td><p>&#x00ED;</p></td>
-                <td>&amp;#x00ED;</td>
-                <td>&amp;#237;</td>
-                <td>&amp;iacute;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- j --> 
-                <td><p>&#x006A;</p></td>
-                <td>&amp;#x006A;</td>
-                <td>&amp;#106;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- k --> 
-                <td><p>&#x006B;</p></td>
-                <td>&amp;#x006B;</td>
-                <td>&amp;#107;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- l --> 
-                <td><p>&#x006C;</p></td>
-                <td>&amp;#x006C;</td>
-                <td>&amp;#108;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- m --> 
-                <td><p>&#x006D;</p></td>
-                <td>&amp;#x006D;</td>
-                <td>&amp;#109;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- n --> 
-                <td><p>&#x006E;</p></td>
-                <td>&amp;#x006E;</td>
-                <td>&amp;#110;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- o --> 
-                <td><p>&#x006F;</p></td>
-                <td>&amp;#x006F;</td>
-                <td>&amp;#111;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr> <!-- o grave --> 
-                <td><p>&#x00F2;</p></td>
-                <td>&amp;#x00F2;</td>
-                <td>&amp;#242;</td>
-                <td>&amp;ograve;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr> <!-- o acute--> 
-                <td><p>&#x00F3;</p></td>
-                <td>&amp;#x00F3;</td>
-                <td>&amp;#243;</td>
-                <td>&amp;oacute;</td>
-                <td class="morse-field"></td>
-                <td><a href="#ref_1"><sup>[1]</sup></a></td>
-              </tr>
-              <tr> <!-- o dot --> 
-                <td><p>&#x1ECD;</p></td>
-                <td>&amp;#x01ECD;</td>
-                <td>&amp;#7885;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr> <!-- o dot grave--> 
-                <td><p>&#x0300;&#7885;</p></td>
-                <td>undefined</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr> <!-- o dot acute--> 
-                <td><p>&#x0301;&#7885;</p></td>
-                <td>undefined</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td></td>
-              </tr>
-
-              <tr> <!-- p --> 
-                <td><p>&#x0070;</p></td>
-                <td>&amp;#x0070;</td>
-                <td>&amp;#112;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- r --> 
-                <td><p>&#x0072;</p></td>
-                <td>&amp;#x0072;</td>
-                <td>&amp;#114;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- s --> 
-                <td><p>&#x0073;</p></td>
-                <td>&amp;#x0073;</td>
-                <td>&amp;#115;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr> <!-- s dot --> 
-                <td><p>&#x1E63;</p></td>
-                <td>&amp;#x1E63;</td>
-                <td>&amp;#7779;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- t --> 
-                <td><p>&#x0074;</p></td>
-                <td>&amp;#x0074;</td>
-                <td>&amp;#116;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- u --> 
-                <td><p>&#x0075;</p></td>
-                <td>&amp;#x0075;</td>
-                <td>&amp;#117;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr> <!-- u grave --> 
-                <td><p>&#x00F9;</p></td>
-                <td>&amp;#x00F9;</td>
-                <td>&amp;#249;</td>
-                <td>&amp;ugrave;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr> <!-- u acute --> 
-                <td><p>&#x00FA;</p></td>
-                <td>&amp;#x00FA;</td>
-                <td>&amp;#250;</td>
-                <td>&amp;uacute;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- w --> 
-                <td><p>&#x0077;</p></td>
-                <td>&amp;#x0077;</td>
-                <td>&amp;#119;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>
-
-              <tr> <!-- y --> 
-                <td><p>&#x0079;</p></td>
-                <td>&amp;#x0079;</td>
-                <td>&amp;#121;</td>
-                <td>&nbsp;</td>
-                <td class="morse-field"></td>
-                <td>&nbsp;</td>
-              </tr>              
-
-            </tbody>
-
-            <tfoot>
-              <tr>
-                <td colspan="6">
-                  <ol>
-                    <li id="ref_1">NON-ENGLISH MORSE EXTENSION</li>
-                    <li id="ref_2">INCLUDED IN ITU-R MORSE</li>
-                  </ol>
-                </td>
-              </tr>
-            </tfoot>
-
-          </table>
-
-          <figcaption>
-            Sources: <a href="https://en.wikipedia.org/wiki/Morse_code" title="Wikipedia Morse Code page" target="_blank">wikipedia.org</a>, <a href="https://decodeunicode.org/" title="decodeunicode website" target="_blank">decodeunicode.org</a>, <a href="http://www.personal.psu.edu/ejp10/symbolcodes/index.html" title="penn state university website legacy page" target="_blank">psu.edu</a>.
-          </figcaption>
-
-        </figure>
-                
-
-      </section>
-    </fieldset>
-  
-    <fieldset>
-      <legend>Yoruba Language Online Multimedia....</legend>
-
-      <section>
-        <header>
-          <h3>Yoruba Language Audio:</h3>    
-        </header>
-
-        <p>stream codec.</p>
-
-        <figure>
+        <div class="hero-article-container">  
+          <article class="hero-article" id="hero-background-cube-01">
+            <div class="hero-message message-right monospaced">
+              <h2>Hero message from the ṢàngóTech <!--&#x1E63;&#x00E0;ng&#x00F3;Tech--> Network.</h2>
+              <h2>"Build great stuff that you genuinely care about"</h2>
+            </div>
+          </article>        
+        </div>
+ 
+        <section class="site-app-card">
+          <header>
+            <h3>Yoruba Language Audio</h3>    
+          </header>
+          <p>stream codec.</p>
+          <figure>
 
           <iframe class="audioEmbed" id="yorubaAudioEmbed01" allow="" title="Yoruba language Audio Embed"></iframe>
           
@@ -537,49 +543,59 @@
             <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="Creative Commons license CC BY-NC-ND 4.0" target="_blank">these Creative Commons licensing terms.</a>
   
           </figcaption>          
-        </figure>
+          </figure>          
+        </section>
 
-      </section>
+        <div class="hero-article-container">  
+          <article class="hero-article" id="hero-background-cube-02">
+            <div class="hero-message message-left firaSansBoldFont">
+              <h2>Hero message from the ṢàngóTech <!--&#x1E63;&#x00E0;ng&#x00F3;Tech--> Network.</h2>
+              <h2>"If you don&apos;t feel passionately... seriously, don&apos;t bother."</h2 >
+            </div>
+          </article>                    
+        </div>
 
-      <hr>
+        <section class="site-app-card">
+          <header>
+            <h3>Yoruba Language Video</h3>    
+          </header>
 
-      <section>
-        <header>
-          <h3>Yoruba Language Video:</h3>    
-        </header>
 
-        <p>stream codec.</p>
+          <p>stream codec.</p>
 
-        <figure>
-          <iframe class="videoEmbed" id="yorubaVideoEmbed01" allow="accelerometer; encrypted-media; gyros cope; picture-in-picture" allowfullscreen title="Yoruba language Video Embed"></iframe>
+          <figure>
+            <iframe class="videoEmbed" id="yorubaVideoEmbed01" allow="accelerometer; encrypted-media; gyros cope; picture-in-picture" allowfullscreen title="Yoruba language Video Embed"></iframe>
 
-          <figcaption>
-            An online, beginners&apos; Yoruba language video. The Online Video Provider is Youtube. Other providers include...
-          </figcaption>
-
-        </figure>                
-
-      </section>
-
-    </fieldset>
-
-      
-    <fieldset>
-      <legend>Laptop Test Image....</legend>
-      <section>
-        <header>
-          <h3>Device Images:</h3>    
-        </header>
-        <figure>
-          <img src="media/images/laptop-dell-personalised.jpg" alt="A dell laptop personalised with various github stickers" width="400">
             <figcaption>
-              A Dell laptop personalised with logo stickers from gitHub, Java, CentOS, Visual Studio Code, Git, Ubuntu, Google, MySQL and Python. Featuring Tux from Linux and Octocat from gitHub.
+              An online, beginners&apos; Yoruba language video. The Online Video Provider is Youtube. Other providers include...
             </figcaption>
-        </figure>                
+
+          </figure>                
+
+  
+        </section>
+
       </section>
-    </fieldset> 
-    
-   
+
+        <!-- Right Sidebar
+================================================== -->
+      <aside class="sidebar">
+        <p>Platforms</p>
+        <p>Topics</p>
+        <p>Use Our Code</p>
+        <p>Contact Us</p>
+      </aside>      
+      
+    </main>
+
+
+
+    <article class="hero-article" id="hero-background-cube-01">
+      <div class="hero-message message-left monospaced">
+        <h2>Hero message from the ṢàngóTech <!--&#x1E63;&#x00E0;ng&#x00F3;Tech-->  Network.</h2>
+        <h2>"Computer Technology, Yoruba Contexts. Let&apos;s Go!"</h2 >
+      </div>
+    </article>        
     
     <div id="confirmDialogCont" class="dlg-container">
       <div class="dlg-header">Let's discuss this...</div>
@@ -589,8 +605,7 @@
         <a id="confirmDlgOkBtn">OK</a>
        </div>
     </div>
-  <!-- Right Sidebar
-================================================== -->
+
   
   <!-- Footer
 ================================================= -->

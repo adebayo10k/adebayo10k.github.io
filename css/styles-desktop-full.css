@@ -263,7 +263,7 @@ iframe {
 }
 
 .mapEmbed, .audioEmbed, .videoEmbed{
-    width: 60%;
+    width: 100%;
 }
 .mapEmbed {
     height: 250px;

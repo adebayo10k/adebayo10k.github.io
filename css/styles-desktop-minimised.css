@@ -93,9 +93,6 @@ figcaption{
     font-style: italic;
 }
 
-.mapEmbed, .audioEmbed, .videoEmbed{
-    width: 80%;
-}
 /*-------------------------------------------------------------*/
 /* page header styles*/
 
@@ -135,9 +132,11 @@ main {
 /*-------------------------------------------------------------*/
 /* navigation styles*/
 
+/* TEST
 .newIcon::after{
   content: url(../media/images/favicon0.ico);
 }
+*/
 
 nav ul{
   display: grid;
