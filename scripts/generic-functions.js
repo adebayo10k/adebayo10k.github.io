@@ -3,7 +3,7 @@
 //===========================================================================================
 // HEADER // add generic header content siteLogo-wide
 const siteLogo = document.getElementById("siteLogo");
-const logoText = `AlgoDiscoDev Software Engineering`;
+const logoText = `AlgoDiscoDev Software Development`;
 
 siteLogo.innerHTML = logoText;
 

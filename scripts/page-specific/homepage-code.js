@@ -33,7 +33,7 @@ const setSystemState = (requestedState) => {
             break;
         case "USER_CONFIGURED" :
             localStorage.setItem("bgColour", bgColourInputElem.value);
-            localStorage.setItem("userChoiceDate", new Date());
+            localStorage.setItem("userChoiceDate", new Date()); // stored as an array object.
             break;
         case "UNSET" : 
             localStorage.clear();
@@ -49,6 +49,23 @@ const updateAppearanceSectionsContent = (storedAppearanceSetting) => {
     const introText = `
     Make yourself at home by changing the background colour being used by this site. Your browser should remember your changes between restarts.    
     `;
+    /*
+    //FIGURING OUT THE MOST PLEASING DATE FORMAT
+
+    console.log(typeof localStorage.getItem("userChoiceDate")); // string returned
+    console.log(localStorage.userChoiceDate);
+
+    const testDate = new Date(localStorage.userChoiceDate);
+    console.log(typeof testDate);
+    console.log(testDate.toLocaleDateString());
+    console.log(testDate.getDay());
+    console.log(testDate.getFullYear());
+    console.log(testDate.toDateString());
+    console.log(testDate.toLocaleTimeString());
+    console.log(testDate.toLocaleString());
+    console.log(testDate.toUTCString()); // ** THIS ONE (ALTHOUGH EXISTING FORMAT OK AFTER ALL)
+    */
+
     const summaryText = `
     Your preferred background colour was set to <strong>${localStorage.getItem("bgColour")}</strong> on <strong>${localStorage.getItem("userChoiceDate")}</strong>. Try another whenever you like.    
     `;    
