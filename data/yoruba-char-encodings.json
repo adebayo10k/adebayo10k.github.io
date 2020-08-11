@@ -1,0 +1,102 @@
+{
+  "characterSet" : "Yoruba Language",
+  "characterSubsets" : [
+    "lowercase"
+  ],
+  "compileDate" : "11 August 2020",
+  "citedSources" : [
+    {
+      "organistionName" : "wikipedia.org",
+      "sourceURL" : "https://en.wikipedia.org/wiki/Morse_code",
+      "sourceDescription" : "Wikipedia Morse Code page"
+    },
+    {
+      "organistionName" : "decodeunicode.org",
+      "sourceURL" : "https://decodeunicode.org/",
+      "sourceDescription" : "decodeunicode website"
+    },
+    {
+      "organistionName" : "psu.edu",
+      "sourceURL" : "http://www.personal.psu.edu/ejp10/symbolcodes/index.html",
+      "sourceDescription" : "penn state university website legacy page"
+    }
+  ],
+  "alphabetCharacters" : [
+    {
+      "characterSymbol" : "a",
+      "unicodeHex" : "x0061",
+      "unicodeDec" : "97",
+      "htmlCER" : "",
+      "morse" : ".-",
+      "phoneticPronounciation" : "aah",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "à",
+      "unicodeHex" : "x00E0",
+      "unicodeDec" : "224",
+      "htmlCER" : "&agrave;",
+      "morse" : ".--.-",
+      "phoneticPronounciation" : "",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : "NON-ENGLISH MORSE EXTENSION"
+    },
+    {
+      "characterSymbol" : "á",
+      "unicodeHex" : "x00E1",
+      "unicodeDec" : "225",
+      "htmlCER" : "&aacute;",
+      "morse" : "",
+      "phoneticPronounciation" : "",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "b",
+      "unicodeHex" : "x0062",
+      "unicodeDec" : "98",
+      "htmlCER" : "",
+      "morse" : "-...",
+      "phoneticPronounciation" : "bee",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "d",
+      "unicodeHex" : "x0064",
+      "unicodeDec" : "100",
+      "htmlCER" : "",
+      "morse" : "-..",
+      "phoneticPronounciation" : "dee",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    }
+  ]
+}
+
