@@ -109,9 +109,10 @@ const heroMsg_4 = `"Build stuff that you actually give a s*** about."`;
 const heroMsg_5 = `"Poor code is worse that no code"`;
 const heroMsg_6 = `"A language fit to support all concepts - both new and old"`;
 const heroMsg_7 = `"Our Philosophies are our foundations."`;
-const heroMsg_8 = `"When you're done with"`;
+const heroMsg_8 = `"When you're done with the Munchkin services, Join Us"`;
 const heroMsg_9 = `""`;
-
+// default messages to remain in html?
+// character count aware, due to limited space
 
 // homepage
 

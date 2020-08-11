@@ -18,10 +18,10 @@ if (document.documentElement.clientWidth < 800){
 //
 // assign value of iframe src attribute, and get the resource AFTER page content has loaded
 const yorubaVideoEmbed01 = document.getElementById("yorubaVideoEmbed01");
-yorubaVideoEmbed01.src = "https://www.youtube.com/embed/KnGPtahOlx0";
+//yorubaVideoEmbed01.src = "https://www.youtube.com/embed/KnGPtahOlx0";
 
 const yorubaAudioEmbed01 = document.getElementById("yorubaAudioEmbed01");
-yorubaAudioEmbed01.src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/369438599&color=%236495ed&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true";
+//yorubaAudioEmbed01.src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/369438599&color=%236495ed&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true";
 
 
 const encodingsBody = document.getElementById("encodingsBody");
@@ -128,7 +128,87 @@ for (let key in yorubaMorse){
         }
     }
 }
+//----------------------------------------------------------------
 
+const encodingsBody1 = document.getElementById("encodingsBody1");
+//let encodingsRow = encodingsBody.childNodes;
+//let encodingsRow1 = encodingsBody1.children; // returns the rows of the table
+const yDataURL = "./data/yoruba-char-encodings.json";// from the root apparently
+
+const getYorubaCharTableData = (url, responseType) => {
+  return fetch(url).then(response => {
+    if(!response.ok){
+      throw new Error(`HTTP Error! Status: ${response.status}`);
+    }
+    else {
+      if (responseType === "json"){
+        return response.json();
+      }
+    }
+  })
+  .catch(err => {
+    console.log(`There has been a problem with your fetch operation for resource "${url}": ${err.message}`);
+  });
+};
+
+const populateTableBody = (jsonObj) => {
+  const charInfo = jsonObj['alphabetCharacters'];
+
+
+  // for every object in charInfo, make a row and add it to the table body
+  for (let index = 0; index < charInfo.length; index++){
+    console.log(charInfo[index].characterSymbol);
+    const row = document.createElement("tr");
+    
+    // compose each td item required
+    const charSymbolData = document.createElement("td");
+    charSymbolData.innerHTML = `<p>${charInfo[index].characterSymbol}</p>`;
+
+    const charHexData = document.createElement("td");
+    charHexData.textContent = `&#${charInfo[index].unicodeHex};`;
+
+    const charDecData = document.createElement("td");
+    charDecData.textContent = `&#${charInfo[index].unicodeDec};`;
+
+    const charCERData = document.createElement("td");
+    charCERData.textContent = `${charInfo[index].htmlCER}`;
+
+    const charMorseData = document.createElement("td");
+    charMorseData.setAttribute("class", "morse-field");
+    let morseValue = charInfo[index].morse;
+    let hexStringMorse = createHexStringMorse(morseValue);
+    charMorseData.innerHTML = `<p>${hexStringMorse}</p>`;
+    
+    const charNoteData = document.createElement("td");
+    
+    // put the td elements into an array
+    let rowData = new Array(charSymbolData, charHexData, charDecData, charCERData, charMorseData, charNoteData);
+
+    // iterate over that now fully formed td array elems to append each to row element
+    for (let j = 0; j < rowData.length; j++){
+      row.appendChild(rowData[j]);
+    }
+
+    encodingsBody1.appendChild(row);
+
+  }// end outer for loop
+
+
+
+
+};
+
+//------------- main ------------
+
+getYorubaCharTableData(yDataURL, "json")
+.then(jsonData => {
+  console.log(jsonData);
+  // populate table header
+
+  // populate table body
+  populateTableBody(jsonData);
+  // populate table footer
+})
 
 
 /*
