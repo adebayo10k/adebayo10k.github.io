@@ -151,13 +151,12 @@ const getYorubaCharTableData = (url, responseType) => {
   });
 };
 
+// for every object in charInfo, make a row and add it to the table body
 const populateTableBody = (jsonObj) => {
   const charInfo = jsonObj['alphabetCharacters'];
-
-
-  // for every object in charInfo, make a row and add it to the table body
+  
   for (let index = 0; index < charInfo.length; index++){
-    console.log(charInfo[index].characterSymbol);
+    //console.log(charInfo[index].characterSymbol);
     const row = document.createElement("tr");
     
     // compose each td item required
@@ -165,10 +164,10 @@ const populateTableBody = (jsonObj) => {
     charSymbolData.innerHTML = `<p>${charInfo[index].characterSymbol}</p>`;
 
     const charHexData = document.createElement("td");
-    charHexData.textContent = `&#${charInfo[index].unicodeHex};`;
+    charHexData.textContent = charInfo[index].unicodeHex === "undefined" ? "undefined" : `&#${charInfo[index].unicodeHex};`;
 
     const charDecData = document.createElement("td");
-    charDecData.textContent = `&#${charInfo[index].unicodeDec};`;
+    charDecData.textContent = charInfo[index].unicodeDec === "undefined" ? "" : `&#${charInfo[index].unicodeDec};`;
 
     const charCERData = document.createElement("td");
     charCERData.textContent = `${charInfo[index].htmlCER}`;
@@ -202,7 +201,7 @@ const populateTableBody = (jsonObj) => {
 
 getYorubaCharTableData(yDataURL, "json")
 .then(jsonData => {
-  console.log(jsonData);
+  //console.log(jsonData);
   // populate table header
 
   // populate table body

@@ -3,6 +3,10 @@
   "characterSubsets" : [
     "lowercase"
   ],
+  "encodings" : [
+    "UTF-16 Unicode",
+    "Morse Code"
+  ],
   "compileDate" : "11 August 2020",
   "citedSources" : [
     {
@@ -89,6 +93,516 @@
       "htmlCER" : "",
       "morse" : "-..",
       "phoneticPronounciation" : "dee",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "e",
+      "unicodeHex" : "x0065",
+      "unicodeDec" : "101",
+      "htmlCER" : "",
+      "morse" : ".",
+      "phoneticPronounciation" : "aye",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "è",
+      "unicodeHex" : "x00E8",
+      "unicodeDec" : "232",
+      "htmlCER" : "&egrave;",
+      "morse" : "",
+      "phoneticPronounciation" : "",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "é",
+      "unicodeHex" : "x00E9",
+      "unicodeDec" : "233",
+      "htmlCER" : "&eacute;",
+      "morse" : "",
+      "phoneticPronounciation" : "",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : "INCLUDED IN ITU-R MORSE"
+    },
+    {
+      "characterSymbol" : "ẹ",
+      "unicodeHex" : "x1EB9",
+      "unicodeDec" : "7865",
+      "htmlCER" : "",
+      "morse" : "",
+      "phoneticPronounciation" : "ehr",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "̀ẹ",
+      "unicodeHex" : "undefined",
+      "unicodeDec" : "undefined",
+      "htmlCER" : "",
+      "morse" : "",
+      "phoneticPronounciation" : "",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "́ẹ",
+      "unicodeHex" : "undefined",
+      "unicodeDec" : "undefined",
+      "htmlCER" : "",
+      "morse" : "",
+      "phoneticPronounciation" : "",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "f",
+      "unicodeHex" : "x0066",
+      "unicodeDec" : "102",
+      "htmlCER" : "",
+      "morse" : "..-.",
+      "phoneticPronounciation" : "fee",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "g",
+      "unicodeHex" : "x0067",
+      "unicodeDec" : "103",
+      "htmlCER" : "",
+      "morse" : "--.",
+      "phoneticPronounciation" : "gee",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "∑{gb}",
+      "unicodeHex" : "undefined",
+      "unicodeDec" : "undefined",
+      "htmlCER" : "",
+      "morse" : "",
+      "phoneticPronounciation" : "gbe",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "h",
+      "unicodeHex" : "x0068",
+      "unicodeDec" : "104",
+      "htmlCER" : "",
+      "morse" : "....",
+      "phoneticPronounciation" : "hee",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "i",
+      "unicodeHex" : "x0069",
+      "unicodeDec" : "105",
+      "htmlCER" : "",
+      "morse" : "..",
+      "phoneticPronounciation" : "e",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "ì",
+      "unicodeHex" : "x00EC",
+      "unicodeDec" : "236",
+      "htmlCER" : "&igrave;",
+      "morse" : "",
+      "phoneticPronounciation" : "",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "í",
+      "unicodeHex" : "x00ED",
+      "unicodeDec" : "237",
+      "htmlCER" : "&iacute;",
+      "morse" : "",
+      "phoneticPronounciation" : "",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "j",
+      "unicodeHex" : "x006A",
+      "unicodeDec" : "106",
+      "htmlCER" : "",
+      "morse" : ".---",
+      "phoneticPronounciation" : "gee",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "k",
+      "unicodeHex" : "x006B",
+      "unicodeDec" : "107",
+      "htmlCER" : "",
+      "morse" : "-.-",
+      "phoneticPronounciation" : "kee",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "l",
+      "unicodeHex" : "x006C",
+      "unicodeDec" : "108",
+      "htmlCER" : "",
+      "morse" : ".-..",
+      "phoneticPronounciation" : "lee",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "m",
+      "unicodeHex" : "x006D",
+      "unicodeDec" : "109",
+      "htmlCER" : "",
+      "morse" : "--",
+      "phoneticPronounciation" : "mee",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "n",
+      "unicodeHex" : "x006E",
+      "unicodeDec" : "110",
+      "htmlCER" : "",
+      "morse" : "-.",
+      "phoneticPronounciation" : "nee",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "o",
+      "unicodeHex" : "x006F",
+      "unicodeDec" : "111",
+      "htmlCER" : "",
+      "morse" : "---",
+      "phoneticPronounciation" : "ooh",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "ò",
+      "unicodeHex" : "x00F2",
+      "unicodeDec" : "242",
+      "htmlCER" : "&ograve;",
+      "morse" : "",
+      "phoneticPronounciation" : "",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "ó",
+      "unicodeHex" : "x00F3",
+      "unicodeDec" : "243",
+      "htmlCER" : "&oacute;",
+      "morse" : "",
+      "phoneticPronounciation" : "",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : "NON-ENGLISH MORSE EXTENSION"
+    },
+    {
+      "characterSymbol" : "ọ",
+      "unicodeHex" : "x01ECD",
+      "unicodeDec" : "7885",
+      "htmlCER" : "",
+      "morse" : "",
+      "phoneticPronounciation" : "o",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "̀ọ",
+      "unicodeHex" : "undefined",
+      "unicodeDec" : "undefined",
+      "htmlCER" : "",
+      "morse" : "",
+      "phoneticPronounciation" : "",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "́ọ",
+      "unicodeHex" : "undefined",
+      "unicodeDec" : "undefined",
+      "htmlCER" : "",
+      "morse" : "",
+      "phoneticPronounciation" : "",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "p",
+      "unicodeHex" : "x0065",
+      "unicodeDec" : "112",
+      "htmlCER" : "",
+      "morse" : ".--.",
+      "phoneticPronounciation" : "kpe",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "r",
+      "unicodeHex" : "x0072",
+      "unicodeDec" : "114",
+      "htmlCER" : "",
+      "morse" : ".-.",
+      "phoneticPronounciation" : "ree",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "s",
+      "unicodeHex" : "x0073",
+      "unicodeDec" : "115",
+      "htmlCER" : "",
+      "morse" : "...",
+      "phoneticPronounciation" : "see",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "ṣ",
+      "unicodeHex" : "x1E63",
+      "unicodeDec" : "7779",
+      "htmlCER" : "",
+      "morse" : "",
+      "phoneticPronounciation" : "she",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "t",
+      "unicodeHex" : "x0074",
+      "unicodeDec" : "116",
+      "htmlCER" : "",
+      "morse" : "-",
+      "phoneticPronounciation" : "tee",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "u",
+      "unicodeHex" : "x0075",
+      "unicodeDec" : "117",
+      "htmlCER" : "",
+      "morse" : "..-",
+      "phoneticPronounciation" : "oow",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "ù",
+      "unicodeHex" : "x00F9",
+      "unicodeDec" : "249",
+      "htmlCER" : "&ugrave;",
+      "morse" : "",
+      "phoneticPronounciation" : "",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "ú",
+      "unicodeHex" : "x00FA",
+      "unicodeDec" : "250",
+      "htmlCER" : "&uacute;",
+      "morse" : "",
+      "phoneticPronounciation" : "",
+      "isVowel" : true,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "w",
+      "unicodeHex" : "x0077",
+      "unicodeDec" : "119",
+      "htmlCER" : "",
+      "morse" : ".--",
+      "phoneticPronounciation" : "wee",
+      "isVowel" : false,
+      "usage" : [
+        "word 1",
+        "word 2",
+        "word 3"
+      ],
+      "note" : ""
+    },
+    {
+      "characterSymbol" : "y",
+      "unicodeHex" : "x0079",
+      "unicodeDec" : "121",
+      "htmlCER" : "",
+      "morse" : "-.--",
+      "phoneticPronounciation" : "yee",
       "isVowel" : false,
       "usage" : [
         "word 1",
