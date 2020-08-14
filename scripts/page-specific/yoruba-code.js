@@ -18,13 +18,16 @@ if (document.documentElement.clientWidth < 800){
 //
 // assign value of iframe src attribute, and get the resource AFTER page content has loaded
 const yorubaVideoEmbed01 = document.getElementById("yorubaVideoEmbed01");
-//yorubaVideoEmbed01.src = "https://www.youtube.com/embed/KnGPtahOlx0";
+yorubaVideoEmbed01.src = "https://www.youtube.com/embed/KnGPtahOlx0";
 
 const yorubaAudioEmbed01 = document.getElementById("yorubaAudioEmbed01");
-//yorubaAudioEmbed01.src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/369438599&color=%236495ed&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true";
+yorubaAudioEmbed01.src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/369438599&color=%236495ed&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true";
 
 
 const encodingsBody = document.getElementById("encodingsBody");
+
+/*
+
 //let encodingsRow = encodingsBody.childNodes;
 let encodingsRow = encodingsBody.children; // returns the rows of the table
 
@@ -70,6 +73,8 @@ const yorubaMorse = {
     "x0079" : "-.--"  //     y
 };
 
+*/
+
 const morse = {
     "dot" : "&#x2022;",
     "dash" : "&#x2501;"
@@ -93,6 +98,7 @@ const createHexStringMorse = (punctString) => {
     return hexStringMorse;
 };
 
+/*
 const getMorseField = (key) => {
     let targetString = `&#${key};`;
     let targetMorseField = null;
@@ -128,11 +134,16 @@ for (let key in yorubaMorse){
         }
     }
 }
+
+*/
+
 //----------------------------------------------------------------
 
-const encodingsBody1 = document.getElementById("encodingsBody1");
+//const encodingsBody1 = document.getElementById("encodingsBody1");
 //let encodingsRow = encodingsBody.childNodes;
 //let encodingsRow1 = encodingsBody1.children; // returns the rows of the table
+
+
 const yDataURL = "./data/yoruba-char-encodings.json";// from the root apparently
 
 const getYorubaCharTableData = (url, responseType) => {
@@ -188,7 +199,7 @@ const populateTableBody = (jsonObj) => {
       row.appendChild(rowData[j]);
     }
 
-    encodingsBody1.appendChild(row);
+    encodingsBody.appendChild(row);
 
   }// end outer for loop
 
@@ -208,18 +219,11 @@ getYorubaCharTableData(yDataURL, "json")
   populateTableBody(jsonData);
   // populate table footer
 })
+.catch(err => {
+  console.log(`Emptiness of return was experienced. Investigate. Error message: ${err.message}`);
+});
 
 
-/*
-    "x00E0 : ",  //             
-    "x00E0 : ",  //                   
-    "x00E0 : ",  //               
-    "x00E0 : ",  //             
-    "x00E0 : ",  //              
-
-
-
-*/
 
 
 
