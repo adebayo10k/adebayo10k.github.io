@@ -9,6 +9,33 @@ const forgetMeBtn = document.getElementById("forgetMeBtn");
 
 const defaultColour = "#6495ed"; //cornflower blue"#6495ed"; //cornflower blue
 
+//---------------------------------------------------------------------------------------------------
+
+// feature detection function that checkS whether localStorage (or sessionStorage) is both supported and available
+const storageAvailable = (type) => {
+  let storage;
+  try {
+    storage = window[type];
+    const x = '__storage_test__';
+    storage.setItem(x, x);
+    storage.removeItem(x);
+    return true;
+  }
+  catch(err) {
+    return err instanceof DOMException && (
+      // everything except Firefox
+      err.code === 22 ||
+      // Firefox
+      err.code === 1014 ||
+      // test name field too, because code might not be present
+      // everything except Firefox
+      err.name === 'QuotaExceededError' ||
+      // Firefox
+      err.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+      // acknowledge QuotaExceededError only if there's something already stored
+      (storage && storage.length !== 0);
+  }
+}
 
 //---------------------------------------------------------------------------------------------------
 
@@ -180,12 +207,32 @@ const clearUserConfiguration = () => {
 //---------------------------------------------------------------------------------------------------
 
 //==============================================================
-// ADD EVENT LISTENERS TO DOM ELEMENTS AND SPECIFY CALLBACK FUNCTIONS
 
-bgColourBtnElem.addEventListener("click", userConfigurePage);
-forgetMeBtn.addEventListener("click", clearUserConfiguration);
 
 // on page load...main...
-//localStorage.clear();
-refreshSiteAppearance();
+// 
+if (storageAvailable('localStorage')) {
+  // localStorage is both supported and available, so...
+  bgColourBtnElem.addEventListener("click", userConfigurePage);
+  forgetMeBtn.addEventListener("click", clearUserConfiguration);
+  refreshSiteAppearance();
+}
+else {
+  // No localStorage, so error was returned. Nothing to do. App will not work.
+  console.log(storageAvailable());
+  // the default 'bad news.. no JavaScript..' html coded message stays visible
+  // TODO: MAKE THAT THE ONLY THING VISIBLE, SO NO BUTTONS, NO NOTHING.
+  /*
+
+  window.addEventListener('storage', function(e) {  
+  document.querySelector('.my-key').textContent = e.key;
+  document.querySelector('.my-old').textContent = e.oldValue;
+  document.querySelector('.my-new').textContent = e.newValue;
+  document.querySelector('.my-url').textContent = e.url;
+  document.querySelector('.my-storage').textContent = JSON.stringify(e.storageArea);
+  });
+
+  */
+}
+
 
