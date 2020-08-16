@@ -184,6 +184,10 @@ a:active {
     color: blueviolet;
 }
 
+abbr:hover {
+  cursor: help;
+}
+
 /* section header h3 */
 /* section p and h3 left margin + padding + border set to line up */
 section header h3{
