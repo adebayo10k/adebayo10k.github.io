@@ -114,7 +114,7 @@ const heroMsg_9 = `"Let's build on solid ground."`;
 // default messages to remain in html?
 // character count aware, due to limited space
 
-// homepage
+// anfani nipasẹ imọ-ẹrọ => vorsprung durch technik
 
 const img5 = "";
 const img6 = "";

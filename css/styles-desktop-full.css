@@ -340,9 +340,10 @@ header.page-head h2{
 }
 
 .page-head.pre {
-  display: none;
+  display: block;
   background-image: none;
-  background-color: rebeccapurple;
+  color: #fff;
+  background-color: green;
   padding: 0.5rem 0;
 }
 
@@ -856,6 +857,7 @@ section.site-app-card.site-form {
   box-shadow: inset 2px 2px 4px 0px linen;
   color: #fff;
 }
+
 /*-------------------------------------------------------------*/
 /* END */
 

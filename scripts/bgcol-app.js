@@ -1,5 +1,7 @@
-// 
-const htmlElem = document.querySelector("html");
+// get html reference only if one not already declared in another script
+if (!htmlElem){
+  const htmlElem = document.querySelector("html");
+}
 const changeIntroPara = document.getElementById("changeIntroPara");
 const changeSummaryPara = document.getElementById("changeSummaryPara");
 const bgColourInputElem = document.getElementById("bgColourPicker");
@@ -11,7 +13,7 @@ const defaultColour = "#6495ed"; //cornflower blue"#6495ed"; //cornflower blue
 
 //---------------------------------------------------------------------------------------------------
 
-// feature detection function that checkS whether localStorage (or sessionStorage) is both supported and available
+// feature detection function that checks whether localStorage (or sessionStorage) is both supported and available
 const storageAvailable = (type) => {
   let storage;
   try {
@@ -127,7 +129,7 @@ const updateAppearanceSectionsContent = (storedAppearanceSetting) => {
 };
 //---------------------------------------------------------------------------------------------------
 
-const updateStyleAllPages = () => {
+const updateStyleThisPage = () => {
    htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;   
 };
 //---------------------------------------------------------------------------------------------------
@@ -149,8 +151,8 @@ const refreshSiteAppearance = () => {
         // system default state found, so nothing to do here
         updateAppearanceSectionsContent(storedAppearanceSetting);// should be no change, but just for completeness
     }
-    // in all states... update page styles:
-    updateStyleAllPages();
+    // in all states... update this pages' styles:
+    updateStyleThisPage();
 
 };
 //---------------------------------------------------------------------------------------------------
