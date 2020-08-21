@@ -1,0 +1,72 @@
+[
+  {
+    "name" : "ffmpeg_multi_in_multi_out.sh",
+    "developers" : ["damola adebayo"],
+    "shortDescription" : "calls the ffmpeg program, passing in many input files and returning corresponding converted output files",
+    "remoteRepoURL" : "https://github.com/adebayo10k/file_management_shell_scripts",
+    "remoteSourceURL" : "https://github.com/adebayo10k/file_management_shell_scripts/blob/master/utils.ffmpeg_multi_in_multi_out.sh",
+    "remoteImageURL" : "../images/project-card-images/laptop-dell-personalised-1500.jpg",
+    "localImageURL" : "",
+    "platforms" : ["linux shell"],
+    "programmingLanguages" : ["BASH"],
+    "contexts" : ["developer"],
+    "currentStatus" : "minimal_function",
+    "visibility" : "public"
+  },
+  {
+    "name" : "yoruba-greetings-selector",
+    "developers" : ["damola adebayo"],
+    "shortDescription" : "Greetings form an important element of Yoruba culture. This app presents the Yoruba learner with a set of appropriate greetings based on the specified situation.",
+    "remoteRepoURL" : "",
+    "remoteSourceURL" : "",
+    "remoteImageURL" : "../media/images/project-card-images/raspberry-pi-3b-plus-1500.jpg",
+    "localImageURL" : "",
+    "platforms" : [""],
+    "programmingLanguages" : [""],
+    "contexts" : ["yoruba"],
+    "currentStatus" : "pending",
+    "visibility" : "public"
+  },
+  {
+    "name" : "audit list maker",
+    "developers" : ["damola adebayo"],
+    "shortDescription" : "Automates the writing of directory contents to files, but in configurable ways, such as excluding or encrypting.",
+    "remoteRepoURL" : "https://github.com/adebayo10k/audit_list_maker",
+    "remoteSourceURL" : "https://github.com/adebayo10k/audit_list_maker/blob/master/utils.audit_list_maker.sh",
+    "remoteImageURL" : "../images/project-card-images/laptop-dell-personalised-1500.jpg",
+    "localImageURL" : "",
+    "platforms" : ["linux shell"],
+    "programmingLanguages" : ["BASH"],
+    "contexts" : ["system administration"],
+    "currentStatus" : "in_service",
+    "visibility" : "public"
+  },
+  {
+    "name" : "encryption services",
+    "developers" : ["damola adebayo"],
+    "shortDescription" : "A wrapper for gpg, enabling configuration and automation of public-key encryption services provided to other programs.",
+    "remoteRepoURL" : "https://github.com/adebayo10k/encryption_services",
+    "remoteSourceURL" : "https://github.com/adebayo10k/encryption_services",
+    "remoteImageURL" : "../media/images/project-card-images/raspberry-pi-3b-plus-1500.jpg",
+    "localImageURL" : "",
+    "platforms" : ["linux shell"],
+    "programmingLanguages" : ["BASH"],
+    "contexts" : ["system administration", "security"],
+    "currentStatus" : "minimal_function",
+    "visibility" : "public"
+  },
+  {
+    "name" : "micro:bit morse coder",
+    "developers" : ["damola adebayo"],
+    "shortDescription" : "This requires young code ninjas to program micro:bit microcontroller to be a Morse Code transceiver, both transmitting and receiving signals.",
+    "remoteRepoURL" : "https://github.com/adebayo10k/CoderDojo_Projects",
+    "remoteSourceURL" : "https://github.com/adebayo10k/CoderDojo_Projects/tree/master/morse_code",
+    "remoteImageURL" : "../images/project-card-images/laptop-dell-personalised-1500.jpg",
+    "localImageURL" : "",
+    "platforms" : ["micro:bit"],
+    "programmingLanguages" : ["makecode"],
+    "contexts" : ["coderdojo", "mentoring", "developer"],
+    "currentStatus" : "in_service",
+    "visibility" : "public"
+  }
+]
