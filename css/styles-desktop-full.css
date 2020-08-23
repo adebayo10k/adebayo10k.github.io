@@ -150,6 +150,7 @@ html{
 
 body{
     background-color:#ddd;
+    background-color:#fff;
     width: 96%;
     width: calc(94% - 2px);
     margin: 1rem auto;

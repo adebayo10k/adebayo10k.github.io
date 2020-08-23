@@ -16,7 +16,7 @@
   {
     "name" : "yoruba-greetings-selector",
     "developers" : ["damola adebayo"],
-    "shortDescription" : "Greetings form an important element of Yoruba culture. This app presents the Yoruba learner with a set of appropriate greetings based on the specified situation.",
+    "shortDescription" : "Greetings form an important element of Yoruba culture. This web app presents the Yoruba learner with a set of appropriate greetings based on the specified situation.",
     "remoteRepoURL" : "",
     "remoteSourceURL" : "",
     "remoteImageURL" : "../media/images/project-card-images/raspberry-pi-3b-plus-1500.jpg",
