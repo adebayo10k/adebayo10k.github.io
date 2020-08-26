@@ -21,6 +21,8 @@ const getProjectsData = (url, responseType) => {
   })
 }; // end function
 
+//------------------------------------------------------------------------------------
+
 // returns a Promise - a database opened on an objectStore
 const openDB = () => {
   return new Promise((resolve, reject) => {
@@ -71,22 +73,19 @@ const openDB = () => {
 
 //------------------------------------------------------------------------------------
 
-//------------------------------------------------------------------------------------
-
 // make a tx scope objectStore to be pass around to specific operations as required during the life of the transaction
 const openTxScopeObjStore = (db, storeList, transactionMode) => {
-  let transax = db.transaction(storeList, transactionMode);
-  let objectStore = transax.objectStore(storeList);
+  //let transax = db.transaction(storeList, transactionMode);
+  let objectStore = db.transaction(storeList[0], transactionMode).objectStore(storeList);
 
   return objectStore;  
 };
 
 //------------------------------------------------------------------------------------
 
-// called only after successful clearing of exisiting objectStore
-const repopulateDB = (jsonObj, objectStore) => {
 
-  //console.log(`objectStore index namsa : ${objectStore.indexNames[0]}`);
+// called only after successful clearing of exisiting objectStore
+const repopulateDB = function (jsonObj, objectStore) {
 
   for (let i = 0; i < jsonObj.length; i++){
     let os_add_req = objectStore.add(jsonObj[i]);
@@ -104,17 +103,10 @@ const repopulateDB = (jsonObj, objectStore) => {
 //------------------------------------------------------------------------------------
 
 // called ONLY if json data AND open db acquired
-const harmoniseProjectsData = (dataStorageObjects) => {
+const harmoniseProjectsData = function (jsonObj, objectStore) {
 
-  let jsonObj = dataStorageObjects[0];
-  let dbObj = dataStorageObjects[1];
-  // use same transaction for multiple operations
-  let objectStore = openTxScopeObjStore(dbObj, ["projects_os"], "readwrite");
-
-  // Since we're got an up-to-date json, delete all existing database records
-  // unfortunately, from here all these async requests will have to be nested, so the happen in correct order
-  // later, we'll use promises 
-  // use the clear() function. call a function for this
+  // Since we'v got an up-to-date json, delete all existing database records
+  // use the clear() function. call a function for this?
   let os_clear_req = objectStore.clear();
 
   os_clear_req.onsuccess = (event) => {
@@ -122,29 +114,204 @@ const harmoniseProjectsData = (dataStorageObjects) => {
     // call function to repopulate db objectStore with json data
     repopulateDB(jsonObj, objectStore);
   };
+}; // end function
+
+
+//------------------------------------------------------------------------------------
+
+const allNameFieldsMatch = (jsonObj, dbRecordArray) => {
+  // return true if match
+  // same lengths, so iterate over either one
+  let allMatch;
+  for (let i = 0; i < jsonObj.length; i++){
+    if (jsonObj[i].name === dbRecordArray[i].name)
+    {
+      console.log(`record ${i} name fields MATCHED`);
+      allMatch = true;
+    }
+    else{
+      console.log(`record ${i} name fields NOT MATCHED!`);
+      allMatch = false;
+      break;
+
+    }
+  }
+  return allMatch;
+
+
+};
+//------------------------------------------------------------------------------------
+
+const checkDataSourcesMatch = (jsonObj, dbRecordArray) => {
+  // assume one source has at least one record
+  // return true if match
+  console.log(`jsonObj.length = ${jsonObj.length}`);
+  console.log(`dbRecordArray.length = ${dbRecordArray.length}`);
+
+  if (jsonObj.length !== dbRecordArray.length){
+    // confirmed source mismatch
+    //let biggestSourceLen = Math.max(jsonObj.length, dbRecordArray.length);
+    //let biggestSource = biggestSourceLen === jsonObj.length ? "largerJSON" : "largerDB";
+    //console.log(`biggestSourceLen = ${biggestSourceLen}`);
+    //console.log(`biggestSource = ${biggestSource}`);
+    return false;
+  }
+  else{
+    // same size, so check for content match
+    if (allNameFieldsMatch(jsonObj, dbRecordArray)){
+      return true;
+    }
+    else{
+      return false;
+    }    
+  }
+     
+};
+
+//------------------------------------------------------------------------------------
+
+// want to call this either after db has updated (so with db derived array), or in other senarios such as with existing db or with existing or fetched json.
+const renderProjectCards = (projectsArray) => {
+
+  // 
+  const pageContent = document.querySelector(".page-content");
+  
+  for (let index = 0; index < projectsArray.length; index++){
+    
+    const projectCard = document.createElement("section");
+    projectCard.setAttribute("class", "project-card");
+
+    const cardImage = document.createElement("div");
+    cardImage.setAttribute("class", "card-image");
+    const imgElem = document.createElement("img");
+    imgElem.setAttribute("src", `${projectsArray[index].remoteImageURL}`);
+    imgElem.setAttribute("alt", `${projectsArray[index].cardImageAlt}`);
+    imgElem.setAttribute("width", `${projectsArray[index].cardImageIntrWidth}`);
+    cardImage.appendChild(imgElem);
+
+    const cardBody = document.createElement("div");
+    cardBody.setAttribute("class", "card-body");
+    cardBody.innerHTML = `
+    <h4>${projectsArray[index].name}</h4>
+    <h3>${projectsArray[index].shortDescription}</h3>
+    `;
+
+    const cardFooter = document.createElement("div");
+    cardFooter.setAttribute("class", "card-footer");
+    cardFooter.innerHTML = `
+    <p>${projectsArray[index].platforms} ${projectsArray[index].programmingLanguages}</p>
+    `;
+
+    projectCard.appendChild(cardImage);
+    projectCard.appendChild(cardBody);
+    projectCard.appendChild(cardFooter);
+
+    pageContent.appendChild(projectCard);
+  }
+  
+  
+
+
+};
+
+//------------------------------------------------------------------------------------
+
+const openRenderTransaction = (dataStorageObject) => {
+
+  let objectStore = openTxScopeObjStore(dataStorageObject, ["projects_os"], "readonly");
+
+  //  getAll() into another array is best approach
+  let os_getAll_req = objectStore.getAll();
+
+  os_getAll_req.onsuccess = (event) => {
+    //console.log(os_getAll_req.result);
+    renderProjectCards(os_getAll_req.result);
+  };
+
+  os_getAll_req.onerror = (event) => {
+    console.log(os_getAll_req.error);
+  };
 
   objectStore.transaction.oncomplete = (event) => {
-    console.log(`transactions all done!`);
-    dbObj.close();
+    console.log(`transaction 2 all done!`);
+    
   };
   objectStore.transaction.onerror = (event) => {
-    console.log(`transaction was NOT done!`);
+    console.log(`transaction 2 was NOT done!`);
   };
-  
-}; // end harmoniseProjectsData function
+
+};
+
+
+//------------------------------------------------------------------------------------
+
+const queryDatabaseIntoArray = (jsonObj, dbObj) => {
+
+  let objectStore = openTxScopeObjStore(dbObj, ["projects_os"], "readwrite");
+
+  let os_get_req = objectStore.getAll();
+
+  os_get_req.onsuccess = (event) => {
+    console.log(os_get_req.result);
+
+    // call function to check whether db and json records match
+    if (checkDataSourcesMatch(jsonObj, os_get_req.result)){
+      // source of truth is 
+      console.log(`about to render immediately (in next transaction)`); 
+    }
+    else {
+      // harmoniseProjectsData (which includes a render phase)
+      console.log(`about to harmonise data sources, then render (in next transaction)`);
+      harmoniseProjectsData(jsonObj, objectStore);
+    }
+  };
+
+  os_get_req.onerror = (event) => {
+    console.log(os_get_req.error);
+  };
+
+  objectStore.transaction.oncomplete = (event) => {
+    console.log(`transaction 1 all done!`);
+    // open another ro transaction to render from database
+    openDB()
+    .then((odb) => {
+      openRenderTransaction(odb);
+    })
+    .catch(err => {
+      console.log(`transaction 2, from opening the databse..... Investigate. Error message: ${err.message}`);
+    })
+
+
+  };
+  objectStore.transaction.onerror = (event) => {
+    console.log(`transaction 1 was NOT done!`);
+  };
+
+};
 
 //------------------- main --------------------------------
 
-const projectsJSONData = getProjectsData(pDataURL, "json");
-const openedProjectsDB = openDB();
+window.onload = () => {
 
-Promise.all([projectsJSONData, openedProjectsDB])
-.then((objects) => {
-  harmoniseProjectsData(objects);
-})
-.catch(err => {
-  console.log(`Caught it! Or did it bubble up? Investigate. Error message: ${err.message}`);
-});
+  // TODO: if can't get new json, use locally stored copy...
+  const projectsJSONData = getProjectsData(pDataURL, "json");
+  const openedProjectsDB = openDB();
+
+  //1. try to get records from database
+  Promise.all([projectsJSONData, openedProjectsDB])
+  .then((objects) => {
+    let jsd = objects[0];
+    let odb = objects[1];
+    //console.log(jsd);
+    //console.log(odb);
+    queryDatabaseIntoArray(jsd, odb);   
+  })
+  .catch(err => {
+    console.log(`Caught it! Or did it bubble up? Investigate. Error message: ${err.message}`);
+  })
+  
+}
+
 
 
 //------------------------------------------------------------------------------------

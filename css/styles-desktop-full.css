@@ -336,7 +336,7 @@ header.page-head h2{
     line-height: 1;
     text-align: center;
     text-shadow: 1px 1px 2px #800000;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: #fff;    
 }
 
@@ -484,6 +484,27 @@ section.project-card {
   width: 100%;
   margin: 0px;
   padding: 0px;
+}
+
+.project-card .card-image {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.project-card .card-body {
+  font-size: 1.5rem;
+  font-weight: normal;
+  font-style: normal;
+  padding: 1rem;
+}
+
+.project-card .card-footer {
+  font-size: 1.15rem;
+  font-weight: normal;
+  font-style: normal;
+  padding: 1rem;
+  border-top: 1px solid #d8d8d8;
 }
 
 @supports (display: grid) {
