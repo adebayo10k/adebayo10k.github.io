@@ -188,13 +188,12 @@ const renderProjectCards = (projectsArray) => {
     const imgElem = document.createElement("img");
     imgElem.setAttribute("src", `${projectsArray[index].remoteImageURL}`);
     imgElem.setAttribute("alt", `${projectsArray[index].cardImageAlt}`);
-    imgElem.setAttribute("width", `${projectsArray[index].cardImageIntrWidth}`);
-    cardImage.appendChild(imgElem);
+    imgElem.setAttribute("width", `${projectsArray[index].cardImageIntrWidth}`);cardImage.appendChild(imgElem);
 
     const cardBody = document.createElement("div");
     cardBody.setAttribute("class", "card-body");
     cardBody.innerHTML = `
-    <h3>${projectsArray[index].title}</h3>
+    <h3><a href="${projectsArray[index].sitePageURL}" title="" target="_blank">${projectsArray[index].title}</a></h3>
     <p>${projectsArray[index].shortDescription}</p>
     `;
 

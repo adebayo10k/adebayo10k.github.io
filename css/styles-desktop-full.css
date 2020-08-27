@@ -341,11 +341,12 @@ header.page-head h2{
 }
 
 .page-head.pre {
-  display: block;
+  display: none;
   background-image: none;
   color: #fff;
   background-color: green;
   padding: 0.5rem 0;
+  text-transform: lowercase;
 }
 
 /*-------------------------------------------------------------*/

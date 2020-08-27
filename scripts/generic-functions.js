@@ -1,4 +1,4 @@
-// this script is used by all pages that need generic features and content generated for them. (like navigation, so that should maybe be in this script?)
+// this script is used by all pages that need generic, common features and content generated for them. (like navigation)
 
 //===========================================================================================
 // HEADER // add generic header content siteLogo-wide
@@ -18,6 +18,38 @@ NOTE: The content of this website is not yet ready for live, prime time. It is n
 footie.innerHTML = footerText;
 
 //===========================================================================================
+// BUILD NAVIGATION DISPLAY
+const navGrid = document.getElementById("nav-links");
+const depth0 = "./"; const depth1 = "../"; const depth2 = "../../";
+let pathPre = depth0;
+
+// if the page is being build in the projects directory
+if (this.location.toString().includes("/projects/")) {
+  pathPre = depth1;
+}
+
+navGrid.innerHTML = `
+<li>
+  <a href="${pathPre}index.html" title="our projects page">Our Projects</a>
+</li>
+<li>
+  <a href="${pathPre}your-projects.html" title="start your own offline projects right here">Your Projects</a>
+</li>                    
+<li>
+  <a href="${pathPre}social-coding.html" title="social coding page">social coding</a>
+</li>
+<li>
+  <a href="${pathPre}multimedia.html" title="multimedia page">multimedia wins</a>    
+</li>
+<li>
+  <a href="${pathPre}yoruba.html" title="yoruba page">yoruba testing</a>
+</li>
+<li>
+  <a href="${pathPre}devices.html" title="devices page">devices path</a>
+</li>
+`;
+
+//===========================================================================================
 // TOGGLE NAVIGATION DISPLAY
 const burger = document.getElementById("burger");
 //console.log(burger.clientHeight);
@@ -25,7 +57,7 @@ const burger = document.getElementById("burger");
 
 const hitZone = document.getElementById("nav-icon-hitzone");
 
-const navGrid = document.getElementById("nav-links");
+
 
 
 // click event on hitzone that contains just the nav icon
