@@ -45,11 +45,11 @@ const openDB = () => {
       if (!db.objectStoreNames.contains("projects_os")){
         console.log(`AND NEW.... DB OBJECT STORE FOUND OK`);
         objectStore = db.createObjectStore("projects_os", {keypath:"id", autoIncrement:true});
-        objectStore.createIndex("name", "name", {unique : false});
-        objectStore.createIndex("developers", "developers", {unique : false});
+        objectStore.createIndex("title", "title", {unique : false});
+        objectStore.createIndex("devUsername", "devUsername", {unique : false});
         objectStore.createIndex("shortDescription", "shortDescription", {unique : false});
-        objectStore.createIndex("remoteRepoURL", "remoteRepoURL", {unique : false});
-        objectStore.createIndex("remoteSourceURL", "remoteSourceURL", {unique : false});
+        objectStore.createIndex("gitHubRepoURL", "gitHubRepoURL", {unique : false});
+        objectStore.createIndex("devGitHubURL", "devGitHubURL", {unique : false});
         objectStore.createIndex("remoteImageURL", "remoteImageURL", {unique : false});
         objectStore.createIndex("localImageURL", "localImageURL", {unique : false});
         objectStore.createIndex("platforms", "platforms", {unique : false});
@@ -73,7 +73,7 @@ const openDB = () => {
 
 //------------------------------------------------------------------------------------
 
-// make a tx scope objectStore to be pass around to specific operations as required during the life of the transaction
+// make a transaction scope objectStore to be pass around to specific operations as required during the life of the transaction
 const openTxScopeObjStore = (db, storeList, transactionMode) => {
   //let transax = db.transaction(storeList, transactionMode);
   let objectStore = db.transaction(storeList[0], transactionMode).objectStore(storeList);
@@ -86,6 +86,8 @@ const openTxScopeObjStore = (db, storeList, transactionMode) => {
 
 // called only after successful clearing of exisiting objectStore
 const repopulateDB = function (jsonObj, objectStore) {
+
+  // 
 
   for (let i = 0; i < jsonObj.length; i++){
     let os_add_req = objectStore.add(jsonObj[i]);
@@ -105,7 +107,7 @@ const repopulateDB = function (jsonObj, objectStore) {
 // called ONLY if json data AND open db acquired
 const harmoniseProjectsData = function (jsonObj, objectStore) {
 
-  // Since we'v got an up-to-date json, delete all existing database records
+  // Since we've got an up-to-date json, delete all existing database records
   // use the clear() function. call a function for this?
   let os_clear_req = objectStore.clear();
 
@@ -124,13 +126,13 @@ const allNameFieldsMatch = (jsonObj, dbRecordArray) => {
   // same lengths, so iterate over either one
   let allMatch;
   for (let i = 0; i < jsonObj.length; i++){
-    if (jsonObj[i].name === dbRecordArray[i].name)
+    if (jsonObj[i].title === dbRecordArray[i].title)
     {
-      console.log(`record ${i} name fields MATCHED`);
+      console.log(`record ${i} title fields MATCHED`);
       allMatch = true;
     }
     else{
-      console.log(`record ${i} name fields NOT MATCHED!`);
+      console.log(`record ${i} title fields NOT MATCHED!`);
       allMatch = false;
       break;
 
@@ -141,7 +143,7 @@ const allNameFieldsMatch = (jsonObj, dbRecordArray) => {
 
 };
 //------------------------------------------------------------------------------------
-
+// cursory checks for now. TODO: later make more rigorous, at least testing more fields
 const checkDataSourcesMatch = (jsonObj, dbRecordArray) => {
   // assume one source has at least one record
   // return true if match
@@ -192,19 +194,45 @@ const renderProjectCards = (projectsArray) => {
     const cardBody = document.createElement("div");
     cardBody.setAttribute("class", "card-body");
     cardBody.innerHTML = `
-    <h4>${projectsArray[index].name}</h4>
-    <h3>${projectsArray[index].shortDescription}</h3>
+    <h3>${projectsArray[index].title}</h3>
+    <p>${projectsArray[index].shortDescription}</p>
     `;
 
-    const cardFooter = document.createElement("div");
-    cardFooter.setAttribute("class", "card-footer");
-    cardFooter.innerHTML = `
-    <p>${projectsArray[index].platforms} ${projectsArray[index].programmingLanguages}</p>
+    const cardTopFooter = document.createElement("div");
+    cardTopFooter.setAttribute("class", "card-topfooter");
+
+    // create strings from array data (platforms, programming languages)
+    let platformsStr = projectsArray[index].platforms.join(" | ");
+    let programmingLanguagesStr = projectsArray[index].programmingLanguages.join(" | ");
+
+    cardTopFooter.innerHTML = `
+    <p>Developed by:
+    <a href="${projectsArray[index].devGitHubURL}" title=" " target="_blank">${projectsArray[index].devUsername}</a>
+    </p>
+    <p>
+    ${platformsStr} ${programmingLanguagesStr}
+    </p>
+
+    `;
+
+    // create string from array data (contexts)
+    let contextsStr = projectsArray[index].contexts.join(" | ");
+
+    const cardBottomFooter = document.createElement("div");
+    cardBottomFooter.setAttribute("class", "card-bottomfooter");
+    cardBottomFooter.innerHTML = `
+    <p>
+    ${contextsStr}
+    </p>
+    <p>Status:
+    ${projectsArray[index].currentStatus}
+    </p>
     `;
 
     projectCard.appendChild(cardImage);
     projectCard.appendChild(cardBody);
-    projectCard.appendChild(cardFooter);
+    projectCard.appendChild(cardTopFooter);
+    projectCard.appendChild(cardBottomFooter);
 
     pageContent.appendChild(projectCard);
   }
@@ -242,7 +270,6 @@ const openRenderTransaction = (dataStorageObject) => {
 
 };
 
-
 //------------------------------------------------------------------------------------
 
 const queryDatabaseIntoArray = (jsonObj, dbObj) => {
@@ -254,7 +281,7 @@ const queryDatabaseIntoArray = (jsonObj, dbObj) => {
   os_get_req.onsuccess = (event) => {
     console.log(os_get_req.result);
 
-    // call function to check whether db and json records match
+    // call function to check whether db and json records match (&& db contains stored image blobs?)
     if (checkDataSourcesMatch(jsonObj, os_get_req.result)){
       // source of truth is 
       console.log(`about to render immediately (in next transaction)`); 

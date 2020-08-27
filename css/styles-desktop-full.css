@@ -493,18 +493,50 @@ section.project-card {
 }
 
 .project-card .card-body {
-  font-size: 1.5rem;
   font-weight: normal;
   font-style: normal;
   padding: 1rem;
+  margin: 0;
+  height: 240px;
+  overflow-x: scroll;
 }
 
-.project-card .card-footer {
-  font-size: 1.15rem;
+.project-card .card-body p {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.project-card .card-topfooter {
   font-weight: normal;
   font-style: normal;
   padding: 1rem;
+  margin: 0;
   border-top: 1px solid #d8d8d8;
+  height: 72px;
+  background-color: aliceblue;
+  overflow: scroll;
+}
+
+.project-card .card-topfooter p {
+  padding: 0;
+  margin: 0;
+}
+
+.project-card .card-bottomfooter {
+  font-weight: normal;
+  font-style: normal;
+  padding: 1rem;
+  margin: 0;
+  border-top: 1px solid #d8d8d8;
+  height: 100px;
+  background-color: beige;
+  overflow: scroll;
+}
+
+.project-card .card-bottomfooter p {
+  padding: 0;
+  margin: 0;
 }
 
 @supports (display: grid) {
