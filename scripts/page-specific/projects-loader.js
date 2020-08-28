@@ -188,7 +188,8 @@ const renderProjectCards = (projectsArray) => {
     const imgElem = document.createElement("img");
     imgElem.setAttribute("src", `${projectsArray[index].remoteImageURL}`);
     imgElem.setAttribute("alt", `${projectsArray[index].cardImageAlt}`);
-    imgElem.setAttribute("width", `${projectsArray[index].cardImageIntrWidth}`);cardImage.appendChild(imgElem);
+    imgElem.setAttribute("width", `${projectsArray[index].cardImageIntrWidth}`);
+    cardImage.appendChild(imgElem);
 
     const cardBody = document.createElement("div");
     cardBody.setAttribute("class", "card-body");

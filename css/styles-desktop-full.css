@@ -419,6 +419,7 @@ section.site-app-card {
 section.project-card {
   /* fallback for browsers without grid layout support */
   width: 45%;
+  position: relative;
 }
 /* an on-grid container of hero articles */
 .hero-article-container {
@@ -491,6 +492,19 @@ section.project-card {
   width: 100%;
   margin: 0px;
   padding: 0px;
+  position: relative;
+}
+
+.project-info-layer{
+  position: absolute;
+  visibility: visible;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  /* stay above, although 0 ok if after in structure */
+  z-index: 1;
 }
 
 .project-card .card-body {
