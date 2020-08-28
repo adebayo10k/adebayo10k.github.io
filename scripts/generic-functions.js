@@ -42,10 +42,10 @@ navGrid.innerHTML = `
   <a href="${pathPre}multimedia.html" title="multimedia page">multimedia wins</a>    
 </li>
 <li>
-  <a href="${pathPre}yoruba.html" title="yoruba page">yoruba testing</a>
+  <a href="${pathPre}yoruba-systems.html" title="yoruba systems">Yoruba Systems</a>
 </li>
 <li>
-  <a href="${pathPre}devices.html" title="devices page">devices path</a>
+  <a href="${pathPre}yoruba-contexts.html" title="yoruba contexts">Yoruba Contexts</a>
 </li>
 `;
 
