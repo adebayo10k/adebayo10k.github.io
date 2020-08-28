@@ -193,7 +193,7 @@ const renderProjectCards = (projectsArray) => {
     const cardBody = document.createElement("div");
     cardBody.setAttribute("class", "card-body");
     cardBody.innerHTML = `
-    <h3><a href="${projectsArray[index].sitePageURL}" title="" target="_blank">${projectsArray[index].title}</a></h3>
+    <h3><a href="${projectsArray[index].sitePageURL}" title="" target="_self">${projectsArray[index].title}</a></h3>
     <p>${projectsArray[index].shortDescription}</p>
     `;
 
@@ -206,7 +206,7 @@ const renderProjectCards = (projectsArray) => {
 
     cardTopFooter.innerHTML = `
     <p>Developed by:
-    <a href="${projectsArray[index].devGitHubURL}" title=" " target="_blank">${projectsArray[index].devUsername}</a>
+    <a href="${projectsArray[index].devGitHubURL}" title=" " target="_self">${projectsArray[index].devUsername}</a>
     </p>
     <p>
     ${platformsStr} ${programmingLanguagesStr}
