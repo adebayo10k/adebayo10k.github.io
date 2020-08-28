@@ -280,6 +280,10 @@ iframe {
     height: 315px;
 }
 
+.hugeFont {
+  font-size: 6rem;
+}
+
 /*-------------------------------------------------------------*/
 /* page footer styles*/
 
@@ -306,7 +310,7 @@ footer p {
 header.page-head {
   position: static;
   top: 0; 
-  background-image: url("../media/images/footpath-20.png");
+  background-image: url("../media/images/footpath-20.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
