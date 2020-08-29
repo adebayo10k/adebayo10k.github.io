@@ -364,7 +364,7 @@ main {
   margin: 1rem;
 }
 
-section.site-app-card, section.project-card, aside.sidebar{
+.site-app-card, .project-card, aside.sidebar{
   border: 2px solid #6495ed;
   /*border-radius: 1em;*/
   background-color: #fff;
@@ -391,7 +391,7 @@ section.site-app-card, section.project-card, aside.sidebar{
   display: block;
   width: 100%;
 }
-section.site-app-card {
+.site-app-card {
   grid-column: 1 / 3;
   background-color: #fff;
   /* fallback for browsers without grid layout support */
@@ -420,7 +420,7 @@ section.site-app-card {
   display: none;
 }
 
-section.project-card {
+.project-card {
   /* fallback for browsers without grid layout support */
   width: 45%;
   position: relative;
@@ -559,7 +559,7 @@ section.project-card {
 }
 
 @supports (display: grid) {
-  .page-content, .sidebar, .page-intro-para, section.site-app-card, section.project-card, .hero-image {
+  .page-content, .sidebar, .page-intro-para, .site-app-card, .project-card, .hero-image {
     width: auto;
   }
 }

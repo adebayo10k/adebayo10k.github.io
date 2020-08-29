@@ -93,7 +93,7 @@ header.page-head {
   position: sticky;
   top: 0;
   background-color: #ffffff;
-  background-image: url("../media/images/footpath-20.png");
+  background-image: url("../media/images/footpath-20.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -123,7 +123,7 @@ header.page-head h2{
   display: block;  
 }
 
-section.site-app-card, section.project-card, aside.sidebar{
+.site-app-card, .project-card, aside.sidebar{
   margin: 4rem 0rem;
 }
 

@@ -180,7 +180,7 @@ const renderProjectCards = (projectsArray) => {
   
   for (let index = 0; index < projectsArray.length; index++){
     
-    const projectCard = document.createElement("section");
+    const projectCard = document.createElement("article");
     projectCard.setAttribute("class", "project-card");
 
     const cardImage = document.createElement("div");
