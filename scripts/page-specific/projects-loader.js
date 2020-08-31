@@ -1,8 +1,9 @@
-//
+// This script creates and populates the database using fetched json, then ultimately renders database records as project cards on the projects page.
 const DB_VERSION = 1;
 const DB_NAME = "projects_db";
 
 const pDataURL = "./data/projects.json";// from the root apparently
+const urlFromReferer = window.location.toString();
 
 // returns a Promise - json object
 const getProjectsData = (url, responseType) => {
@@ -182,6 +183,7 @@ const renderProjectCards = (projectsArray) => {
     
     const projectCard = document.createElement("article");
     projectCard.setAttribute("class", "project-card");
+    projectCard.setAttribute("id", `${index}`);
 
     const cardImage = document.createElement("div");
     cardImage.setAttribute("class", "card-image");
@@ -194,7 +196,7 @@ const renderProjectCards = (projectsArray) => {
     const cardBody = document.createElement("div");
     cardBody.setAttribute("class", "card-body");
     cardBody.innerHTML = `
-    <h3><a href="${projectsArray[index].sitePageURL}" title="" target="_self">${projectsArray[index].title}</a></h3>
+    <h3><a href="${projectsArray[index].sitePageURL}" title="go to the full project" target="_self">${projectsArray[index].title}</a></h3>
     <p>${projectsArray[index].shortDescription}</p>
     `;
 
@@ -207,7 +209,7 @@ const renderProjectCards = (projectsArray) => {
 
     cardTopFooter.innerHTML = `
     <p>Developed by:
-    <a href="${projectsArray[index].devGitHubURL}" title=" " target="_self">${projectsArray[index].devUsername}</a>
+    <a href="${projectsArray[index].devGitHubURL}" title="go to this devs gitHub account (opens in a separate browser tab)" target="_blank">${projectsArray[index].devUsername}</a>
     </p>
     <p>
     ${platformsStr} ${programmingLanguagesStr}
@@ -244,7 +246,7 @@ const renderProjectCards = (projectsArray) => {
 
 //------------------------------------------------------------------------------------
 
-const openRenderTransaction = (dataStorageObject) => {
+const openRenderTransaction = (dataStorageObject, requestedURL) => {
 
   let objectStore = openTxScopeObjStore(dataStorageObject, ["projects_os"], "readonly");
 
@@ -262,6 +264,11 @@ const openRenderTransaction = (dataStorageObject) => {
 
   objectStore.transaction.oncomplete = (event) => {
     console.log(`transaction 2 all done!`);
+    // if specific project id in the requestedURL, go to that article
+    /*if (isArticleRequested(urlFromReferer)){
+      scrollToArticle();
+    }*/
+
     
   };
   objectStore.transaction.onerror = (event) => {
@@ -272,7 +279,68 @@ const openRenderTransaction = (dataStorageObject) => {
 
 //------------------------------------------------------------------------------------
 
-const queryDatabaseIntoArray = (jsonObj, dbObj) => {
+const associatePageWithProject = (dbObj) => {
+
+  const pageIntroTitle = document.querySelector(".page-intro-para header h3");
+  console.log(`page intro title: ${pageIntroTitle.textContent}`);
+
+  const padaAnchor = document.querySelector(".page-intro-para a");
+  let hrefValue = padaAnchor.getAttribute("href");
+  console.log(hrefValue);
+
+  let minKey = 72000;// arbitrary number higher than any expected key value
+  let projectID, currentKey;
+  let objectStore = openTxScopeObjStore(dbObj, ["projects_os"], "readonly");
+
+  let os_cursor_req = objectStore.openCursor();
+
+  os_cursor_req.onsuccess = (event) => {
+    //console.log(os_cursor_req.result);
+    let cursor = os_cursor_req.result;    
+    
+    if(cursor){
+      //
+      console.log(`record id: ${cursor.key}`);
+      console.log(`record title: ${cursor.value.title}`);
+      currentKey = cursor.key;
+      minKey = Math.min(currentKey, minKey);
+
+      // found record to associate with this page, so get it's key
+      // based on first record key being reset to zero
+      if (cursor.value.title == pageIntroTitle.textContent){
+        console.log("WE GOT A HIT");
+        projectID = cursor.key - minKey;
+        hrefValue += `#${projectID}`;
+        console.log(hrefValue);
+        padaAnchor.setAttribute("href", hrefValue);
+      }
+
+      cursor.continue();
+    }
+    else{
+      console.log("didn't break out, so ..");
+      console.log(`finally, minKey: ${minKey}`);
+      console.log(`finally, projectID: ${projectID}`);
+    }
+
+  };
+  os_cursor_req.onerror = (event) => {
+     console.log(os_cursor_req.error);
+  };
+
+  objectStore.transaction.oncomplete = (event) => {
+    console.log(`transaction 1 all done!`);
+  };
+  objectStore.transaction.onerror = (event) => {
+    console.log(`transaction 1 was NOT done!`);
+  };
+
+
+};
+
+//------------------------------------------------------------------------------------
+
+const queryDatabaseIntoArray = (jsonObj, dbObj, requestedURL) => {
 
   let objectStore = openTxScopeObjStore(dbObj, ["projects_os"], "readwrite");
 
@@ -302,7 +370,7 @@ const queryDatabaseIntoArray = (jsonObj, dbObj) => {
     // open another ro transaction to render from database
     openDB()
     .then((odb) => {
-      openRenderTransaction(odb);
+      openRenderTransaction(odb, requestedURL);
     })
     .catch(err => {
       console.log(`transaction 2, from opening the databse..... Investigate. Error message: ${err.message}`);
@@ -320,23 +388,50 @@ const queryDatabaseIntoArray = (jsonObj, dbObj) => {
 
 window.onload = () => {
 
-  // TODO: if can't get new json, use locally stored copy...
-  const projectsJSONData = getProjectsData(pDataURL, "json");
-  const openedProjectsDB = openDB();
+  const thisURL = urlFromReferer;
+  console.log(`thisURL: ${thisURL}`);
 
-  //1. try to get records from database
-  Promise.all([projectsJSONData, openedProjectsDB])
-  .then((objects) => {
-    let jsd = objects[0];
-    let odb = objects[1];
-    //console.log(jsd);
-    //console.log(odb);
-    queryDatabaseIntoArray(jsd, odb);   
-  })
-  .catch(err => {
-    console.log(`Caught it! Or did it bubble up? Investigate. Error message: ${err.message}`);
-  })
+  // we're running on the index page (where project cards are displayed)
+  if (thisURL.includes("adebayo10k.github.io/index.html")){
   
+    // TODO: if can't get new json, use locally stored copy...
+    const projectsJSONData = getProjectsData(pDataURL, "json");
+    const openedProjectsDB = openDB();
+
+    //1. try to get records from database
+    Promise.all([projectsJSONData, openedProjectsDB])
+    .then((objects) => {
+      let jsd = objects[0];
+      let odb = objects[1];
+      //console.log(jsd);
+      //console.log(odb);
+      queryDatabaseIntoArray(jsd, odb);   
+    })
+    .catch(err => {
+      console.log(`Caught it! Or did it bubble up? Investigate. Error message: ${err.message}`);
+    })
+  }
+  // we're running in one of the project specific pages
+  else if (thisURL.includes("adebayo10k.github.io/projects/")){
+
+    const openedProjectsDB = openDB();
+
+    //1. try to get records from database
+    Promise.all([openedProjectsDB])
+    .then((objects) => {
+      let odb = objects[0];
+      console.log(odb);
+      associatePageWithProject(odb);   
+    })
+    .catch(err => {
+      console.log(`Caught it! Or did it bubble up? Investigate. Error message: ${err.message}`);
+    })
+  
+  }
+  else {
+    console.log("Error: NOT SURE WHICH PAGE WE'RE ON!");
+  }
+
 }
 
 

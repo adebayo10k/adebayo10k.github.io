@@ -23,7 +23,7 @@ const navGrid = document.getElementById("nav-links");
 const depth0 = "./"; const depth1 = "../"; const depth2 = "../../";
 let pathPre = depth0;
 
-// if the page is being build in the projects directory
+// if the page is being built in the projects directory
 if (this.location.toString().includes("/projects/")) {
   pathPre = depth1;
 }
