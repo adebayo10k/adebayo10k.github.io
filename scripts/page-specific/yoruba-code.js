@@ -1,9 +1,3 @@
-// consult storage for latest background settings
-const htmlElem = document.querySelector("html");
-if (localStorage.getItem("bgColour")){
-    htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;    
-}
-
 // make table headers appropriate at page load
 if (document.documentElement.clientWidth < 800){
     document.getElementById("headChar").textContent = "Char";

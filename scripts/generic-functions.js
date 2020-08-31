@@ -1,6 +1,13 @@
 // this script is used by all pages that need generic, common features and content generated for them. (like navigation)
 
 //===========================================================================================
+// query storage for latest background settings
+const htmlElem = document.querySelector("html");
+if (localStorage.getItem("bgColour")){
+    htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;    
+}
+
+//===========================================================================================
 // HEADER // add generic header content siteLogo-wide
 const siteLogo = document.getElementById("siteLogo");
 const logoText = `AlgoDiscoDev Software Development`;
@@ -143,6 +150,7 @@ const heroMsg_6 = `"A language fit to support all concepts - both new and old"`;
 const heroMsg_7 = `"Our Philosophies are our foundations."`;
 const heroMsg_8 = `"When you're done with the Munchkin services, Join Us."`;
 const heroMsg_9 = `"Let's build on solid ground."`;
+const heroMsg_10 = `"There is no market for shit coders."`;
 // default messages to remain in html?
 // character count aware, due to limited space
 

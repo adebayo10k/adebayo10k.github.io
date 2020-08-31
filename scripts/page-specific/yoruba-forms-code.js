@@ -1,9 +1,3 @@
-// consult storage for latest background settings
-const htmlElem = document.querySelector("html");
-if (localStorage.getItem("bgColour")){
-    htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;    
-}
-
 // Code now gives real-time, live, inline validation, as well as submit time validation.
 // Character ranges specified
 // Password confirm now first checks that password is valid, before doing it's own validations

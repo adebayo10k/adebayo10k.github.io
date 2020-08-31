@@ -1,7 +1,13 @@
 // get html reference only if one not already declared in another script
-if (!htmlElem){
+try {
+  //if (!htmlElem){
   const htmlElem = document.querySelector("html");
+  //}
 }
+catch (err) {
+  console.log(`what do i do with this error: ${err.message}`);
+}
+
 const changeIntroPara = document.getElementById("changeIntroPara");
 const changeSummaryPara = document.getElementById("changeSummaryPara");
 const bgColourInputElem = document.getElementById("bgColourPicker");
