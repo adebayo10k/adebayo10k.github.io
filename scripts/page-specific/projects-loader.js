@@ -246,8 +246,21 @@ const renderProjectCards = (projectsArray) => {
 
 //------------------------------------------------------------------------------------
 
-const openRenderTransaction = (dataStorageObject, requestedURL) => {
+const scrollWhenArticleRequested = (requestedUrlStr, callback) => {
+  // if it exists, get the part (substring) of url that represents a project id
+  // TODO: should really check that this is one and only "#" in the url
+  if (requestedUrlStr.includes("#")){
+    let projectID = requestedUrlStr.split("#")[1];
+    console.log(projectID);
+    callback(projectID);
+  }
 
+};
+
+//------------------------------------------------------------------------------------
+
+const openRenderTransaction = (dataStorageObject, requestedURL) => {
+  //console.log(`requested url in openRenderTransaction: ${requestedURL}`);
   let objectStore = openTxScopeObjStore(dataStorageObject, ["projects_os"], "readonly");
 
   //  getAll() into another array is best approach
@@ -265,10 +278,14 @@ const openRenderTransaction = (dataStorageObject, requestedURL) => {
   objectStore.transaction.oncomplete = (event) => {
     console.log(`transaction 2 all done!`);
     // if specific project id in the requestedURL, go to that article
-    /*if (isArticleRequested(urlFromReferer)){
-      scrollToArticle();
-    }*/
-
+    scrollWhenArticleRequested(requestedURL, (projectID) => {
+      //use the newly discovered scrollIntoView method to get identified article into view by scrolling its' parent
+      console.log(`callback function received projectID: ${projectID}`);
+      // TODO: check that projectID can be cast to an integer
+      // NOTE: smooth behaviour is part of experimental API. is it even cool?
+      //document.getElementById(`${projectID}`).scrollIntoView();
+      document.getElementById(`${projectID}`).scrollIntoView({behavior : "smooth"});
+    })
     
   };
   objectStore.transaction.onerror = (event) => {
@@ -341,7 +358,7 @@ const associatePageWithProject = (dbObj) => {
 //------------------------------------------------------------------------------------
 
 const queryDatabaseIntoArray = (jsonObj, dbObj, requestedURL) => {
-
+  //console.log(`requested url in queryDatabaseIntoArray: ${requestedURL}`);
   let objectStore = openTxScopeObjStore(dbObj, ["projects_os"], "readwrite");
 
   let os_get_req = objectStore.getAll();
@@ -354,7 +371,7 @@ const queryDatabaseIntoArray = (jsonObj, dbObj, requestedURL) => {
       // source of truth is 
       console.log(`about to render immediately (in next transaction)`); 
     }
-    else {
+    else {// TODO: could this be a sync callback, encapsulating the checks?
       // harmoniseProjectsData (which includes a render phase)
       console.log(`about to harmonise data sources, then render (in next transaction)`);
       harmoniseProjectsData(jsonObj, objectStore);
@@ -370,6 +387,7 @@ const queryDatabaseIntoArray = (jsonObj, dbObj, requestedURL) => {
     // open another ro transaction to render from database
     openDB()
     .then((odb) => {
+      //console.log(`requested url in oncomplete openDB.then: ${requestedURL}`);
       openRenderTransaction(odb, requestedURL);
     })
     .catch(err => {
@@ -405,7 +423,7 @@ window.onload = () => {
       let odb = objects[1];
       //console.log(jsd);
       //console.log(odb);
-      queryDatabaseIntoArray(jsd, odb);   
+      queryDatabaseIntoArray(jsd, odb, thisURL);   
     })
     .catch(err => {
       console.log(`Caught it! Or did it bubble up? Investigate. Error message: ${err.message}`);
@@ -420,7 +438,7 @@ window.onload = () => {
     Promise.all([openedProjectsDB])
     .then((objects) => {
       let odb = objects[0];
-      console.log(odb);
+      //console.log(odb);
       associatePageWithProject(odb);   
     })
     .catch(err => {
