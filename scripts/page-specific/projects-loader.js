@@ -408,8 +408,9 @@ window.onload = () => {
 
   const thisURL = urlFromReferer;
   console.log(`thisURL: ${thisURL}`);
+  //const indexPagePath = "adebayo10k.github.io/index.html";
 
-  // we're running on the index page (where project cards are displayed)
+  // we're running on the index page (where dynamically generated project cards are displayed)
   if (thisURL.includes("adebayo10k.github.io/index.html")){
   
     // TODO: if can't get new json, use locally stored copy...
@@ -447,7 +448,7 @@ window.onload = () => {
   
   }
   else {
-    console.log("Error: NOT SURE WHICH PAGE WE'RE ON!");
+    console.log("Error: NOT SURE WHICH PAGE WE'RE ON, SO NOTHING TO DO, BUT EXIT!");
   }
 
 }

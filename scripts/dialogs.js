@@ -1,6 +1,6 @@
 //---------------------------------------------------------------------
 // alert dialog functions
-// OK button only
+// (OK button only)
 
 const CustomAlert = new function(){
     this.show = (msg) => {
@@ -84,7 +84,7 @@ const CustomConfirm = new function(){
 
 //---------------------------------------------------------------------
 // prompt dialog functions
-// TEXT INPUT, CANCEL and OK buttons
+// (TEXT INPUT, CANCEL and OK buttons)
 
 // callback function
 const validateUsername = (username) => {
