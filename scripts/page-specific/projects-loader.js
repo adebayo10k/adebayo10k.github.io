@@ -411,7 +411,7 @@ window.onload = () => {
   //const indexPagePath = "adebayo10k.github.io/index.html";
 
   // we're running on the index page (where dynamically generated project cards are displayed)
-  if (thisURL.includes("adebayo10k.github.io/index.html")){
+  if (thisURL.includes("adebayo10k.github.io/index.html") || thisURL.endsWith("adebayo10k.github.io/")){
   
     // TODO: if can't get new json, use locally stored copy...
     const projectsJSONData = getProjectsData(pDataURL, "json");
