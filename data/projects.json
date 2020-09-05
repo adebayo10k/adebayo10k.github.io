@@ -68,15 +68,15 @@
     "visibility" : "public"
   },
   {
-    "title" : "micro:bit morse code",
+    "title" : "bbc micro:bit morse code",
     "devUsername" : "adebayo10k",
     "devGitHubURL" : "https://github.com/adebayo10k/",
     "shortDescription" : "This requires young coders to program bbc micro:bit microcontroller to be a Morse Code transceiver, both transmitting and receiving signals.",
     "gitHubRepoURL" : "https://github.com/adebayo10k/CoderDojo_Projects",
     "sitePageURL" : "./projects/microbit-morse.html",
-    "remoteImageURL" : "./media/images/project-card-images/laptop-dell-personalised-1500.jpg",
+    "remoteImageURL" : "./media/images/project-card-images/morse-chart-image.jpg",
     "localImageURL" : "",
-    "cardImageAlt" : "A dell laptop personalised with various github stickers",
+    "cardImageAlt" : "A Morse Code chart",
     "cardImageIntrWidth" : "1500",
     "platforms" : ["bbc micro:bit"],
     "programmingLanguages" : ["Makecode"],

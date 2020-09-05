@@ -25,7 +25,7 @@ const morse = {
     "dash" : "&#x2501;"
 };
 
-const yDataURL = "./data/yoruba-char-encodings.json";// from the root apparently
+const yorùbáJsonPath = "./data/yoruba-char-encodings.json";// from the root apparently
 
 // called functions ---------------------------------------------------------------
 
@@ -105,7 +105,7 @@ const populateTableBody = (jsonObj) => {
 
 //------------- main ------------
 
-getYorubaCharTableData(yDataURL, "json")
+getYorubaCharTableData(yorùbáJsonPath, "json")
 .then(jsonData => {
   //console.log(jsonData);
   // populate table header
