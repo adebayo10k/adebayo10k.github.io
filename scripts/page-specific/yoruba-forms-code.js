@@ -79,6 +79,7 @@ password2.addEventListener("input", (event) => {
 
 //================================================================
 // FUNCTIONS THAT CALL APPROPRIATE INPUT VALIDATIONS, THEN PASS ON THE OUTCOMES
+// TODO: could encapsulation be better here by using synchronous callback functions?
 const doUsernameTests = () => {
 	//
 	if (isEmpty(username)){
