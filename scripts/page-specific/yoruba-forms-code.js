@@ -148,6 +148,7 @@ const doPasswordConfirmTests = () => {
 
 // =======================================================
 // SHOW ERROR OR SUCCESS ICONS AND MESSAGING
+// TODO: use try..catch to validate arguments and handle errors
 
 // show error, add error class
 const setErrorFor = (input, message) => { 

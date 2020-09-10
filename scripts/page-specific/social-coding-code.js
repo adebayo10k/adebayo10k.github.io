@@ -1,6 +1,7 @@
 // here I fake my own expiry 
 // generalised constructor function for codewars and hackerrank solution objects
 function Solution (latestCode, expiryDate, codeBlockElemID, showBtnElemID){
+  // TODO: use try..catch to validate arguments and handle errors
     this.latestCode = latestCode;
     this.expiryDate = expiryDate;
     this.codeBlockElemID = codeBlockElemID;

@@ -30,6 +30,8 @@ const yorùbáJsonPath = "./data/yoruba-char-encodings.json";// from the root ap
 // called functions ---------------------------------------------------------------
 
 const createHexStringMorse = (punctString) => {
+
+  // TODO: use try..catch to validate argument and handle errors
     let hexStringMorse = "";
     for (charPos in punctString){
         char = punctString.charAt(charPos);    
