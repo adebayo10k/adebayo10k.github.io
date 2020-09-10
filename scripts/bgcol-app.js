@@ -1,11 +1,6 @@
 // get html reference only if one not already declared in another script
-try {
-  //if (!htmlElem){
+if (!htmlElem){
   const htmlElem = document.querySelector("html");
-  //}
-}
-catch (err) {
-  console.log(`what do i do with this error: ${err.message}`);
 }
 
 const changeIntroPara = document.getElementById("changeIntroPara");
@@ -15,7 +10,9 @@ const bgColourBtnElem = document.getElementById("bgColourBtn");
 const forgetMeSectionElem = document.getElementById("forgetMe");
 const forgetMeBtn = document.getElementById("forgetMeBtn");
 
-const defaultColour = "#6495ed"; //cornflower blue"#6495ed"; //cornflower blue
+const defaultColour = "#6495ed"; //cornflower blue"#6495ed"; //cornflowerblue
+
+const validStates = ["UNSET", "SYSTEM_DEFAULT", "USER_CONFIGURED"];
 
 //---------------------------------------------------------------------------------------------------
 
@@ -50,32 +47,56 @@ const storageAvailable = (type) => {
 // find out what localeStorage currently looks like
 const getSystemState = () => {
 
+  try{
     let state = 
     !localStorage.getItem("bgColour") ? "UNSET"
     : localStorage.getItem("bgColour") && !localStorage.getItem("userChoiceDate") ? "SYSTEM_DEFAULT"
-    : localStorage.getItem("bgColour") && localStorage.getItem("userChoiceDate") ? "USER_CONFIGURED"
-    : console.log("pre try-catch failsafe");
+    : localStorage.getItem("bgColour") && localStorage.getItem("userChoiceDate") ? "USER_CONFIGURED": undefined;
 
-    return state;
+    if (!state){
+      throw new Error(`Couldn't determine system state. state variable was set to: ${state}`);
+    }
+    else{
+      return state;
+    }    
+  }
+  catch(err){
+    console.error(err.name);
+    console.error(err.message);
+  }
 };
 //---------------------------------------------------------------------------------------------------
 // populate local storage with properties based on requested state
 const setSystemState = (requestedState) => {
-    
-    switch (requestedState){
-        case "SYSTEM_DEFAULT" :
-            localStorage.setItem("bgColour", defaultColour);
-            break;
-        case "USER_CONFIGURED" :
-            localStorage.setItem("bgColour", bgColourInputElem.value);
-            localStorage.setItem("userChoiceDate", new Date()); // stored as an array object.
-            break;
-        case "UNSET" : 
-            localStorage.clear();
-            break;
-        default:
-            console.log("Pre try-catch failsafe. setSystemState switch didn't match argument");
-    };    
+  try {
+    // first make sure the at requested state is one of the known states
+    if (validStates.includes(requestedState) === false){
+      throw new RangeError(`Unknown requestedState argument: ${requestedState}`);
+    }
+    else{
+
+      switch (requestedState){
+      case "SYSTEM_DEFAULT" :
+        localStorage.setItem("bgColour", defaultColour);
+        break;
+      case "USER_CONFIGURED" :
+        localStorage.setItem("bgColour", bgColourInputElem.value);
+        localStorage.setItem("userChoiceDate", new Date()); // stored as an array object.
+        break;
+      case "UNSET" : 
+        localStorage.clear();
+        break;
+      }; 
+
+    }
+  }
+  catch (err){
+    console.error(err.name);
+    console.error(err.message);
+    // Gracefully shutdown app here.
+    // handleErrors(err) deactivateApp(err)
+  }
+       
 };
 //---------------------------------------------------------------------------------------------------
 
@@ -103,10 +124,17 @@ const updateAppearanceSectionsContent = (storedAppearanceSetting) => {
 
     const summaryText = `
     Your preferred background colour was set to <strong>${localStorage.getItem("bgColour")}</strong> on <strong>${localStorage.getItem("userChoiceDate")}</strong>. Try another whenever you like.    
-    `;    
-
-    switch (storedAppearanceSetting){
-        case "UNSET" :
+    `; 
+    
+    try {
+      // first make sure the at storedAppearanceSetting is one of the known states
+      if (validStates.includes(storedAppearanceSetting) === false){
+        throw new RangeError(`Unknown storedAppearanceSetting argument: ${storedAppearanceSetting}`);
+      }
+      else{
+  
+        switch (storedAppearanceSetting){
+          case "UNSET" :
             changeIntroPara.innerHTML = introText;
             changeIntroPara.style.display = "block";
             // explicitly use the hardcoded default
@@ -114,7 +142,7 @@ const updateAppearanceSectionsContent = (storedAppearanceSetting) => {
             changeSummaryPara.style.display = "none";
             forgetMeSectionElem.style.display = "none";
             break;
-        case "SYSTEM_DEFAULT" :
+          case "SYSTEM_DEFAULT" :
             changeIntroPara.innerHTML = introText;
             changeIntroPara.style.display = "block";
             bgColourInputElem.value = localStorage.getItem("bgColour");
@@ -122,16 +150,22 @@ const updateAppearanceSectionsContent = (storedAppearanceSetting) => {
             changeSummaryPara.style.display = "none";
             forgetMeSectionElem.style.display = "none";
             break;
-        case "USER_CONFIGURED" :
+          case "USER_CONFIGURED" :
             changeIntroPara.style.display = "none";
             changeSummaryPara.innerHTML = summaryText;
             changeSummaryPara.style.display = "block";
             bgColourInputElem.value = localStorage.getItem("bgColour");
             forgetMeSectionElem.style.display = "block";  
             break;
-        default:
-            console.log("Pre try-catch failsafe. updateAppearanceSectionsContent switch didn't match argument");
-    }; 
+          };   
+      }
+    }
+    catch (err){
+      console.error(err.name);
+      console.error(err.message);
+      // Gracefully shutdown app here.
+      // handleErrors(err)
+    }    
 };
 //---------------------------------------------------------------------------------------------------
 
@@ -141,57 +175,87 @@ const updateStyleThisPage = () => {
 //---------------------------------------------------------------------------------------------------
 
 const refreshSiteAppearance = () => {
-
-    let storedAppearanceSetting = getSystemState();
-
-    // TODO: USE SWITCH HERE INSTEAD
-    if (storedAppearanceSetting == "UNSET"){
+  
+  let storedAppearanceSetting;
+  
+  try {
+    storedAppearanceSetting = getSystemState();
+    // if storedAppearanceSetting is undefined at this point, then there was no explicit return value from getSystemState(), and so the app cannot be used.
+    if (!storedAppearanceSetting){
+      throw new Error(`storedAppearanceSetting was undefined`);
+    }
+    else{
+      if (storedAppearanceSetting == "UNSET"){
         setSystemState("SYSTEM_DEFAULT");
         storedAppearanceSetting = getSystemState();
         updateAppearanceSectionsContent(storedAppearanceSetting);
-    }
-    else if (storedAppearanceSetting == "USER_CONFIGURED"){
-        updateAppearanceSectionsContent(storedAppearanceSetting);
-    }
-    else{
-        // system default state found, so nothing to do here
-        updateAppearanceSectionsContent(storedAppearanceSetting);// should be no change, but just for completeness
-    }
-    // in all states... update this pages' styles:
-    updateStyleThisPage();
+      }
+      else if (storedAppearanceSetting == "USER_CONFIGURED"){
+          updateAppearanceSectionsContent(storedAppearanceSetting);
+      }
+      else{
+          // system default state found, so nothing to do here
+          updateAppearanceSectionsContent(storedAppearanceSetting);// should be no change, but just for completeness
+      }
+      // in all states... update this pages' styles:
+      updateStyleThisPage();
 
+    }    
+  }
+  catch (err){
+    console.error(err.name);
+    console.error(err.message);
+    // Gracefully shutdown app here. Default "bad news" message remains.
+    // disable inputs
+    bgColourBtnElem.removeEventListener("click", userConfigurePage);
+    forgetMeBtn.removeEventListener("click", clearUserConfiguration);
+  }
+ 
 };
 //---------------------------------------------------------------------------------------------------
-// called when change button is pressed
+// called when bgColourBtnElem (change that background) button is pressed
 const userConfigurePage = () => {
-    let currentConfig = getSystemState();
-    switch (currentConfig){
-        case "UNSET" :
-            console.log(`currentConfig: ${currentConfig}`);
-            console.log("should NEVER be here at button press time! Investigate.")
-            break;
-        case "SYSTEM_DEFAULT" :
-            setSystemState("USER_CONFIGURED");
-            refreshSiteAppearance();         
-            break;
-        case "USER_CONFIGURED" : // in this case, get user confirmation
-            let confirmMsg = `Your site background colour is currently ${localStorage.getItem("bgColour")}. Looks like you're changing it to ${bgColourInputElem.value}. Is that OK?`;
 
-            // callback function
-            const getUserResponse = (response) => {
-                if (response){
-                    setSystemState("USER_CONFIGURED");
-                    refreshSiteAppearance();
-                }
-                else{
-                    console.log("user cancelled");// NO ELSE!
-                }
-            };
-            CustomConfirm.show(confirmMsg,getUserResponse);             
-            break;
-        default:
-            console.log("Pre try-catch failsafe. userConfigurePage switch didn't match argument");
-    }; 
+  try{
+    let currentConfig = getSystemState();
+
+    if (!currentConfig){
+      throw new Error(`Couldn't determine system state. currentConfig was assigned value: ${currentConfig}`);
+    }
+    else if (currentConfig === "UNSET"){
+      throw new Error(`Should NEVER be here at button press time! Investigate.. currentConfig was assigned value: ${currentConfig}`);
+    }
+    else{
+      switch (currentConfig){        
+        case "SYSTEM_DEFAULT" : // no existing user configuration, so just go ahead with change
+          setSystemState("USER_CONFIGURED");
+          refreshSiteAppearance();         
+          break;
+        case "USER_CONFIGURED" : // in this case, get user confirmation (to overwrite existing configuration)
+          let confirmMsg = `Your site background colour is currently ${localStorage.getItem("bgColour")}. Looks like you're changing it to ${bgColourInputElem.value}. Is that OK?`;
+
+          // callback function
+          const getUserResponse = (response) => {
+            if (response){
+              setSystemState("USER_CONFIGURED");
+              refreshSiteAppearance();
+            }
+            else{
+              console.log("user cancelled");// NO ELSE!
+            }
+          };
+          CustomConfirm.show(confirmMsg,getUserResponse);             
+          break;
+      };
+    }    
+  }
+  catch(err){
+    console.error(err.name);
+    console.error(err.message);
+  }  
+
+    
+     
 };
 //---------------------------------------------------------------------------------------------------
 // when forget me button is pressed, get user confirmation
@@ -207,7 +271,7 @@ const clearUserConfiguration = () => {
             refreshSiteAppearance();
         }
         else{
-            console.log("user cancelled");// NO ELSE!
+            console.log("user cancelled");// NO ELSE NEEDED IN PRODUCTION!
         }
     };
     CustomConfirm.show(confirmMsg,getUserResponse);
@@ -227,7 +291,7 @@ if (storageAvailable('localStorage')) {
 }
 else {
   // No localStorage, so error was returned. Nothing to do. App will not work.
-  console.log(storageAvailable());
+  console.err(storageAvailable());
   // the default 'bad news.. no JavaScript..' html coded message stays visible
   // TODO: MAKE THAT THE ONLY THING VISIBLE, SO NO BUTTONS, NO NOTHING.
   /*
