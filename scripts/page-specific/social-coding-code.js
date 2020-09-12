@@ -1,65 +1,97 @@
 // here I fake my own expiry 
 // generalised constructor function for codewars and hackerrank solution objects
 function Solution (latestCode, expiryDate, codeBlockElemID, showBtnElemID){
-  // TODO: use try..catch to validate arguments and handle errors
-    this.latestCode = latestCode;
-    this.expiryDate = expiryDate;
-    this.codeBlockElemID = codeBlockElemID;
-    this.showBtnElemID = showBtnElemID;
-    daily_ms = 1E+3*Math.pow(60,2)*24;
-    currentDate = new Date();
-    this.daysLeft = Math.floor( (this.expiryDate.getTime() - currentDate.getTime()) / daily_ms );
-    this.daysLeftPlurality = Math.abs(this.daysLeft) !== 1;
-    this.expiryLapseDays = this.daysLeft < 0 ? Math.abs(this.daysLeft) : null;
+  
+  const knownCodeBlocks = ["codeFragBlockCW", "codeFragBlockHR"];
+  const knownShowButtons = ["showBtnCW", "showBtnHR"];
 
-    this.codeBlockElem = document.getElementById(this.codeBlockElemID); //;
-    this.showBtnElem = document.getElementById(this.showBtnElemID); // ;
+  // using try..catch to validate actual arguments and handle errors
+  try{
+    let errors = [];
+    // validate the actual arguments
+    if (!typeof latestCode === "string"){
+      errors.push(new TypeError(`Error: latestCode was not a string literal. It's type was: ${typeof latestCode}`));
+    }
+    if (!expiryDate instanceof Date){
+      errors.push(new TypeError(`Error: expiryDate was not a Date object.`));
+    }
+    if (!knownCodeBlocks.includes(codeBlockElemID)){
+      errors.push(new RangeError(`Error: codeBlockElemID was outside expected range. Value was ${codeBlockElemID}`));
+    }
+    if (!knownShowButtons.includes(showBtnElemID)){
+      errors.push(new RangeError(`Error: showBtnElemID was outside expected range. Value was ${showBtnElemID}`));
+    }
 
-    this.codeText = "";
+    if (errors.length > 0){
+      throw errors;
+    }
+    else {
+      this.latestCode = latestCode;
+      this.expiryDate = expiryDate;
+      this.codeBlockElemID = codeBlockElemID;
+      this.showBtnElemID = showBtnElemID;
 
-    expiredCodeText = `
+      daily_ms = 1E+3*Math.pow(60,2)*24;
+      currentDate = new Date();
+      this.daysLeft = Math.floor( (this.expiryDate.getTime() - currentDate.getTime()) / daily_ms );
+      this.daysLeftPlurality = Math.abs(this.daysLeft) !== 1;
+      this.expiryLapseDays = this.daysLeft < 0 ? Math.abs(this.daysLeft) : null;
+      this.codeBlockElem = document.getElementById(this.codeBlockElemID); //;
+      this.showBtnElem = document.getElementById(this.showBtnElemID); // ;
+      this.codeText = "";
+      expiredCodeText = `
 <strong>THIS SOLUTION &lsquo;EXPIRED&rsquo; ${this.expiryLapseDays} ${(this.daysLeftPlurality ? "sols" : "sol")} ago</strong>.
 IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING, DM ME TODAY.
                 
                 `;
-    // set the code or message that will be displayed when button is pressed
-    this.setCodeText = function (){
+      // set the code or message that will be displayed when button is pressed
+      this.setCodeText = function (){
         if (this.daysLeft >= 0){ // not yet expired    
-            this.codeText += `
+          this.codeText += `
 // NOTE: This solution expires in ${this.daysLeft} ${(this.daysLeftPlurality ? "days" : "day")}`;
-            this.codeText += this.latestCode;    
+          this.codeText += this.latestCode;    
         }
         else{ // expired
-            this.codeText = expiredCodeText;            
+          this.codeText = expiredCodeText;            
         }
-    };  
-    // display or hide the code or message, based on toggle switch position
-    this.displayCode = function (flag){
+      };  
+      // display or hide the code or message, based on toggle switch position
+      this.displayCode = function (flag){
         if (flag) {
-            this.codeBlockElem.innerHTML = this.codeText;
-            this.showBtnElem.innerHTML = "hide code";
+          this.codeBlockElem.innerHTML = this.codeText;
+          this.showBtnElem.innerHTML = "hide code";
         }
         else {
-            this.codeBlockElem.innerHTML = "";
-            this.showBtnElem.innerHTML = "show code";
+          this.codeBlockElem.innerHTML = "";
+          this.showBtnElem.innerHTML = "show code";
         }
-    };
-    // toggle switch based on existing state of this object
-    this.switchDisplay = function(){
+      };
+      // toggle switch based on existing state of this object
+      this.switchDisplay = function(){
         if (this.codeBlockElem.innerHTML == ""){
-            this.displayCode(true);
+          this.displayCode(true);
         }
         else{
-            this.displayCode(false);
+          this.displayCode(false);
         }
-    };
+      };
 
-    // set initial state of this object
-    this.showBtnElem.addEventListener("click", () => {this.switchDisplay()});
-    this.setCodeText();
-    this.displayCode(false); 
-    
+      // set initial state of this object
+      this.showBtnElem.addEventListener("click", () => {this.switchDisplay()});
+      this.setCodeText();
+      this.displayCode(false); 
+    }// end else
 
+  }
+  catch(err){
+    // handle the errors array
+    for (i=0; i<err.length; i++){
+      console.error(err[i].name);
+      console.error(err[i].message);
+      // Gracefully shutdown app from here.
+    }
+  }  
+  
 } // end constructor function
 
 
@@ -67,7 +99,7 @@ IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING, DM ME TOD
 // arguments for codewars object instantiation
 const cwCodeBlockElemID = "codeFragBlockCW";
 const cwShowBtnElemID = "showBtnCW";
-let latestCWexpiryDate = new Date(2020, 8, 6, 18, 00, 0, 000); // zero based month
+let latestCWexpiryDate = new Date(2020, 9, 6, 18, 00, 0, 000); // zero based month
 const latestCWcode = `
 // 5 kyu
 //perfect_power.js
@@ -106,7 +138,7 @@ console.log(keys);
 // arguments for hackerrank object instantiation
 const hrCodeBlockElemID = "codeFragBlockHR";
 const hrShowBtnElemID = "showBtnHR";
-let latestHRexpiryDate = new Date(2020, 4, 27, 18, 00, 0, 1); // zero based month, UTC accounted
+let latestHRexpiryDate = new Date(2020, 9, 27, 18, 00, 0, 1); // zero based month, UTC accounted
 const latestHRcode = ` 
 #!/bin/bash
 
@@ -157,7 +189,6 @@ for (let key in latestHRSolution){
 
 //-----------------------------------------------------------------------------------------
 // TODO:  
-// adds code to try-catch blocks 
 // to display arbitrary number of concurrent solution article objects ????
 
 
