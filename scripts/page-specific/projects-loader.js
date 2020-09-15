@@ -188,6 +188,7 @@ const renderProjectCards = (projectsArray) => {
     const cardImage = document.createElement("div");
     cardImage.setAttribute("class", "card-image");
     const imgElem = document.createElement("img");
+    // object-fit only works on fixed container size, which isn't the case here
     imgElem.setAttribute("src", `${projectsArray[index].remoteImageURL}`);
     imgElem.setAttribute("alt", `${projectsArray[index].cardImageAlt}`);
     imgElem.setAttribute("width", `${projectsArray[index].cardImageIntrWidth}`);

@@ -475,6 +475,7 @@ main {
   text-align: right;
 }
 
+/* */
 .project-card figure{
   margin: 0px;
   padding: 0px;
@@ -491,13 +492,13 @@ main {
   margin: 0px;
   padding: 0px;
 }
+/* */
 
 .project-card .card-image {
   width: 100%;
   margin: 0px;
   padding: 0px;
   border-bottom: 1px solid #d8d8d8;
-  position: relative;
 }
 
 .project-info-layer{
