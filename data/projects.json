@@ -1,6 +1,6 @@
 [
   {
-    "title" : "multiple file encoding format converter using ffmpeg",
+    "title" : "convert formats of a set of av files using ffmpeg",
     "devUsername" : "adebayo10k",
     "devGitHubURL" : "https://github.com/adebayo10k/",
     "shortDescription" : "makes multiple calls to the ffmpeg encoding format conversion program to convert a set of audio or video files.",
@@ -119,15 +119,15 @@
     "visibility" : "public"
   },
   {
-    "title" : "Solving the Rubiks Cube (in Yoruba!)",
+    "title" : "Solving the Rubiks Cube (in Yoruba)",
     "devUsername" : "algoDiscoDev",
     "devGitHubURL" : "https://github.com/adebayo10k/",
     "shortDescription" : "Resilience, patience, determination... then Glory! Algorithms in Yoruba, iwaju pada, osi siwaju... Get the idea?",
     "gitHubRepoURL" : "https://github.com/adebayo10k/CoderDojo_Projects",
     "sitePageURL" : "./projects/rubiks-yoruba.html",
-    "remoteImageURL" : "./media/images/project-card-images/laptop-dell-personalised-1500.jpg",
+    "remoteImageURL" : "./media/images/project-card-images/rubiks-cube-04-1500.jpg",
     "localImageURL" : "",
-    "cardImageAlt" : "A dell laptop personalised with various github stickers",
+    "cardImageAlt" : "A solved Rubik's cube on wooden floor next to a whiteboard",
     "cardImageIntrWidth" : "1500",
     "platforms" : ["Web Browser"],
     "programmingLanguages" : ["JavaScript"],
