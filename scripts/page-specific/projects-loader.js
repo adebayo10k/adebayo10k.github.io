@@ -18,7 +18,7 @@ const getProjectsData = (url, responseType) => {
     }
   })
   .catch(err => {
-    console.log(`There has been a problem with your fetch operation for resource "${url}": ${err.message}`);
+    console.error(`There has been a problem with your fetch operation for resource "${url}": ${err.message}`);
   })
 }; // end function
 
@@ -85,28 +85,27 @@ const openTxScopeObjStore = (db, storeList, transactionMode) => {
 //------------------------------------------------------------------------------------
 
 
-// called only after successful clearing of exisiting objectStore
-const repopulateDB = function (jsonObj, objectStore) {
 
-  // 
-
-  for (let i = 0; i < jsonObj.length; i++){
-    let os_add_req = objectStore.add(jsonObj[i]);
-    
-    os_add_req.onsuccess = (event) => {
-      console.log(`Record addition ${i} finished`);
-    };
-    os_add_req.onerror = (event) => {
-      console.log(`Record addition ${i} failed: ${os_add_req.error}`);
-    };  
-  }// end for loop  
-
-};// end repopulateDB function
 
 //------------------------------------------------------------------------------------
 
 // called ONLY if json data AND open db acquired
 const harmoniseProjectsData = function (jsonObj, objectStore) {
+
+  // called only after successful clearing of exisiting objectStore
+  const repopulateDB = function () {  
+    // 
+    for (let i = 0; i < jsonObj.length; i++){
+      let os_add_req = objectStore.add(jsonObj[i]);
+
+      os_add_req.onsuccess = (event) => {
+        console.log(`Record addition ${i} finished`);
+      };
+      os_add_req.onerror = (event) => {
+        console.error(`Record addition ${i} failed: ${os_add_req.error}`);
+      };  
+    }// end for loop
+  };// end repopulateDB function
 
   // Since we've got an up-to-date json, delete all existing database records
   // use the clear() function. call a function for this?
@@ -115,34 +114,13 @@ const harmoniseProjectsData = function (jsonObj, objectStore) {
   os_clear_req.onsuccess = (event) => {
     console.log(`all data cleared from objectStore`);
     // call function to repopulate db objectStore with json data
-    repopulateDB(jsonObj, objectStore);
+    repopulateDB();
   };
 }; // end function
 
 
 //------------------------------------------------------------------------------------
 
-const allNameFieldsMatch = (jsonObj, dbRecordArray) => {
-  // return true if match
-  // same lengths, so iterate over either one
-  let allMatch;
-  for (let i = 0; i < jsonObj.length; i++){
-    if (jsonObj[i].title === dbRecordArray[i].title)
-    {
-      console.log(`record ${i} title fields MATCHED`);
-      allMatch = true;
-    }
-    else{
-      console.log(`record ${i} title fields NOT MATCHED!`);
-      allMatch = false;
-      break;
-
-    }
-  }
-  return allMatch;
-
-
-};
 //------------------------------------------------------------------------------------
 // cursory checks for now. TODO: later make more rigorous, at least testing more fields
 const checkDataSourcesMatch = (jsonObj, dbRecordArray) => {
@@ -150,6 +128,26 @@ const checkDataSourcesMatch = (jsonObj, dbRecordArray) => {
   // return true if match
   console.log(`jsonObj.length = ${jsonObj.length}`);
   console.log(`dbRecordArray.length = ${dbRecordArray.length}`);
+
+  // TODO: later make more rigorous, at least testing EVERY field for change/difference
+  const allNameFieldsMatch = () => {
+    // return true if match
+    // same lengths, so iterate over either one
+    let allMatch;
+    for (let i = 0; i < jsonObj.length; i++){
+      if (jsonObj[i].title === dbRecordArray[i].title)
+      {
+        console.log(`record ${i} title fields MATCHED`);
+        allMatch = true;
+      }
+      else{
+        console.log(`record ${i} title fields NOT MATCHED!`);
+        allMatch = false;
+        break;
+      }
+    }
+    return allMatch;
+  };
 
   if (jsonObj.length !== dbRecordArray.length){
     // confirmed source mismatch
@@ -160,134 +158,135 @@ const checkDataSourcesMatch = (jsonObj, dbRecordArray) => {
     return false;
   }
   else{
-    // same size, so check for content match
-    if (allNameFieldsMatch(jsonObj, dbRecordArray)){
+    // same size, so now check for content match
+    if (allNameFieldsMatch()){
       return true;
     }
     else{
       return false;
     }    
-  }
-     
+  }     
 };
 
 //------------------------------------------------------------------------------------
 
-// want to call this either after db has updated (so with db derived array), or in other senarios such as with existing db or with existing or fetched json.
-const renderProjectCards = (projectsArray) => {
-
-  // 
-  const pageContent = document.querySelector(".page-content");
-  
-  for (let index = 0; index < projectsArray.length; index++){
-    
-    const projectCard = document.createElement("article");
-    projectCard.setAttribute("class", "project-card");
-    projectCard.setAttribute("id", `${index}`);
-
-    const cardImage = document.createElement("div");
-    cardImage.setAttribute("class", "card-image");
-    const imgElem = document.createElement("img");
-    // object-fit only works on fixed container size, which isn't the case here
-    imgElem.setAttribute("src", `${projectsArray[index].remoteImageURL}`);
-    imgElem.setAttribute("alt", `${projectsArray[index].cardImageAlt}`);
-    imgElem.setAttribute("width", `${projectsArray[index].cardImageIntrWidth}`);
-    cardImage.appendChild(imgElem);
-
-    const cardBody = document.createElement("div");
-    cardBody.setAttribute("class", "card-body");
-    cardBody.innerHTML = `
-    <h3><a href="${projectsArray[index].sitePageURL}" title="go to the full project" target="_self">${projectsArray[index].title}</a></h3>
-    <p>${projectsArray[index].shortDescription}</p>
-    `;
-
-    const cardTopFooter = document.createElement("div");
-    cardTopFooter.setAttribute("class", "card-topfooter");
-
-    // create strings from array data (platforms, programming languages)
-    let platformsStr = projectsArray[index].platforms.join(" | ");
-    let programmingLanguagesStr = projectsArray[index].programmingLanguages.join(" | ");
-
-    cardTopFooter.innerHTML = `
-    <p>Developed by:
-    <a href="${projectsArray[index].devGitHubURL}" title="go to this devs gitHub account (opens in a separate browser tab)" target="_blank">${projectsArray[index].devUsername}</a>
-    </p>
-    <p>
-    ${platformsStr} ${programmingLanguagesStr}
-    </p>
-
-    `;
-
-    // create string from array data (contexts)
-    let contextsStr = projectsArray[index].contexts.join(" | ");
-
-    const cardBottomFooter = document.createElement("div");
-    cardBottomFooter.setAttribute("class", "card-bottomfooter");
-    cardBottomFooter.innerHTML = `
-    <p>
-    ${contextsStr}
-    </p>
-    <p>Status:
-    ${projectsArray[index].currentStatus}
-    </p>
-    `;
-
-    projectCard.appendChild(cardImage);
-    projectCard.appendChild(cardBody);
-    projectCard.appendChild(cardTopFooter);
-    projectCard.appendChild(cardBottomFooter);
-
-    pageContent.appendChild(projectCard);
-  }
-  
-  
-
-
-};
-
 //------------------------------------------------------------------------------------
 
-const scrollWhenArticleRequested = (requestedUrlStr, callback) => {
-  // if it exists, get the part (substring) of url that represents a project id
-  // TODO: should really check that this is one and only "#" in the url
-  if (requestedUrlStr.includes("#")){
-    let projectID = requestedUrlStr.split("#")[1];
-    console.log(projectID);
-    callback(projectID);
-  }
-
-};
-
 //------------------------------------------------------------------------------------
-
+// at this point a single, consistent source of truth has already been established
 const openRenderTransaction = (dataStorageObject, requestedURL) => {
   //console.log(`requested url in openRenderTransaction: ${requestedURL}`);
   let objectStore = openTxScopeObjStore(dataStorageObject, ["projects_os"], "readonly");
+
+  // call this function with an established single source of truth.
+  // So, either after db has updated (so with db derived array), or in other senarios too, such as with existing db or with existing or fetched json.
+  const renderProjectCards = () => {
+    // 
+    const projectsArray = os_getAll_req.result; //create a private copy
+    const pageContent = document.querySelector(".page-content");
+
+    for (let index = 0; index < projectsArray.length; index++){
+
+      const projectCard = document.createElement("article");
+      projectCard.setAttribute("class", "project-card");
+      projectCard.setAttribute("id", `${index}`);
+
+      const cardImage = document.createElement("div");
+      cardImage.setAttribute("class", "card-image");
+      const imgElem = document.createElement("img");
+      // object-fit only works on fixed container size, which isn't the case here
+      imgElem.setAttribute("src", `${projectsArray[index].remoteImageURL}`);
+      imgElem.setAttribute("alt", `${projectsArray[index].cardImageAlt}`);
+      imgElem.setAttribute("width", `${projectsArray[index].cardImageIntrWidth}`);
+      cardImage.appendChild(imgElem);
+
+      const cardBody = document.createElement("div");
+      cardBody.setAttribute("class", "card-body");
+      cardBody.innerHTML = `
+      <h3><a href="${projectsArray[index].sitePageURL}" title="go to the full project" target="_self">${projectsArray [index].title}</a></h3>
+      <p>${projectsArray[index].shortDescription}</p>
+      `;
+
+      const cardTopFooter = document.createElement("div");
+      cardTopFooter.setAttribute("class", "card-topfooter");
+
+      // create strings from array data (platforms, programming languages)
+      let platformsStr = projectsArray[index].platforms.join(" | ");
+      let programmingLanguagesStr = projectsArray[index].programmingLanguages.join(" | ");
+
+      cardTopFooter.innerHTML = `
+      <p>Developed by:
+      <a href="${projectsArray[index].devGitHubURL}" title="go to this devs gitHub account (opens in a separate   browser tab)" target="_blank">${projectsArray[index].devUsername}</a>
+      </p>
+      <p>
+      ${platformsStr} ${programmingLanguagesStr}
+      </p>
+
+      `;
+
+      // create string from array data (contexts)
+      let contextsStr = projectsArray[index].contexts.join(" | ");
+
+      const cardBottomFooter = document.createElement("div");
+      cardBottomFooter.setAttribute("class", "card-bottomfooter");
+      cardBottomFooter.innerHTML = `
+      <p>
+      ${contextsStr}
+      </p>
+      <p>Status:
+      ${projectsArray[index].currentStatus}
+      </p>
+      `;
+
+      projectCard.appendChild(cardImage);
+      projectCard.appendChild(cardBody);
+      projectCard.appendChild(cardTopFooter);
+      projectCard.appendChild(cardBottomFooter);
+
+      pageContent.appendChild(projectCard);
+    }
+  };// end renderProjectCards inner function
+
+  // 
+  const scrollWhenArticleRequested = () => {
+    // if it exists, get the part (substring) of url that represents a project id
+   
+    const requestedUrlStr = requestedURL; // make a private copy
+
+    const doThatScroll = (projectID) => {
+      //use the newly discovered scrollIntoView method to get identified article into view by scrolling its' parent
+      console.log(`callback function received projectID: ${projectID}`);
+      // TODO: check that projectID can be cast to an integer
+      // NOTE: smooth behaviour is part of experimental API. is it even cool?      
+      const projectIdNum = projectID; // create a private copy
+      document.getElementById(`${projectIdNum}`).scrollIntoView({behavior : "smooth"});
+      //document.getElementById(`${projectIdNum}`).scrollIntoView();
+    };// end doThatScroll inner-inner function
+
+     // TODO: should really check that this is one and only "#" in the url
+    if (requestedUrlStr.includes("#")){
+      let projectID = requestedUrlStr.split("#")[1];
+      console.log(projectID);
+      doThatScroll(projectID);
+    }  
+  };// end scrollWhenArticleRequested inner function
 
   //  getAll() into another array is best approach
   let os_getAll_req = objectStore.getAll();
 
   os_getAll_req.onsuccess = (event) => {
     //console.log(os_getAll_req.result);
-    renderProjectCards(os_getAll_req.result);
+    renderProjectCards();
   };
 
   os_getAll_req.onerror = (event) => {
-    console.log(os_getAll_req.error);
+    console.error(os_getAll_req.error);
   };
 
   objectStore.transaction.oncomplete = (event) => {
     console.log(`transaction 2 all done!`);
     // if specific project id in the requestedURL, go to that article
-    scrollWhenArticleRequested(requestedURL, (projectID) => {
-      //use the newly discovered scrollIntoView method to get identified article into view by scrolling its' parent
-      console.log(`callback function received projectID: ${projectID}`);
-      // TODO: check that projectID can be cast to an integer
-      // NOTE: smooth behaviour is part of experimental API. is it even cool?
-      //document.getElementById(`${projectID}`).scrollIntoView();
-      document.getElementById(`${projectID}`).scrollIntoView({behavior : "smooth"});
-    })
-    
+    scrollWhenArticleRequested();    
   };
   objectStore.transaction.onerror = (event) => {
     console.log(`transaction 2 was NOT done!`);
@@ -343,14 +342,14 @@ const associatePageWithProject = (dbObj) => {
 
   };
   os_cursor_req.onerror = (event) => {
-     console.log(os_cursor_req.error);
+     console.error(os_cursor_req.error);
   };
 
   objectStore.transaction.oncomplete = (event) => {
     console.log(`transaction 1 all done!`);
   };
   objectStore.transaction.onerror = (event) => {
-    console.log(`transaction 1 was NOT done!`);
+    console.error(`transaction 1 was NOT done!`);
   };
 
 
@@ -380,7 +379,7 @@ const queryDatabaseIntoArray = (jsonObj, dbObj, requestedURL) => {
   };
 
   os_get_req.onerror = (event) => {
-    console.log(os_get_req.error);
+    console.error(os_get_req.error);
   };
 
   objectStore.transaction.oncomplete = (event) => {
@@ -392,7 +391,7 @@ const queryDatabaseIntoArray = (jsonObj, dbObj, requestedURL) => {
       openRenderTransaction(odb, requestedURL);
     })
     .catch(err => {
-      console.log(`transaction 2, from opening the databse..... Investigate. Error message: ${err.message}`);
+      console.error(`transaction 2, from opening the databse..... Investigate. Error message: ${err.message}`);
     })
 
 
@@ -428,7 +427,7 @@ window.onload = () => {
       queryDatabaseIntoArray(jsd, odb, thisURL);   
     })
     .catch(err => {
-      console.log(`Caught it! Or did it bubble up? Investigate. Error message: ${err.message}`);
+      console.error(`Caught it! Or did it bubble up? Investigate. Error message: ${err.message}`);
     })
   }
   // we're running in one of the project specific pages
@@ -444,12 +443,12 @@ window.onload = () => {
       associatePageWithProject(odb);   
     })
     .catch(err => {
-      console.log(`Caught it! Or did it bubble up? Investigate. Error message: ${err.message}`);
+      console.error(`Caught it! Or did it bubble up? Investigate. Error message: ${err.message}`);
     })
   
   }
   else {
-    console.log("Error: NOT SURE WHICH PAGE WE'RE ON, SO NOTHING TO DO, BUT EXIT!");
+    console.error("Error: NOT SURE WHICH PAGE WE'RE ON, SO NOTHING TO DO, BUT EXIT!");
   }
 
 }

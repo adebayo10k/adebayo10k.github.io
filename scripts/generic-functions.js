@@ -64,52 +64,49 @@ const burger = document.getElementById("burger");
 
 const hitZone = document.getElementById("nav-icon-hitzone");
 
-
-
-
 // click event on hitzone that contains just the nav icon
+// (basically, the headers disappear along with the navigation menu, leaving just the burger bars)
 hitZone.addEventListener("click", (event) => {
+  // toggle between visible and hidden headers. Useful on smaller, tablet and mobile screens
+  const toggleHeadings = () => {
+    for (index in headHeadings) {
+      headHeadings[index].className = headHeadings[index].className == "toggled-heading" ? "toggled-heading hidden" : "toggled-heading";
+    }
+  };
+  // toggle between visible and hidden navigation. Usefull on smaller, tablet and mobile screens
+  const toggleNav = () => {   
+      navGrid.className = navGrid.className == "nav-grid" ? "nav-grid open-grid" : "nav-grid";
+      //console.log(navGrid.className);
+  };
+
   toggleNav();
   toggleHeadings();
+
 });
 
 
-// toggle between display styles on tablet and mobile screens
-const toggleNav = () => {   
-    navGrid.className = navGrid.className == "nav-grid" ? "nav-grid open-grid" : "nav-grid";
-    //console.log(navGrid.className);
-};
+//===========================================================================================
+// SHOW/HIDE HEADER HEADINGS AND NAVIGATION MENU BY DEFAULT  
+const headHeadings = document.querySelectorAll(".toggled-heading");
+//console.log(headHeadings);
 
 // display the navigation by default
 const openNav = () => {
     navGrid.className = "nav-grid open-grid";
     //console.log(navGrid.className);
 };
-
 // hide the navigation by default
 const closeNav = () => {
   navGrid.className = "nav-grid";
   //console.log(navGrid.className);
 };
 
-//===========================================================================================
-// TOGGLE HEADER HEADINGS DISPLAY
-const headHeadings = document.querySelectorAll(".toggled-heading");
-//console.log(headHeadings);
-
-// toggle between display styles on tablet and mobile screens
-const toggleHeadings = () => {
-  for (index in headHeadings) {
-    headHeadings[index].className = headHeadings[index].className == "toggled-heading" ? "toggled-heading hidden" : "toggled-heading";
-  }
-};
 // display header headings by default
 const showHeadings = () => {
   for (index in headHeadings) {
     headHeadings[index].className = "toggled-heading";
   }
 }
-
 // hide header headings by default
 const hideHeadings = () => {
   for (index in headHeadings) {
@@ -140,7 +137,7 @@ const heroImg_1 = "../media/images/hero-images/rubiks-cube-02-2400.jpg";
 const heroImg_2 = "../media/images/hero-images/rubiks-cube-03-2400.jpg";
 const heroImg_3 = "../media/images/hero-images/bash-vscode-01-1250.jpg";
 
-const heroMsg_0 = `""`;
+const heroMsg_0 = `"Seek TRUTH, exploit FALLACY, live well."`;
 const heroMsg_1 = `"Build great stuff that you genuinely care about"`;
 const heroMsg_2 = `"If you don't feel passionately... seriously, don't bother."`;
 const heroMsg_3 = `"Computer Technology, Yoruba Context. Let's Go!"`;

@@ -20,31 +20,31 @@ if (document.documentElement.clientWidth < 800){
 
 const encodingsBody = document.getElementById("encodingsBody");
 
-const morse = {
-    "dot" : "&#x2022;",
-    "dash" : "&#x2501;"
-};
-
 const yorùbáJsonPath = "./data/yoruba-char-encodings.json";// from the root apparently
 
 // called functions ---------------------------------------------------------------
 
 const createHexStringMorse = (punctString) => {
-
-  // TODO: use try..catch to validate argument and handle errors
-    let hexStringMorse = "";
-    for (charPos in punctString){
-        char = punctString.charAt(charPos);    
-        if ( char == "." ){
-        hexStringMorse += `${morse.dot} `;
-        }
-        else{
-            hexStringMorse += `${morse.dash} `; 
-        }     
+// TODO: use try..catch to validate actual argument and handle errors
+// specifically:
+// must be a string that contains only "." and/or "-" characters
+  const morse = {
+    "dot" : "&#x2022;",
+    "dash" : "&#x2501;"
+  };
+  
+  let hexStringMorse = "";
+  for (charPos in punctString){
+    char = punctString.charAt(charPos);    
+    if ( char == "." ){
+      hexStringMorse += `${morse.dot} `;
     }
-    hexStringMorse = hexStringMorse.trimEnd();
-
-    return hexStringMorse;
+    else{
+      hexStringMorse += `${morse.dash} `; 
+    }     
+  }
+  hexStringMorse = hexStringMorse.trimEnd();
+  return hexStringMorse;
 };
 
 const getYorubaCharTableData = (url, responseType) => {

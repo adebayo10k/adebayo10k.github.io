@@ -63,6 +63,7 @@ const getSystemState = () => {
   catch(err){
     console.error(err.name);
     console.error(err.message);
+    return false;
   }
 };
 //---------------------------------------------------------------------------------------------------
@@ -98,16 +99,26 @@ const setSystemState = (requestedState) => {
   }
        
 };
+
 //---------------------------------------------------------------------------------------------------
 
-// eg. change text and add forget me button if background is now user configured
-const updateAppearanceSectionsContent = (storedAppearanceSetting) => {
+const refreshSiteAppearance = () => {
+  
+  let storedAppearanceSetting;
+
+  const updateStyleThisPage = () => {
+    htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;   
+  };
+
+  // eg. change text and add forget me button if background is now user configured
+  const updateAppearanceSectionsContent = () => {
+    
+    const trueAppearanceSetting = storedAppearanceSetting; // create private copy of the string
     const introText = `
     Make yourself at home by changing the background colour being used by this site. Your browser should remember your changes between restarts.    
     `;
     /*
     //FIGURING OUT THE MOST PLEASING DATE FORMAT
-
     console.log(typeof localStorage.getItem("userChoiceDate")); // string returned
     console.log(localStorage.userChoiceDate);
 
@@ -125,15 +136,15 @@ const updateAppearanceSectionsContent = (storedAppearanceSetting) => {
     const summaryText = `
     Your preferred background colour was set to <strong>${localStorage.getItem("bgColour")}</strong> on <strong>${localStorage.getItem("userChoiceDate")}</strong>. Try another whenever you like.    
     `; 
-    
+
     try {
-      // first make sure the at storedAppearanceSetting is one of the known states
-      if (validStates.includes(storedAppearanceSetting) === false){
-        throw new RangeError(`Unknown storedAppearanceSetting argument: ${storedAppearanceSetting}`);
+      // first make sure the at trueAppearanceSetting is one of the known states
+      if (validStates.includes(trueAppearanceSetting) === false){
+        throw new RangeError(`Unknown trueAppearanceSetting argument: ${trueAppearanceSetting}`);
       }
       else{
-  
-        switch (storedAppearanceSetting){
+
+        switch (trueAppearanceSetting){
           case "UNSET" :
             changeIntroPara.innerHTML = introText;
             changeIntroPara.style.display = "block";
@@ -166,21 +177,12 @@ const updateAppearanceSectionsContent = (storedAppearanceSetting) => {
       // Gracefully shutdown app here.
       // handleErrors(err)
     }    
-};
-//---------------------------------------------------------------------------------------------------
-
-const updateStyleThisPage = () => {
-   htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;   
-};
-//---------------------------------------------------------------------------------------------------
-
-const refreshSiteAppearance = () => {
-  
-  let storedAppearanceSetting;
+  }; // end updateAppearanceSectionsContent inner function
   
   try {
     storedAppearanceSetting = getSystemState();
-    // if storedAppearanceSetting is undefined at this point, then there was no explicit return value from getSystemState(), and so the app cannot be used.
+    // if storedAppearanceSetting is undefined at this point, then there was no explicit return value from getSystemState(). 
+    // if false, then that value was returned from the catch block. In either case, the app cannot be used.
     if (!storedAppearanceSetting){
       throw new Error(`storedAppearanceSetting was undefined`);
     }
@@ -188,14 +190,14 @@ const refreshSiteAppearance = () => {
       if (storedAppearanceSetting == "UNSET"){
         setSystemState("SYSTEM_DEFAULT");
         storedAppearanceSetting = getSystemState();
-        updateAppearanceSectionsContent(storedAppearanceSetting);
+        updateAppearanceSectionsContent();
       }
       else if (storedAppearanceSetting == "USER_CONFIGURED"){
-          updateAppearanceSectionsContent(storedAppearanceSetting);
+          updateAppearanceSectionsContent();
       }
       else{
           // system default state found, so nothing to do here
-          updateAppearanceSectionsContent(storedAppearanceSetting);// should be no change, but just for completeness
+          updateAppearanceSectionsContent();// should be no change, but just for completeness
       }
       // in all states... update this pages' styles:
       updateStyleThisPage();
