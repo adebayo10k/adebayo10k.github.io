@@ -122,30 +122,34 @@ const harmoniseProjectsData = function (jsonObj, objectStore) {
 //------------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------------
-// cursory checks for now. TODO: later make more rigorous, at least testing more fields
+// tests all string values match
 const checkDataSourcesMatch = (jsonObj, dbRecordArray) => {
   // assume one source has at least one record
   // return true if match
   console.log(`jsonObj.length = ${jsonObj.length}`);
   console.log(`dbRecordArray.length = ${dbRecordArray.length}`);
 
-  // TODO: later make more rigorous, at least testing EVERY field for change/difference
+  // TODO: test EVERY field for change/difference
   const allNameFieldsMatch = () => {
     // return true if match
     // same lengths, so iterate over either one
     let allMatch;
-    for (let i = 0; i < jsonObj.length; i++){
-      if (jsonObj[i].title === dbRecordArray[i].title)
-      {
-        console.log(`record ${i} title fields MATCHED`);
-        allMatch = true;
-      }
-      else{
-        console.log(`record ${i} title fields NOT MATCHED!`);
-        allMatch = false;
-        break;
-      }
-    }
+    outerLoop: for (let i = 0; i < jsonObj.length; i++){
+      for (let key in jsonObj[i]){
+        // only comparing string values for now
+        if (typeof jsonObj[i][key] === "string"){
+          if (jsonObj[i][key] === dbRecordArray[i][key]){
+            console.log(`record ${i} field "${key}" MATCHED`);
+            allMatch = true;
+          }
+          else{
+            console.log(`record ${i}  field "${key}" NOT MATCHED!`);
+            allMatch = false;
+            break outerLoop;
+          }
+        }        
+      } // end inner for-loop      
+    } // end outer for-loop  
     return allMatch;
   };
 

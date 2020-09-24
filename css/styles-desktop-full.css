@@ -176,6 +176,12 @@ a:hover{
     text-decoration: none;
 }
 /* we never remove tab-to outline without replacing it */
+/*
+*:focus {
+  outline: 3px dashed #228bec;
+  outline-offset: 0;
+}
+*/
 a:focus {
     background-color: aliceblue;
     font-size: 1.2em;
