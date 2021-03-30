@@ -59,7 +59,7 @@ p{
 }
 
 /* section p and h3 left margin + padding + border set to line up */
-section header h3{
+section header h3,h2{
     margin: 6px;
     padding: 6px;
 }
