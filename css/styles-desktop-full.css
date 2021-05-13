@@ -448,6 +448,9 @@ main {
   display: flow-root;
 }
 
+/* there are reasons we'd want a type of article on
+each page, known by its' id. this image properties
+specified here are just a placeholder for that case */
 #hero-background-cube-01 {
   background-image: url("../media/images/hero-images/rubiks-cube-02-2400.jpg");
   background-position: center center;
