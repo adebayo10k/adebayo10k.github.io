@@ -82,7 +82,7 @@ fieldset {
 
 img, video, audio{
     width: 300px;
-    padding: 2px;
+    padding: 0px;
 }
 
 figure{

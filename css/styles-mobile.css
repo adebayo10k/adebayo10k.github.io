@@ -74,7 +74,7 @@ fieldset {
 
 img, video, audio{
     width: 100%;
-    padding: 2px;
+    padding: 0px;
 }
 
 figure{

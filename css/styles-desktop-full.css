@@ -136,6 +136,10 @@ html{
   background-color: #6495ed; /*cornflowerblue*/
 }
 
+.stand-out-text {
+  color: #8b0000;
+}
+
 .inline-list {
   padding-left: 20px;  
 }
@@ -249,12 +253,21 @@ pre {
 
 img, video, audio{
     width: 400px;
-    padding: 4px;
+    padding: 0px;
 }
 
 figure{
     margin: 8px;
     margin-bottom: 2px;
+}
+
+/* images bordered, except when of class no-border */
+figure img {
+  border: 1px solid #000;
+}
+
+figure img.no-border {
+  border: none;
 }
 
 /* doesn't work */
@@ -264,7 +277,7 @@ figure.fig-table {
 }
 
 figcaption{
-    font-style: italic;
+  font-style: italic;
 }
 
 iframe {
