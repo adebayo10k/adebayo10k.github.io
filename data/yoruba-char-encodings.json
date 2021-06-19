@@ -162,7 +162,7 @@
       "note" : ""
     },
     {
-      "characterSymbol" : "&#x0323;&egrave;",
+      "characterSymbol" : "&egrave;&#x0323;",
       "unicodeHex" : "undefined",
       "unicodeDec" : "undefined",
       "htmlCER" : "",
