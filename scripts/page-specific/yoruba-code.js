@@ -74,6 +74,7 @@ const populateTableBody = (jsonObj) => {
     // compose each td item required
     const charSymbolData = document.createElement("td");
     charSymbolData.innerHTML = `<p>${charInfo[index].characterSymbol}</p>`;
+    //charSymbolData.innerHTML = `<p>${charInfo[index].characterSymbol}</p>`;
 
     const charHexData = document.createElement("td");
     charHexData.textContent = charInfo[index].unicodeHex === "undefined" ? "undefined" : `&#${charInfo[index].unicodeHex};`;

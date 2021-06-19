@@ -42,7 +42,7 @@
       "note" : ""
     },
     {
-      "characterSymbol" : "à",
+      "characterSymbol" : "&#x00E0;",
       "unicodeHex" : "x00E0",
       "unicodeDec" : "224",
       "htmlCER" : "&agrave;",
@@ -162,7 +162,7 @@
       "note" : ""
     },
     {
-      "characterSymbol" : "̀ẹ",
+      "characterSymbol" : "&#x0323;&egrave;",
       "unicodeHex" : "undefined",
       "unicodeDec" : "undefined",
       "htmlCER" : "",
