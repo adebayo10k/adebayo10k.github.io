@@ -813,7 +813,7 @@ caption {
     padding: 10px;
 }
 
-.morse-field { /* perhaps more efficient to use nth-child() to target this column, even if class has other uses */
+.morse-field {
     white-space: nowrap;
     padding-left: 4px;
     text-align: left;

@@ -86,7 +86,7 @@ const populateTableBody = (jsonObj) => {
     charCERData.textContent = `${charInfo[index].htmlCER}`;
 
     const charMorseData = document.createElement("td");
-    charMorseData.setAttribute("class", "morse-field");
+    charMorseData.setAttribute("class", "morse-field monospaced");
     let morseValue = charInfo[index].morse;
     let hexStringMorse = createHexStringMorse(morseValue);
     charMorseData.innerHTML = `<p>${hexStringMorse}</p>`;
