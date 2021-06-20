@@ -14,27 +14,27 @@ const password2 = document.getElementById("password2");
 
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-const validUsernameCharsetRegex = "/([\u0030-\u0039\u0041-\u005A\u0061-\u007A\u00C0-\u00DE\u00E0-\u00FF\u1E63\u1EB9\u1ECD])+/gu";
+const validUsernameCharsetRegex = "/([\u0030-\u0039\u0041-\u005A\u0061-\u007A\u00C0-\u00DE\u00E0-\u00FF])+/gu";
 
 const validLatinBasic = /^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/;
-const validLatinAll = /^[\u0041-\u005A\u0061-\u007A\u0030-\u0039\u0020\u00E0-\u00FF\u00C0-\u00DE\u1E63\u1EB9\u1ECD _-]+$/;
+const validLatinAll = /^[\u0041-\u005A\u0061-\u007A\u0030-\u0039\u0020\u00E0-\u00FF\u00C0-\u00DE\u0144\u01F9\u0323 _-]+$/;
 /*
-NUMERIC RANGE
+NUMERIC RANGES BY UNICODE STANDARD BLOCK
+      \u0020 space character
       \u0030-\u0039 numeric 0 - 9
      BASIC LATIN RANGES
       \u0041-\u005A basic latin upper-case A-Z
       \u0061-\u007A basic latin lower-case a-z
-     LATIN-1 RANGES
+     LATIN-1 SUPPLEMENT RANGES
       \u00C0-\u00DE  latin upper-case A-Z
       \u00E0-\u00FF  latin lower-case a-z
-     ENUMERATED DOTTED UNICODES (in numeric order)
-      \u1E63  s dot
-      \u1EB9  e dot
-      \u1ECD  o dot
+     LATIN EXTENDED-A RANGES
+      \u0144
+     LATIN EXTENDED-B RANGES
+      \u01F9
+     COMBINING CHARACTER RANGES 
+      \u0323
       
-      \u00E0-\u00FA à to ú
-      \u1EB9-\u1E63 ẹ to 
-      space is \u0020
 */
 
 // =======================================================

@@ -38,7 +38,7 @@
   
   <noscript>
     <h4>JavaScript is off. Please enable to view full site.</h4>
-    <p>&#x0394; &#x03A8; &#x03A9; &#x039E;</p>
+    <p>anfani nipase&#x0323; imo&#x0323;-e&#x0323;ro&#x0323;</p>
   </noscript>
   <div id="freezeLayer" class="freeze-layer" style="display: none;"></div>
   <header class="page-head">
@@ -80,7 +80,7 @@
 
   <article class="hero-article" id="hero-background-bash-vscode-01">
     <div class="hero-message message-right monospaced">
-      <h2>Hero message from the ṢàngóTech <!--&#x1E63;&#x00E0;ng&#x00F3;Tech--> Network.</h2>
+      <h2>Hero message from the &#x0053;&#x0323;&#x00E0;ng&#x00F3;Tech Network.</h2>
       <h2>"Mission Accepted"</h2>
     </div>
   </article>        
@@ -96,29 +96,44 @@
         <p>Forms created for us to test out some web form client-side validation and styling - although not so much of the styling.</p>
         <p>Using the Oguntech network services for form content.</p>
         <p>We&apos;re going for a <strong>live, inline validation</strong> approach for fields where it works.</p>
-        <p>Try entering Yor&#249;b&#225; language characters (copy them into the form fields). The ones currently defined in unicode are found to be completely valid to this form.</p>
+        <p>Try entering Yor&ugrave;b&aacute; language characters (copy them into the form fields for now).</p>
+        <p>Characters with unicode codepoints, no issue.</p>
+        <p>Characters composed using combining diacritical marks can go through form validation ok, but they are considered by the browser JavaScript to be two separate characters, so some more scripting is required. Not sustainable IMO.</p>
+
         <p>So, these should be found valid:</p>
         <ul class="inline-list">
-          <li>&#x00E0;</li>
-          <li>&#x00E1;</li>
-          <li>&#x00E8;</li>
-          <li>&#x00E9;</li>
-          <li>&#x1EB9;</li><!-- e dot -->
-          <li>&#x00EC;</li>
-          <li>&#x00ED;</li>
-          <li>&#x00F2;</li>
-          <li>&#x00F3;</li>
-          <li>&#x01ECD;</li><!-- o dot -->
-          <li>&#x1E63;</li><!-- s dot --> 
-          <li>&#x00F9;</li>
-          <li>&#x00FA;</li>            
+          <li>&#x00E0;</li><!-- a grave -->
+          <li>&#x00E1;</li><!-- a acute -->
+
+          <li>&#x00E8;</li><!-- e grave -->
+          <li>&#x00E9;</li><!-- e acute -->
+          <li>e&#x0323;</li><!-- e dot -->
+          <li>&egrave;&#x0323;</li><!-- e grave dot -->
+          <li>&eacute;&#x0323;</li><!-- e acute dot -->
+
+          <li>&#x00EC;</li><!-- i grave -->
+          <li>&#x00ED;</li><!-- i acute -->
+
+          <li>&#x01F9;</li><!-- n grave -->
+          <li>&#x0144;</li><!-- n acute -->
+
+          <li>&#x00F2;</li><!-- o grave -->
+          <li>&#x00F3;</li><!-- o acute -->
+          <li>o&#x0323;</li><!-- o dot -->
+          <li>&ograve;&#x0323;</li><!-- o grave dot -->
+          <li>&oacute;&#x0323;</li><!-- o acute dot -->
+
+          <li>s&#x0323;</li><!-- s dot -->
+
+          <li>&#x00F9;</li><!-- u grave -->
+          <li>&#x00FA;</li><!-- u acute -->    
         </ul>
       </section>
       
       <div class="hero-article-container">  
         <article class="hero-article" id="hero-background-cube-02">
           <div class="hero-message message-right monospaced">
-            <h2>Hero message from the ṢàngóTech <!--&#x1E63;&#x00E0;ng&#x00F3;Tech--> Network.</h2>
+            <h2>Hero message from the &#x0053;&#x0323;&#x00E0;ng&#x00F3;Tech Network.</h2>
             <h2>"Build great stuff that you genuinely care about."</h2>
           </div>
         </article>        
@@ -134,7 +149,7 @@
       
             <div class="form-control">
               <label for="username">Username</label>
-              <input type="text" id="username" placeholder="mu orukọ olumulo kan" required minlength="3" maxlength="31">
+              <input type="text" id="username" placeholder="mu or&uacute;k&ograve;&#x0323; olumulo kan" required minlength="3" maxlength="31">
               <i class="fa fa-check-circle" aria-hidden="true"></i>
               <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
               <small>Error message</small>
@@ -142,7 +157,7 @@
       
             <div class="form-control">
               <label for="email">Email</label>
-              <input type="email" id="email" placeholder="imeeli rẹ" required maxlength="63">
+              <input type="email" id="email" placeholder="n.b.u.c. re&#x0323;" required maxlength="63">
               <i class="fa fa-check-circle" aria-hidden="true"></i>
               <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
               <small>Error message</small>
@@ -150,7 +165,7 @@
       
             <div class="form-control">
               <label for="password">Password</label>
-              <input type="password" id="password" placeholder="mu ọrọ atiwọle kan" required minlength="8" maxlength="63">
+              <input type="password" id="password" placeholder="mu &ograve;&#x0323;r&ograve;&#x0323; atiwo&#x0323;le kan" required minlength="8" maxlength="63">
               <i class="fa fa-check-circle" aria-hidden="true"></i>
               <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
               <small>Error message</small>
@@ -158,7 +173,7 @@
       
             <div class="form-control">
               <label for="password2">Password Confirm</label>
-              <input type="password" id="password2" placeholder="tun fi ọrọ atiwọle" required maxlength="63">
+              <input type="password" id="password2" placeholder="tun fi &ograve;&#x0323;r&ograve;&#x0323; atiwo&#x0323;le" required maxlength="63">
               <i class="fa fa-check-circle" aria-hidden="true"></i>
               <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
               <small>Error message</small>
@@ -174,7 +189,7 @@
       <div class="hero-article-container">  
         <article class="hero-article" id="hero-background-cube-01">
           <div class="hero-message message-left firaSansBoldFont">
-            <h2>Hero message from the ṢàngóTech <!--&#x1E63;&#x00E0;ng&#x00F3;Tech--> Network.</h2>
+            <h2>Hero message from the &#x0053;&#x0323;&#x00E0;ng&#x00F3;Tech Network.</h2>
             <h2>Build great stuff that you genuinely care about.</h2 >
           </div>
         </article>                    
@@ -376,7 +391,7 @@
       <section class="site-app-card site-form" id="yourPublicKey">
         <div class="form-container">
           <header>
-            <h2>Kọkọrọ Gbangba rẹ</h2>
+            <h2>Ko&#x0323;ko&#x0323;ro&#x0323; Gbangba re&#x0323;</h2>
             <h2>&lpar;Your Public Key&rpar;</h2>  
           </header>
           <form class="form" id="yourPublicKeyForm" novalidate>
@@ -439,7 +454,7 @@
   
   <article class="hero-article">
     <div class="hero-message-right monospaced">
-      <h2>Hero message from the ṢàngóTech Network.</h2>
+      <h2>Hero message from the &#x0053;&#x0323;&#x00E0;ng&#x00F3;Tech Network.</h2>
       <h2>"Build stuff that you want to see."</h2>
     </div>
   </article> 
