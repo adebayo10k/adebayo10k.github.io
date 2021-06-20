@@ -81,7 +81,7 @@
 .firaSansBoldFont {
   font-family: FiraSansBold;
 }
-.monospaced {
+.monospaced { /* do not use this for text as it breaks correctly decoded unicode */
   font-family: monospace;
 }
 
@@ -127,7 +127,7 @@ nav li a:link {
 /* |&|GENERAL SITE-WIDE DEFAULT STYLES */
 
 html{
-  font-family: FiraSansReg, FiraMonoReg, monospace, sans-serif, 'Ubuntu Mono';
+  font-family: FiraSansReg, FiraMonoReg, sans-serif, 'Ubuntu Mono', serif;
   padding-top: 8px;
   padding-bottom: 12px;
 }
@@ -652,7 +652,7 @@ nav li a:focus {
   display: block;
   cursor:pointer;
   color:#ffffff;
-  font-family:'Ubuntu Mono', monospace, serif;
+  font-family:"FiraSansReg", "FiraMonoReg",'Ubuntu Mono', sans-serif, serif;
   font-size:18px;
   font-weight:bold;
   padding:6px 24px;
@@ -669,7 +669,7 @@ nav li a:focus {
   top:1px;
 }
 .blue-button {
-	box-shadow:inset 0px 39px 50px -24px #9fb4f2;
+	box-shadow:inset 0px 1px 0px 0px #9fb4f2;
 	background:linear-gradient(to bottom, #9eb5de 5%, #476e9e 100%);
 	background-color:#9eb5de;
 	border-radius:6px;
@@ -677,7 +677,7 @@ nav li a:focus {
 	display:block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:'Ubuntu Mono', monospace, serif;
+	font-family:"FiraSansReg", "FiraMonoReg",'Ubuntu Mono', sans-serif, serif;
   font-size:18px;
   font-weight:bold;
   padding:6px 24px;
@@ -833,7 +833,7 @@ colgroup col:nth-child(2) {
 /* form styles*/
 
 section.site-app-card.site-form {
-  font-family: "FiraSansReg", monospace;
+  font-family: "FiraSansReg", "FiraMonoReg", 'UbuntuMono' sans-serif, serif;
   display: flex;
   align-items: center;
   justify-content: center;
