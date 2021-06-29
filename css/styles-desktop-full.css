@@ -540,7 +540,8 @@ specified here are just a placeholder for that case */
   font-style: normal;
   padding: 1rem;
   margin: 0;
-  height: 240px;
+  /*height: 240px;*/
+  height: 300px;
   overflow-x: scroll;
 }
 
@@ -556,7 +557,9 @@ specified here are just a placeholder for that case */
   padding: 1rem;
   margin: 0;
   border-top: 1px solid #d8d8d8;
-  height: 72px;
+  /*height: 72px;*/
+  height: 100px;
+  color: #333;
   background-color: aliceblue;
   overflow: scroll;
 }
@@ -572,7 +575,9 @@ specified here are just a placeholder for that case */
   padding: 1rem;
   margin: 0;
   border-top: 1px solid #d8d8d8;
-  height: 100px;
+  /*height: 100px;*/
+  height: 120px;
+  color: #333;
   background-color: beige;
   overflow: scroll;
 }
