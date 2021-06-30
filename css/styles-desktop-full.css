@@ -540,9 +540,10 @@ specified here are just a placeholder for that case */
   font-style: normal;
   padding: 1rem;
   margin: 0;
-  /*height: 240px;*/
-  height: 300px;
+  /*height: 300px;*/
+  height: 240px;
   overflow-x: scroll;
+  scrollbar-width: none; /* for firefox browser to scroll without any visible scrollbar*/
 }
 
 .project-card .card-body p {
@@ -557,11 +558,12 @@ specified here are just a placeholder for that case */
   padding: 1rem;
   margin: 0;
   border-top: 1px solid #d8d8d8;
-  /*height: 72px;*/
+  /*height: 100px;*/
   height: 100px;
   color: #333;
   background-color: aliceblue;
   overflow: scroll;
+  scrollbar-width: none;
 }
 
 .project-card .card-topfooter p {
@@ -575,17 +577,26 @@ specified here are just a placeholder for that case */
   padding: 1rem;
   margin: 0;
   border-top: 1px solid #d8d8d8;
-  /*height: 100px;*/
+  /*height: 120px;*/
   height: 120px;
   color: #333;
   background-color: beige;
   overflow: scroll;
+  scrollbar-width: none;
 }
 
 .project-card .card-bottomfooter p {
   padding: 0;
   margin: 0;
 }
+
+
+/* for webkit browsers like Chrome, Safari and Opera to scroll without any visible scrollbar*/
+.project-card .card-body::-webkit-scrollbar,  .project-card .card-topfooter::-webkit-scrollbar, .project-card .card-bottomfooter::-webkit-scrollbar{
+  display: none;
+  width: 0px;
+}
+
 
 @supports (display: grid) {
   .page-content, .sidebar, .page-intro-para, .site-app-card, .project-card, .hero-image {
