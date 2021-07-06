@@ -42,7 +42,7 @@
       "note": ""
     },
     {
-      "characterSymbol": "&agrave;",
+      "characterSymbol": "à",
       "unicodeHex": "x00E0",
       "unicodeDec": "224",
       "htmlCER": "&agrave;",
@@ -57,7 +57,7 @@
       "note": "NON-ENGLISH MORSE EXTENSION"
     },
     {
-      "characterSymbol": "&aacute;",
+      "characterSymbol": "á",
       "unicodeHex": "x00E1",
       "unicodeDec": "225",
       "htmlCER": "&aacute;",
@@ -117,7 +117,7 @@
       "note": ""
     },
     {
-      "characterSymbol": "&egrave;",
+      "characterSymbol": "è",
       "unicodeHex": "x00E8",
       "unicodeDec": "232",
       "htmlCER": "&egrave;",
@@ -132,7 +132,7 @@
       "note": ""
     },
     {
-      "characterSymbol": "&eacute;",
+      "characterSymbol": "é",
       "unicodeHex": "x00E9",
       "unicodeDec": "233",
       "htmlCER": "&eacute;",
@@ -147,7 +147,7 @@
       "note": "INCLUDED IN ITU-R MORSE"
     },
     {
-      "characterSymbol": "e&#x0323;",
+      "characterSymbol": "ẹ",
       "unicodeHex": "undefined",
       "unicodeDec": "undefined",
       "htmlCER": "",
@@ -162,7 +162,7 @@
       "note": ""
     },
     {
-      "characterSymbol": "&egrave;&#x0323;",
+      "characterSymbol": "ẹ̀",
       "unicodeHex": "undefined",
       "unicodeDec": "undefined",
       "htmlCER": "",
@@ -177,7 +177,7 @@
       "note": ""
     },
     {
-      "characterSymbol": "&eacute;&#x0323;",
+      "characterSymbol": "ẹ́",
       "unicodeHex": "undefined",
       "unicodeDec": "undefined",
       "htmlCER": "",
@@ -267,7 +267,7 @@
       "note": ""
     },
     {
-      "characterSymbol": "&igrave;",
+      "characterSymbol": "ì",
       "unicodeHex": "x00EC",
       "unicodeDec": "236",
       "htmlCER": "&igrave;",
@@ -282,7 +282,7 @@
       "note": ""
     },
     {
-      "characterSymbol": "&iacute;",
+      "characterSymbol": "í",
       "unicodeHex": "x00ED",
       "unicodeDec": "237",
       "htmlCER": "&iacute;",
@@ -372,7 +372,7 @@
       "note": ""
     },
     {
-      "characterSymbol": "&#x01F9",
+      "characterSymbol": "ǹ",
       "unicodeHex": "x01F9",
       "unicodeDec": "505",
       "htmlCER": "",
@@ -387,7 +387,7 @@
       "note": ""
     },
     {
-      "characterSymbol": "&nacute;",
+      "characterSymbol": "ń",
       "unicodeHex": "x0144",
       "unicodeDec": "324",
       "htmlCER": "&nacute;",
@@ -417,7 +417,7 @@
       "note": ""
     },
     {
-      "characterSymbol": "&ograve;",
+      "characterSymbol": "ò",
       "unicodeHex": "x00F2",
       "unicodeDec": "242",
       "htmlCER": "&ograve;",
@@ -432,7 +432,7 @@
       "note": ""
     },
     {
-      "characterSymbol": "&oacute;",
+      "characterSymbol": "ó",
       "unicodeHex": "x00F3",
       "unicodeDec": "243",
       "htmlCER": "&oacute;",
@@ -447,7 +447,7 @@
       "note": "NON-ENGLISH MORSE EXTENSION"
     },
     {
-      "characterSymbol": "o&#x0323;",
+      "characterSymbol": "ọ",
       "unicodeHex": "undefined",
       "unicodeDec": "undefined",
       "htmlCER": "",
@@ -462,7 +462,7 @@
       "note": ""
     },
     {
-      "characterSymbol": "&ograve;&#x0323;",
+      "characterSymbol": "ọ̀",
       "unicodeHex": "undefined",
       "unicodeDec": "undefined",
       "htmlCER": "",
@@ -477,7 +477,7 @@
       "note": ""
     },
     {
-      "characterSymbol": "&oacute;&#x0323;",
+      "characterSymbol": "ọ́",
       "unicodeHex": "undefined",
       "unicodeDec": "undefined",
       "htmlCER": "",
@@ -537,7 +537,7 @@
       "note": ""
     },
     {
-      "characterSymbol": "s&#x0323;",
+      "characterSymbol": "ṣ",
       "unicodeHex": "undefined",
       "unicodeDec": "undefined",
       "htmlCER": "",
@@ -582,7 +582,7 @@
       "note": ""
     },
     {
-      "characterSymbol": "&ugrave;",
+      "characterSymbol": "ù",
       "unicodeHex": "x00F9",
       "unicodeDec": "249",
       "htmlCER": "&ugrave;",
@@ -597,7 +597,7 @@
       "note": ""
     },
     {
-      "characterSymbol": "&uacute;",
+      "characterSymbol": "ú",
       "unicodeHex": "x00FA",
       "unicodeDec": "250",
       "htmlCER": "&uacute;",
