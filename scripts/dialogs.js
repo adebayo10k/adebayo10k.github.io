@@ -2,7 +2,7 @@
 // alert dialog functions
 // (OK button only)
 
-const CustomAlert = new function(){
+const CustomAlert = new function () {
     this.show = (msg) => {
         const dlg = document.getElementById("alertDialogCont");
         const dlgBody = dlg.querySelector("#alertDialogBody");
@@ -39,12 +39,12 @@ const hideAlertDialog = () => {
 // (CANCEL and OK buttons)
 
 const handleDefaultConfirm = () => {
-    if (confirm("Ok to change background?")){
+    if (confirm("Ok to change background?")) {
         console.log("Background now updating....");
     }
 };
 
-const CustomConfirm = new function(){
+const CustomConfirm = new function () {
     this.show = (msg, callback) => { // 
         this.callback = callback;
         const dlg = document.getElementById("confirmDialogCont");
@@ -52,10 +52,10 @@ const CustomConfirm = new function(){
         dlgBody.textContent = msg;
         const dlgOkBtn = document.getElementById("confirmDlgOkBtn");
         const dlgCancelBtn = document.getElementById("confirmDlgCancelBtn");
-                
-        dlg.style.top = `${(document.documentElement.clientHeight/2)+window.pageYOffset}px`; // 
-        
-        dlg.style.opacity = 1;        
+
+        dlg.style.top = `${(document.documentElement.clientHeight / 2) + window.pageYOffset}px`; // 
+
+        dlg.style.opacity = 1;
         document.getElementById("freezeLayer").style.display = "block";
 
         dlgOkBtn.addEventListener("click", this.affirm);
@@ -79,7 +79,7 @@ const CustomConfirm = new function(){
         dlg.style.opacity = 0;
         document.getElementById("freezeLayer").style.display = "none";
     };
-   
+
 };
 
 //---------------------------------------------------------------------
@@ -90,25 +90,25 @@ const CustomConfirm = new function(){
 const validateUsername = (username) => {
     const resultBox = document.getElementById("result");
     // TODO: all sorts of input validation...HERE.. 
-    if (username != null){
-        if (username.startsWith("d")){
+    if (username != null) {
+        if (username.startsWith("d")) {
             resultMsg = "damola?";
         }
-        else{
+        else {
             resultMsg = "who are you?";
         }
     }
-    else{
+    else {
         resultMsg = "User cancelled input";
     }
     resultBox.textContent = resultMsg;
 };
 
 const handleDefaultPrompt = () => {
-    validateUsername(prompt("Give me your username"));    
+    validateUsername(prompt("Give me your username"));
 };
 
-const CustomPrompt = new function(){
+const CustomPrompt = new function () {
     // object scope variables assigned at object creation time
     this.dialogInputElem = document.getElementById("promptDialogInput");
 
@@ -147,5 +147,5 @@ const showPromptDialog = () => {
     // create message and callback
     const msg = "Username needs confirmation now";
     // args passed to CustomPrompt object will have been dynamically generated
-    CustomPrompt.show(msg,validateUsername);
+    CustomPrompt.show(msg, validateUsername);
 };

@@ -42,35 +42,35 @@ NUMERIC RANGES BY UNICODE STANDARD BLOCK
 
 // form (re)validation at submit time
 form.addEventListener("submit", (event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-	//checkInputs();
-	doUsernameTests();
-	doEmailTests();
-	doPasswordTests();
-  doPasswordConfirmTests();
-  
-  // reset the form
-  // give focus to first input field
-	
+    //checkInputs();
+    doUsernameTests();
+    doEmailTests();
+    doPasswordTests();
+    doPasswordConfirmTests();
+
+    // reset the form
+    // give focus to first input field
+
 });
 
 
 username.addEventListener("input", (event) => {
-  doUsernameTests();
+    doUsernameTests();
 });
 
 email.addEventListener("input", (event) => {
-	doEmailTests();
+    doEmailTests();
 });
 
 password.addEventListener("input", (event) => {
-	doPasswordTests();
-  // now let's just make sure the confirm password isn't caught out...
-  // if confirm password has already been entered once and validated, it needs to be done again
-  if (!isEmpty(password2)) {
-    doPasswordConfirmTests();
-  }
+    doPasswordTests();
+    // now let's just make sure the confirm password isn't caught out...
+    // if confirm password has already been entered once and validated, it needs to be done again
+    if (!isEmpty(password2)) {
+        doPasswordConfirmTests();
+    }
 });
 
 password2.addEventListener("input", (event) => {
@@ -81,69 +81,69 @@ password2.addEventListener("input", (event) => {
 // FUNCTIONS THAT CALL APPROPRIATE INPUT VALIDATIONS, THEN PASS ON THE OUTCOMES
 // TODO: could encapsulation be better here by using synchronous callback functions?
 const doUsernameTests = () => {
-	//
-	if (isEmpty(username)){
-    setErrorFor(username, "Username cannot be blank");
-  }
-  else if (isTooShort(username, username.minLength)){
-    let charDiffPlurality = (username.minLength - username.value.length) !== 1;
-    setErrorFor(username, `Need at least ${username.minLength - username.value.length} more ${charDiffPlurality ? "characters" : "character"}.`);
-  }
-  else if (hasInvalidCharacters(username)) {
-    setErrorFor(username, "Invalid character");
-  }
-  else if (hasWhitespaceTopOrTail(username)) {
-    setErrorFor(username, "Username cannot start or end with a space character");
-  }
-  else {
-    setSuccessFor(username);
-  }
+    //
+    if (isEmpty(username)) {
+        setErrorFor(username, "Username cannot be blank");
+    }
+    else if (isTooShort(username, username.minLength)) {
+        let charDiffPlurality = (username.minLength - username.value.length) !== 1;
+        setErrorFor(username, `Need at least ${username.minLength - username.value.length} more ${charDiffPlurality ? "characters" : "character"}.`);
+    }
+    else if (hasInvalidCharacters(username)) {
+        setErrorFor(username, "Invalid character");
+    }
+    else if (hasWhitespaceTopOrTail(username)) {
+        setErrorFor(username, "Username cannot start or end with a space character");
+    }
+    else {
+        setSuccessFor(username);
+    }
 };
 
 const doEmailTests = () => {
-	//
-	if (isEmpty(email)){
-    setErrorFor(email, "Email cannot be blank");
-  }
-  else if (!isEmail(email)) {
-    setErrorFor(email, "Email is not valid");
-  }
-  else {
-    setSuccessFor(email);
-  }		
+    //
+    if (isEmpty(email)) {
+        setErrorFor(email, "Email cannot be blank");
+    }
+    else if (!isEmail(email)) {
+        setErrorFor(email, "Email is not valid");
+    }
+    else {
+        setSuccessFor(email);
+    }
 };
 
 const doPasswordTests = () => {
-  // 
-  if (isEmpty(password)){
-    setErrorFor(password, "Password cannot be blank");
-  }
-  else if (isTooShort(password, password.minLength)){
-    let charDiffPlurality = (password.minLength - password.value.length) !== 1;
-    setErrorFor(password, `Need at least ${password.minLength - password.value.length} more ${charDiffPlurality ? "characters" : "character"}.`);
-  }
-  else if (hasWhitespaceTopOrTail(password)) {
-    setErrorFor(password, "Password cannot start or end with a space character");
-  }
-  else {
-    setSuccessFor(password);
-  }
+    // 
+    if (isEmpty(password)) {
+        setErrorFor(password, "Password cannot be blank");
+    }
+    else if (isTooShort(password, password.minLength)) {
+        let charDiffPlurality = (password.minLength - password.value.length) !== 1;
+        setErrorFor(password, `Need at least ${password.minLength - password.value.length} more ${charDiffPlurality ? "characters" : "character"}.`);
+    }
+    else if (hasWhitespaceTopOrTail(password)) {
+        setErrorFor(password, "Password cannot start or end with a space character");
+    }
+    else {
+        setSuccessFor(password);
+    }
 };
 
-const doPasswordConfirmTests = () => {  
-  if (isEmpty(password2)){
-    setErrorFor(password2, "Password Confirm cannot be blank");
-  }
-  // before validating for equality, just check that password is valid
-  else if (isNotValid(password)) {
-    setErrorFor(password2, "Set a valid password first!");
-  }
-  else if (areNotEqual(password, password2)) {
-    setErrorFor(password2, `Passwords do not match`);
-  }
-  else {
-    setSuccessFor(password2);
-  }
+const doPasswordConfirmTests = () => {
+    if (isEmpty(password2)) {
+        setErrorFor(password2, "Password Confirm cannot be blank");
+    }
+    // before validating for equality, just check that password is valid
+    else if (isNotValid(password)) {
+        setErrorFor(password2, "Set a valid password first!");
+    }
+    else if (areNotEqual(password, password2)) {
+        setErrorFor(password2, `Passwords do not match`);
+    }
+    else {
+        setSuccessFor(password2);
+    }
 };
 
 // =======================================================
@@ -151,27 +151,27 @@ const doPasswordConfirmTests = () => {
 // TODO: use try..catch to validate arguments and handle errors
 
 // show error, add error class
-const setErrorFor = (input, message) => { 
-  const formControl = input.parentElement; //.form-control
-  const small = formControl.querySelector("small");
-  const constraintsTip = "Only letters, numbers, space, dash(-) and underscore(_) are allowed here";
+const setErrorFor = (input, message) => {
+    const formControl = input.parentElement; //.form-control
+    const small = formControl.querySelector("small");
+    const constraintsTip = "Only letters, numbers, space, dash(-) and underscore(_) are allowed here";
 
-  // add error message into small
-  if (message == "Invalid character"){
-    small.innerHTML = `<abbr style="cursor:help;" title="${constraintsTip}">${message}</abbr>`;
-  }
-  else {
-    small.innerText = message;
-  }
-  
-  // add error class
-  formControl.className = "form-control error"
+    // add error message into small
+    if (message == "Invalid character") {
+        small.innerHTML = `<abbr style="cursor:help;" title="${constraintsTip}">${message}</abbr>`;
+    }
+    else {
+        small.innerText = message;
+    }
+
+    // add error class
+    formControl.className = "form-control error"
 };
 
 // add success class
 const setSuccessFor = (input) => {
-  const formControl = input.parentElement; //.form-control
-  formControl.className = "form-control success"
+    const formControl = input.parentElement; //.form-control
+    formControl.className = "form-control success"
 };
 // =======================================================
 
@@ -183,75 +183,75 @@ const setSuccessFor = (input) => {
 
 // generalised function for checking...
 const isEmpty = (input) => {
-  let input_value = input.value;
-  let isEmpty = false;
-  if (input_value == ""){
-      isEmpty = true;
-  }
-  return isEmpty;
+    let input_value = input.value;
+    let isEmpty = false;
+    if (input_value == "") {
+        isEmpty = true;
+    }
+    return isEmpty;
 };
 
 // generalised function for checking...
 const isTooShort = (input, minLen) => {
-  let input_value = input.value;
-  let isTooShort = false;
-  if (input_value.length < minLen){
-      isTooShort = true;
-  }
-  return isTooShort;
+    let input_value = input.value;
+    let isTooShort = false;
+    if (input_value.length < minLen) {
+        isTooShort = true;
+    }
+    return isTooShort;
 };
 
 // generalised function for checking...
 const isEmail = (input) => {
-  let input_value = input.value;
-  if (input_value.match(emailRegex)) {    
-    return true;
-  }
-  else {    
-    return false;
-  }
+    let input_value = input.value;
+    if (input_value.match(emailRegex)) {
+        return true;
+    }
+    else {
+        return false;
+    }
 };
 
 // generalised function for checking...
 const hasInvalidCharacters = (input) => {
-  let input_value = input.value;
-  if (!input_value.match(validLatinAll)) {  
-    return true;
-  }
-  else {
-    return false;
-  }
+    let input_value = input.value;
+    if (!input_value.match(validLatinAll)) {
+        return true;
+    }
+    else {
+        return false;
+    }
 };
 
 // generalised function for checking...
 const hasWhitespaceTopOrTail = (input) => {
-  let input_value = input.value;
-  if (input_value.trim().length < input_value.length) {
-    return true;
-  }
-  else {
-    return false;
-  }
+    let input_value = input.value;
+    if (input_value.trim().length < input_value.length) {
+        return true;
+    }
+    else {
+        return false;
+    }
 };
 
 // generalised function for checking whether 2 inputs values are NOT strictly equal
 const areNotEqual = (input1, input2) => {
-  let input1_value = input1.value;
-  let input2_value = input2.value;
-  if (input1_value !== input2_value) {
-    return true;
-  }
-  else {
-    return false;
-  }
+    let input1_value = input1.value;
+    let input2_value = input2.value;
+    if (input1_value !== input2_value) {
+        return true;
+    }
+    else {
+        return false;
+    }
 };
 
 // generalised function for checking whether another input is currently INVALID
 const isNotValid = (input) => {
-  if (input.parentElement.className === "form-control error") {
-    return true;
-  }
-  else {
-    return false;
-  }
+    if (input.parentElement.className === "form-control error") {
+        return true;
+    }
+    else {
+        return false;
+    }
 };

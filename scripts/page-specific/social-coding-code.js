@@ -1,97 +1,97 @@
 // here I fake my own expiry 
 // generalised constructor function for codewars and hackerrank solution objects
-function Solution (latestCode, expiryDate, codeBlockElemID, showBtnElemID){
-  
-  const knownCodeBlocks = ["codeFragBlockCW", "codeFragBlockHR"];
-  const knownShowButtons = ["showBtnCW", "showBtnHR"];
+function Solution(latestCode, expiryDate, codeBlockElemID, showBtnElemID) {
 
-  // using try..catch to validate actual arguments and handle errors
-  try{
-    let errors = [];
-    // validate the actual arguments
-    if (!typeof latestCode === "string"){
-      errors.push(new TypeError(`Error: latestCode was not a string literal. It's type was: ${typeof latestCode}`));
-    }
-    if (!expiryDate instanceof Date){
-      errors.push(new TypeError(`Error: expiryDate was not a Date object.`));
-    }
-    if (!knownCodeBlocks.includes(codeBlockElemID)){
-      errors.push(new RangeError(`Error: codeBlockElemID was outside expected range. Value was ${codeBlockElemID}`));
-    }
-    if (!knownShowButtons.includes(showBtnElemID)){
-      errors.push(new RangeError(`Error: showBtnElemID was outside expected range. Value was ${showBtnElemID}`));
-    }
+    const knownCodeBlocks = ["codeFragBlockCW", "codeFragBlockHR"];
+    const knownShowButtons = ["showBtnCW", "showBtnHR"];
 
-    if (errors.length > 0){
-      throw errors;
-    }
-    else {
-      this.latestCode = latestCode;
-      this.expiryDate = expiryDate;
-      this.codeBlockElemID = codeBlockElemID;
-      this.showBtnElemID = showBtnElemID;
+    // using try..catch to validate actual arguments and handle errors
+    try {
+        let errors = [];
+        // validate the actual arguments
+        if (!typeof latestCode === "string") {
+            errors.push(new TypeError(`Error: latestCode was not a string literal. It's type was: ${typeof latestCode}`));
+        }
+        if (!expiryDate instanceof Date) {
+            errors.push(new TypeError(`Error: expiryDate was not a Date object.`));
+        }
+        if (!knownCodeBlocks.includes(codeBlockElemID)) {
+            errors.push(new RangeError(`Error: codeBlockElemID was outside expected range. Value was ${codeBlockElemID}`));
+        }
+        if (!knownShowButtons.includes(showBtnElemID)) {
+            errors.push(new RangeError(`Error: showBtnElemID was outside expected range. Value was ${showBtnElemID}`));
+        }
 
-      daily_ms = 1E+3*Math.pow(60,2)*24;
-      currentDate = new Date();
-      this.daysLeft = Math.floor( (this.expiryDate.getTime() - currentDate.getTime()) / daily_ms );
-      this.daysLeftPlurality = Math.abs(this.daysLeft) !== 1;
-      this.expiryLapseDays = this.daysLeft < 0 ? Math.abs(this.daysLeft) : null;
-      this.codeBlockElem = document.getElementById(this.codeBlockElemID); //;
-      this.showBtnElem = document.getElementById(this.showBtnElemID); // ;
-      this.codeText = "";
-      expiredCodeText = `
+        if (errors.length > 0) {
+            throw errors;
+        }
+        else {
+            this.latestCode = latestCode;
+            this.expiryDate = expiryDate;
+            this.codeBlockElemID = codeBlockElemID;
+            this.showBtnElemID = showBtnElemID;
+
+            daily_ms = 1E+3 * Math.pow(60, 2) * 24;
+            currentDate = new Date();
+            this.daysLeft = Math.floor((this.expiryDate.getTime() - currentDate.getTime()) / daily_ms);
+            this.daysLeftPlurality = Math.abs(this.daysLeft) !== 1;
+            this.expiryLapseDays = this.daysLeft < 0 ? Math.abs(this.daysLeft) : null;
+            this.codeBlockElem = document.getElementById(this.codeBlockElemID); //;
+            this.showBtnElem = document.getElementById(this.showBtnElemID); // ;
+            this.codeText = "";
+            expiredCodeText = `
 <strong>THIS SOLUTION &lsquo;EXPIRED&rsquo; ${this.expiryLapseDays} ${(this.daysLeftPlurality ? "sols" : "sol")} ago</strong>.
 IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING, DM ME TODAY.
                 
                 `;
-      // set the code or message that will be displayed when button is pressed
-      this.setCodeText = function (){
-        if (this.daysLeft >= 0){ // not yet expired    
-          this.codeText += `
+            // set the code or message that will be displayed when button is pressed
+            this.setCodeText = function () {
+                if (this.daysLeft >= 0) { // not yet expired    
+                    this.codeText += `
 // NOTE: This solution expires in ${this.daysLeft} ${(this.daysLeftPlurality ? "days" : "day")}`;
-          this.codeText += this.latestCode;    
-        }
-        else{ // expired
-          this.codeText = expiredCodeText;            
-        }
-      };  
-      // display or hide the code or message, based on toggle switch position
-      this.displayCode = function (flag){
-        if (flag) {
-          this.codeBlockElem.innerHTML = this.codeText;
-          this.showBtnElem.innerHTML = "hide code";
-        }
-        else {
-          this.codeBlockElem.innerHTML = "";
-          this.showBtnElem.innerHTML = "show code";
-        }
-      };
-      // toggle switch based on existing state of this object
-      this.switchDisplay = function(){
-        if (this.codeBlockElem.innerHTML == ""){
-          this.displayCode(true);
-        }
-        else{
-          this.displayCode(false);
-        }
-      };
+                    this.codeText += this.latestCode;
+                }
+                else { // expired
+                    this.codeText = expiredCodeText;
+                }
+            };
+            // display or hide the code or message, based on toggle switch position
+            this.displayCode = function (flag) {
+                if (flag) {
+                    this.codeBlockElem.innerHTML = this.codeText;
+                    this.showBtnElem.innerHTML = "hide code";
+                }
+                else {
+                    this.codeBlockElem.innerHTML = "";
+                    this.showBtnElem.innerHTML = "show code";
+                }
+            };
+            // toggle switch based on existing state of this object
+            this.switchDisplay = function () {
+                if (this.codeBlockElem.innerHTML == "") {
+                    this.displayCode(true);
+                }
+                else {
+                    this.displayCode(false);
+                }
+            };
 
-      // set initial state of this object
-      this.showBtnElem.addEventListener("click", () => {this.switchDisplay()});
-      this.setCodeText();
-      this.displayCode(false); 
-    }// end else
+            // set initial state of this object
+            this.showBtnElem.addEventListener("click", () => { this.switchDisplay() });
+            this.setCodeText();
+            this.displayCode(false);
+        }// end else
 
-  }
-  catch(err){
-    // handle the errors array
-    for (i=0; i<err.length; i++){
-      console.error(err[i].name);
-      console.error(err[i].message);
-      // Gracefully shutdown app from here.
     }
-  }  
-  
+    catch (err) {
+        // handle the errors array
+        for (i = 0; i < err.length; i++) {
+            console.error(err[i].name);
+            console.error(err[i].message);
+            // Gracefully shutdown app from here.
+        }
+    }
+
 } // end constructor function
 
 

@@ -3,8 +3,8 @@
 //===========================================================================================
 // query storage for latest background settings
 const htmlElem = document.querySelector("html");
-if (localStorage.getItem("bgColour")){
-    htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;    
+if (localStorage.getItem("bgColour")) {
+    htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;
 }
 
 //===========================================================================================
@@ -32,7 +32,7 @@ let pathPre = depth0;
 
 // if the page is being built in the projects directory
 if (this.location.toString().includes("/projects/")) {
-  pathPre = depth1;
+    pathPre = depth1;
 }
 
 navGrid.innerHTML = `
@@ -67,20 +67,20 @@ const hitZone = document.getElementById("nav-icon-hitzone");
 // click event on hitzone that contains just the nav icon
 // (basically, the headers disappear along with the navigation menu, leaving just the burger bars)
 hitZone.addEventListener("click", (event) => {
-  // toggle between visible and hidden headers. Useful on smaller, tablet and mobile screens
-  const toggleHeadings = () => {
-    for (index in headHeadings) {
-      headHeadings[index].className = headHeadings[index].className == "toggled-heading" ? "toggled-heading hidden" : "toggled-heading";
-    }
-  };
-  // toggle between visible and hidden navigation. Usefull on smaller, tablet and mobile screens
-  const toggleNav = () => {   
-      navGrid.className = navGrid.className == "nav-grid" ? "nav-grid open-grid" : "nav-grid";
-      //console.log(navGrid.className);
-  };
+    // toggle between visible and hidden headers. Useful on smaller, tablet and mobile screens
+    const toggleHeadings = () => {
+        for (index in headHeadings) {
+            headHeadings[index].className = headHeadings[index].className == "toggled-heading" ? "toggled-heading hidden" : "toggled-heading";
+        }
+    };
+    // toggle between visible and hidden navigation. Usefull on smaller, tablet and mobile screens
+    const toggleNav = () => {
+        navGrid.className = navGrid.className == "nav-grid" ? "nav-grid open-grid" : "nav-grid";
+        //console.log(navGrid.className);
+    };
 
-  toggleNav();
-  toggleHeadings();
+    toggleNav();
+    toggleHeadings();
 
 });
 
@@ -97,21 +97,21 @@ const openNav = () => {
 };
 // hide the navigation by default
 const closeNav = () => {
-  navGrid.className = "nav-grid";
-  //console.log(navGrid.className);
+    navGrid.className = "nav-grid";
+    //console.log(navGrid.className);
 };
 
 // display header headings by default
 const showHeadings = () => {
-  for (index in headHeadings) {
-    headHeadings[index].className = "toggled-heading";
-  }
+    for (index in headHeadings) {
+        headHeadings[index].className = "toggled-heading";
+    }
 }
 // hide header headings by default
 const hideHeadings = () => {
-  for (index in headHeadings) {
-    headHeadings[index].className = "toggled-heading hidden";
-  }
+    for (index in headHeadings) {
+        headHeadings[index].className = "toggled-heading hidden";
+    }
 }
 
 //===========================================================================================
@@ -119,14 +119,14 @@ const hideHeadings = () => {
 // check whether fa icon url was received.
 // if not, we'll have to just display the navigation by default
 // TODO: later on, catch and handle the download failure ERROR
-if (burger.clientHeight == 0 || burger.clientWidth == 0){
-  openNav();
-  showHeadings();  
+if (burger.clientHeight == 0 || burger.clientWidth == 0) {
+    openNav();
+    showHeadings();
 }
 // otherwise, hide nav and headings by default
 else {
-  closeNav();
-  hideHeadings();
+    closeNav();
+    hideHeadings();
 }
 
 //===========================================================================================

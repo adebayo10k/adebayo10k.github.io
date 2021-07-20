@@ -1,480 +1,505 @@
 <!DOCTYPE html>
 <html class="configurable-background" lang="en">
-  <head>
-  <!-- Basic Page Needs
+
+<head>
+    <!-- Basic Page Needs
   ================================================== -->
     <meta charset="utf-8">
     <meta name="author" content="damola">
     <title>Software Development Life</title>
-		<meta name="description" content="Software Development Projects">
-		
-  <!-- Mobile Specific Metas
+    <meta name="description" content="Software Development Projects">
+
+    <!-- Mobile Specific Metas
   ================================================== -->
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-		 
-  <!-- CSS
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
   ================================================== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles-desktop-full.css" media="screen">
     <link rel="stylesheet" href="css/styles-desktop-minimised.css" media="screen and (max-width: 800px)">
-  	<link rel="stylesheet" href="css/styles-mobile.css" media="screen and (max-width: 400px)">
-	
-  <!-- Favicons
+    <link rel="stylesheet" href="css/styles-mobile.css" media="screen and (max-width: 400px)">
+
+    <!-- Favicons
 	================================================= -->
-    <link rel="icon" href="media/images/favicon1.ico" type="image/x-icon"> 
-      
-  <!-- Scripts
-	================================================= -->    
-    <script src="scripts/generic-functions.js" defer></script> 
+    <link rel="icon" href="media/images/favicon1.ico" type="image/x-icon">
+
+    <!-- Scripts
+	================================================= -->
+    <script src="scripts/generic-functions.js" defer></script>
     <script src="scripts/dialogs.js" defer></script>
     <script src="scripts/page-specific/yoruba-forms-code.js" defer></script>
-      
-  </head>
-  <body>
 
-  <!-- Primary Page Layout
+</head>
+
+<body>
+
+    <!-- Primary Page Layout
   ================================================== -->
-  
-  <noscript>
-    <h4>JavaScript is off. Please enable to view full site.</h4>
-    <p>anfani nipase&#x0323; imo&#x0323;-e&#x0323;ro&#x0323;</p>
-  </noscript>
-  <div id="freezeLayer" class="freeze-layer" style="display: none;"></div>
-  <header class="page-head">
-    <h1 class="toggled-heading" id="siteLogo">AlgoDiscoDev Software Development</h1>
-    <h2 class="toggled-heading" id="pageLogo">Yoruba Contexts</h2>		
-      <nav>
-        <div class="nav-icon-container">
-          <div id="nav-icon-hitzone"><i class="fa fa-bars fa-lg" id="burger" aria-hidden="true"></i></div>
-        </div>
-        <ul class="nav-grid open-grid" id="nav-links">
-        
-          <li>
-            <a href="index.html" title="our projects page">Our Projects</a>
-          </li>                    
-          
-          <li>
-            <a href="social-coding.html" title="social coding page">social coding</a>
-          </li>          
-          
-          <li>
-            <a href="your-projects.html" title="start your own offline projects right here">Your Projects</a>
-          </li>
-          
-          <li>
-            <a href="multimedia.html" title="multimedia page">multimedia wins</a>    
- 				</li>
-          
-          <li>
-            <a href="yoruba-contexts.html" title="yoruba contexts">Yoruba Contexts</a>
-          </li>              
-          
-          <li>
-            <a href="yoruba-systems.html" title="yoruba systems">Yoruba Systems</a>
-          </li>
-          
-        </ul> 
-      </nav>
-  </header>
 
-  <article class="hero-article" id="hero-background-bash-vscode-01">
-    <div class="hero-message message-right firaSansRegFont">
-      <h2>Hero message from the &#x0053;&#x0323;&#x00E0;ng&#x00F3;Tech Network.</h2>
-      <h2>"Mission Accepted"</h2>
-    </div>
-  </article>        
-
-  <main>
-
-    <div class="page-content">
-      
-      <section class="page-intro-para">
-        <header>
-          <h2>Yoruba Contexts</h2>
-        </header>        
-        <p>Forms created for us to test out some web form client-side validation and styling - although not so much of the styling.</p>
-        <p>Using the Oguntech network services (made up) for form content.</p>
-        <p>We&apos;re going for a <strong>live, inline validation</strong> approach for fields where it works.</p>
-        <p>Test the Yor&ugrave;b&aacute; language characters below (copy them into the form fields for now).</p>
-        <p>Characters with unicode codepoints, no issue.</p>
-        <p>Characters composed using combining diacritical marks can also be validated as form field inputs, but they are considered by the browser JavaScript to be two separate characters, so some additional workaround scripting is required. Not sustainable IMO.</p>
-
-        <p>So, these should be found valid:</p>
-        <ul class="inline-list">
-          <li>&#x00E0;</li><!-- a grave -->
-          <li>&#x00E1;</li><!-- a acute -->
-
-          <li>&#x00E8;</li><!-- e grave -->
-          <li>&#x00E9;</li><!-- e acute -->
-          <li>e&#x0323;</li><!-- e dot -->
-          <li>&egrave;&#x0323;</li><!-- e grave dot -->
-          <li>&eacute;&#x0323;</li><!-- e acute dot -->
-
-          <li>&#x00EC;</li><!-- i grave -->
-          <li>&#x00ED;</li><!-- i acute -->
-
-          <li>&#x01F9;</li><!-- n grave -->
-          <li>&#x0144;</li><!-- n acute -->
-
-          <li>&#x00F2;</li><!-- o grave -->
-          <li>&#x00F3;</li><!-- o acute -->
-          <li>o&#x0323;</li><!-- o dot -->
-          <li>&ograve;&#x0323;</li><!-- o grave dot -->
-          <li>&oacute;&#x0323;</li><!-- o acute dot -->
-
-          <li>s&#x0323;</li><!-- s dot -->
-
-          <li>&#x00F9;</li><!-- u grave -->
-          <li>&#x00FA;</li><!-- u acute -->    
-        </ul>
-      </section>
-      
-      <div class="hero-article-container">  
-        <article class="hero-article" id="hero-background-cube-02">
-          <div class="hero-message message-right firaSansRegFont">
-            <h2>Hero message from the &#x0053;&#x0323;&#x00E0;ng&#x00F3;Tech Network.</h2>
-            <h2>"Build great stuff that you genuinely care about."</h2>
-          </div>
-        </article>        
-      </div>
-
-      <section class="site-app-card site-form" id="createAccountApp">
-
-        <div class="form-container">
-          <header>
-            <h2>Create an OgunTechies Account</h2>
-          </header>
-          <form class="form" id="createAccountForm" action="#" novalidate enctype="multipart/form-data">
-      
-            <div class="form-control">
-              <label for="username">Username</label>
-              <input type="text" id="username" placeholder="mu or&uacute;k&ograve;&#x0323; olumulo kan" required minlength="3" maxlength="31">
-              <i class="fa fa-check-circle" aria-hidden="true"></i>
-              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-              <small>Error message</small>
+    <noscript>
+        <h4>JavaScript is off. Please enable to view full site.</h4>
+        <p>anfani nipase&#x0323; imo&#x0323;-e&#x0323;ro&#x0323;</p>
+    </noscript>
+    <div id="freezeLayer" class="freeze-layer" style="display: none;"></div>
+    <header class="page-head">
+        <h1 class="toggled-heading" id="siteLogo">AlgoDiscoDev Software Development</h1>
+        <h2 class="toggled-heading" id="pageLogo">Yoruba Contexts</h2>
+        <nav>
+            <div class="nav-icon-container">
+                <div id="nav-icon-hitzone"><i class="fa fa-bars fa-lg" id="burger" aria-hidden="true"></i></div>
             </div>
-      
-            <div class="form-control">
-              <label for="email">Email</label>
-              <input type="email" id="email" placeholder="n.b.u.c. re&#x0323;" required maxlength="63">
-              <i class="fa fa-check-circle" aria-hidden="true"></i>
-              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-              <small>Error message</small>
-            </div>
-      
-            <div class="form-control">
-              <label for="password">Password</label>
-              <input type="password" id="password" placeholder="mu &ograve;&#x0323;r&ograve;&#x0323; atiwo&#x0323;le kan" required minlength="8" maxlength="63">
-              <i class="fa fa-check-circle" aria-hidden="true"></i>
-              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-              <small>Error message</small>
-            </div>
-      
-            <div class="form-control">
-              <label for="password2">Password Confirm</label>
-              <input type="password" id="password2" placeholder="tun fi &ograve;&#x0323;r&ograve;&#x0323; atiwo&#x0323;le" required maxlength="63">
-              <i class="fa fa-check-circle" aria-hidden="true"></i>
-              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-              <small>Error message</small>
-            </div>
+            <ul class="nav-grid open-grid" id="nav-links">
 
-     
-            <button type="reset">Reset Form</button>
-      
-          </form>      
-        </div>
-      </section> <!-- end site-app-card site-form section -->
- 
-      <div class="hero-article-container">  
-        <article class="hero-article" id="hero-background-cube-01">
-          <div class="hero-message message-left firaSansBoldFont">
-            <h2>Hero message from the &#x0053;&#x0323;&#x00E0;ng&#x00F3;Tech Network.</h2>
-            <h2>Build great stuff that you genuinely care about.</h2 >
-          </div>
-        </article>                    
-      </div>
+                <li>
+                    <a href="index.html" title="our projects page">Our Projects</a>
+                </li>
 
-      <section class="site-app-card site-form" id="aboutYouApp">
+                <li>
+                    <a href="social-coding.html" title="social coding page">social coding</a>
+                </li>
 
-        <div class="form-container">
-          <header>
-            <h2>About You</h2>
-          </header>
-          <form class="form" id="aboutYouForm" action="#" novalidate>
-      
-            <div class="form-control">
-              <label for="orishaChoice">Which Orisha most inspires you?</label>
-              <select id="orishaChoice" name="orisha">
-                <option>None</option>
-                <option>Ogun</option>
-                <option>Sango</option>              
-                <option>Oya</option>
-                <option>Get back to you on that one</option>
-              </select>
-              <small>Error message</small>
-            </div>                     
-            
-            <div class="form-control">
-              <label for="notThoseOrisha">None of those, but I do like...</label>
-              <input type="text" id="notThoseOrisha" placeholder="your choice" maxlength="63">
-              <i class="fa fa-check-circle" aria-hidden="true"></i>
-              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-              <small>Error message</small>
-            </div>
-      
-            <div class="form-control">
-              <label for="gitHubuserName">What&apos;s your GitHub username</label>
-              <input type="text" id="gitHubuserName" placeholder="your GitHub username" required minlength="3" maxlength="63">
-              <i class="fa fa-check-circle" aria-hidden="true"></i>
-              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-              <small>Error message</small>
-            </div>
-      
-            <div class="form-control">
-              <label for="gitHubURL">GitHub URL Verifier</label>
-              <input type="url" id="gitHubURL" placeholder="https://your-username.github.io/" maxlength="63" disabled>
-              <i class="fa fa-check-circle" aria-hidden="true"></i>
-              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-              <small>Error message</small>
-            </div>
-     
-            <button type="reset">Reset Form</button>
-      
-          </form>      
-        </div> 
-      </section> <!-- end site-app-card site-form section --> 
+                <li>
+                    <a href="your-projects.html" title="start your own offline projects right here">Your Projects</a>
+                </li>
 
-      <section class="site-app-card site-form" id="aboutSkillSetsApp">
-        <div class="form-container">
-          <header>
-            <h2>About Skill Sets</h2>    
-          </header>
-          <form class="form" id="aboutSkillSetsForm" novalidate>
+                <li>
+                    <a href="multimedia.html" title="multimedia page">multimedia wins</a>
+                </li>
 
-            <p>Select at least 1 and up to 5 skills you&apos;d like to develop and practice on an Oguntech project.</p>
-            <ul>
-              <li>
-                <label for="sd_skill">
-                  <span>Software Development Process</span>
-                  <input type="checkbox" id="sd_skill" name="sd_skill">
-                </label>
-              </li>
-              <li>
-                <label for="algo_disco">
-                  <span>Algorithm Discovery</span>
-                  <input type="checkbox" id="algo_disco" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="git_scm">
-                  <span>Git Source Control Management</span>
-                  <input type="checkbox" id="git_scm" name="git_scm">
-                </label>
-              </li>
-              <li>
-                <label for="soc_cod">
-                  <span>Social Coding and Collaboration</span>
-                  <input type="checkbox" id="soc_cod" name="skill">
-                </label>
-              </li>       
-              <li>
-                <label for="cs_web_dev">
-                  <span>Client-side Web Development</span>
-                  <input type="checkbox" id="cs_web_dev" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="ss_web_dev">
-                  <span>Server-side Web Development</span>
-                  <input type="checkbox" id="ss_web_dev" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="av_edit">
-                  <span>Image/Audio/Video Editing</span>
-                  <input type="checkbox" id="av_edit" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="mob_app_dev">
-                  <span>Mobile App Development</span>
-                  <input type="checkbox" id="mob_app_dev" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="linux_sys_admin">
-                  <span>Linux System Administration</span>
-                  <input type="checkbox" id="linux_sys_admin" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="computer_networking">
-                  <span>Computer Networking</span>
-                  <input type="checkbox" id="computer_networking" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="cloud_deploy">
-                  <span>Cloud Deployment</span>
-                  <input type="checkbox" id="cloud_deploy" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="ci_cd">
-                  <span>CI/CD</span>
-                  <input type="checkbox" id="ci_cd" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="network_sec">
-                  <span>Network &amp; Information Security</span>
-                  <input type="checkbox" id="network_sec" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="ethical_hack">
-                  <span>Ethical Hacking</span>
-                  <input type="checkbox" id="ethical_hack" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="data_analysis">
-                  <span>Data Analysis</span>
-                  <input type="checkbox" id="data_analysis" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="wordpress_cms">
-                  <span>WordPress CMS</span>
-                  <input type="checkbox" id="wordpress_cms" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="business_mgt">
-                  <span>Business Management</span>
-                  <input type="checkbox" id="business_mgt" name="skill">
-                </label>
-              </li>
-              <li>
-                <label for="apache_httpd">
-                  <span>Apache Web Server</span>
-                  <input type="checkbox" id="apache_httpd" name="skill">
-                </label>
-              </li>
+                <li>
+                    <a href="yoruba-contexts.html" title="yoruba contexts">Yoruba Contexts</a>
+                </li>
+
+                <li>
+                    <a href="yoruba-systems.html" title="yoruba systems">Yoruba Systems</a>
+                </li>
 
             </ul>
+        </nav>
+    </header>
 
-            <div class="form-control">
-              <label for="notThoseSkills">Optionally, add another desired skill to practice:</label>
-              <input type="text" id="notThoseSkills" placeholder="enter the skill name" minlength="3" maxlength="63">
-              <i class="fa fa-check-circle" aria-hidden="true"></i>
-              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-              <small>Error message</small>
+    <article class="hero-article" id="hero-background-bash-vscode-01">
+        <div class="hero-message message-right firaSansRegFont">
+            <h2>Hero message from the &#x0053;&#x0323;&#x00E0;ng&#x00F3;Tech Network.</h2>
+            <h2>"Mission Accepted"</h2>
+        </div>
+    </article>
+
+    <main>
+
+        <div class="page-content">
+
+            <section class="page-intro-para">
+                <header>
+                    <h2>Yoruba Contexts</h2>
+                </header>
+                <p>Forms created for us to test out some web form client-side validation and styling - although not so
+                    much of the styling.</p>
+                <p>Using the Oguntech network services (made up) for form content.</p>
+                <p>We&apos;re going for a <strong>live, inline validation</strong> approach for fields where it works.
+                </p>
+                <p>Test the Yor&ugrave;b&aacute; language characters below (copy them into the form fields for now).</p>
+                <p>Characters with unicode codepoints, no issue.</p>
+                <p>Characters composed using combining diacritical marks can also be validated as form field inputs, but
+                    they are considered by the browser JavaScript to be two separate characters, so some additional
+                    workaround scripting is required. Not sustainable IMO.</p>
+
+                <p>So, these should be found valid:</p>
+                <ul class="inline-list">
+                    <li>&#x00E0;</li><!-- a grave -->
+                    <li>&#x00E1;</li><!-- a acute -->
+
+                    <li>&#x00E8;</li><!-- e grave -->
+                    <li>&#x00E9;</li><!-- e acute -->
+                    <li>e&#x0323;</li><!-- e dot -->
+                    <li>&egrave;&#x0323;</li><!-- e grave dot -->
+                    <li>&eacute;&#x0323;</li><!-- e acute dot -->
+
+                    <li>&#x00EC;</li><!-- i grave -->
+                    <li>&#x00ED;</li><!-- i acute -->
+
+                    <li>&#x01F9;</li><!-- n grave -->
+                    <li>&#x0144;</li><!-- n acute -->
+
+                    <li>&#x00F2;</li><!-- o grave -->
+                    <li>&#x00F3;</li><!-- o acute -->
+                    <li>o&#x0323;</li><!-- o dot -->
+                    <li>&ograve;&#x0323;</li><!-- o grave dot -->
+                    <li>&oacute;&#x0323;</li><!-- o acute dot -->
+
+                    <li>s&#x0323;</li><!-- s dot -->
+
+                    <li>&#x00F9;</li><!-- u grave -->
+                    <li>&#x00FA;</li><!-- u acute -->
+                </ul>
+            </section>
+
+            <div class="hero-article-container">
+                <article class="hero-article" id="hero-background-cube-02">
+                    <div class="hero-message message-right firaSansRegFont">
+                        <h2>Hero message from the &#x0053;&#x0323;&#x00E0;ng&#x00F3;Tech Network.</h2>
+                        <h2>"Build great stuff that you genuinely care about."</h2>
+                    </div>
+                </article>
             </div>
 
-            <div class="form-control">
-              <label for="motives">Also optionally, tell us about anything else youd like to gain from being part of an OgunTech project:</label>
-              <textarea name="motives" id="motives" cols="72" rows="4" maxlength="300"></textarea>
-              <i class="fa fa-check-circle" aria-hidden="true"></i>
-              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-              <small>Error message</small>
+            <section class="site-app-card site-form" id="createAccountApp">
+
+                <div class="form-container">
+                    <header>
+                        <h2>Create an OgunTechies Account</h2>
+                    </header>
+                    <form class="form" id="createAccountForm" action="#" novalidate enctype="multipart/form-data">
+
+                        <div class="form-control">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" placeholder="mu or&uacute;k&ograve;&#x0323; olumulo kan"
+                                required minlength="3" maxlength="31">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <small>Error message</small>
+                        </div>
+
+                        <div class="form-control">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="n.b.u.c. re&#x0323;" required maxlength="63">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <small>Error message</small>
+                        </div>
+
+                        <div class="form-control">
+                            <label for="password">Password</label>
+                            <input type="password" id="password"
+                                placeholder="mu &ograve;&#x0323;r&ograve;&#x0323; atiwo&#x0323;le kan" required
+                                minlength="8" maxlength="63">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <small>Error message</small>
+                        </div>
+
+                        <div class="form-control">
+                            <label for="password2">Password Confirm</label>
+                            <input type="password" id="password2"
+                                placeholder="tun fi &ograve;&#x0323;r&ograve;&#x0323; atiwo&#x0323;le" required
+                                maxlength="63">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <small>Error message</small>
+                        </div>
+
+
+                        <button type="reset">Reset Form</button>
+
+                    </form>
+                </div>
+            </section> <!-- end site-app-card site-form section -->
+
+            <div class="hero-article-container">
+                <article class="hero-article" id="hero-background-cube-01">
+                    <div class="hero-message message-left firaSansBoldFont">
+                        <h2>Hero message from the &#x0053;&#x0323;&#x00E0;ng&#x00F3;Tech Network.</h2>
+                        <h2>Build great stuff that you genuinely care about.</h2>
+                    </div>
+                </article>
             </div>
 
-            <button type="reset">Reset Form</button>
+            <section class="site-app-card site-form" id="aboutYouApp">
 
-          </form>
-        </div>        
+                <div class="form-container">
+                    <header>
+                        <h2>About You</h2>
+                    </header>
+                    <form class="form" id="aboutYouForm" action="#" novalidate>
 
-      </section> <!-- end site-app-card site-form section --> 
+                        <div class="form-control">
+                            <label for="orishaChoice">Which Orisha most inspires you?</label>
+                            <select id="orishaChoice" name="orisha">
+                                <option>None</option>
+                                <option>Ogun</option>
+                                <option>Sango</option>
+                                <option>Oya</option>
+                                <option>Get back to you on that one</option>
+                            </select>
+                            <small>Error message</small>
+                        </div>
 
-      <section class="site-app-card site-form" id="yourPublicKey">
-        <div class="form-container">
-          <header>
-            <h2>K&oacute;&#x0323;k&oacute;&#x0323;r&oacute;&#x0323; Gbangba re&#x0323;</h2>
-            <h2>&lpar;Your Public Key&rpar;</h2>  
-          </header>
-          <form class="form" id="yourPublicKeyForm" novalidate>
+                        <div class="form-control">
+                            <label for="notThoseOrisha">None of those, but I do like...</label>
+                            <input type="text" id="notThoseOrisha" placeholder="your choice" maxlength="63">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <small>Error message</small>
+                        </div>
 
-            <p>OgunTech team members sometimes like to communicate reliably and securely with eachother.</p>
-            <p>They also prefer to control their own encryption keys.</p>
-            <p>If you&apos;re able to generate your own GnuPG public keypair, then follow these steps:</p>
-            
-            <div class="form-control">
-              <p>1. Send us a short video (up to 10 seconds) in which both you and your gpg public key are visible together for at least a few seconds.</p>
-              <p>This helps support our <a href="https://en.wikipedia.org/wiki/Web_of_trust" target="_blank" rel="noopener noreferrer">web of trust (opens in a new window)</a>, where members are geographically remote from eachother and there also exists the current (or new normal) social distancing policies. Where these are not the case, <a href="https://en.wikipedia.org/wiki/Key_signing_party" target="_blank" rel="noopener noreferrer">key signing parties (opens in a new window)</a> are a better way.</p>
-              <p>We&apos;re effectively acting as a pseudo-Certificate Authority, within the network!</p>
-              
-              <label for="fileUpload">Upload Video File</label>
-              <input type="file" id="fileUpload" name="fileUpload">
-              <i class="fa fa-check-circle" aria-hidden="true"></i>
-              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-              <small>Error message</small>
-            </div>
+                        <div class="form-control">
+                            <label for="gitHubuserName">What&apos;s your GitHub username</label>
+                            <input type="text" id="gitHubuserName" placeholder="your GitHub username" required
+                                minlength="3" maxlength="63">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <small>Error message</small>
+                        </div>
 
-            <div class="form-control">
-              <label for="keyserverURL">2. If you have one, link us to your public keyserver too:</label>
-              <input type="url" id="keyserverURL" placeholder="keyserver URL" minlength="3" maxlength="63">
-              <i class="fa fa-check-circle" aria-hidden="true"></i>
-              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-              <small>Error message</small>
-            </div>
+                        <div class="form-control">
+                            <label for="gitHubURL">GitHub URL Verifier</label>
+                            <input type="url" id="gitHubURL" placeholder="https://your-username.github.io/"
+                                maxlength="63" disabled>
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <small>Error message</small>
+                        </div>
 
-            <p>3. You&apos;re now free to exchange keys and do secure comms with other members.</p>            
-            
+                        <button type="reset">Reset Form</button>
 
-            <p>Remember to double-check that we&apos;re firing with https!</p>
-            <button type="reset">Reset Form</button>
+                    </form>
+                </div>
+            </section> <!-- end site-app-card site-form section -->
 
-          </form>
-        </div>        
+            <section class="site-app-card site-form" id="aboutSkillSetsApp">
+                <div class="form-container">
+                    <header>
+                        <h2>About Skill Sets</h2>
+                    </header>
+                    <form class="form" id="aboutSkillSetsForm" novalidate>
 
-      </section> <!-- end site-app-card site-form section --> 
+                        <p>Select at least 1 and up to 5 skills you&apos;d like to develop and practice on an Oguntech
+                            project.</p>
+                        <ul>
+                            <li>
+                                <label for="sd_skill">
+                                    <span>Software Development Process</span>
+                                    <input type="checkbox" id="sd_skill" name="sd_skill">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="algo_disco">
+                                    <span>Algorithm Discovery</span>
+                                    <input type="checkbox" id="algo_disco" name="skill">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="git_scm">
+                                    <span>Git Source Control Management</span>
+                                    <input type="checkbox" id="git_scm" name="git_scm">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="soc_cod">
+                                    <span>Social Coding and Collaboration</span>
+                                    <input type="checkbox" id="soc_cod" name="skill">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="cs_web_dev">
+                                    <span>Client-side Web Development</span>
+                                    <input type="checkbox" id="cs_web_dev" name="skill">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="ss_web_dev">
+                                    <span>Server-side Web Development</span>
+                                    <input type="checkbox" id="ss_web_dev" name="skill">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="av_edit">
+                                    <span>Image/Audio/Video Editing</span>
+                                    <input type="checkbox" id="av_edit" name="skill">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="mob_app_dev">
+                                    <span>Mobile App Development</span>
+                                    <input type="checkbox" id="mob_app_dev" name="skill">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="linux_sys_admin">
+                                    <span>Linux System Administration</span>
+                                    <input type="checkbox" id="linux_sys_admin" name="skill">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="computer_networking">
+                                    <span>Computer Networking</span>
+                                    <input type="checkbox" id="computer_networking" name="skill">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="cloud_deploy">
+                                    <span>Cloud Deployment</span>
+                                    <input type="checkbox" id="cloud_deploy" name="skill">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="ci_cd">
+                                    <span>CI/CD</span>
+                                    <input type="checkbox" id="ci_cd" name="skill">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="network_sec">
+                                    <span>Network &amp; Information Security</span>
+                                    <input type="checkbox" id="network_sec" name="skill">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="ethical_hack">
+                                    <span>Ethical Hacking</span>
+                                    <input type="checkbox" id="ethical_hack" name="skill">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="data_analysis">
+                                    <span>Data Analysis</span>
+                                    <input type="checkbox" id="data_analysis" name="skill">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="wordpress_cms">
+                                    <span>WordPress CMS</span>
+                                    <input type="checkbox" id="wordpress_cms" name="skill">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="business_mgt">
+                                    <span>Business Management</span>
+                                    <input type="checkbox" id="business_mgt" name="skill">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="apache_httpd">
+                                    <span>Apache Web Server</span>
+                                    <input type="checkbox" id="apache_httpd" name="skill">
+                                </label>
+                            </li>
 
-      <section class="site-app-card">
-        <div class="form-container">
-          <header>
-            <h2>ANOTHER FORM GOES HERE</h2>    
-          </header>
-        </div>        
+                        </ul>
 
-      </section> 
-      
-    </div> <!-- end page-content div --> 
+                        <div class="form-control">
+                            <label for="notThoseSkills">Optionally, add another desired skill to practice:</label>
+                            <input type="text" id="notThoseSkills" placeholder="enter the skill name" minlength="3"
+                                maxlength="63">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <small>Error message</small>
+                        </div>
 
-    <aside class="sidebar">
-      <p>Platforms</p>
-      <p>Topics</p>
-      <p>Use Our Code</p>
-      <p>Contact Us</p>
-    </aside>      
-    
-  </main>
+                        <div class="form-control">
+                            <label for="motives">Also optionally, tell us about anything else youd like to gain from
+                                being part of an OgunTech project:</label>
+                            <textarea name="motives" id="motives" cols="72" rows="4" maxlength="300"></textarea>
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <small>Error message</small>
+                        </div>
 
-  
-  <article class="hero-article">
-    <div class="hero-message-right firaSansBoldFont">
-      <h2>Hero message from the &#x0053;&#x0323;&#x00E0;ng&#x00F3;Tech Network.</h2>
-      <h2>"Build stuff that you want to see."</h2>
-    </div>
-  </article> 
- 
-  
-    
+                        <button type="reset">Reset Form</button>
+
+                    </form>
+                </div>
+
+            </section> <!-- end site-app-card site-form section -->
+
+            <section class="site-app-card site-form" id="yourPublicKey">
+                <div class="form-container">
+                    <header>
+                        <h2>K&oacute;&#x0323;k&oacute;&#x0323;r&oacute;&#x0323; Gbangba re&#x0323;</h2>
+                        <h2>&lpar;Your Public Key&rpar;</h2>
+                    </header>
+                    <form class="form" id="yourPublicKeyForm" novalidate>
+
+                        <p>OgunTech team members sometimes like to communicate reliably and securely with eachother.</p>
+                        <p>They also prefer to control their own encryption keys.</p>
+                        <p>If you&apos;re able to generate your own GnuPG public keypair, then follow these steps:</p>
+
+                        <div class="form-control">
+                            <p>1. Send us a short video (up to 10 seconds) in which both you and your gpg public key are
+                                visible together for at least a few seconds.</p>
+                            <p>This helps support our <a href="https://en.wikipedia.org/wiki/Web_of_trust"
+                                    target="_blank" rel="noopener noreferrer">web of trust (opens in a new window)</a>,
+                                where members are geographically remote from eachother and there also exists the current
+                                (or new normal) social distancing policies. Where these are not the case, <a
+                                    href="https://en.wikipedia.org/wiki/Key_signing_party" target="_blank"
+                                    rel="noopener noreferrer">key signing parties (opens in a new window)</a> are a
+                                better way.</p>
+                            <p>We&apos;re effectively acting as a pseudo-Certificate Authority, within the network!</p>
+
+                            <label for="fileUpload">Upload Video File</label>
+                            <input type="file" id="fileUpload" name="fileUpload">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <small>Error message</small>
+                        </div>
+
+                        <div class="form-control">
+                            <label for="keyserverURL">2. If you have one, link us to your public keyserver too:</label>
+                            <input type="url" id="keyserverURL" placeholder="keyserver URL" minlength="3"
+                                maxlength="63">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <small>Error message</small>
+                        </div>
+
+                        <p>3. You&apos;re now free to exchange keys and do secure comms with other members.</p>
+
+
+                        <p>Remember to double-check that we&apos;re firing with https!</p>
+                        <button type="reset">Reset Form</button>
+
+                    </form>
+                </div>
+
+            </section> <!-- end site-app-card site-form section -->
+
+            <section class="site-app-card">
+                <div class="form-container">
+                    <header>
+                        <h2>ANOTHER FORM GOES HERE</h2>
+                    </header>
+                </div>
+
+            </section>
+
+        </div> <!-- end page-content div -->
+
+        <aside class="sidebar">
+            <p>Platforms</p>
+            <p>Topics</p>
+            <p>Use Our Code</p>
+            <p>Contact Us</p>
+        </aside>
+
+    </main>
+
+
+    <article class="hero-article">
+        <div class="hero-message-right firaSansBoldFont">
+            <h2>Hero message from the &#x0053;&#x0323;&#x00E0;ng&#x00F3;Tech Network.</h2>
+            <h2>"Build stuff that you want to see."</h2>
+        </div>
+    </article>
+
+
+
     <div id="confirmDialogCont" class="dlg-container">
-      <div class="dlg-header">Let's discuss this...</div>
-      <div id="confirmDialogBody" class="dlg-body"></div>
-      <div class="dlg-footer">
-        <a id="confirmDlgCancelBtn">Cancel</a>
-        <a id="confirmDlgOkBtn">OK</a>
-       </div>
+        <div class="dlg-header">Let's discuss this...</div>
+        <div id="confirmDialogBody" class="dlg-body"></div>
+        <div class="dlg-footer">
+            <a id="confirmDlgCancelBtn">Cancel</a>
+            <a id="confirmDlgOkBtn">OK</a>
+        </div>
     </div>
-  <!-- Right Sidebar
+    <!-- Right Sidebar
 ================================================== -->
-  
-  <!-- Footer
+
+    <!-- Footer
 ================================================= -->
     <footer></footer>
 
-  </body>
+</body>
+
 </html>
