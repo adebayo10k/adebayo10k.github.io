@@ -17,24 +17,24 @@ const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+")
 const validUsernameCharsetRegex = "/([\u0030-\u0039\u0041-\u005A\u0061-\u007A\u00C0-\u00DE\u00E0-\u00FF])+/gu";
 
 const validLatinBasic = /^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/;
-const validLatinAll = /^[\u0041-\u005A\u0061-\u007A\u0030-\u0039\u0020\u00E0-\u00FF\u00C0-\u00DE\u0144\u01F9\u0323 _-]+$/;
+const validLatinAll = /^[\u0041-\u005A\u0061-\u007A\u0030-\u0039\u0020\u00E0-\u00FF\u00C0-\u00DE\u0144\u01F9\u0300\u0301\u0323 _-]+$/;
 /*
 NUMERIC RANGES BY UNICODE STANDARD BLOCK
-      \u0020 space character
-      \u0030-\u0039 numeric 0 - 9
-     BASIC LATIN RANGES
-      \u0041-\u005A basic latin upper-case A-Z
-      \u0061-\u007A basic latin lower-case a-z
-     LATIN-1 SUPPLEMENT RANGES
-      \u00C0-\u00DE  latin upper-case A-Z
-      \u00E0-\u00FF  latin lower-case a-z
-     LATIN EXTENDED-A RANGES
-      \u0144
-     LATIN EXTENDED-B RANGES
-      \u01F9
-     COMBINING CHARACTER RANGES 
-      \u0323
-      
+     \u0020 space character
+     \u0030-\u0039 numeric 0 - 9
+    BASIC LATIN RANGES
+     \u0041-\u005A basic latin upper-case A-Z
+     \u0061-\u007A basic latin lower-case a-z
+    LATIN-1 SUPPLEMENT RANGES
+     \u00C0-\u00DE  latin upper-case A-Z
+     \u00E0-\u00FF  latin lower-case a-z
+    LATIN EXTENDED-A RANGES
+     \u0144
+    LATIN EXTENDED-B RANGES
+     \u01F9
+    COMBINING CHARACTER RANGES 
+    \u0300\u0301\u0323
+          
 */
 
 // =======================================================

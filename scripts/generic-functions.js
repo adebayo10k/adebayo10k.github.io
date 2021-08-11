@@ -151,7 +151,7 @@ const heroMsg_10 = `"There is no market for shit coders."`;
 // default messages to remain in html?
 // character count aware, due to limited space
 
-// anfani nipase&#x0323; imo&#x0323;-e&#x0323;ro&#x0323; => vorsprung durch technik
+// anfani nipas&#x065;&#x0323; im&#x006F;&#x0323;-&#x0065;&#x0323;r&#x006F;&#x0323; => vorsprung durch technik
 
 const img5 = "";
 const img6 = "";
