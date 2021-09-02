@@ -12,6 +12,9 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
 
+// making an array of our input elements
+const inputElements = [username, email, password, password2];
+
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 const validUsernameCharsetRegex = "/([\u0030-\u0039\u0041-\u005A\u0061-\u007A\u00C0-\u00DE\u00E0-\u00FF])+/gu";
@@ -42,7 +45,7 @@ NUMERIC RANGES BY UNICODE STANDARD BLOCK
 
 // form (re)validation at submit time
 form.addEventListener("submit", (event) => {
-    event.preventDefault();
+    event.preventDefault(); // which in the case of submit is an http request
 
     //checkInputs();
     doUsernameTests();
@@ -55,6 +58,26 @@ form.addEventListener("submit", (event) => {
 
 });
 
+// form reset (clear all input content, icons, messages etc.)
+form.addEventListener("reset", (event) => {
+    
+    inputElements.forEach( (elem) => {
+        elem.parentElement.querySelector("small").innerText= "";
+        elem.parentElement.className = "form-control";
+    })
+});
+
+// =======================================================
+// RESET (CLEAR) ERROR OR SUCCESS ICONS AND MESSAGING AT RESET TIME
+
+// remove error, remove error class
+const resetErrorAndSuccessFor = (input) => {
+    const formControl = input.parentElement; //.form-control
+    const small = formControl.querySelector("small");
+    small.innerText = ""; 
+    // reset error class
+    formControl.className = "form-control";
+};
 
 username.addEventListener("input", (event) => {
     doUsernameTests();
@@ -173,7 +196,7 @@ const setSuccessFor = (input) => {
     const formControl = input.parentElement; //.form-control
     formControl.className = "form-control success"
 };
-// =======================================================
+
 
 // =======================================================
 // SPECIFIC CHECKS ON INPUTS AT INPUT TIME
