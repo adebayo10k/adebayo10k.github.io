@@ -220,7 +220,7 @@ const openRenderTransaction = (dataStorageObject, requestedURL) => {
 
             cardTopFooter.innerHTML = `
       <p>Developed by:
-      <a href="${projectsArray[index].devGitHubURL}" title="go to this devs gitHub account (opens in a separate   browser tab)" target="_blank">${projectsArray[index].devUsername}</a>
+      <a href="${projectsArray[index].devGitHubURL}" title="go to this devs gitHub account (opens in a separate browser tab)" target="_blank">${projectsArray[index].devUsername}</a>
       </p>
       <p>
       ${platformsStr} ${programmingLanguagesStr}
@@ -415,7 +415,11 @@ window.onload = () => {
     //const indexPagePath = "adebayo10k.github.io/index.html";
 
     // we're running on the index page (where dynamically generated project cards are displayed)
-    if (thisURL.includes("adebayo10k.github.io/index.html") || thisURL.endsWith("adebayo10k.github.io/")) {
+    if (thisURL.includes("adebayo10k.github.io/index.html") || thisURL.endsWith("adebayo10k.github.io/") 
+    // development environment:
+    || thisURL.includes("127.0.0.1:5500/index.html") || thisURL.endsWith("127.0.0.1:5500") || thisURL.endsWith("127.0.0.1:5500/")
+    )
+    {
 
         // TODO: if can't get new json, use locally stored copy...
         const projectsJSONData = getProjectsData(pDataURL, "json");
@@ -435,7 +439,9 @@ window.onload = () => {
             })
     }
     // we're running in one of the project specific pages
-    else if (thisURL.includes("adebayo10k.github.io/projects/")) {
+    else if (thisURL.includes("adebayo10k.github.io/projects/") 
+    || thisURL.includes("127.0.0.1:5500/projects/")
+    ) {
 
         const openedProjectsDB = openDB();
 
