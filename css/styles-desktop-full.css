@@ -385,7 +385,6 @@ main {
 
 .site-app-card, .project-card, aside.sidebar{
   border: 2px solid #6495ed;
-  /*border-radius: 1em;*/
   background-color: #fff;
 }
 .page-content {
@@ -398,7 +397,7 @@ main {
   width: 60%;
 }
 
-.aside.sidebar {
+aside.sidebar p {
     line-height: 1.2;
 }
 .sidebar {
