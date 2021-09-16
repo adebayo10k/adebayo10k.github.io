@@ -15,6 +15,24 @@ const logoText = `AlgoDiscoDev Software Development`;
 siteLogo.innerHTML = logoText;
 
 //===========================================================================================
+// ASIDE // adds this list of links to the RHS aside of every page
+const aside = document.querySelector("aside");
+
+const asideLinks = `<section>
+
+<a href="https://github.com/adebayo10k" title="links to GitHub repository of adebayo10k" target="_blank" rel="noopener noreferrer"><p>Use Our Code</p></a>
+
+<a href="https://yorubasystems.com" title="links to an amazing language test web app" target="_blank" rel="noopener noreferrer"><p>An amazing yoruba language vocabulary test web application</p></a>
+
+<p>Report content errors or site use problems</p>
+<p>How to collaborate with adebayo10k</p>
+</section>`;
+
+aside.innerHTML = asideLinks;
+
+
+
+//===========================================================================================
 // FOOTER // add generic footer content siteLogo-wide
 const footie = document.querySelector("footer");
 
@@ -137,7 +155,7 @@ const heroImg_1 = "../media/images/hero-images/rubiks-cube-02-2400.jpg";
 const heroImg_2 = "../media/images/hero-images/rubiks-cube-03-2400.jpg";
 const heroImg_3 = "../media/images/hero-images/bash-vscode-01-1250.jpg";
 
-const heroMsg_0 = `"Seek TRUTH, exploit FALLACY, live well."`;
+const heroMsg_0 = `"Build on TRUTH, exploit FALLACY, live well."`;
 const heroMsg_1 = `"Build great stuff that you genuinely care about"`;
 const heroMsg_2 = `"If you don't feel passionately... seriously, don't bother."`;
 const heroMsg_3 = `"Computer Technology, Yoruba Context. Let's Go!"`;
