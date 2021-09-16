@@ -398,6 +398,9 @@ main {
   width: 60%;
 }
 
+.aside.sidebar {
+    line-height: 1.2;
+}
 .sidebar {
   /* fallback for browsers without grid layout support */
   float: right;
