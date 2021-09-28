@@ -18,17 +18,24 @@ siteLogo.innerHTML = logoText;
 // ASIDE // adds this list of links to the RHS aside of every page
 const aside = document.querySelector("aside");
 
-const asideLinks = `<section>
+// this if condition is needed until all pages get the grid layout structure's aside element
+if (aside) {
 
-<a href="https://github.com/adebayo10k" title="links to GitHub repository of adebayo10k" target="_blank" rel="noopener noreferrer"><p>Use Our Code</p></a>
+  const asideLinks = `<section>
 
-<a href="https://yorubasystems.com" title="links to an amazing language test web app" target="_blank" rel="noopener noreferrer"><p>An amazing yoruba language vocabulary test web application</p></a>
+  <a href="https://github.com/adebayo10k" title="links to GitHub repository of adebayo10k" target="_blank" rel="noopener noreferrer"><p>Use Our Code</p></a>
 
-<p>Report content errors or site use problems</p>
-<p>How to collaborate with adebayo10k</p>
-</section>`;
+  <a href="https://yorubasystems.com" title="links to an amazing language test web app" target="_blank" rel="noopener noreferrer"><p>An amazing yoruba language vocabulary test web application</p></a>
 
-aside.innerHTML = asideLinks;
+  <p>Report content errors or site use problems</p>
+  <p>How to collaborate with adebayo10k</p>
+  </section>`;
+
+  aside.innerHTML = asideLinks;
+
+}
+
+
 
 
 
