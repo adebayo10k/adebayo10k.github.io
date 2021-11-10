@@ -44,7 +44,7 @@ if (aside) {
 const footie = document.querySelector("footer");
 
 const footerText = `<p>
-NOTE: The content of this website is not yet ready for live, prime time. It is not rigorously researched. Assume the authors&apos; policy to be: publish first, check accuracy later (if ever). We&apos;re not talking about our code. That&apos;s already rock solid.
+DISCLAIMER: The content of this website is not yet ready for live, prime time. It is not rigorously researched. Assume the authors&apos; policy to be: publish first, check accuracy later (if ever). We&apos;re not talking about our code. That&apos;s already pretty much rock solid.
 </p>`;
 
 footie.innerHTML = footerText;
