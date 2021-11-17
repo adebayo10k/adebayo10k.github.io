@@ -464,8 +464,8 @@ aside.sidebar p {
 }
 
 /* there are reasons we'd want a type of article on
-each page, known by its' id. this image properties
-specified here are just a placeholder for that case */
+each page, known by its' id. the image properties
+specified here are just a placeholder for those cases */
 #hero-background-cube-01 {
   background-image: url("../media/images/hero-images/rubiks-cube-02-2400.jpg");
   background-position: center center;
@@ -644,8 +644,7 @@ nav li a:visited {
 }
 
 nav li a:hover {
-  background-color: #6495ed; /* cornflour blue */
-  color: #fff;
+  color:  #6495ed; /* cornflour blue */
   font-weight: bold;
 }
 
