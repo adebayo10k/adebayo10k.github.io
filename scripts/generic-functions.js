@@ -12,7 +12,7 @@ if (localStorage.getItem("bgColour")) {
 const siteLogo = document.getElementById("siteLogo");
 const logoText = `AlgoDiscoDev Software Development`;
 
-siteLogo.innerHTML = logoText;
+siteLogo.innerHTML = `${logoText}`;
 
 //===========================================================================================
 // ASIDE // adds this list of links to the RHS aside of every page
@@ -21,7 +21,7 @@ const aside = document.querySelector("aside");
 // this if condition is needed until all pages get the grid layout structure's aside element
 if (aside) {
 
-  const asideLinks = `<section>
+    const asideLinks = `<section>
 
   <a href="https://github.com/adebayo10k" title="links to GitHub repository of adebayo10k" target="_blank" rel="noopener noreferrer"><p>Use Our Code</p></a>
 
@@ -31,7 +31,7 @@ if (aside) {
   <p>How to collaborate with adebayo10k</p>
   </section>`;
 
-  aside.innerHTML = asideLinks;
+    aside.innerHTML = asideLinks;
 
 }
 
@@ -62,7 +62,7 @@ if (this.location.toString().includes("/projects/")) {
 
 navGrid.innerHTML = `
 <li>
-  <a href="${pathPre}index.html" title="our projects page">Our Projects</a>
+  <a href="${pathPre}index.html" title="homepage and Our Projects page">Our Projects</a>
 </li>
 <li>
   <a href="${pathPre}your-projects.html" title="start your own offline projects right here">Your Projects</a>
