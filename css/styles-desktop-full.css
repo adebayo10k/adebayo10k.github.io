@@ -352,6 +352,23 @@ header.page-head h1{
     border-bottom: 4px #800000 solid;
 }
 
+.page-head a[title~="site"]:link{
+    text-decoration: none;
+}
+
+.page-head a[title~="site"]:visited{
+    text-decoration: none;
+}
+
+.page-head a[title~="site"]:hover{
+    text-decoration: underline;
+    text-decoration-color: #fff;
+}
+
+.page-head a[title~="site"]:focus{
+    text-decoration: none;
+}
+
 header.page-head h2{
     margin: 2px 4px;
     padding: 2px 4px;
@@ -644,7 +661,8 @@ nav li a:visited {
 }
 
 nav li a:hover {
-  color:  #6495ed; /* cornflour blue */
+  color: #fff;
+  background-color:  #6495ed; /* cornflour blue */
   font-weight: bold;
 }
 
