@@ -62,7 +62,11 @@ if (this.location.toString().includes("/projects/")) {
 
 navGrid.innerHTML = `
 <li>
+<<<<<<< HEAD
   <a href="${pathPre}index.html" title="homepage and Our Projects page">Our Projects</a>
+=======
+  <a href="${pathPre}index.html" title="site homepage and Our Projects page">Our Projects</a>
+>>>>>>> origin
 </li>
 <li>
   <a href="${pathPre}your-projects.html" title="start your own offline projects right here">Your Projects</a>
