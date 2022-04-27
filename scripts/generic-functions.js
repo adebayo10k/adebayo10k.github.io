@@ -35,40 +35,41 @@ if (aside) {
 
 }
 
+//===========================================================================================
+// SET A PATH VARIABLE FOR USE BY HEADER AND FOOTER NAV LINK PATHS
 
+const depth0 = "./"; const depth1 = "../"; const depth2 = "../../";
+let pathPre = depth0; // default case
 
-
+// if the page is being built in the projects directory
+if (this.location.toString().includes("/projects/")) {
+    pathPre = depth1;
+}
 
 //===========================================================================================
 // FOOTER // add generic footer content siteLogo-wide
 const footie = document.querySelector("footer");
 
-/*
-const footerText = `<p>
-DISCLAIMER: The content of this website is not yet ready for live, prime time. It is not rigorously researched. Assume the authors&apos; policy to be: publish first, check accuracy later (if ever). We&apos;re not talking about our code. That&apos;s already pretty much rock solid.
-</p>`;
-*/
-
 const footerText = `<!-- site map -->
 <nav class="footer-nav" id="footerSiteMap">
     <ul>
         <li>
-            <a href="./index.html">Our Projects</a>
+            <a href="${pathPre}index.html">Our Projects</a>
         </li>
         <li>
-            <a href="./your-projects.html">Your Projects</a>
+            <a href="${pathPre}your-projects.html">Your Projects</a>
         </li>
         <li>
-            <a href="./social-coding.html">Social Coding</a>
+            <a href="${pathPre}social-coding.html">Social Coding</a>
         </li>
         <li>
-            <a href="./multimedia.html">Multimedia Wins</a>
+            <a href="${pathPre}multimedia.html">Multimedia Wins</a>
         </li>
         <li>
-            <a href="./yoruba-systems.html">Yoruba Systems</a>
+            <a href="${pathPre}yoruba-systems.html">Yoruba Systems</a>
         </li>
         <li>
-            <a href="./yoruba-contexts.html">Yoruba Contexts</a>
+            <a href="${pathPre}yoruba-contexts.html">Yoruba Contexts</a>
         </li>
     </ul>
 </nav>
@@ -98,15 +99,8 @@ const footerText = `<!-- site map -->
 footie.innerHTML = footerText;
 
 //===========================================================================================
-// BUILD NAVIGATION DISPLAY
+// BUILD PAGE HEADER NAVIGATION DISPLAY
 const navGrid = document.getElementById("nav-links");
-const depth0 = "./"; const depth1 = "../"; const depth2 = "../../";
-let pathPre = depth0;
-
-// if the page is being built in the projects directory
-if (this.location.toString().includes("/projects/")) {
-    pathPre = depth1;
-}
 
 navGrid.innerHTML = `
 <li>
@@ -203,36 +197,5 @@ else {
 }
 
 //===========================================================================================
-// MANAGE HERO MESSAGES
 
-const heroImg_0 = "";
-const heroImg_1 = "../media/images/hero-images/rubiks-cube-02-2400.jpg";
-const heroImg_2 = "../media/images/hero-images/rubiks-cube-03-2400.jpg";
-const heroImg_3 = "../media/images/hero-images/bash-vscode-01-1250.jpg";
 
-const heroMsg_0 = `"Build on TRUTH, exploit FALLACY, live well."`;
-const heroMsg_1 = `"Build great stuff that you genuinely care about"`;
-const heroMsg_2 = `"If you don't feel passionately... seriously, don't bother."`;
-const heroMsg_3 = `"Computer Technology, Yoruba Context. Let's Go!"`;
-const heroMsg_4 = `"Build stuff that you actually give a s*** about."`;
-const heroMsg_5 = `"Poor code is worse that no code"`;
-const heroMsg_6 = `"A language fit to support all concepts - both new and old"`;
-const heroMsg_7 = `"Our Philosophies are our foundations."`;
-const heroMsg_8 = `"When you're done with the Munchkin services, Join Us."`;
-const heroMsg_9 = `"Let's build on solid ground."`;
-const heroMsg_10 = `"There is no market for shit coders."`;
-// default messages to remain in html?
-// character count aware, due to limited space
-
-// anfani nipas&#x065;&#x0323; im&#x006F;&#x0323;-&#x0065;&#x0323;r&#x006F;&#x0323; => vorsprung durch technik
-
-const img5 = "";
-const img6 = "";
-
-// multimedia
-
-// social-coding
-
-// yoruba
-
-// yoruba-forms
