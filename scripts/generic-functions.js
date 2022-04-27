@@ -43,9 +43,57 @@ if (aside) {
 // FOOTER // add generic footer content siteLogo-wide
 const footie = document.querySelector("footer");
 
+/*
 const footerText = `<p>
 DISCLAIMER: The content of this website is not yet ready for live, prime time. It is not rigorously researched. Assume the authors&apos; policy to be: publish first, check accuracy later (if ever). We&apos;re not talking about our code. That&apos;s already pretty much rock solid.
 </p>`;
+*/
+
+const footerText = `<!-- site map -->
+<nav class="footer-nav" id="footerSiteMap">
+    <ul>
+        <li>
+            <a href="./index.html">Our Projects</a>
+        </li>
+        <li>
+            <a href="./your-projects.html">Your Projects</a>
+        </li>
+        <li>
+            <a href="./social-coding.html">Social Coding</a>
+        </li>
+        <li>
+            <a href="./multimedia.html">Multimedia Wins</a>
+        </li>
+        <li>
+            <a href="./yoruba-systems.html">Yoruba Systems</a>
+        </li>
+        <li>
+            <a href="./yoruba-contexts.html">Yoruba Contexts</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- contact links -->
+<div>
+    <h3>Contact</h3>
+    <ul>
+        <li>LinkedIn</li>
+    </ul>
+</div>
+
+
+<!-- credits links -->
+<div>
+    <h3>Credits</h3>
+    <ul>
+        <li>Designed by: algoDisco</li>
+        <li>Engineered by: softMod and compSim</li>
+        <li>Powered by: Sol</li>
+    </ul>
+</div>
+
+
+<!-- notices links -->`;
 
 footie.innerHTML = footerText;
 

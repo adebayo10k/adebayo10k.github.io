@@ -120,6 +120,9 @@ header.page-head {
 }
 
 /*-------------------------------------------------------------*/
+/* page footer styles*/
+
+/*-------------------------------------------------------------*/
 /* card page layout styles*/
 main {
   /* single column when not full desktop screen */
@@ -138,7 +141,7 @@ main {
 }
 */
 
-nav ul{
+#headerNav ul{ 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: minmax(20px, auto);
@@ -148,7 +151,7 @@ nav ul{
   padding-right: 10px;
 }
 
-nav li{
+#headerNav li{
   list-style-type: none;
   text-align: center;
   margin: 0px 4px;
@@ -183,11 +186,11 @@ nav li{
   outline: none;
 }
 
-.nav-grid {
+#headerNav .nav-grid {
   display: none;
 }
 
-.nav-grid.open-grid {
+#headerNav .nav-grid.open-grid {
   display: grid;
 }
 

@@ -114,6 +114,11 @@ header.page-head h2{
 }
 
 /*-------------------------------------------------------------*/
+/* page footer styles*/
+
+
+
+/*-------------------------------------------------------------*/
 /* card page layout styles*/
 .page-content {
   /* back to mobile screen single column 
@@ -129,7 +134,7 @@ header.page-head h2{
 
 /*-------------------------------------------------------------*/
 /* navigation styles*/
-nav ul{
+#headerNav ul{ 
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   /*grid-auto-rows: minmax(20px, auto);
@@ -140,7 +145,7 @@ nav ul{
   display: none;
 }
 
-nav li{
+#headerNav li{
     list-style-type: none;
     text-align: center;
     margin: 0px 4px;    
@@ -164,11 +169,11 @@ nav-icon-container #nav-icon-hitzone:focus {
 }
 */
 
-.nav-grid {
+#headerNav .nav-grid {
   display: none;
 }
 
-.nav-grid.open-grid {
+#headerNav .nav-grid.open-grid {
     display: block;
 }
 
