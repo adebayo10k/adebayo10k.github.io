@@ -436,6 +436,7 @@ header.page-head h2 {
     margin: 0px 4px;
 }
 
+/* anchor pseudo-classes in LVHA order. Active always last */
 #headerNav li a:link {
     color: #00008b;
     /*darkblue*/
@@ -453,8 +454,6 @@ header.page-head h2 {
 #headerNav li a:visited {
     color: #800000;
     /*maroon*/
-    /*border-color: #6495ed;
-  background-color: rgba(221, 221, 221, 0.72);;*/
 }
 
 #headerNav li a:hover {
@@ -470,6 +469,7 @@ header.page-head h2 {
     color: #fff;
     outline: auto;
 }
+
 
 .nav-icon-container {
     display: none;
@@ -491,7 +491,7 @@ footer {
     /*border-bottom: 4px #800000 solid;*/
     border-radius: 0 0 10px 10px;
     color: #fff;
-    background-color: #000000;
+    background-color: #1B1B1B;
 }
 
 /*
@@ -513,6 +513,7 @@ footer p {
     padding-left: 8px;
 }
 
+/* anchor pseudo-classes in LVHA order. Active always last */
 .footer-nav ul li a:link {
     font-size: 1.5rem;
     color: #fff;
@@ -524,6 +525,17 @@ footer p {
 
 .footer-nav ul li a:hover {
     text-decoration: underline;
+}
+
+.footer-nav ul li a:focus {
+    background-color: #1B1B1B;
+    font-size: 1.2em;
+    outline: 2px solid aquamarine;
+}
+
+.footer-nav ul li a:active {
+    color: #fff;
+    text-decoration: none;
 }
 
 footer div {
