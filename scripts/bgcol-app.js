@@ -115,7 +115,7 @@ const refreshSiteAppearance = () => {
 
         const trueAppearanceSetting = storedAppearanceSetting; // create private copy of the string
         const introText = `
-    Make yourself at home by changing the background colour being used by this site. Your browser should remember your changes between restarts.    
+    Make yourself at home by changing the background colour being used by this site. Your browser uses its&apos; sandboxed &apos;Local Storage&apos; area to remember your changes between restarts.    
     `;
         /*
         //FIGURING OUT THE MOST PLEASING DATE FORMAT
