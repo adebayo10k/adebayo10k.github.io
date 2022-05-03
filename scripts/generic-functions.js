@@ -132,7 +132,7 @@ const burger = document.getElementById("burger");
 const hitZone = document.getElementById("nav-icon-hitzone");
 
 // click event on hitzone that contains just the nav icon
-// (basically, the headers disappear along with the navigation menu, leaving just the burger bars)
+// (basically, the headers disappear along with the navigation menu, leaving just the burger bars icon)
 hitZone.addEventListener("click", (event) => {
     // toggle between visible and hidden headers. Useful on smaller, tablet and mobile screens
     const toggleHeadings = () => {

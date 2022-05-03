@@ -207,7 +207,7 @@ const openRenderTransaction = (dataStorageObject, requestedURL) => {
             const cardBody = document.createElement("div");
             cardBody.setAttribute("class", "card-body");
             cardBody.innerHTML = `
-      <h3><a href="${projectsArray[index].sitePageURL}" title="go to the full project" target="_self">${projectsArray[index].title}</a></h3>
+      <h3><a href="${projectsArray[index].sitePageURL}" title="go to a brief TL;DR summary of this project" target="_self">${projectsArray[index].title}</a></h3>
       <p>${projectsArray[index].shortDescription}</p>
       `;
 
@@ -220,7 +220,7 @@ const openRenderTransaction = (dataStorageObject, requestedURL) => {
 
             cardTopFooter.innerHTML = `
       <p>Developed by:
-      <a href="${projectsArray[index].devGitHubURL}" title="go to this devs gitHub account (opens in a separate browser tab)" target="_blank">${projectsArray[index].devUsername}</a>
+      <a href="${projectsArray[index].devGitHubURL}" title="go to this developers GitHub account (opens in a separate browser tab)" target="_blank">${projectsArray[index].devUsername}</a>
       </p>
       <p>
       ${platformsStr} ${programmingLanguagesStr}
