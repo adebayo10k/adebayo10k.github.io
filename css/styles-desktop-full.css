@@ -411,7 +411,7 @@ header.page-head h2 {
     display: none;
     background-image: none;
     color: #fff;
-    background-color: green;
+    background-color: #6495ed;
     padding: 0.5rem 0;
     text-transform: lowercase;
 }
