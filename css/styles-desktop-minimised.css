@@ -198,6 +198,7 @@ header.page-head {
 /* page footer styles*/
 
 /* anchor pseudo-classes in LVHA order. Active always last */
+/*link styles on touchscreens*/
 .footer-nav ul li a:link {
     text-decoration: underline;
 }

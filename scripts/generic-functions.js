@@ -23,9 +23,9 @@ if (aside) {
 
     const asideLinks = `<section>
 
-  <a href="https://github.com/adebayo10k" title="links to GitHub repository of adebayo10k" target="_blank" rel="noopener noreferrer"><p>Use Our Code</p></a>
+  <a href="https://github.com/adebayo10k" title="links to GitHub repository of adebayo10k" target="_blank"><p>Use Our Code</p></a>
 
-  <a href="https://yorubasystems.com" title="links to an amazing language test web app" target="_blank" rel="noopener noreferrer"><p>An amazing yoruba language vocabulary test web application</p></a>
+  <a href="https://yorubasystems.com" title="links to an amazing language test web app" target="_blank"><p>An amazing yoruba language vocabulary test web application</p></a>
 
   <p>Report content errors or site use problems</p>
   <p>How to collaborate with adebayo10k</p>
