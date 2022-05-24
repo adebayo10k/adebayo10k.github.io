@@ -75,7 +75,7 @@ const footerText = `<!-- site map -->
             <a href="${pathPre}research.html">Research</a>
         </li>
         <li>
-            <a href="${pathPre}yoruba-contexts.html">Yoruba Contexts</a>
+            <a href="${pathPre}yoruba-web.html">Yorùbá Web</a>
         </li>
     </ul>
 </nav>
@@ -125,7 +125,7 @@ navGrid.innerHTML = `
   <a href="${pathPre}research.html" title="research">Research</a>
 </li>
 <li>
-  <a href="${pathPre}yoruba-contexts.html" title="yoruba contexts">Yoruba Contexts</a>
+  <a href="${pathPre}yoruba-web.html" title="yoruba language on the web">Yorùbá Web</a>
 </li>
 `;
 
