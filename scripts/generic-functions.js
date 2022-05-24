@@ -29,7 +29,7 @@ if (aside) {
   <a href="https://yorubasystems.com" title="links to an amazing language test web app" target="_blank"><p>An amazing yoruba language vocabulary test web application</p></a>
   -->
 
-  <a href="http://damola-webpage.s3-website.eu-west-2.amazonaws.com/error.html" title="sorry, this site is temporarily offline for maintenance" target="_blank"><p>An amazing yoruba language vocabulary test web application</p></a>
+  <a href="http://yorubasystems.com" title="sorry, this site is temporarily offline for maintenance" target="_blank"><p>An amazing yoruba language vocabulary test web application</p></a>
 
   
 
@@ -66,7 +66,7 @@ const footerText = `<!-- site map -->
             <a href="${pathPre}your-projects.html">Your Projects</a>
         </li>
         <li>
-            <a href="${pathPre}social-coding.html">Social Coding</a>
+            <a href="${pathPre}skills.html">Skills</a>
         </li>
         <li>
             <a href="${pathPre}multimedia.html">Multimedia Wins</a>
@@ -116,7 +116,7 @@ navGrid.innerHTML = `
   <a href="${pathPre}your-projects.html" title="start your own offline projects right here">Your Projects</a>
 </li>                    
 <li>
-  <a href="${pathPre}social-coding.html" title="social coding page">social coding</a>
+  <a href="${pathPre}skills.html" title="skills page">Skills</a>
 </li>
 <li>
   <a href="${pathPre}multimedia.html" title="multimedia page">multimedia wins</a>    
