@@ -60,7 +60,7 @@ const footerText = `<!-- site map -->
 <nav class="footer-nav" id="footerSiteMap">
     <ul>
         <li>
-            <a href="${pathPre}index.html">Our Projects</a>
+            <a href="${pathPre}index.html">Projects</a>
         </li>
         <li>
             <a href="${pathPre}your-projects.html">Your Projects</a>
@@ -110,10 +110,10 @@ const navGrid = document.getElementById("nav-links");
 
 navGrid.innerHTML = `
 <li>
-  <a href="${pathPre}index.html" title="homepage and Our Projects page">Our Projects</a>
+  <a href="${pathPre}index.html" title="Homepage (Projects)">Projects</a>
 </li>
 <li>
-  <a href="${pathPre}your-projects.html" title="start your own offline projects right here">Your Projects</a>
+  <a href="${pathPre}your-projects.html" title="cloud research">Your Projects</a>
 </li>                    
 <li>
   <a href="${pathPre}skills.html" title="skills page">Skills</a>
