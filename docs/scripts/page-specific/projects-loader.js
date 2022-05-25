@@ -2,7 +2,7 @@
 const DB_VERSION = 1;
 const DB_NAME = "projects_db";
 
-const pDataURL = "./data/projects.json";// from the root apparently
+const pDataURL = "./data/projects.json"; // from the document root apparently
 const urlFromReferer = window.location.toString();
 
 // returns a Promise - json object
@@ -415,9 +415,11 @@ window.onload = () => {
     //const indexPagePath = "adebayo10k.github.io/index.html";
 
     // we're running on the index page (where dynamically generated project cards are displayed)
-    if (thisURL.includes("adebayo10k.github.io/docs/index.html") || thisURL.includes("adebayo10k.github.io/index.html") || thisURL.endsWith("adebayo10k.github.io/") 
+    if (thisURL.includes("adebayo10k.github.io/index.html") || thisURL.endsWith("adebayo10k.github.io/") 
     // development environment (VSCode running Live Server):
     || thisURL.includes("127.0.0.1:5500/index.html") || thisURL.endsWith("127.0.0.1:5500") || thisURL.endsWith("127.0.0.1:5500/")
+    // development environment (local web server):
+    || thisURL.includes("adebayo10k.com/index.html") || thisURL.endsWith("adebayo10k.com") || thisURL.endsWith("adebayo10k.com/")
     )
     {
 
@@ -439,7 +441,10 @@ window.onload = () => {
             })
     }
     // we're running in one of the project specific pages
-    else if (thisURL.includes("adebayo10k.github.io/projects/") || thisURL.includes("adebayo10k.github.io/docs/projects/")
+    else if (thisURL.includes("adebayo10k.github.io/projects/") 
+    // development environment (local web server):
+    || thisURL.includes("adebayo10k.com/projects/")
+    // development environment (VSCode running Live Server):
     || thisURL.includes("127.0.0.1:5500/projects/")
     ) {
 
