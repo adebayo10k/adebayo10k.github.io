@@ -415,8 +415,8 @@ window.onload = () => {
     //const indexPagePath = "adebayo10k.github.io/index.html";
 
     // we're running on the index page (where dynamically generated project cards are displayed)
-    if (thisURL.includes("adebayo10k.github.io/index.html") || thisURL.endsWith("adebayo10k.github.io/") 
-    // development environment:
+    if (thisURL.includes("adebayo10k.github.io/docs/index.html") || thisURL.includes("adebayo10k.github.io/index.html") || thisURL.endsWith("adebayo10k.github.io/") 
+    // development environment (VSCode running Live Server):
     || thisURL.includes("127.0.0.1:5500/index.html") || thisURL.endsWith("127.0.0.1:5500") || thisURL.endsWith("127.0.0.1:5500/")
     )
     {
@@ -439,7 +439,7 @@ window.onload = () => {
             })
     }
     // we're running in one of the project specific pages
-    else if (thisURL.includes("adebayo10k.github.io/projects/") 
+    else if (thisURL.includes("adebayo10k.github.io/projects/") || thisURL.includes("adebayo10k.github.io/docs/projects/")
     || thisURL.includes("127.0.0.1:5500/projects/")
     ) {
 
