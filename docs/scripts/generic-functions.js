@@ -60,7 +60,7 @@ const footerText = `<!-- site map -->
 <nav class="footer-nav" id="footerSiteMap">
     <ul>
         <li>
-            <a href="${pathPre}index.html">Projects</a>
+            <a href="${pathPre}docs/index.html">Projects</a>
         </li>
         <li>
             <a href="${pathPre}cloud.html">Cloud</a>
