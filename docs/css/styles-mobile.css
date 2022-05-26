@@ -3,65 +3,86 @@
 /* |&|font sizes subsection */
 
 html {
-    font-size: 10px; /* easy HCF to work with */
+    font-size: 10px;
+    /* easy HCF to work with */
 }
-p, li, button, input, select, textarea, fieldset legend, footer, form {
+
+p,
+li,
+button,
+input,
+select,
+textarea,
+fieldset legend,
+footer,
+form {
     font-size: 1.5rem;
 }
-sub, sup, figcaption {
+
+sub,
+sup,
+figcaption {
     font-size: 1rem;
 }
+
 h1 {
     font-size: 1.5rem;
 }
+
 h2 {
     font-size: 1.5rem;
 }
+
 h3 {
     font-size: 1.5rem;
 }
+
 h4 {
     font-size: 1.5rem;
 }
+
 nav li a:link {
     font-size: 1.5rem;
 }
 
 /* |&|GENERAL SITE-WIDE DEFAULT STYLES */
 
-html{
-  padding-top: 4px;
-  padding-bottom: 12px;
+html {
+    padding-top: 4px;
+    padding-bottom: 12px;
 }
 
-.configurable-background{
-    background-color: #6495ed; /*cornflour blue*/
+.configurable-background {
+    background-color: #6495ed;
+    /*cornflour blue*/
 }
 
-body{
+body {
     width: 94%;
     padding: 2px;
     border: solid black 2px;
 }
 
 /* section p and h3 left margin + padding + border set to line up */
-p{
+p {
     margin: 4px;
     padding: 4px;
 }
 
 /* section p and h3 left margin + padding + border set to line up */
-section header h3,h2{
+section header h3,
+h2, h3 {
     margin: 4px;
     padding: 4px;
 }
 
-ul, ol{
+ul,
+ol {
     margin-top: 2px;
     margin-bottom: 2px;
 }
 
-li{
+li {
     padding-top: 1px;
     margin-top: 1px;
     /* line-height: 1;*/
@@ -72,17 +93,19 @@ fieldset {
     margin: 2px;
 }
 
-img, video, audio{
+img,
+video,
+audio {
     width: 100%;
     padding: 0px;
 }
 
-figure{
+figure {
     margin: 4px;
     margin-left: 2px;
 }
 
-figcaption{
+figcaption {
     font-style: italic;
 }
 
@@ -90,27 +113,27 @@ figcaption{
 /* page header styles*/
 
 header.page-head {
-  position: sticky;
-  top: 0;
-  background-color: #ffffff;
-  background-image: url("../media/images/footpath-20.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  opacity: 1.0;
-  border: #6495ed 0px solid;
-  border-radius: 1em;
-  padding: 0.72rem 0;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    background-image: url("../media/images/footpath-20.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 1.0;
+    border: #6495ed 0px solid;
+    border-radius: 1em;
+    padding: 0.72rem 0;
 }
 
-header.page-head h1{
-  margin: 2px 4px;
-  padding: 4px;
+header.page-head h1 {
+    margin: 2px 4px;
+    padding: 4px;
 }
 
-header.page-head h2{
-  margin: 2px 4px;
-  padding: 2px;
+header.page-head h2 {
+    margin: 2px 4px;
+    padding: 2px;
 }
 
 /*-------------------------------------------------------------*/
@@ -120,35 +143,41 @@ header.page-head h2{
 
 /*-------------------------------------------------------------*/
 /* card page layout styles*/
+/* ||GRID||LAYOUT||HERO|| */
+
 .page-content {
-  /* back to mobile screen single column 
+    /* back to mobile screen single column 
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   row-gap: 2rem;*/
-  display: block;  
+    display: block;
 }
 
-.site-app-card, .project-card, aside.sidebar{
-  margin: 4rem 0rem;
+.site-app-card,
+.project-card,
+aside.sidebar,
+.skills-update,
+.multimedia-card {
+    margin: 4rem 0rem;
 }
 
 /*-------------------------------------------------------------*/
 /* navigation styles*/
-#headerNav ul{ 
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  /*grid-auto-rows: minmax(20px, auto);
+#headerNav ul {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /*grid-auto-rows: minmax(20px, auto);
   column-gap: 2px;
   row-gap: 2px; LAST COL STANDING!*/
-  padding-left: 10px;
-  padding-right: 10px;
-  display: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: none;
 }
 
-#headerNav li{
+#headerNav li {
     list-style-type: none;
     text-align: center;
-    margin: 0px 4px;    
+    margin: 0px 4px;
 }
 
 /*
@@ -170,7 +199,7 @@ nav-icon-container #nav-icon-hitzone:focus {
 */
 
 #headerNav .nav-grid {
-  display: none;
+    display: none;
 }
 
 #headerNav .nav-grid.open-grid {
@@ -180,50 +209,55 @@ nav-icon-container #nav-icon-hitzone:focus {
 /*-------------------------------------------------------------*/
 /* custom button styles*/
 .red-button {
-    box-shadow:inset 0px 1px 0px 0px #f5978e;
-    background:linear-gradient(to bottom, #f24537 5%, darkred 100%);
+    box-shadow: inset 0px 1px 0px 0px #f5978e;
+    background: linear-gradient(to bottom, #f24537 5%, darkred 100%);
     background-color: darkred;
-    border-radius:6px;
-    border:1px solid #d02718;
+    border-radius: 6px;
+    border: 1px solid #d02718;
     display: block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:'Ubuntu Mono', monospace, serif;
-    font-size:14px;
-    font-weight:bold;
-    padding:6px 24px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #961108;
-}
-.red-button:hover {
-    background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
-    background-color:darkred;
-}
-.red-button:active {
-    position:relative;
-    top:1px;
-}
-/*-------------------------------------------------------------*/
-/* custom dialog box styles CANCEL and OK buttons*/
-.dlg-container{
-  width: 200px;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: 'Ubuntu Mono', monospace, serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #961108;
 }
 
-.dlg-footer a{
-  width: 60px;
+.red-button:hover {
+    background: linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+    background-color: darkred;
+}
+
+.red-button:active {
+    position: relative;
+    top: 1px;
+}
+
+/*-------------------------------------------------------------*/
+/* custom dialog box styles CANCEL and OK buttons*/
+.dlg-container {
+    width: 200px;
+}
+
+.dlg-footer a {
+    width: 60px;
 }
 
 /*-------------------------------------------------------------*/
 /* table styles*/
 
-table, table p {
-  font-size: 0.8rem;
+table,
+table p {
+    font-size: 0.8rem;
 }
 
-td, th {
+td,
+th {
     padding: 2px 2px;
 }
-  
+
 caption {
     padding: 4px;
 }

@@ -40,8 +40,8 @@ function Solution(latestCode, expiryDate, codeBlockElemID, showBtnElemID) {
             this.showBtnElem = document.getElementById(this.showBtnElemID); // ;
             this.codeText = "";
             expiredCodeText = `
-<strong>THIS SOLUTION &lsquo;EXPIRED&rsquo; ${this.expiryLapseDays} ${(this.daysLeftPlurality ? "sols" : "sol")} ago</strong>.
-IF YOU&apos;RE ALSO INTO PROGRESSING, COLLABORATING AND SOCIAL CODING, DM ME TODAY.
+<p><strong>THIS SOLUTION &lsquo;EXPIRED&rsquo; ${this.expiryLapseDays} ${(this.daysLeftPlurality ? "sols" : "sol")} ago.</strong></p>
+<p>Never mind. Contact me on LinkedIn to discuss what you're missing.</p>
                 
                 `;
             // set the code or message that will be displayed when button is pressed

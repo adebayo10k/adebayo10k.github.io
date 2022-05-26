@@ -79,16 +79,31 @@
     </header>
 
 
-    <fieldset>
-        <legend>Skillset Updates...</legend>
-        <section>
-            <header>
-                <h3>Now to document some skillset and achievement updates.</h3>
-            </header>
-            <p>Starting to create foundations for the System Administration and Networking skillsets that dovetail with
-                Web Development.</p>
+    <main>
 
-            <section>
+        <section class="page-content">
+
+            <section class="page-intro-para">
+
+                <header>
+                    <h2>Skills</h2>
+                </header>
+                <p>This page. That's it.</p>
+
+            </section>
+
+
+            <div class="hero-article-container">
+                <article class="hero-article" id="hero-background-cube-01">
+                    <div class="hero-message message-right firaSansRegFont">
+                        <h2>"My best skill is acquiring new skills."</h2>
+                        <em>- Damola Adebayo</em>
+                    </div>
+                </article>
+            </div>
+
+
+            <section class="skills-update">
                 <header>
                     <h3>Cloud Development:</h3>
                 </header>
@@ -107,13 +122,9 @@
                     </figcaption>
                 </figure>
 
-
             </section><!-- end cloud development section-->
 
-            <hr>
-
-
-            <section>
+            <section class="skills-update">
                 <header>
                     <h3>Networking:</h3>
                 </header>
@@ -149,9 +160,7 @@
 
             </section><!-- end networking section-->
 
-            <hr>
-
-            <section>
+            <section class="skills-update">
                 <header>
                     <h3>System Administration:</h3>
                 </header>
@@ -183,9 +192,7 @@
                 </figure>
             </section><!-- end system admin section-->
 
-            <hr>
-
-            <section>
+            <section class="skills-update">
                 <header>
                     <h3>Volunteer Mentoring:</h3>
                 </header>
@@ -217,64 +224,56 @@
                 </figure>
             </section><!-- end volunteering section-->
 
+            <section class="skills-update">
+                <header>
+                    <h3>Codewars:</h3>
+                </header>
+                <figure>
+                    <a href="https://www.codewars.com/users/sudo256/completed" title="public codewars page of sudo256"
+                        target="_blank" rel="noreferrer">
+                        <img class="no-border" src="./media/images/large.png"
+                            alt="A large Codewars badge with username, rank and honour" width="400">
+                    </a>
+                    <figcaption>
+                        &quot;...it&apos;s a badge&quot;
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section class="site-app-card">
+                <header>
+                    <h3>Here for at least 48 hours after discovery:</h3>
+                </header>
+                <button class="red-button" id="showBtnCW" type="button">show code</button>
+                <pre><code id="codeFragBlockCW"></code></pre>
+            </section>
+
+            <section class="site-app-card">
+                <header>
+                    <h3>Here for at least 24 hours after discovery:</h3>
+                </header>
+                <button class="red-button" id="showBtnHR" type="button">show code</button>
+                <pre><code id="codeFragBlockHR"></code></pre>
+            </section>
+
+
+            <div class="hero-article-container">
+                <article class="hero-article" id="hero-background-cube-02">
+                    <div class="hero-message message-left firaSansBoldFont">
+                        <h2></h2>
+                        <h2>"Linode."</h2>
+                    </div>
+                </article>
+            </div>
+
         </section>
-    </fieldset>
 
-    <fieldset>
-        <legend>Codewars...</legend>
-        <section>
-            <header>
-                <h3>Earned in the Codewars:</h3>
-            </header>
-            <p>Just for the glory...</p>
-            <figure>
-                <a href="https://www.codewars.com/users/sudo256/completed" title="public codewars page of sudo256"
-                    target="_blank" rel="noreferrer">
-                    <img class="no-border" src="./media/images/large.png"
-                        alt="A large Codewars badge with username, rank and honour" width="400">
-                </a>
-                <figcaption>
-                    &quot;...it&apos;s a badge&quot;
-                </figcaption>
-            </figure>
-        </section>
-    </fieldset>
-
-    <fieldset id="codewarsSolution">
-        <!-- frag id only used by links from places like slack channels -->
-        <legend>Latest Codewars Solution...</legend>
-        <section>
-            <header>
-                <h3>Shared here for at least 48 hours after discovery:</h3>
-            </header>
-            <button class="red-button" id="showBtnCW" type="button">show code</button>
-            <pre><code id="codeFragBlockCW"></code></pre>
-        </section>
-    </fieldset>
-
-    <fieldset id="hackerRankSolution">
-        <!-- frag id only used by links from places like slack channels -->
-        <legend>Latest HackerRank Solution...</legend>
-        <section>
-            <header>
-                <h3>Here for at least 24 hours after discovery:</h3>
-            </header>
-            <button class="red-button" id="showBtnHR" type="button">show code</button>
-            <pre><code id="codeFragBlockHR"></code></pre>
-        </section>
-    </fieldset>
-
-    <div id="confirmDialogCont" class="dlg-container">
-        <div class="dlg-header">Let's discuss this...</div>
-        <div id="confirmDialogBody" class="dlg-body"></div>
-        <div class="dlg-footer">
-            <a id="confirmDlgCancelBtn">Cancel</a>
-            <a id="confirmDlgOkBtn">OK</a>
-        </div>
-    </div>
-
-    <!-- Right Sidebar
+        <!-- Right Sidebar
 ================================================== -->
+        <aside class="sidebar"></aside>
+
+    </main>
+
 
     <!-- Footer
 =============================================== -->
