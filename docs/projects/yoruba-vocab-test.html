@@ -136,14 +136,27 @@
                     the printed media anymore. See the problem here? What happens when a language can't easily be
                     plugged into the web?</p>
                 <p>So, my main 'interesting challenge' would be discovering for myself whether I could create a web
-                    application whose source data was from a character set for which no unicode code-points currently
+                    application whose source data was from a character set for which some unicode code-points do not currently
                     exists. Eh?</p>
 
                 <h3>Research</h3>
 
-                <p>In the Linux world, the bash interpreter will take an unix hex unicode code-point from stdin and give
-                    us back the corresponding unicode character in stdout:</p>
-                <pre>Ctrl + Shift +  u00e9 	# outputs: é</pre>
+                <p>
+                    In the Linux world, the bash interpreter will take an unix hex unicode code-point from stdin and
+                    give
+                    us back the corresponding unicode character in stdout:
+                </p>
+                <kbd>Ctrl</kbd>
+                <span>+</span>
+                <kbd>Shift</kbd>
+                <span>+</span>
+                <kbd>u</kbd>
+                <kbd>0</kbd>
+                <kbd>0</kbd>
+                <kbd>e</kbd>
+                <kbd>9</kbd>
+                <span># outputs: é</span>
+
                 <code>echo -e '\u00e9'	# (as an escape sequence) outputs: é</code>
 
                 <p>
@@ -162,13 +175,13 @@
                 <p>xml unicode code-point used by most interpreters:</p>
                 <code>&amp;#x00E9;</code>
                 <p>html cer used by browsers (which are interpreters):</p>
-                <code><pre>&amp;#233;</pre></code>
+                <pre>&amp;#233;</pre>
                 <p>unix-like unicode used by php interpreter:</p>
                 <code>\u{00E9}</code>
 
                 <p>
                     Then, there&apos;s also the font support for this workaround to consider. Monospaced and most
-                    specialist font families seem unable render correctly decoded combining diacritical marks.
+                    specialist font families seem unable render even correctly decoded combining diacritical marks.
                 </p>
 
                 <p>
@@ -178,21 +191,25 @@
                 <p>
                     I then had the idea that the simplest form of web application in which the reliable interpreting of
                     these weird Yoruba characters could be demonstrated, would be a language quiz app. Still 'doing
-                    research', I then created a <a href="">yoruba language quiz bash shell program</a> as a kind of
+                    research', I then created a <a
+                        href="https://github.com/adebayo10k/yoruba-language-quiz-prototype" title="to the github source code repository (opens in new tab)"
+                        target="_blank">yoruba language quiz bash
+                        shell program</a> as a kind of
                     prototype of how such an application would handle JSON source data like this:
                 </p>
 
                 <code>
-            {
-                "englishPhrase": "'hat'",
-                "yorubaPhrase": "'fil\\u{00E0}'",
-                "category": "",
-                "shortAudioFile": ""
-            }
+{    
+    "englishPhrase": "'hat'",
+    "yorubaPhrase": "'fil\\u{00E0}'",
+    "category": "",
+    "shortAudioFile": ""
+}
                 </code>
 
                 <p>
-                    It worked as expected. From that point, I was confident enough to start developing a web application,
+                    It worked as expected. From that point, I was confident enough to start developing a web
+                    application,
                     briefly summarised as follows:
                 </p>
 
@@ -221,7 +238,8 @@
                 <p>
                     The 'simple as possible' server-side web app implemented the Front Controller pattern, with one main
                     page as the single entry point of control. The application was coded and database created within
-                    a local development environment. PHPUnit was installed locally using the Composer dependency manager, then used to conduct unit testing on our classes.
+                    a local development environment. PHPUnit was installed locally using the Composer dependency
+                    manager, then used to conduct unit testing on our classes.
                 </p>
 
                 <h3>Deployment on AWS Cloud</h3>
@@ -231,13 +249,15 @@
                     go into that now.</p>
 
                 <h3>Securing the Web App</h3>
-                <p>Being a server-side web application gives an inherent layer of security. The Apache 'Web Application Firewall' module mod_security was also installed as an additional Application Layer inspector of web server traffic.</p>
+                <p>Being a server-side web application gives an inherent layer of security. The Apache 'Web Application
+                    Firewall' module mod_security was also installed as an additional Application Layer inspector of web
+                    server traffic.</p>
 
                 <h3>Monitoring the App</h3>
-                <p>Web server logs, ubuntu server logs and AWS Cloudwatch</p>
+                <p>Web server logs, ubuntu server logs and AWS Cloudwatch.</p>
 
                 <h3>Site Analytics and Testing</h3>
-                <p>None yet</p>
+                <p>None yet.</p>
 
 
             </section>

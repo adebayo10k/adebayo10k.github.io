@@ -109,13 +109,16 @@ html {
 }
 
 p,
+code,
+pre,
+span,
+kbd,
 li,
 table,
 button,
 input,
 select,
 textarea,
-fieldset legend,
 footer,
 form {
     font-size: 1.75rem;
@@ -194,7 +197,9 @@ body {
 }
 
 /* section p and h3 left margin + padding + border set to line up */
-p {
+p,
+code,
+pre {
     margin: 8px;
     padding: 8px;
 }
@@ -257,21 +262,9 @@ li {
     margin-top: 1px;
 }
 
-fieldset {
-    background: none;
-    border: none;
-    /*border-radius: 1em;
-    padding: 8px;
-    margin: 6px;*/
-}
-
-fieldset legend {
-    font-weight: bold;
-    color: #8b0000;
-    /*darkred*/
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
+kbd {
+    margin: 6px;
+    padding: 6px;
 }
 
 code {

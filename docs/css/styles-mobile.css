@@ -8,6 +8,10 @@ html {
 }
 
 p,
+code,
+pre,
+span,
+kbd,
 li,
 button,
 input,
@@ -64,14 +68,17 @@ body {
 }
 
 /* section p and h3 left margin + padding + border set to line up */
-p {
+p,
+code,
+pre {
     margin: 4px;
     padding: 4px;
 }
 
 /* section p and h3 left margin + padding + border set to line up */
 section header h3,
-h2, h3 {
+h2,
+h3 {
     margin: 4px;
     padding: 4px;
 }
@@ -88,7 +95,7 @@ li {
     /* line-height: 1;*/
 }
 
-fieldset {
+kbd {
     padding: 2px;
     margin: 2px;
 }

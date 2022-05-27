@@ -9,6 +9,10 @@ html {
 }
 
 p,
+code,
+pre,
+span,
+kbd,
 li,
 table,
 button,
@@ -74,7 +78,9 @@ body {
 }
 
 /* section p and h3 left margin + padding + border set to line up */
-p {
+p,
+code,
+pre {
     margin: 6px;
     padding: 6px;
 }
@@ -116,7 +122,8 @@ a:active {
 
 /* section p and h3 left margin + padding + border set to line up */
 section header h3,
-h2, h3 {
+h2,
+h3 {
     margin: 6px;
     padding: 6px;
 }
@@ -133,7 +140,7 @@ li {
     /*line-height: 1;*/
 }
 
-fieldset {
+kbd {
     padding: 4px;
     margin: 4px;
 }
