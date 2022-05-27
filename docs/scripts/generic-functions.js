@@ -29,7 +29,7 @@ if (aside) {
   <a href="https://yorubasystems.com" title="links to an amazing language test web app" target="_blank"><p>An amazing yoruba language vocabulary test web application</p></a>
   -->
 
-  <a href="http://yorubasystems.com" title="sorry, this site is temporarily offline for maintenance" target="_blank"><p>An amazing yoruba language vocabulary test web application</p></a>
+  <a href="http://yorubasystems.com" title="bit emabarrassing, but this now takes you to a failover static page (http), until site back online" target="_blank"><p>An amazing yoruba language vocabulary test web application</p></a>
 
   
 
