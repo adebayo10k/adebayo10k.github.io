@@ -89,7 +89,7 @@
                     <!--This header text must match EXACTLY with a title in projects.json -->
                     <!--Changes must be mutually inclusive -->
                     <!--These project pages are being created manually for now-->
-                    <h3>Vocabulary tests for English speaking Yoruba Language learners</h3>
+                    <h3>Vocabulary tests for English speaking Yoruba language learners</h3>
                 </header>
 
                 <a href="../index.html" title="Return to the Projects page">
@@ -114,8 +114,8 @@
                 <p>This project is now deployed at <a href="http://yorubasystems.com"
                         title="bit emabarrassing, but this now takes you to a failover static page (http), until site back online"
                         target="_blank">yorubasystems.com</a>. The orginal scope of this project was for a
-                    simple, online vocabulary quiz. This page is supposed to document the interesting parts of my
-                    research and the software development
+                    simple, online vocabulary quiz. This page documents the interesting parts of my
+                    research and software development
                     process.</p>
 
                 <h3>Background</h3>
@@ -125,18 +125,20 @@
                 <p>Unfortunately, the bus on which unicode code-points for latin characters were being standardised,
                     left about 20 years ago.</p>
                 <p>Thankfully, some smart unicode people developed the 'combining diacritical marks' workaround (which I
-                    won't go into on this page). Being a workaround however, and not a core standard, it's use in
-                    today's 'web and information standards world' is not optimal.</p>
+                    won't go into on this page). Being a workaround however, and not a core standard, it's
+                    implementation is far from universal.</p>
 
 
                 <h3>The Challenge</h3>
 
                 <p> <em>The web</em> is now the way most of the world consumes it's written information - so, not so
                     much
-                    the printed media anymore. See the problem here? What happens when a language can't easily be
-                    plugged into the web?</p>
+                    the printed media anymore. Web and Information standards are the foundations of a stack on which
+                    we're all building. But what happens when a language is not yet a standard part of that foundation?
+                </p>
                 <p>So, my main 'interesting challenge' would be discovering for myself whether I could create a web
-                    application whose source data was from a character set for which some unicode code-points do not currently
+                    application whose source data was from a character set for which some unicode code-points do not
+                    currently
                     exists. Eh?</p>
 
                 <h3>Research</h3>
@@ -161,9 +163,9 @@
 
                 <p>
                     Developers need to be aware of which unicode hex formats are understood by the various interpreters
-                    that make up their web applications. Developers then need to use reliable pipelines to encode,
-                    decode, input, output, store and transmit
-                    Yoruba language character set data between these different interpreters.
+                    that make up their web applications. For the Yoruba language character set, developers then need to
+                    use reliable pipelines to encode,
+                    decode, input, output, store and transmit data between these different interpreters.
                 </p>
 
                 <p>
@@ -176,24 +178,28 @@
                 <code>&amp;#x00E9;</code>
                 <p>html cer used by browsers (which are interpreters):</p>
                 <pre>&amp;#233;</pre>
-                <p>unix-like unicode used by php interpreter:</p>
+                <p>unix-like unicode used by php interpreters:</p>
                 <code>\u{00E9}</code>
 
                 <p>
-                    Then, there&apos;s also the font support for this workaround to consider. Monospaced and most
-                    specialist font families seem unable render even correctly decoded combining diacritical marks.
+                    Then, there&apos;s the font support to consider. For reasons like efficiency, some font families
+                    like monospace are specifically designed to implement only core standard unicode. Even correctly
+                    decoded combining diacritical marks are therefore
+                    rendered incorrectly by these fonts.
+                    Probably one for further research.
                 </p>
 
                 <p>
-                    At this point in the research, my excitement levels had become 'quite high'.
+                    At this point in the research, my excitement levels had become 'quite high'. The opportunites to
+                    develop services in this space seemed massive.
                 </p>
 
                 <p>
-                    I then had the idea that the simplest form of web application in which the reliable interpreting of
+                    Next, I had the idea that the simplest form of application, in which the reliable interpreting of
                     these weird Yoruba characters could be demonstrated, would be a language quiz app. Still 'doing
-                    research', I then created a <a
-                        href="https://github.com/adebayo10k/yoruba-language-quiz-prototype" title="to the github source code repository (opens in new tab)"
-                        target="_blank">yoruba language quiz bash
+                    research', I created a <a href="https://github.com/adebayo10k/yoruba-language-quiz-prototype"
+                        title="to the github source code repository (opens in new tab)" target="_blank">yoruba language
+                        quiz bash
                         shell program</a> as a kind of
                     prototype of how such an application would handle JSON source data like this:
                 </p>
@@ -216,16 +222,18 @@
                 <h3>Application Architecture</h3>
 
                 <p>Classic, monolithic, LAMP stack architecture would do for now. So, something like an Ubuntu Linux
-                    server operating system would be running an Apache http server, on which PHP and MySQL modules would
+                    server operating system would be running an Apache http server, on which PHP and MySQL/MariaDB modules would
                     need to be installed. All very tightly coupled, I know.</p>
 
                 <h3>Database Design</h3>
 
                 <p>
-                    Entity Relationship modelling used to create a Data Model. For an app with static data, so nothing
-                    changed or created by users, we could get away with reading the data from a JSON data structure. It
-                    would even perform much better. However, by this point I was beginning to develop 'big ideas' about
-                    the destiny of this web app. No point delaying. Only full CRUD functionality would do for where this
+                    Entity Relationship modelling used to create a Data Model. For an application with static data, so nothing
+                    changed or created by users, I could get away with reading source data from a JSON structured data file. Up to a point, this might even perform much better than database reads. However, by this point I was beginning to develop
+                    'big ideas' about
+                    the destiny of this web app. No point delaying. Only full <abbr
+                        title="Create, Read, Update, Delete. Four basic operations executed on database applications">CRUD</abbr>
+                    functionality would do for where this
                     application was going! A MySQL relational database, now!
                 </p>
 
@@ -236,21 +244,30 @@
                 <h3>Implementation</h3>
 
                 <p>
-                    The 'simple as possible' server-side web app implemented the Front Controller pattern, with one main
+                    This 'minimum viable product' server-side web app implemented the Front Controller pattern, with one
+                    main
                     page as the single entry point of control. The application was coded and database created within
-                    a local development environment. PHPUnit was installed locally using the Composer dependency
-                    manager, then used to conduct unit testing on our classes.
+                    a local development environment. PHPUnit was installed locally to the project using the Composer
+                    dependency
+                    manager, then used to conduct suites of unit tests on our classes and object methods as they were
+                    being
+                    developed.
                 </p>
 
                 <h3>Deployment on AWS Cloud</h3>
-                <p>A Single EC2 hypervisor instance was used to virtualise an Ubuntu Linux server OS, on which Apache
+                <p>Based on the application architecture I'd decided upon, but also as a bit of a side-challenge, it
+                    looked like I'd be implementing the <abbr title="Infrastructure as a Service">IaaS</abbr> cloud
+                    deployment model. A Single EC2 hypervisor
+                    instance was used to virtualise an Ubuntu Linux server OS, on which Apache
                     web server was configured with various modules were built by hand (slow, but satisfying). So, web
-                    and database servers running on the same instance should be enough for now. Or so I thought. I won't
+                    and database servers running on the same instance as the application itself should be enough for
+                    now. Or so I thought. I won't
                     go into that now.</p>
 
                 <h3>Securing the Web App</h3>
-                <p>Being a server-side web application gives an inherent layer of security. The Apache 'Web Application
-                    Firewall' module mod_security was also installed as an additional Application Layer inspector of web
+                <p>Being a server-side web application gives an inherent layer of security. The most sensitive
+                    application code stays on the server. Additionally, the Apache 'Web Application
+                    Firewall' module mod_security was installed as an Application Layer inspector of web
                     server traffic.</p>
 
                 <h3>Monitoring the App</h3>

@@ -78,7 +78,8 @@ pre {
 /* section p and h3 left margin + padding + border set to line up */
 section header h3,
 h2,
-h3 {
+h3,
+h4 {
     margin: 4px;
     padding: 4px;
 }
