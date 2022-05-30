@@ -93,8 +93,8 @@ const footerText = `<!-- site map -->
 <div>
     <h3>Credits</h3>
     <ul>
-        <li>Designed by: algoDisco</li>
-        <li>Engineered by: softMod and compSim</li>
+        <li>Developed by: Damola Adebayo</li>
+        <li>Maintained by: Damola Adebayo</li>
         <li>Powered by: Sol</li>
     </ul>
 </div>

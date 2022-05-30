@@ -40,8 +40,8 @@ function Solution(latestCode, expiryDate, codeBlockElemID, showBtnElemID) {
             this.showBtnElem = document.getElementById(this.showBtnElemID); // ;
             this.codeText = "";
             expiredCodeText = `
-<p><strong>THIS SOLUTION &lsquo;EXPIRED&rsquo; ${this.expiryLapseDays} ${(this.daysLeftPlurality ? "sols" : "sol")} ago.</strong></p>
-<p>Never mind. Contact me on LinkedIn to discuss what you're missing.</p>
+<strong>THIS SOLUTION &lsquo;EXPIRED&rsquo; ${this.expiryLapseDays} ${(this.daysLeftPlurality ? "sols" : "sol")} ago.</strong>
+Never mind. Contact me on LinkedIn to discuss what you're missing.
                 
                 `;
             // set the code or message that will be displayed when button is pressed
@@ -99,7 +99,7 @@ function Solution(latestCode, expiryDate, codeBlockElemID, showBtnElemID) {
 // arguments for codewars object instantiation
 const cwCodeBlockElemID = "codeFragBlockCW";
 const cwShowBtnElemID = "showBtnCW";
-let latestCWexpiryDate = new Date(2020, 9, 6, 18, 00, 0, 000); // zero based month
+let latestCWexpiryDate = new Date(2022, 9, 6, 18, 00, 0, 000); // zero based month
 const latestCWcode = `
 // 5 kyu
 //perfect_power.js
@@ -138,7 +138,7 @@ console.log(keys);
 // arguments for hackerrank object instantiation
 const hrCodeBlockElemID = "codeFragBlockHR";
 const hrShowBtnElemID = "showBtnHR";
-let latestHRexpiryDate = new Date(2020, 9, 27, 18, 00, 0, 1); // zero based month, UTC accounted
+let latestHRexpiryDate = new Date(2022, 9, 27, 18, 00, 0, 1); // zero based month, UTC accounted
 const latestHRcode = ` 
 #!/bin/bash
 
@@ -150,7 +150,7 @@ function check_ip
     ip4_test1_regex="^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$"
     #ip4_test1_regex="^([0-9]{1,3}[\.]){3}([0-9]{1,3})$"
        
-    if [[ $adr =~ $ip4_test1_regex ]] # test 1
+    if [[ $adr =~ $ip4_test1_regex ]] # test 1 for ip regex match
     then
         OIFS=$IFS
         IFS='.'
@@ -159,13 +159,13 @@ function check_ip
 
         for byte in \${test_byte_array[@]}
 	    do              
-            if [ $byte -gt 255 ] || [[ \${byte:0:1} -eq 0 && \${#byte} > 1 ]] # test 2 
+            if [ $byte -gt 255 ] || [[ \${byte:0:1} -eq 0 && \${#byte} > 1 ]] # test 2 for ip decimal format
             then
-            valid_ok=3 # 3 = failed  # bad ip
+            valid_ok=3 # 3 = failed  # bad ip, wrong format
             fi
         done
     else
-        valid_ok=2 # 2 = failed # bad ip
+        valid_ok=2 # 2 = failed # bad ip, no regex match
     fi
     
     if [ $valid_ok -eq 0 ]

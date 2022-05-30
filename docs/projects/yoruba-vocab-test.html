@@ -133,7 +133,7 @@
 
                 <p> <em>The web</em> is now the way most of the world consumes it's written information - so, not so
                     much
-                    the printed media anymore. Web and Information standards are the foundations of a stack on which
+                    the printed media anymore. Web and Information standards are the foundations of the stacks on which
                     we're all building. But what happens when a language is not yet a standard part of that foundation?
                 </p>
                 <p>So, my main 'interesting challenge' would be discovering for myself whether I could create a web
@@ -182,7 +182,7 @@
                 <code>\u{00E9}</code>
 
                 <p>
-                    Then, there&apos;s the font support to consider. For reasons like efficiency, some font families
+                    Then, there&apos;s the font support to consider. For reasons of efficiency, some font families
                     like monospace are specifically designed to implement only core standard unicode. Even correctly
                     decoded combining diacritical marks are therefore
                     rendered incorrectly by these fonts.
@@ -222,14 +222,18 @@
                 <h3>Application Architecture</h3>
 
                 <p>Classic, monolithic, LAMP stack architecture would do for now. So, something like an Ubuntu Linux
-                    server operating system would be running an Apache http server, on which PHP and MySQL/MariaDB modules would
+                    server operating system would be running an Apache http server, on which PHP and MySQL/MariaDB
+                    modules would
                     need to be installed. All very tightly coupled, I know.</p>
 
                 <h3>Database Design</h3>
 
                 <p>
-                    Entity Relationship modelling used to create a Data Model. For an application with static data, so nothing
-                    changed or created by users, I could get away with reading source data from a JSON structured data file. Up to a point, this might even perform much better than database reads. However, by this point I was beginning to develop
+                    Entity Relationship modelling used to create a Data Model. For an application with static data, so
+                    nothing
+                    changed or created by users, I could get away with reading source data from a JSON structured data
+                    file. Up to a point, this might even perform much better than database reads. However, by this point
+                    I was beginning to develop
                     'big ideas' about
                     the destiny of this web app. No point delaying. Only full <abbr
                         title="Create, Read, Update, Delete. Four basic operations executed on database applications">CRUD</abbr>
@@ -256,10 +260,10 @@
 
                 <h3>Deployment on AWS Cloud</h3>
                 <p>Based on the application architecture I'd decided upon, but also as a bit of a side-challenge, it
-                    looked like I'd be implementing the <abbr title="Infrastructure as a Service">IaaS</abbr> cloud
-                    deployment model. A Single EC2 hypervisor
-                    instance was used to virtualise an Ubuntu Linux server OS, on which Apache
-                    web server was configured with various modules were built by hand (slow, but satisfying). So, web
+                    looked like I'd be utilising the <abbr
+                        title="Infrastructure as a Service: A cloud service model implemented by cloud providers">IaaS</abbr>, <abbr title="Public Cloud: A cloud deployment model, implemented by cloud providers">public cloud</abbr> offerings provided by AWS. A Single EC2 hypervisor
+                    instance was launched to virtualise an Ubuntu Linux server OS, on which an Apache
+                    web server, configured with various modules was built by hand (slow, but satisfying). So, web
                     and database servers running on the same instance as the application itself should be enough for
                     now. Or so I thought. I won't
                     go into that now.</p>

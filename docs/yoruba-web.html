@@ -95,18 +95,16 @@
                 <header>
                     <h2>Yorùbá Web</h2>
                 </header>
-                <p>Forms created for us to test out some web form client-side validation and styling - although not so
-                    much of the styling.</p>
-                <p>Using the Oguntech network services (made up) for form content.</p>
-                <p>We&apos;re going for a <strong>live, inline validation</strong> approach for fields where it works.
+                <p>Forms created for us to test out some client-side, web form validation and styling. We&apos;re going
+                    for a <strong>live, inline form field validation</strong> approach for fields where that works.
                 </p>
-                <p>Test the Yor&ugrave;b&aacute; language characters below (copy them into the form fields for now).</p>
-                <p>Characters with unicode codepoints, no issue.</p>
-                <p>Characters composed using combining diacritical marks can also be validated as form field inputs, but
-                    they are considered by the browser JavaScript to be two separate characters, so some additional
-                    workaround scripting is required. Not sustainable IMO.</p>
+                <p>Characters with unicode codepoints, no issue. Characters encoded using combining diacritical marks
+                    can be validated by these forms, but
+                    are interpreted by the browsers' JavaScript to be two or more separate characters. Some additional
+                    workaround scripting would be required to get accurate content word counts, for example.</p>
 
-                <p>So, these should be found valid:</p>
+                <p>Anyway, in the meantime go ahead and test that these Yor&ugrave;b&aacute; language characters are valid user
+                    inputs (by copying them into the form fields for now):</p>
                 <ul class="inline-list">
                     <li>&#x00E0;</li><!-- a grave -->
                     <li>&#x00E1;</li><!-- a acute -->
@@ -168,7 +166,7 @@
                             <label for="email">Email</label>
                             <input type="email"
                                 title="type some english or yoruba language characters to test this form input"
-                                id="email" placeholder="n.b.u.c. re&#x0323;" required maxlength="63">
+                                id="email" placeholder="email re&#x0323;" required maxlength="63">
                             <i class="fa fa-check-circle" aria-hidden="true"></i>
                             <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                             <small>Error message</small>
@@ -220,7 +218,7 @@
                     <form class="form" id="aboutYouForm" action="#" novalidate>
 
                         <div class="form-control">
-                            <label for="orishaChoice">Which Orisha most inspires you?</label>
+                            <label for="orishaChoice">Which is your favourite Orisha?</label>
                             <select id="orishaChoice" name="orisha">
                                 <option>None</option>
                                 <option>Ogun</option>
@@ -270,13 +268,12 @@
                     </header>
                     <form class="form" id="aboutSkillSetsForm" novalidate>
 
-                        <p>Select at least 1 and up to 5 skills you&apos;d like to develop and practice on an Oguntech
-                            project.</p>
+                        <p>Select at least 1 and up to 5 skills you&apos;d like to develop and practice on a project.</p>
                         <ul>
                             <li>
-                                <label for="sd_skill">
-                                    <span>Software Development Process</span>
-                                    <input type="checkbox" id="sd_skill" name="sd_skill">
+                                <label for="agile_sd_skill">
+                                    <span>Agile Software Development</span>
+                                    <input type="checkbox" id="agile_sd_skill" name="sd_skill">
                                 </label>
                             </li>
                             <li>
@@ -289,6 +286,12 @@
                                 <label for="git_scm">
                                     <span>Git Source Control Management</span>
                                     <input type="checkbox" id="git_scm" name="git_scm">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="ci_cd">
+                                    <span>CI/CD</span>
+                                    <input type="checkbox" id="ci_cd" name="skill">
                                 </label>
                             </li>
                             <li>
@@ -334,15 +337,15 @@
                                 </label>
                             </li>
                             <li>
-                                <label for="aws_cloud">
-                                    <span>AWS Cloud</span>
-                                    <input type="checkbox" id="cloud_deploy" name="skill">
+                                <label for="aws_cloud_dev">
+                                    <span>AWS Cloud Development</span>
+                                    <input type="checkbox" id="aws_cloud_dev" name="skill">
                                 </label>
                             </li>
                             <li>
-                                <label for="ci_cd">
-                                    <span>CI/CD</span>
-                                    <input type="checkbox" id="ci_cd" name="skill">
+                                <label for="containerisation">
+                                    <span>Containeristation</span>
+                                    <input type="checkbox" id="containerisation" name="skill">
                                 </label>
                             </li>
                             <li>
@@ -367,12 +370,6 @@
                                 <label for="wordpress_cms">
                                     <span>WordPress CMS</span>
                                     <input type="checkbox" id="wordpress_cms" name="skill">
-                                </label>
-                            </li>
-                            <li>
-                                <label for="business_mgt">
-                                    <span>Business Management</span>
-                                    <input type="checkbox" id="business_mgt" name="skill">
                                 </label>
                             </li>
                             <li>
@@ -424,14 +421,13 @@
                         <div class="form-control">
                             <p>1. Send us a short video (up to 10 seconds) in which both you and your gpg public key are
                                 visible together for at least a few seconds.</p>
-                            <p>This helps support our <a href="https://en.wikipedia.org/wiki/Web_of_trust"
-                                    title="Opens the Wikipedia page for this concept" target="_blank"
-                                    rel="noreferrer">web of trust (opens in a new window)</a>,
-                                where members are geographically remote from eachother and there also exists the current
-                                (or new normal) social distancing policies. Where these are not the case, <a
+                            <p>This helps support a <a href="https://en.wikipedia.org/wiki/Web_of_trust"
+                                    title="Visist the Wikipedia page for this concept (opens in a new window)"
+                                    target="_blank" rel="noreferrer">web of trust</a>,
+                                where members are geographically remote from eachother. Where this is not the case, <a
                                     href="https://en.wikipedia.org/wiki/Key_signing_party"
-                                    title="Opens the Wikipedia page for this concept" target="_blank"
-                                    rel="noreferrer">key signing parties (opens in a new window)</a> are a
+                                    title="Visit the Wikipedia page for this concept (opens in a new window)"
+                                    target="_blank" rel="noreferrer">key signing parties </a> are a
                                 better way.</p>
                             <p>We&apos;re effectively acting as a pseudo-Certificate Authority, within the network!</p>
 
@@ -454,7 +450,7 @@
                         <p>3. You&apos;re now free to exchange keys and do secure comms with other members.</p>
 
 
-                        <p>Remember to double-check that we&apos;re firing with https!</p>
+                        <p>Remember to double-check that you&apos;re firing with https!</p>
                         <button type="reset">Reset Form</button>
 
                     </form>
@@ -469,7 +465,7 @@
 
     </main>
 
-   
+
     <!-- Right Sidebar
 ================================================== -->
 
