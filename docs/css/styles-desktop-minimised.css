@@ -91,12 +91,7 @@ pre {
 /* THESE DEFAULTS ARE DIFFERENT FOR TOUCH SCREEN DEVICES*/
 
 a:link {
-    color: #000000;
     text-decoration: underline;
-}
-
-a:visited {
-    color: #800000;
 }
 
 /* we never remove tab-to outline without replacing it */

@@ -206,7 +206,8 @@ pre {
 
 /* anchor pseudo-classes in LVHA order. Active always last */
 a:link {
-    color: #000000;
+    color: #00008b;
+    /*darkblue*/
     text-decoration: none;
 }
 
