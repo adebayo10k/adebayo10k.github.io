@@ -358,7 +358,7 @@ header.page-head {
     border: #6495ed 0px solid;
     /*#800000 1px solid; maroon*/
     border-radius: 1em;
-    padding: 0.72rem 0;
+    padding: 0.72rem 0rem;
     z-index: 1;
     /*staying above outside-of-normal-flow stuff */
 }
@@ -408,7 +408,7 @@ header.page-head h2 {
     background-image: none;
     color: #fff;
     background-color: #6495ed;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0rem;
     text-transform: lowercase;
 }
 
@@ -484,52 +484,59 @@ footer {
     margin-top: 20px;
     margin-bottom: 0px;
     border-top: 4px #800000 solid;
-    /*border-bottom: 4px #800000 solid;*/
-    border-radius: 0 0 10px 10px;
+    border-radius: 0px 0px 10px 10px;
     color: #fff;
     background-color: #1B1B1B;
 }
 
-.footer-nav {
+nav.footer-nav {
     flex: 300px;
-    /*flex: 1vmax;
-    border: 1px #fff solid;*/
+    /*flex: 1vmax;*/
     padding: 6px;
 }
 
-.footer-nav ul {
-    list-style-type: none;
+nav.footer-nav h3 {
     padding-left: 8px;
 }
 
+nav.footer-nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 6px;
+}
+
 /* anchor pseudo-classes in LVHA order. Active always last */
-.footer-nav ul li a:link {
+nav.footer-nav ul li a:link {
     font-size: 1.5rem;
     color: #fff;
 }
 
-.footer-nav ul li a:visited {
+nav.footer-nav ul li a:visited {
     color: #fff;
 }
 
-.footer-nav ul li a:hover {
+nav.footer-nav ul li a:hover {
     text-decoration: underline;
 }
 
-.footer-nav ul li a:focus {
+nav.footer-nav ul li a:focus {
     background-color: #1B1B1B;
     font-size: 1.2em;
     outline: 2px solid aquamarine;
 }
 
-.footer-nav ul li a:active {
+nav.footer-nav ul li a:active {
     color: #fff;
     text-decoration: none;
 }
-
+/*-------------------------------------------------------------*/
 footer div {
     flex: 1 200px;
-    /*border: 1px #fff solid;*/
+    padding: 6px;
+}
+
+footer div h3 {
+    margin: 0px;
     padding: 6px;
 }
 
@@ -537,20 +544,16 @@ footer div:nth-of-type(2) {
     flex: 1 300px;
 }
 
-footer div h3 {
-    margin: 8px;
-}
-
 footer div ul {
-    margin: 8px;
-    padding-left: 8px;
+    margin: 0px;
+    padding: 6px;
     list-style-type: none;
 }
 
 footer div li {
     font-size: 1.5rem;
 }
-
+/*-------------------------------------------------------------*/
 
 
 /*-------------------------------------------------------------*/
@@ -751,23 +754,11 @@ specified here are just a placeholder for those cases */
     border-bottom: 1px solid #d8d8d8;
 }
 
-.project-info-layer {
-    position: absolute;
-    visibility: visible;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.5);
-    /* stay above, although 0 ok if after in structure */
-    z-index: 1;
-}
-
 .project-card .card-body {
     font-weight: normal;
     font-style: normal;
     padding: 1rem;
-    margin: 0;
+    margin: 0rem;
     /*height: 300px;*/
     height: 240px;
     overflow-x: scroll;
@@ -777,8 +768,8 @@ specified here are just a placeholder for those cases */
 
 .project-card .card-body p,
 .project-card .card-body h3 {
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     margin-bottom: 5px;
 }
 
@@ -786,7 +777,7 @@ specified here are just a placeholder for those cases */
     font-weight: normal;
     font-style: normal;
     padding: 1rem;
-    margin: 0;
+    margin: 0px;
     border-top: 1px solid #d8d8d8;
     /*height: 100px;*/
     height: 100px;
@@ -797,15 +788,15 @@ specified here are just a placeholder for those cases */
 }
 
 .project-card .card-topfooter p {
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
 }
 
 .project-card .card-bottomfooter {
     font-weight: normal;
     font-style: normal;
     padding: 1rem;
-    margin: 0;
+    margin: 0px;
     border-top: 1px solid #d8d8d8;
     /*height: 120px;*/
     height: 120px;
@@ -816,8 +807,8 @@ specified here are just a placeholder for those cases */
 }
 
 .project-card .card-bottomfooter p {
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
 }
 
 
@@ -947,13 +938,13 @@ specified here are just a placeholder for those cases */
 .dlg-footer {
     text-align: center;
     background: #f5f5f2;
-    padding: 3px 0;
+    padding: 3px 0px;
 }
 
 .dlg-footer a {
     display: inline-block;
     width: 100px;
-    padding: 5px 0;
+    padding: 5px 0px;
     border: 1px solid #ccc;
     border-radius: 10px;
     background: #eeeeee;
@@ -969,8 +960,8 @@ specified here are just a placeholder for those cases */
 
 .freeze-layer {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0px;
+    left: 0px;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
@@ -1048,7 +1039,7 @@ section.site-app-card.site-form {
     align-items: center;
     justify-content: center;
     min-height: 80vh;
-    margin: 0;
+    margin: 0px;
 }
 
 #createAccountApp {
@@ -1077,7 +1068,7 @@ section.site-app-card.site-form {
 }
 
 .form-container header h2 {
-    margin: 0;
+    margin: 0px;
     text-align: center;
 }
 
@@ -1142,8 +1133,8 @@ section.site-app-card.site-form {
 .form-control small {
     visibility: hidden;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 0px;
+    left: 0px;
 }
 
 .form-control small abbr {

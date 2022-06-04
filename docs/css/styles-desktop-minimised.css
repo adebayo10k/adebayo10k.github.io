@@ -161,7 +161,7 @@ figcaption {
 
 header.page-head {
     position: sticky;
-    top: 0;
+    top: 0px;
     background-color: #ffffff;
     /*background-image: url("../media/images/footpath-20.png");*/
     background-size: cover;
@@ -170,7 +170,7 @@ header.page-head {
     opacity: 1.0;
     border: #6495ed 0px solid;
     border-radius: 1em;
-    padding: 0.72rem 0;
+    padding: 0.72rem 0rem;
 }
 
 /* toggle headings using nav burger when sticky scrolling */
