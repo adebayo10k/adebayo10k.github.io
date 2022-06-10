@@ -25,7 +25,7 @@ if (aside) {
 
   <a href="https://github.com/adebayo10k" title="links to GitHub repository of adebayo10k" target="_blank"><p>Use Our Code</p></a>
 
-  <a href="https://yorubasystems.com" title="An aws hosted development project site" target="_blank"><p>A Yoruba language vocabulary test web application project</p></a>
+  <a href="http://yorubasystems.com" title="An aws hosted development project site" target="_blank"><p>A Yoruba language vocabulary test web application project</p></a>
 
   
 
