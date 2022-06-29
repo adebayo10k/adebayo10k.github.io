@@ -415,13 +415,12 @@ window.onload = () => {
     //const indexPagePath = "adebayo10k.github.io/index.html";
 
     // we're running on the index page (where dynamically generated project cards are displayed)
-    if (thisURL.includes("adebayo10k.github.io/index.html") || thisURL.endsWith("adebayo10k.github.io/") 
-    // development environment (VSCode running Live Server):
-    || thisURL.includes("127.0.0.1:5500/index.html") || thisURL.endsWith("127.0.0.1:5500") || thisURL.endsWith("127.0.0.1:5500/")
-    // development environment (local web server):
-    || thisURL.includes("adebayo10k.com/index.html") || thisURL.endsWith("adebayo10k.com") || thisURL.endsWith("adebayo10k.com/")
-    )
-    {
+    if (thisURL.includes("adebayo10k.github.io/index.html") || thisURL.endsWith("adebayo10k.github.io/")
+        // development environment (VSCode running Live Server):
+        || thisURL.includes("127.0.0.1:5500/index.html") || thisURL.endsWith("127.0.0.1:5500") || thisURL.endsWith("127.0.0.1:5500/")
+        // development environment (local web server):
+        || thisURL.includes("adebayo10k.com/index.html") || thisURL.endsWith("adebayo10k.com") || thisURL.endsWith("adebayo10k.com/")
+    ) {
 
         // TODO: if can't get new json, use locally stored copy...
         const projectsJSONData = getProjectsData(pDataURL, "json");
@@ -441,11 +440,11 @@ window.onload = () => {
             })
     }
     // we're running in one of the project specific pages
-    else if (thisURL.includes("adebayo10k.github.io/projects/") 
-    // development environment (local web server):
-    || thisURL.includes("adebayo10k.com/projects/")
-    // development environment (VSCode running Live Server):
-    || thisURL.includes("127.0.0.1:5500/projects/")
+    else if (thisURL.includes("adebayo10k.github.io/projects/")
+        // development environment (local web server):
+        || thisURL.includes("adebayo10k.com/projects/")
+        // development environment (VSCode running Live Server):
+        || thisURL.includes("127.0.0.1:5500/projects/")
     ) {
 
         const openedProjectsDB = openDB();
