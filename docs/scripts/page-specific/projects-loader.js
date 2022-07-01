@@ -415,11 +415,11 @@ window.onload = () => {
     //const indexPagePath = "adebayo10k.github.io/index.html";
 
     // we're running on the index page (where dynamically generated project cards are displayed)
-    if (thisURL.includes("adebayo10k.github.io/index.html") || thisURL.endsWith("adebayo10k.github.io/")
-        // development environment (VSCode running Live Server):
-        || thisURL.includes("127.0.0.1:5500/index.html") || thisURL.endsWith("127.0.0.1:5500") || thisURL.endsWith("127.0.0.1:5500/")
-        // development environment (local web server):
-        || thisURL.includes("adebayo10k.com/index.html") || thisURL.endsWith("adebayo10k.com") || thisURL.endsWith("adebayo10k.com/")
+    // for example: http://localhost:8072/index.html    
+    if (thisURL.includes("adebayo10k.github.io/index.html") || thisURL.endsWith("adebayo10k.github.io/") // production environment (GitHub Pages)        
+        || thisURL.includes("127.0.0.1:5500/index.html") || thisURL.endsWith("127.0.0.1:5500") || thisURL.endsWith("127.0.0.1:5500/") // development environment (VSCode running Live Server)        
+        || thisURL.includes("adebayo10k.com/index.html") || thisURL.endsWith("adebayo10k.com") || thisURL.endsWith("adebayo10k.com/") // development environment (local web server)         
+        || thisURL.includes("localhost:8072/index.html") || thisURL.endsWith("localhost:8072") || thisURL.endsWith("localhost:8072/") // localhost (docker containerised webserver)
     ) {
 
         // TODO: if can't get new json, use locally stored copy...
@@ -440,11 +440,11 @@ window.onload = () => {
             })
     }
     // we're running in one of the project specific pages
-    else if (thisURL.includes("adebayo10k.github.io/projects/")
-        // development environment (local web server):
-        || thisURL.includes("adebayo10k.com/projects/")
-        // development environment (VSCode running Live Server):
-        || thisURL.includes("127.0.0.1:5500/projects/")
+    // for example: http://localhost:8072/projects/yoruba-vocab-test.html        
+    else if (thisURL.includes("adebayo10k.github.io/projects/") // production environment (GitHub Pages)        
+        || thisURL.includes("adebayo10k.com/projects/") // development environment (local web server)        
+        || thisURL.includes("127.0.0.1:5500/projects/") // development environment (VSCode running Live Server)        
+        || thisURL.includes("localhost:8072/projects/") // localhost (docker containerised webserver)
     ) {
 
         const openedProjectsDB = openDB();
