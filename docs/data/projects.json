@@ -46,26 +46,26 @@
         "visibility": "public"
     },
     {
-        "title": "Yoruba Greeting Suggester",
-        "devUsername": "OgunTech",
+        "title": "Docker Containerisation of this GitHub Pages Site",
+        "devUsername": "adebayo10k",
         "devGitHubURL": "https://github.com/adebayo10k/",
-        "shortDescription": "Greetings form an important element of Yoruba social culture. This fun web app presents the Yoruba learner with a set of appropriate greetings based on different situations.",
+        "shortDescription": "This site was developed as a monolithic web application. This project uses Docker to migrate it to a containerised development environment.",
         "gitHubRepoURL": "",
-        "sitePageURL": "./projects/yoruba-greet.html",
+        "sitePageURL": "./projects/dockerise-github-site.html",
         "remoteImageURL": "./media/images/project-card-images/raspberry-pi-3b-plus-1500.jpg",
         "localImageURL": "",
         "cardImageAlt": "A powered up Raspberry Pi computer",
         "cardImageIntrWidth": "1500",
         "platforms": [
-            "none yet"
+            "Linux", "Docker"
         ],
         "programmingLanguages": [
-            "none yet"
+            "BASH"
         ],
         "contexts": [
-            "Languages"
+            "Developer"
         ],
-        "currentStatus": "research",
+        "currentStatus": "published",
         "visibility": "public"
     },
     {

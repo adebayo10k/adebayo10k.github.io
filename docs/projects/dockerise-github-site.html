@@ -91,26 +91,383 @@
           <h3>Docker Containerisation of this GitHub Pages Site</h3>
         </header>
 
+        <p>This project involved the migration of a static GitHub Pages website, running in a traditional monolithic
+          development environment to one with loosely coupled, modular, disposable Docker containers. </p>
+        <p>This project report came for my keeping a log of my Docker containerisation learning and implementation
+          experiences.</p>
+
         <a href="../index.html" title="Return to the Projects page">
           <span class="hugeFont firaSansMedFont">&lt; pada</span>
         </a>
 
       </section>
 
+
       <div class="hero-article-container">
         <article class="hero-article" id="hero-background-cube-01">
           <div class="hero-message message-right firaSansRegFont">
-            <h2>Hero message from the &#x0053;&#x0323;&#x00E0;ng&#x00F3;Tech Network.</h2>
-            <h2>"Build great stuff that you genuinely care about"</h2>
+            <h2>"If you wake up and find yourself inside a Docker container... Just make the most of the time you have
+              left."</h2>
           </div>
         </article>
       </div>
+
+      <section class="project-summary">
+        <header>
+          <h2>Objectives of this project</h2>
+        </header>
+        <p>Apparently, one of the use cases that containerisation improves is that of the distribution of both work
+          products and developement environment to other developers for the purpose of collaboration. So like GitHub,
+          but without each dev having to acquire and build all the tooling and dependencies locally by hand.</p>
+        <p>In this scenario, anyone with a Docker engine, daemon, client environment installed on their host machine
+          could pull my public image distributions and spin up the containerised version of my web app dev environment
+          within seconds. </p>
+
+        <p>The objective of this project was to implement this scenario by migrating a simple web application to a
+          containerised docker environment.</p>
+        <p>There were two stages:</p>
+        <ol>
+          <li>Research and Learning: To research, install and practice using the Docker system of containerisation.</li>
+          <li>Publish a series of docker images (under the same image tag) to a DockerHub repository.</li>
+        </ol>
+
+
+
+        <h3>1. Research and Learning</h3>
+
+        <p>My research and learning process for this project is discussed more fully on the Research page of this site.
+          link to [documentation of this research]</p>
+        <p>Just one finding to quickly preview here though, regarding my installation of the Docker environment. Wanting
+          to test out everything I'd read about online, I decided to go ahead and put my user account into the docker
+          group, in order not to have to enter sudo with every docker command.</p>
+        <code>sudo usermod -aG docker ${USER}</code>
+        <p>Soon after, I read in the docker docs [ https://docs.docker.com/engine/install/linux-postinstall/ ] that this
+          had some risks, so was not recommended. I suppose that as usual, security and convenience is a
+          zero-sum game. You have to pick one.</p>
+
+        <p>Anyway, I therefore decided to walk-back that previous decision by removing my user account from docker group
+          membership. I didn't mind getting into the habit of delivering those extra keystrokes if helped reduce the
+          attack surface of environments in which I would be working. I had to check some man pages to find the rarely
+          used
+          command to do this. Either of these were available:</p>
+        <code>sudo gpasswd -d ${USER} docker</code>
+        <code>sudo deluser ${USER} docker</code>
+
+
+
+        <h3>2. Publish a series of docker images to DockerHub registry.</h3>
+
+        <p>There were two distinct phases to this also:</p>
+        <p>Phase 0: Build a webserver image preloaded with my github pages static site and push to DockerHub.</p>
+        <p>Phase 1: Update that image with logging to a docker-managed volume on the host and log data retrieval,
+          without breaking host isolation.</p>
+
+
+
+
+        <h3>Build Phase 0:</h3>
+
+        <p>This was a relatively simple target to achieve. All I had to do was to create a Dockerfile to build an image
+          that extends the official httpd web server with my web content and
+          perhaps a bit of web server configuration.</p>
+        <p>NOTE: The Apache httpd server[link] image that I found first was one based on a RedHat Linux distribution.
+          Even though I'm more familiar with Debian based version of the webserver, I thought I'd try it anyway. I later
+          realised that Canonical also publish an Apache2 image, based on Ubuntu.</p>
+
+        <code>
+          # Dockerfile
+
+          #################################
+          # Dockerfile to build an http web server image 
+          #################################
+          # Base image is Apaches' httpd server (based on Redhad (official) Linux)
+          FROM httpd
+          # Author: Damola Adebayo
+          LABEL maintainer="Damola Adebayo <adebayo10k@gmail.com>"
+          # Copy website source code into image build
+          COPY ./src/ /usr/local/apache2/htdocs/
+          # Expose port 80
+          EXPOSE 80
+        </code>
+
+        <p>Also, although not absolutely necessary for a single service, I took the opportunity to create an
+          embarrassingly short docker-compose file for this phase. Like so:</p>
+
+        <code>
+            # docker-compose.yaml
+
+            version: '3.8'
+            services:
+              web:
+                build: 
+                  context: ./
+                  dockerfile: ./Dockerfile
+                container_name: a10k_site_running
+                ports:
+                - "8072:80"    
+          </code>
+
+        <p>Even building this single service, there were a couple of times when I may have gone down wrong roads. I'll
+          now
+          confess one of them.</p>
+
+        <h4>Wrong Road: A Symlink Fail</h4>
+        <p>I had the 'brilliant' idea that instead of copying web source files from their /var/www location on host web
+          server into the docker project src/ directory, I could save duplication and future divergence by symlinking
+          from docker project context to that web server target. Like this:</p>
+
+        <code>
+ln -s /var/www/adebayo10k.github.io/docs/ ~/Code/Docker/projects/adebayo10k.github.io/
+cd ~/Code/Docker/projects/adebayo10k.github.io
+ls -lh
+-rw-rw-r-- 1 damola damola 186 Jul  1 14:08 docker-compose.yaml
+-rw-rw-r-- 1 damola damola 386 Jul  1 13:40 Dockerfile
+lrwxrwxrwx 1 damola damola  35 Jul  1 10:50 docs -> /var/www/adebayo10k.github.io/docs/
+                </code>
+
+        <p>Long story short... it didn't work. Docker said:</p>
+
+        <code>
+=> ERROR [2/2] COPY ./docs/* /usr/local/apache2/htdocs/                                                            1.0s
+------
+ > [2/2] COPY ./docs/* /usr/local/apache2/htdocs/:
+------
+failed to solve: lstat /var/lib/docker/tmp/buildkit-mount2610895224/var/www/adebayo10k.github.io/docs: no such file or directory
+          </code>
+
+        <p>It seems so obvious in retrospect, but even as symlink, docker won't reach up outside of the 'context', and
+          into the hosts' web directory to COPY files! I'd have to carefully remove the symlink (without deleting my
+          actual source content), then prepare the context with a duplicate of my source content manually first.
+          Like so..</p>
+
+        <code>
+ cd ~/Code/Docker/projects/adebayo10k.github.io/
+ unlink docs
+ cd ~/Code/Docker/projects/adebayo10k.github.io/
+ cp -R /var/www/adebayo10k.github.io/docs/* .
+          </code>
+
+
+
+        <h4>Publishing the Image to the public DockerHub registry</h4>
+        <p>With the container now tested and working, I issued the following commands to retag the image and for the
+          DockerHub push:</p>
+
+        <code>
+# registrydomain:port/repository[:tag]
+sudo docker image tag adebayo10kgithubio_web:latest adebayo10k/adebayo10kgithubio_web:latest
+sudo docker images
+sudo docker rmi adebayo10kgithubio_web:latest
+        </code>
+
+        <p>... then login to the docker CLI</p>
+
+        <code>
+sudo docker push adebayo10k/adebayo10kgithubio_web:latest
+sudo docker rmi adebayo10k/adebayo10kgithubio_web:latest
+        </code>
+
+        <p>... and to test the rest of this workflow by pulling it back down and running a local container:</p>
+
+        <code>
+sudo docker run -d --rm -p 8072:80 --name a10k_pull_test adebayo10k/adebayo10kgithubio_web:latest
+sudo docker run -d --rm -p 8072:80 -P adebayo10k/adebayo10kgithubio_web:latest
+        </code>
+
+        <p>... then request the site from our browser http://localhost:8072. At first got a 400 Client Error, but after
+          a session of troubleshooting, worked as expected.</p>
+
+
+        <h3>Build Phase 1: </h3>
+
+        <p>To update the image with persistent logging to a docker-managed data volume on the host via a dedicated
+          data-only container.</p>
+
+        <p>We'd like to access log data from a container, rather than having to alter the root ownership or permissions
+          on the mounted host data volume!</p>
+        <p>Step by step configure docker to achieve the following:</p>
+
+        <ol>
+          <li>
+            Update the Dockerfile referenced by the web service to copy in a custom httpd.conf file at image build
+            time. NOTE: sudo docker logs command would no longer be available to track logs, as it seems to be
+            configured in the httpd base image to listen to stdout and stderr streams from the Linux proc filesystem.
+          </li>
+          <li>Persist web server logs in a docker-managed, named, shared data volume on host.</li>
+          <li>Data-only container with a volume that mounts the docker-managed shared volume and serves as a single
+            point for accessing the log data generated by ALL containers in the container network. Apart from the
+            data-generating containers (just the web server for now), this data volume container must remain the only
+            one to maintain a reference to the mounted data volume.</li>
+          <li>Run an ad-hoc, transient, log retrieving container to query the data-only container when required, then
+            exit immediately.</li>
+        </ol>
+
+        <p>Here are the relevant files and code fragments:</p>
+
+        <code>
+# http.conf
+
+COPY ./conf/httpd.conf /usr/local/apache2/conf/httpd.conf
+ErrorLog "/var/log/data_access_dir/error_log"
+CustomLog "/var/log/data_access_dir/access_log" common
+        </code>
+
+        <code>
+# docker-compose.yaml
+
+version: '3.8'
+services:
+
+  web:
+    build: 
+      context: ./
+      dockerfile: ./Dockerfile
+    container_name: a10k_site_running
+    ports:
+    - "8072:80"
+    environment:
+      - APACHE_LOG_DIR=/var/log/data_access_dir
+    volumes:
+      #- shared_vol:/usr/local/apache2/logs
+      - shared_vol:/var/log/data_access_dir
+    depends_on:
+      - data_hub
+  
+  data_hub:
+    build:
+      context: ./
+      dockerfile: ./data_hub/Dockerfile
+    container_name: data_only_hub
+    volumes:
+     - shared_vol:/var/log/data_access_dir
+
+volumes:
+  shared_vol:
+        </code>
+
+        <code>
+# Dockerfile
+
+#################################
+# Dockerfile to build a dedicated data-only, log data \
+# access volume for all log generating services
+#################################
+# Base image is busybox
+FROM busybox:latest
+# Author: Damola Adebayo
+LABEL maintainer="Damola Adebayo <adebayo10k@gmail.com>"
+# Create the mountpoint directory
+RUN mkdir -p /var/log/data_access_dir
+# Create a data-only volume as mountpoint 
+VOLUME [ "/var/log/data_access_dir" ]
+# Execute /bin/true for this data-only container to exit without a shell, \
+# without anything but a zero exit code.
+CMD [ "/bin/true" ]
+        </code>
+
+        <code>
+# Dockerfile
+
+#################################
+# Dockerfile to build an httpd web server image 
+#################################
+# Base image is Apaches' httpd server (based on Redhad (official) Linux)
+FROM httpd
+# Author: Damola Adebayo
+LABEL maintainer="Damola Adebayo <adebayo10k@gmail.com>"
+#ENV APACHE_LOG_DIR=/usr/local/apache2/logs
+ENV APACHE_LOG_DIR=/var/log/data_access_dir
+# Create the mountpoint directory that we configured \
+# for webserver logs.
+RUN mkdir -p /var/log/data_access_dir
+# Define the mountpoint
+VOLUME [ "/var/log/data_access_dir" ]
+# Copy website source code into image build
+COPY ./webserver/src/ /usr/local/apache2/htdocs/
+# Copy in our customised main httpd configuration file
+COPY ./webserver/conf/httpd.conf /usr/local/apache2/conf/httpd.conf
+# Expose port 80 to the container network
+EXPOSE 80
+        </code>
+
+        <p>... And the repeated sequence of commands to build the working, distributable images:</p>
+
+        <code>
+sudo docker compose build --no-cache && \
+sudo docker compose up -d --build
+
+[+] Running 4/4
+⠿ Network adebayo10kgithubio_default      Created                         0.4s
+⠿ Volume "adebayo10kgithubio_shared_vol"  Created                      0.2s
+⠿ Container data_only_hub                 Started                                        5.0s
+⠿ Container a10k_site_running             Started                                   5.7s
+        </code>
+
+        <p>Some one-off manual checks (from within project context):</p>
+
+        <code>
+sudo docker compose ps
+
+NAME                COMMAND              SERVICE             STATUS              PORTS
+a10k_site_running   "httpd-foreground"   web                 running             0.0.0.0:8072->80/tcp
+data_only_hub       "/bin/true"          data_hub            exited (0)
+        </code>
+
+        <code>
+sudo docker inspect --format='{{json .Mounts}}' a10k_site_running
+
+[{"Type":"volume","Name":"adebayo10kgithubio_shared_vol","Source":"/var/lib/docker/volumes/adebayo10kgithubio_shared_vol/_data","Destination":"/var/log/data_access_dir","Driver":"local","Mode":"z","RW":true,"Propagation":""}]
+        </code>
+
+        <code>
+sudo docker inspect --format='{{json .Mounts}}' data_only_hub
+
+[{"Type":"volume","Name":"adebayo10kgithubio_shared_vol","Source":"/var/lib/docker/volumes/adebayo10kgithubio_shared_vol/_data","Destination":"/var/log/data_access_dir","Driver":"local","Mode":"z","RW":true,"Propagation":""}]
+        </code>
+
+        <p>All checks done, now browsed to <i>http://localhost:8072</i> and navigate around site for a bit, then manually at
+          cli, ran the transient container...</p>
+        <p>NOTE: Remember, data persist in root owned /var/lib/docker/volumes. This transient access container gives us
+          secure access from container land, rather than from host.</p>
+        <p>Thought I'd try a couple of base images for this. The smaller the better I suppose:</p>
+
+        <code>
+sudo docker run --rm --volumes-from data_only_hub busybox:latest ls -lh /var/log/data_access_dir
+sudo docker run --rm --volumes-from data_only_hub ubuntu:latest tail /var/log/data_access_dir/access_log
+sudo docker exec	-it a10k_site_running /bin/bash
+</code>
+
+        <p>Finally, from within the project context, tear everything down...</p>
+
+        <code>
+sudo docker compose stop && \
+sudo docker compose down && \
+sudo docker rmi adebayo10kgithubio_web adebayo10kgithubio_data_hub 69ef484e3193 && \
+sudo docker volume prune
+
+        </code>
+
+        <h3>Lessons Learned:</h3>
+
+        <p>Really important that when I'm trying to do something, and despite hours of internet research an trying
+          different approaches, I'm not finding a way to achieve it, I should:</p>
+
+        <ol>
+          <li>If it's after 1am, go to bed.</li>
+          <li>Check my previous similar code and note exactly what's different now.</li>
+          <li>Make an AFK list of all alternative approaches to try.</li>
+        </ol>
+
+
+      </section>
+
+
 
       <div class="hero-article-container">
         <article class="hero-article" id="hero-background-cube-02">
           <div class="hero-message message-left firaSansBoldFont">
             <h2>Hero message from the &#x0053;&#x0323;&#x00E0;ng&#x00F3;Tech Network.</h2>
-            <h2>"Software Development is very nice indeed"</h2>
+            <h2>"Designing software systems is very nice."</h2>
           </div>
         </article>
       </div>
@@ -127,7 +484,6 @@
     </aside>
 
   </main>
-
   <div id="confirmDialogCont" class="dlg-container">
     <div class="dlg-header">Let's discuss this...</div>
     <div id="confirmDialogBody" class="dlg-body"></div>
