@@ -615,7 +615,9 @@ aside.sidebar p {
     width: 100%;
 }
 
-.project-summary {
+.project-summary,
+.project-report,
+.research-report {
     grid-column: 1 / 3;
     background-color: #fff;
     /* fallback for browsers without grid layout support */
