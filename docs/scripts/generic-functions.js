@@ -7,12 +7,6 @@ if (localStorage.getItem("bgColour")) {
     htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;
 }
 
-//===========================================================================================
-// HEADER // add generic header content siteLogo-wide
-const siteLogo = document.getElementById("siteLogo");
-const logoText = `AlgoDiscoDev`;
-
-siteLogo.innerHTML = `${logoText}`;
 
 //===========================================================================================
 // ASIDE // adds this list of links to the RHS aside of every page
@@ -47,6 +41,14 @@ let pathPre = depth0; // default case
 if (this.location.toString().includes("/projects/")) {
     pathPre = depth1;
 }
+
+//===========================================================================================
+// HEADER // add generic header content siteLogo-wide
+const siteLogo = document.getElementById("siteLogo");
+const logoText = `AlgoDiscoDev`;
+
+//siteLogo.innerHTML = `${logoText}`;
+siteLogo.innerHTML = `<a href="${pathPre}index.html" title="Site Homepage (Projects)" target="">${logoText}</a>`;
 
 //===========================================================================================
 // FOOTER // add generic footer content siteLogo-wide

@@ -375,21 +375,23 @@ header.page-head h1 {
     border-bottom: 4px #800000 solid;
 }
 
-.page-head a[title~="site"]:link {
+header.page-head h1#siteLogo a:link {
     text-decoration: none;
+    color: #fff;
 }
 
-.page-head a[title~="site"]:visited {
+header.page-head h1#siteLogo a:visited {
     text-decoration: none;
+    color: #fff;
 }
 
-.page-head a[title~="site"]:hover {
+header.page-head h1#siteLogo a:hover {
     text-decoration: underline;
     text-decoration-color: #fff;
 }
 
-.page-head a[title~="site"]:focus {
-    text-decoration: none;
+header.page-head h1#siteLogo a:focus {
+    color: #fff;
 }
 
 header.page-head h2 {
@@ -403,7 +405,7 @@ header.page-head h2 {
     color: #fff;
 }
 
-.page-head.pre {
+header.page-head.pre {
     display: none;
     background-image: none;
     color: #fff;
