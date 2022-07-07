@@ -269,7 +269,8 @@
                     down, then back up the <samp>localhost</samp> loopback interface) to the device that hosts the web
                     server, where an Apache daemon is always listening for such incoming requests on the one or more
                     configured ports. These port are configured using the <samp>Listen</samp> directive, for example
-                    <samp>Listen 80</samp>.</p>
+                    <samp>Listen 80</samp>.
+                </p>
 
                 <p>Next, in my setups, with name-based virtual hosting, the Hostname value in the request header is used
                     by the Apache web server to decide to which virtual host to direct the request.</p>
@@ -303,12 +304,14 @@
                     each containerised web server can only possibly serve a single site.</p>
 
                 <h4>Conclusion</h4>
-                <p>As far as I can see at the moment, the use of name-based virtual hosting that I've used to serve
+                <p>As far as I can see at the moment, the name-based virtual hosting that I've used to serve
                     multiple sites from each Apache webserver <em>cannot be migrated over to a container-based
                         development environment</em>. If so, I shouldn't waste time trying to craft images of Apache
-                    webservers with multiple virtually hosted sites baked in. Phew! Anyway, perhaps this conclusion is
-                    moot, because another key containerisation principle is that each container should provide a single
-                    service only. Ahh, I get it now.</p>
+                    webservers with multiple virtually hosted sites baked in. Phew!</p>
+
+                <p> Ok, perhaps that conclusion is
+                    moot, since another key containerisation principle is that each container should provide a single
+                    service only. Ahh... Ok. Never mind then.</p>
 
 
             </section>

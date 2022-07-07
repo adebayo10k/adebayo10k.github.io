@@ -185,6 +185,11 @@ html {
     margin: 10px 12px;
 }
 
+/*applied to the command line prompt in code samples*/
+.prompt {
+    color: #b00;
+}
+
 body {
     background-color: #ddd;
     background-color: #fff;
@@ -269,18 +274,20 @@ kbd {
     padding: 6px;
 }
 
-code {
+code.block-displayed {
     display: block;
     width: auto;
     height: auto;
-    white-space: pre-wrap;
+    white-space: pre-line;
     background: #d1dffa;
+    word-wrap: break-word;
 }
 
 pre {
     width: auto;
     height: auto;
-    white-space: pre-wrap;
+    white-space: normal;
+    white-space: pre-line;
     background: #fae6d1;
     background: #d1dffa;
 }
