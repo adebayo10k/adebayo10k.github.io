@@ -116,12 +116,10 @@
         <header>
           <h2>Objectives of this project</h2>
         </header>
-        <p>Apparently, one of the use cases that containerisation improves is that of the distribution of both work
-          products and developement environment to other developers for the purpose of collaboration. So like GitHub,
-          but without each dev having to acquire and build all the tooling and dependencies locally by hand.</p>
-        <p>In this scenario, anyone with a Docker engine, daemon, client environment installed on their host machine
-          could pull my public image distributions and spin up the containerised version of my web app dev environment
-          within seconds. </p>
+        <p>Apparently, one of the use cases that containerisation improves upon is that of developer collaboration.</p>
+        <p>In this scenario, anyone with Docker engine, client and server environment installed on their host machine
+          could either pull my public image and spin up the containerised version of my web app or build the same using
+          the build configuration files that I provide. </p>
 
         <p>The objective of this project was to implement this scenario by migrating a simple web application to a
           containerised docker environment.</p>
@@ -146,7 +144,7 @@
         <code class="block-displayed"><span class="prompt">damola@host:~$</span> sudo usermod -aG docker ${USER}</code>
 
         <p>A bit after that, I read in the <a href="https://docs.docker.com/engine/install/linux-postinstall/"
-            title="Links to a Docker documentation page" target="_blank">docker docs</a> that this
+            title="Links to a Docker documentation page" target="_blank">docker docs</a> that this approach
           had some risks, so was not recommended. I suppose that as usual, security and convenience is a
           zero-sum game. You have to pick one.</p>
 
@@ -180,7 +178,8 @@
         <p>NOTE: The <a href="https://hub.docker.com/_/httpd"
             title="Links to Apache Apache HTTP Server Project on DockerHub" target="_blank">Apache httpd server
             image</a> that I found first was one based on a RedHat Linux distribution.
-          Even though I'm more familiar with Debian based version of the webserver, I thought I'd try it anyway. I later
+          Even though I'm more familiar with the Debian based version of the webserver, I thought I'd try it anyway. I
+          later
           discovered that Canonical also publish an <a href="https://hub.docker.com/r/ubuntu/apache2"
             title="DockerHub page for Apache2 Docker Image" target="_blank">Ubuntu-based Apache2
             image</a>.</p>
@@ -225,7 +224,7 @@
         <p>I had the 'brilliant' idea that instead of copying web source files from their <samp>/var/www</samp> location
           on host web
           server into the docker project <samp>src/</samp> directory, I could save duplication and future divergence by
-          symlinking to the host web server target from the docker project context. Like this:</p>
+          symlinking to the host web server target from the docker project build context. Like this:</p>
 
         <code class="block-displayed">
           <span class="prompt">damola@host:~$</span> ln -s /var/www/adebayo10k.github.io/docs/ ~/adebayo10k.github.io/
@@ -235,11 +234,6 @@
           -rw-rw-r-- 1 damola damola 386 Jul  1 13:40 Dockerfile
           lrwxrwxrwx 1 damola damola  35 Jul  1 10:50 docs -> /var/www/adebayo10k.github.io/docs/
                 </code>
-        <!--
-
-        <p>          failed to solve: lstat /var/lib/docker/tmp/buildkit-mount2610895224/var/www/adebayo10k.github.io/docs:/var/lib/docker/tmp/buildkitmount2610895224/var/www/adebayo10k.github.io/docs: no such file or directory
-              </p> 
-            -->
 
 
         <p>Long story short... it didn't work. Docker said:</p>
@@ -253,11 +247,12 @@
 
                         </code>
 
-        <p>It seems so obvious in retrospect, but even as symlink, docker won't reach up outside of the 'context', and
+        <p>It seems so obvious in retrospect, but even as symlink, docker won't reach up outside of the project build
+          context, and
           into the hosts' web directory to <samp><kbd>COPY</kbd></samp> files! I'd have to carefully remove the symlink
           (without
           deleting my
-          actual source content), then prepare the context with a duplicate of my source content manually first.
+          actual source content), then prepare the build context with a duplicate of my source content manually first.
           Like so..</p>
 
         <code class="block-displayed">
@@ -266,15 +261,21 @@
           <span class="prompt">damola@host:~/adebayo10kgithubio$</span> mkdir src && cd src
           <span class="prompt">damola@host:~/adebayo10kgithubio/src$</span> cp -R /var/www/adebayo10k.github.io/docs/* .
           </code>
+
+        <p>NOTE: I later realised that Docker and Git can share a single project context, so that copying of source
+          files is not necessary after all.</p>
+
         <h4>Publishing the Image to the public DockerHub registry</h4>
-        <p>With the container now tested and working, I issued the following commands to retag the image and for the
+
+        <code># registrydomain[:port]/repository[:tag]</code>
+
+        <p>With the container tested and working, I issued the following commands to retag the image and for the
           DockerHub push:</p>
 
         <code class="block-displayed">
           <span class="prompt">damola@host:~$</span> sudo docker image tag adebayo10kgithubio_web:latest adebayo10k/adebayo10kgithubio_web:latest
           <span class="prompt">damola@host:~$</span> sudo docker images
-          <span class="prompt">damola@host:~$</span> sudo docker rmi adebayo10kgithubio_web:latest
-          # registrydomain[:port]/repository[:tag]
+          <span class="prompt">damola@host:~$</span> sudo docker rmi adebayo10kgithubio_web:latest          
         </code>
 
         <p>... then login to the docker CLI</p>
@@ -319,7 +320,8 @@
             Linux <samp>proc</samp> filesystem.
           </li>
           <li>Persist web server logs in a docker-managed, named, shared data volume on host.</li>
-          <li>Data-only container with a volume that mounts the docker-managed shared volume and serves as a single
+          <li>Data-only, nologin container with a volume that mounts the docker-managed shared volume and serves as a
+            single
             point for accessing the log data generated by ALL containers in the container network. Apart from the
             data-generating containers (just the web server for now), this data volume container must remain the only
             one to maintain a reference to the mounted data volume.</li>
@@ -417,8 +419,8 @@
         <p>... And the repeated sequence of commands to build the working, distributable images:</p>
 
         <code class="block-displayed">
-          <span class="prompt">damola@host:~/adebayo10kgithubio$</span> sudo docker compose build --no-cache && \
-          sudo docker compose up -d --build
+          <span class="prompt">damola@host:~/adebayo10kgithubio$</span> sudo docker compose build --no-cache
+          <span class="prompt">damola@host:~/adebayo10kgithubio$</span> sudo docker compose up -d --build
 
           [+] Running 4/4
           ⠿ Network adebayo10kgithubio_default      Created               0.4s
@@ -430,6 +432,7 @@
         <p>Some one-off manual checks:</p>
 
         <code class="block-displayed">
+          # Check which containers exist in our current project:
           <span class="prompt">damola@host:~/adebayo10kgithubio$</span> sudo docker compose ps
 
           NAME                COMMAND              SERVICE             STATUS              PORTS
@@ -437,10 +440,10 @@
           data_only_hub       "/bin/true"          data_hub            exited (0)
         </code>
 
-        
-        <code class="block-displayed unbroken-lined-code-sample" >
-          <samp>
-            <span class="prompt">damola@host:~$</span> sudo docker inspect --format='{{json .Mounts}}' a10k_site_running
+
+        <code class="block-displayed unbroken-lined-code-sample">
+          # Query a containers' configuration, filtering for mount information:
+          <samp><span class="prompt">damola@host:~$</span> sudo docker inspect --format='{{json .Mounts}}' a10k_site_running
           
              [{"Type":"volume",
           "Name":"adebayo10kgithubio_shared_vol",
@@ -453,8 +456,9 @@
           </samp>
          
         </code>
-        
+
         <code class="block-displayed unbroken-lined-code-sample">
+          # Query a containers' configuration, filtering for mount information:
           <span class="prompt">damola@host:~$</span> sudo docker inspect --format='{{json .Mounts}}' data_only_hub
 
           [{"Type":"volume",
@@ -466,29 +470,30 @@
           "RW":true,
           "Propagation":""}]
         </code>
-        
+
         <p>All checks done, now browsed to <samp><kbd>http://localhost:8072</kbd></samp> and navigate around site for a
           bit, then
           manually at
           cli, ran the transient container...</p>
-        <p>NOTE: Remember, data persist in root owned <samp>/var/lib/docker/volumes</samp>. This transient access
+        <p>Log data will persist in the root owned <samp>/var/lib/docker/volumes</samp>, but this transient
           container gives us
           secure access from container land, rather than from host.</p>
-        <p>Thought I'd try a couple of different base images for this transient container. The smaller the better I suppose:</p>
+        <p>Thought I'd try a couple of different base images for this transient container. The smaller the better I
+          suppose:</p>
 
         <code class="block-displayed">
           <span class="prompt">damola@host:~$</span> sudo docker run --rm --volumes-from data_only_hub busybox:latest ls -lh /var/log/data_access_dir
           <span class="prompt">damola@host:~$</span> sudo docker run --rm --volumes-from data_only_hub ubuntu:latest tail /var/log/data_access_dir/access_log
           <span class="prompt">damola@host:~$</span> sudo docker exec	-it a10k_site_running /bin/bash
         </code>
-          
 
-        <p>Finally, from within the project context, tear everything down...</p>
+
+        <p>Finally, from within the project build context, tear everything down...</p>
 
         <code class="block-displayed">
           <span class="prompt">damola@host:~/adebayo10kgithubio$</span> sudo docker compose stop && \
           sudo docker compose down && \
-          sudo docker rmi adebayo10kgithubio_web adebayo10kgithubio_data_hub 69ef484e3193 && \
+          sudo docker rmi adebayo10kgithubio_web adebayo10kgithubio_data_hub && \
           sudo docker volume prune
         </code>
 
@@ -497,16 +502,26 @@
         <p>When, even after hours of online research, I'm making no progress:</p>
 
         <ol>
-          <li>If it's after 1am, go to bed.</li>
+          <li> <strike>If it's after 1am, go to bed.</strike></li>
           <li>Check my previous similar code and note exactly what's different now.</li>
           <li>Make an AFK list of all alternative approaches to try.</li>
         </ol>
 
-        <p>All <a href="https://hub.docker.com/r/adebayo10k/adebayo10kgithubio_web"
-            title="Links to Dockerhub images created by adebayo10k" target="_blank">images from this project</a> are
-          publicly available on DockerHub, in the <a href="https://hub.docker.com/u/adebayo10k"
-            title="Links to DockerHub adebayo10k registry domain" target="_blank">DockerHub adebayo10k registry
-            domain</a>.</p>
+
+        <h3>Resources:</h3>
+
+
+        <p>Build configuration files are in the
+          <a href="https://github.com/adebayo10k/dev-webserver-docker-migration">dev-webserver-docker-migration GitHub
+            repository</a>
+        </p>
+
+        <p>Find pre-built images in the <a href="https://hub.docker.com/u/adebayo10k"
+            title="Links to DockerHub adebayo10k registry domain" target="_blank">adebayo10k registry
+            domain</a> on DockerHub.
+        </p>
+
+
       </section>
 
 

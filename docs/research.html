@@ -209,22 +209,19 @@
                 <p>I was starting from a point where my local development and remote production environments consisted
                     of:</p>
                 <ul>
-                    <li>Apache webservers on laptop, desktop and RPi hosts.</li>
+                    <li>Various Apache httpd webservers on laptop, desktop, RPi and EC2 instance.</li>
                     <li>Each web server with tightly coupled LAMP stack modules such as PHP interpreter and MySQL
                         Server.</li>
                     <li>Each web server configured to serve multiple project sites.</li>
-                    <li>Public cloud compute deployments that replicate that "traditional" environment, which some
-                        additional "production" configurations.</li>
                 </ul>
 
                 <p>Questions:</p>
                 <ul>
-                    <li>How much of my existing development environment would have to change if I embraced the new
-                        modular, container-based software development?</li>
+                    <li>How migration to containerisation change my development workflows?</li>
                     <li>What will my adoption path look like?</li>
-                    <li>Would I have to rewrite source code to adapt the web applications to a new development
-                        environment?</li>
-                    <li>How would my development workflows change?</li>
+                    <li>Would I have to rewrite source code to adapt the web applications to a new development and
+                        environments?</li>
+
                 </ul>
 
                 <p>My research learning process was roughly this:</p>
@@ -235,22 +232,21 @@
                     <li>Install Docker and do the practice exercises from the book.</li>
                 </ol>
 
-                <p>The following is a discussion of the main issue raised by that research learning process, regarding
+                <p>The following is a brief discussion of the main issue raised by that research learning process,
+                    regarding
                     my migration to the Docker system of containerisation.</p>
 
                 <h4>A Docker Migration Issue</h4>
-                <p>In my current development environment, each webserver has been configured with a name-based virtual
+                <p>In my current development environment, each webserver has been configured with a Name-Based virtual
                     host (vhost) for each site project. Apparently, one of the reasons the Apache webserver first became
                     so popular on the web was this ability to host serveral isolated web sites on the same physical
                     host, using the concept of virtual hosts.</p>
 
                 <p>Questions:</p>
                 <ul>
-                    <li>Can this useful virtual hosting practice be migrated to a containerised web server? Does it need
+                    <li>Can this useful Name-Based virtual hosting practice be migrated to a containerised web server?
+                        Does it need
                         to be?</li>
-                    <li>What will my adoption path look like?</li>
-                    <li>Or more specifically, how would I migrate project sites that are currently served on my local
-                        network to adapt to development and collaboration with containers?</li>
                 </ul>
 
                 <h4>A Brief Review of Local DNS Resolution and Virtual Hosting</h4>
@@ -258,8 +254,9 @@
                     browser on the same network. The same would apply even if the browser and webserver were on the same
                     physical host machine.</p>
 
-                <p>The browser must resolve the URL (which includes a hostname) that I enter locally, usually on the
-                    same host. We have a stack of dns resolution options. Closest to the user and taking precedence are
+                <p>When I enter the URL of a site hosted on my network the browser must use some local means to resolve
+                    the hostname part. There are a stack of dns resolution options. Closest to the user and taking
+                    precedence are
                     the translations defined in the <samp>/etc/hosts</samp> configuration file. If an entry here
                     resolves what's been entered into the browser into a local IP address, then the network stack of the
                     browser process has its' answer and can assign destination addresses to IP packets. Let's assume
@@ -272,46 +269,52 @@
                     <samp>Listen 80</samp>.
                 </p>
 
-                <p>Next, in my setups, with name-based virtual hosting, the Hostname value in the request header is used
+                <p>Next, in my setups, with Name-Based virtual hosting, the <code>Hostname</code> value in the request
+                    header is used
                     by the Apache web server to decide to which virtual host to direct the request.</p>
 
-                <h4>A Couple of Fundamental Principles of Containerisation</h4>
-                <p>Now contrast that process with what would happen in containerised development environment. How would
-                    my colleagues browser send requests to the containerised web server that she's just pulled from my
-                    repository and spun up in an isolated container on her local network?</p>
+                <p>Back to this in a sec.</p>
 
-                <p>My point here is not to discuss the NAT-like interfaces involved, but just to highlight the
-                    following:</p>
+                <h4>A Couple of Fundamental Principles of Containerisation</h4>
+
+                <p>In contrast to that process, but without getting into the NAT-like interfaces involved, there are two
+                    principles of containerisation prevent my hosts' <samp>/etc/hosts</samp> configuration file from
+                    participating in the process:</p>
 
                 <ul>
-                    <li>One of the fundamental principles of Containerisation is isolation of container environments
-                        from host machine environment. Only data volume mounts seem to breach this principle, however
-                        that just seems so, as the docker engine has full awareness and control over any mounted part of
-                        the host filesystem.</li>
-                    <li>'Ad-hoc reconfiguration' of the host machine for each container project is also verboten, as
+                    <li>Isolation of container environments from host machine environment.</li>
+                    <li>Independence of container environments from any particular host set up, as
                         containers should 'run anywhere', regardless of host configuration.</li>
                 </ul>
 
                 <p>Bearing these in mind, I think I have a migration/adoption issue..</p>
 
                 <h4>Migration of my Virtual Hosts into Docker Images</h4>
-                <p>If we're not able to recruit our host machines' <samp>/etc/hosts</samp> file aliases to translate
-                    hostnames into an IP address, how would an HTTP requests' Hostname header be used by a containerised
-                    Apache web server to route requests to the appropriate virtual host?</p>
 
-                <p>The port number in the request gets the packets to the correct running web server container, but what
-                    then? It currently seems to me that when requests come from anywhere outside the container network,
+                <p>Without <samp>/etc/hosts</samp> (or any other host configuration file) I'd be restricted to only
+                    enter either an IP
+                    address or the <code>localhost</code> hostname that gets preconfigured on all Linux-based systems.
+                    So using <code>localhost</code> is fine, but with IP address only, the Apache webserver won't be
+                    able to route
+                    incoming packets to the correct Name-Based Virtual Host.</p>
+
+                <p>A port number in a <code>localhost</code> request gets packets to the correct running web server
+                    container, but what
+                    then? It seems that when requests come from anywhere outside the container network,
                     each containerised web server can only possibly serve a single site.</p>
 
                 <h4>Conclusion</h4>
-                <p>As far as I can see at the moment, the name-based virtual hosting that I've used to serve
+
+                <p>As far as I can see at the moment, the Name-Based virtual hosting that I've used to serve
                     multiple sites from each Apache webserver <em>cannot be migrated over to a container-based
-                        development environment</em>. If so, I shouldn't waste time trying to craft images of Apache
-                    webservers with multiple virtually hosted sites baked in. Phew!</p>
+                        environments</em>. If so, I shouldn't waste time trying to craft images of Apache
+                    webservers configured with multiple virtually hosted sites. Phew!</p>
 
                 <p> Ok, perhaps that conclusion is
                     moot, since another key containerisation principle is that each container should provide a single
-                    service only. Ahh... Ok. Never mind then.</p>
+                    service only.</p>
+
+                <p> Ahh... Ok. Never mind then. Nice chat anyway.</p>
 
 
             </section>
