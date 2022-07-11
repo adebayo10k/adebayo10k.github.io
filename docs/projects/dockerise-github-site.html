@@ -194,7 +194,7 @@
           # Base image is Apaches' httpd server (based on Redhad (official) Linux)
           FROM httpd
           # Author: Damola Adebayo
-          LABEL maintainer="Damola Adebayo <adebayo10k@domain.org>"
+          LABEL maintainer="Damola Adebayo &lt;adebayo10k@domain.org&gt;"
           # Copy website source code into image build
           COPY ./src/ /usr/local/apache2/htdocs/
           # Expose port 80
@@ -235,6 +235,12 @@
           -rw-rw-r-- 1 damola damola 386 Jul  1 13:40 Dockerfile
           lrwxrwxrwx 1 damola damola  35 Jul  1 10:50 docs -> /var/www/adebayo10k.github.io/docs/
                 </code>
+        <!--
+
+        <p>          failed to solve: lstat /var/lib/docker/tmp/buildkit-mount2610895224/var/www/adebayo10k.github.io/docs:/var/lib/docker/tmp/buildkitmount2610895224/var/www/adebayo10k.github.io/docs: no such file or directory
+              </p> 
+            -->
+
 
         <p>Long story short... it didn't work. Docker said:</p>
 
@@ -243,8 +249,9 @@
           ------
            > [2/2] COPY ./docs/* /usr/local/apache2/htdocs/:
           ------
-          failed to solve: lstat /var/lib/docker/tmp/buildkit-mount2610895224/var/www/adebayo10k.github.io/docs: no such file or directory
-          </code>
+          failed to solve: lstat /var/lib/docker/tmp/buildkit-mount26108952 ...
+
+                        </code>
 
         <p>It seems so obvious in retrospect, but even as symlink, docker won't reach up outside of the 'context', and
           into the hosts' web directory to <samp><kbd>COPY</kbd></samp> files! I'd have to carefully remove the symlink
@@ -259,7 +266,6 @@
           <span class="prompt">damola@host:~/adebayo10kgithubio$</span> mkdir src && cd src
           <span class="prompt">damola@host:~/adebayo10kgithubio/src$</span> cp -R /var/www/adebayo10k.github.io/docs/* .
           </code>
-
         <h4>Publishing the Image to the public DockerHub registry</h4>
         <p>With the container now tested and working, I issued the following commands to retag the image and for the
           DockerHub push:</p>
@@ -290,6 +296,7 @@
             Client Error</samp>, but after
           a session of troubleshooting, worked as expected.
         </p>
+
 
 
         <h3>Build Phase 1: </h3>
@@ -372,7 +379,7 @@
           # Base image is busybox
           FROM busybox:latest
           # Author: Damola Adebayo
-          LABEL maintainer="Damola Adebayo <adebayo10k@domain.org>"
+          LABEL maintainer="Damola Adebayo &lt;adebayo10k@domain.org&gt;"
           # Create the mountpoint directory
           RUN mkdir -p /var/log/data_access_dir
           # Create a data-only volume as mountpoint 
@@ -391,7 +398,7 @@
           # Base image is Apaches' httpd server (based on Redhad (official) Linux)
           FROM httpd
           # Author: Damola Adebayo
-          LABEL maintainer="Damola Adebayo <adebayo10k@domain.org>"
+          LABEL maintainer="Damola Adebayo &lt;adebayo10k@domain.org&gt;"
           #ENV APACHE_LOG_DIR=/usr/local/apache2/logs
           ENV APACHE_LOG_DIR=/var/log/data_access_dir
           # Create the mountpoint directory that we configured \
@@ -430,18 +437,36 @@
           data_only_hub       "/bin/true"          data_hub            exited (0)
         </code>
 
-        <code class="block-displayed">
-          <span class="prompt">damola@host:~$</span> sudo docker inspect --format='{{json .Mounts}}' a10k_site_running
-
-          [{"Type":"volume","Name":"adebayo10kgithubio_shared_vol","Source":"/var/lib/docker/volumes/adebayo10kgithubio_shared_vol/_data","Destination":"/var/log/data_access_dir","Driver":"local","Mode":"z","RW":true,"Propagation":""}]
+        
+        <code class="block-displayed unbroken-lined-code-sample" >
+          <samp>
+            <span class="prompt">damola@host:~$</span> sudo docker inspect --format='{{json .Mounts}}' a10k_site_running
+          
+             [{"Type":"volume",
+          "Name":"adebayo10kgithubio_shared_vol",
+          "Source":"/var/lib/docker/volumes/..._shared_vol/_data",
+          "Destination":"/var/log/data_access_dir",
+          "Driver":"local",
+          "Mode":"z",
+          "RW":true,
+          "Propagation":""}]
+          </samp>
+         
         </code>
-
-        <code class="block-displayed">
+        
+        <code class="block-displayed unbroken-lined-code-sample">
           <span class="prompt">damola@host:~$</span> sudo docker inspect --format='{{json .Mounts}}' data_only_hub
 
-          [{"Type":"volume","Name":"adebayo10kgithubio_shared_vol","Source":"/var/lib/docker/volumes/adebayo10kgithubio_shared_vol/_data","Destination":"/var/log/data_access_dir","Driver":"local","Mode":"z","RW":true,"Propagation":""}]
+          [{"Type":"volume",
+          "Name":"adebayo10kgithubio_shared_vol",
+          "Source":"/var/lib/docker/volumes/.../_data",
+          "Destination":"/var/log/data_access_dir",
+          "Driver":"local",
+          "Mode":"z",
+          "RW":true,
+          "Propagation":""}]
         </code>
-
+        
         <p>All checks done, now browsed to <samp><kbd>http://localhost:8072</kbd></samp> and navigate around site for a
           bit, then
           manually at
@@ -456,6 +481,7 @@
           <span class="prompt">damola@host:~$</span> sudo docker run --rm --volumes-from data_only_hub ubuntu:latest tail /var/log/data_access_dir/access_log
           <span class="prompt">damola@host:~$</span> sudo docker exec	-it a10k_site_running /bin/bash
         </code>
+          
 
         <p>Finally, from within the project context, tear everything down...</p>
 
@@ -481,7 +507,6 @@
           publicly available on DockerHub, in the <a href="https://hub.docker.com/u/adebayo10k"
             title="Links to DockerHub adebayo10k registry domain" target="_blank">DockerHub adebayo10k registry
             domain</a>.</p>
-
       </section>
 
 

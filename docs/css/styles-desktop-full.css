@@ -605,13 +605,6 @@ aside.sidebar p {
     width: 30%;
 }
 
-.page-intro-para {
-    grid-column: 1 / 3;
-    /* fallback for browsers without grid layout support */
-    display: block;
-    width: 100%;
-}
-
 .site-app-card {
     grid-column: 1 / 3;
     background-color: #fff;
@@ -622,6 +615,7 @@ aside.sidebar p {
     width: 100%;
 }
 
+.page-intro-para,
 .project-summary,
 .project-report,
 .research-report {

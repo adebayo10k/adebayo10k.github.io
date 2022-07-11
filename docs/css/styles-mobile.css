@@ -153,12 +153,16 @@ header.page-head h2 {
 /* card page layout styles*/
 /* ||GRID||LAYOUT||HERO|| */
 
+/*
+main unchanged, with single column
+.page-content now with single column
+*/
 .page-content {
-    /* back to mobile screen single column 
+  /* back to mobile screen single column */
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  row-gap: 2rem;*/
-    display: block;
+  row-gap: 2rem;
+  /*display: block;*/
 }
 
 .site-app-card,
@@ -167,6 +171,30 @@ aside.sidebar,
 .skills-update,
 .multimedia-card {
     margin: 4rem 0rem;
+}
+
+.page-intro-para,
+.site-app-card,
+.project-card,
+aside.sidebar,
+.skills-update,
+.multimedia-card,
+.project-summary,
+.project-report,
+.research-report,
+.hero-article-container {
+    grid-column: 1 / 2;
+    background-color: #fff;
+    margin: 4rem 0rem;
+    /* fallback for browsers without grid layout support */
+    display: block;
+    width: 100%;
+}
+
+/* workaround until we solve the problem of long unbroken
+line of text overflow affecting layout on mobile screen*/
+code.unbroken-lined-code-sample {
+    display: none;
 }
 
 /*-------------------------------------------------------------*/
