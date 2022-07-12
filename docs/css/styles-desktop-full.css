@@ -190,6 +190,8 @@ html {
     color: #b00;
 }
 
+
+
 body {
     background-color: #ddd;
     background-color: #fff;
@@ -279,6 +281,15 @@ code.block-displayed {
     width: auto;
     height: auto;
     white-space: pre-line;
+    background: #d1dffa;
+    word-wrap: break-word;
+}
+
+code.block-displayed-prewrap {
+    display: block;
+    width: auto;
+    height: auto;
+    white-space: pre-wrap;
     background: #d1dffa;
     word-wrap: break-word;
 }
