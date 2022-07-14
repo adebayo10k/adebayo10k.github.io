@@ -190,8 +190,6 @@ html {
     color: #b00;
 }
 
-
-
 body {
     background-color: #ddd;
     background-color: #fff;
@@ -280,15 +278,18 @@ code.block-displayed {
     display: block;
     width: auto;
     height: auto;
+    /* render with collapsed source code leading whitespace*/
     white-space: pre-line;
     background: #d1dffa;
     word-wrap: break-word;
 }
 
+
 code.block-displayed-prewrap {
     display: block;
     width: auto;
     height: auto;
+    /* preserve code indentation where it really matters*/
     white-space: pre-wrap;
     background: #d1dffa;
     word-wrap: break-word;
