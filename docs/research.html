@@ -228,7 +228,8 @@
                 <p>My research learning process was roughly this:</p>
                 <ol>
                     <li>Read a book.</li>
-                    <li>Browse through some online <a href="https://docs.docker.com/" title="links to docker docs" target="_blank">docker
+                    <li>Browse through some online <a href="https://docs.docker.com/" title="links to docker docs"
+                            target="_blank">docker
                             docs</a> documentation.</li>
                     <li>Watch some online videos.</li>
                     <li>Install Docker and do the practice exercises from the book.</li>
@@ -253,11 +254,11 @@
 
                 <h4>A Brief Review of my local DNS Resolution and Virtual Hosting</h4>
                 <p>I'll now briefly review how a development website hosted on my local network is accessed from any
-                    browser on the same network. The same would apply a browser and webserver on the same
+                    browser on the same network. The same would apply to a browser and webserver on the same
                     physical host machine.</p>
 
-                <p>When I enter the URL of a site hosted on my local network the browser must use some local means to
-                    resolve
+                <p>When I enter the URL of a site hosted on my local network into the browsers' address bar, there
+                    must be use some local DNS resolution of
                     the hostname part. There are a stack of dns resolution options. Closest to the user and taking
                     precedence are
                     the translations defined in the <samp>/etc/hosts</samp> configuration file. If an entry here
@@ -293,11 +294,11 @@
                     <li>Independence of container environments from any particular host set up, as
                         containers should 'run anywhere', regardless of host configuration.</li>
                 </ul>
-                
+
 
                 <h4>Migration of my Virtual Hosts Configuration into Docker Images</h4>
 
-                <p>With those principles in mind, I do I have a Docker containerisation migration/adoption issue?</p>
+                <p>With those principles in mind, might I have a Docker containerisation migration/adoption issue?</p>
 
                 <p>Without <samp>/etc/hosts</samp> (or any other host configuration file) I'd be restricted to only
                     entering either an IP
@@ -306,7 +307,8 @@
                     able to route
                     incoming packets to their correct Name-Based Virtual Host destinations.</p>
 
-                <p>Note also, that a port number specified in a <code>localhost</code> request gets packets to the correct running webserver
+                <p>Note also, that a port number specified in a <code>localhost</code> request gets packets to the
+                    correct running webserver
                     container, but what
                     then? It seems that when requests come from anywhere outside the container network,
                     each containerised webserver can only possibly serve a single site.</p>

@@ -153,7 +153,7 @@
                 </p>
 
                 <pre>
-                    <samp><kbd>Ctrl + Shift + u + u00e9</kbd></samp> <samp># outputs: é</samp>
+                    <samp><kbd>Ctrl + Shift + u + 00e9</kbd></samp> <samp># outputs: é</samp>
                 </pre>
 
                 <pre>
@@ -165,8 +165,12 @@
                     Developers need to be aware of which unicode hex formats are understood by the various interpreters
                     that make up their web applications. For the Yoruba language character set, developers then need to
                     use reliable pipelines to encode,
-                    decode, input, output, store and transmit data between these different interpreters.
-                </p>
+                    decode, compress, encrypt, input, output, store and transmit data between these different
+                    interpreters.</p>
+                <p>To be transmitted safely across the Internet, data needs to be encoded using schemes
+                    like base64 or Unicode, then decoded by your application.</p>
+
+
 
                 <p>
                     Some of the default escape sequence formats I found were:
@@ -188,7 +192,9 @@
                     rendered incorrectly by these fonts.
                 </p>
 
-                <p>As explained in the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp" title="Links to Mozzilla docs for samp element" target="_blank">Mozzilla docs</a>, some HTML5 elements like <samp><kbd>&lt;samp&gt;</kbd></samp> are
+                <p>As explained in the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp"
+                        title="Links to Mozzilla docs for samp element" target="_blank">Mozzilla docs</a>, some HTML5
+                    elements like <samp><kbd>&lt;samp&gt;</kbd></samp> are
                     typically rendered using the browser's default monospaced font.</p>
 
                 <p>
