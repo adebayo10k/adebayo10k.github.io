@@ -264,8 +264,10 @@
                     the translations defined in the <samp>/etc/hosts</samp> configuration file. If an entry here
                     resolves what's been entered into the browser into a local IP address, then the network stack of
                     that
-                    browser process has its' answer and can assign destination addresses to IP packets. Let's assume
-                    that was successful.</p>
+                    browser process has its' answer and can assign destination addresses to IP packets. The HTTP
+                    <samp>Host:</samp> header can also now be assigned that hostname value we entered. Let's assume
+                    that was successful.
+                </p>
 
                 <p>Next, smoothing over the fine details, a request for the web page gets sent over the network (or
                     down, then back up the <samp>localhost</samp> loopback interface) to the device that hosts the
@@ -274,9 +276,8 @@
                     <samp>Listen 80</samp>.
                 </p>
 
-                <p>Next, in my setups, with Name-Based virtual hosting, the <code>Hostname</code> value that came from
-                    the URL I gave my browser, has been assign in the request
-                    header. That value is used
+                <p>Next, in my setups, with Name-Based virtual hosting, the hostname value assigned to the
+                    <samp>Host:</samp> header is used
                     by the Apache webserver to decide to which virtual host to direct the request.</p>
 
                 <p>Without getting into the NAT-like interfaces involved, let's contrast that process with one in which
@@ -302,8 +303,9 @@
 
                 <p>Without <samp>/etc/hosts</samp> (or any other host configuration file) I'd be restricted to only
                     entering either an IP
-                    address or the <code>localhost</code> hostname that gets preconfigured on all Linux-based systems.
-                    So using <code>localhost</code> is fine, but with IP address only, my Apache webservers won't be
+                    address or the <code>localhost</code> value that gets preconfigured on all
+                    Linux-based systems.
+                    So using <code>localhost</code> would be fine, but with IP address only, my Apache webservers won't be
                     able to route
                     incoming packets to their correct Name-Based Virtual Host destinations.</p>
 
