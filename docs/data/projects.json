@@ -1,5 +1,28 @@
 [
     {
+        "title": "Expressvpn CLI Client Package Upgrader",
+        "devUsername": "adebayo10k",
+        "devGitHubURL": "https://github.com/adebayo10k/",
+        "shortDescription": "BASH shell program to automate the process of updating expressvpn VPN client packages from the command line.",
+        "gitHubRepoURL": "https://github.com/adebayo10k/expressvpn-version-upgrader",
+        "sitePageURL": "./projects/expressvpn-upgrader.html",
+        "remoteImageURL": "./media/images/project-card-images/net-router-cables.jpg",
+        "localImageURL": "",
+        "cardImageAlt": "An IP router with multiple LAN ports",
+        "cardImageIntrWidth": "1500",
+        "platforms": [
+            "Ubuntu Linux"
+        ],
+        "programmingLanguages": [
+            "BASH"
+        ],
+        "contexts": [
+            "Developer"
+        ],
+        "currentStatus": "In-Service",
+        "visibility": "public"
+    },
+    {
         "title": "Vocabulary tests for English speaking Yoruba language learners",
         "devUsername": "adebayo10k",
         "devGitHubURL": "https://github.com/adebayo10k/",
@@ -57,7 +80,8 @@
         "cardImageAlt": "A powered up Raspberry Pi computer",
         "cardImageIntrWidth": "1500",
         "platforms": [
-            "Linux", "Docker"
+            "Linux",
+            "Docker"
         ],
         "programmingLanguages": [
             "BASH"
@@ -66,29 +90,6 @@
             "Developer"
         ],
         "currentStatus": "published",
-        "visibility": "public"
-    },
-    {
-        "title": "audit list maker",
-        "devUsername": "adebayo10k",
-        "devGitHubURL": "https://github.com/adebayo10k/",
-        "shortDescription": "Automates the writing of directory contents to files, but in configurable ways, such as excluding or encrypting.",
-        "gitHubRepoURL": "https://github.com/adebayo10k/audit-list-maker",
-        "sitePageURL": "./projects/audit-list.html",
-        "remoteImageURL": "./media/images/project-card-images/laptop-order-00-1500.jpg",
-        "localImageURL": "",
-        "cardImageAlt": "A dell laptop personalised with various github stickers",
-        "cardImageIntrWidth": "1500",
-        "platforms": [
-            "Linux Shell"
-        ],
-        "programmingLanguages": [
-            "BASH"
-        ],
-        "contexts": [
-            "System Admin"
-        ],
-        "currentStatus": "In-Service",
         "visibility": "public"
     },
     {
