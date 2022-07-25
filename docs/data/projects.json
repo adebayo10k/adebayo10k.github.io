@@ -46,11 +46,11 @@
         "visibility": "public"
     },
     {
-        "title": "convert formats of a set of av files using ffmpeg",
+        "title": "Multi AV file converter using ffmpeg",
         "devUsername": "adebayo10k",
         "devGitHubURL": "https://github.com/adebayo10k/",
-        "shortDescription": "makes multiple calls to the ffmpeg encoding format conversion program to convert a set of audio or video files.",
-        "gitHubRepoURL": "https://github.com/adebayo10k/file_management_shell_scripts",
+        "shortDescription": "Makes multiple calls to the ffmpeg encoding format conversion program to convert a set of audio or video files.",
+        "gitHubRepoURL": "",
         "sitePageURL": "./projects/ffmpeg-multi.html",
         "remoteImageURL": "./media/images/project-card-images/audio-levels-00-1500.jpg",
         "localImageURL": "",
@@ -65,7 +65,7 @@
         "contexts": [
             "Developer"
         ],
-        "currentStatus": "Minimal Function",
+        "currentStatus": "MVP",
         "visibility": "public"
     },
     {
@@ -93,12 +93,12 @@
         "visibility": "public"
     },
     {
-        "title": "encryption services",
+        "title": "GnuPG (gpg) Encryption Using JSON Profiles",
         "devUsername": "adebayo10k",
         "devGitHubURL": "https://github.com/adebayo10k/",
-        "shortDescription": "A wrapper for gpg, enabling configuration and automation of public-key encryption services provided to other programs.",
-        "gitHubRepoURL": "https://github.com/adebayo10k/encryption_services",
-        "sitePageURL": "./projects/encrypt-services.html",
+        "shortDescription": "bash shell scripts that enable us to use JSON structured profiles to create our gpg file encryption commands.",
+        "gitHubRepoURL": "https://github.com/adebayo10k/gpg-encryption-using-json-profiles",
+        "sitePageURL": "./projects/gpg-encrypt.html",
         "remoteImageURL": "./media/images/project-card-images/security-00-1500.jpg",
         "localImageURL": "",
         "cardImageAlt": "A powered up Raspberry Pi computer",
@@ -113,7 +113,7 @@
             "System Admin",
             "Security"
         ],
-        "currentStatus": "Minimal Function",
+        "currentStatus": "MVP",
         "visibility": "public"
     },
     {
