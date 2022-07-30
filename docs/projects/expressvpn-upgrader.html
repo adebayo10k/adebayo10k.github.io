@@ -105,8 +105,9 @@
 
                 <p>This program has so far been tested only on 64-bit Ubuntu (20.04) Linux and with its' default,
                     built-in BASH interpreter.</p>
-                
-                <p>This program is only meant for hobby and testing environments, as it depends on things that expressvpn may change at any time.</p>
+
+                <p>This program is only meant for hobby and testing environments, as it depends on things that
+                    expressvpn may change at any time.</p>
 
 
 
@@ -129,46 +130,53 @@
                 <header>
                     <h2>Technical Documentation</h2>
                 </header>
-                <p>The <a href="https://github.com/adebayo10k/expressvpn-version-upgrader/blob/main/README.md" title="Go to the project README page on GitHub site" target="_blank">Technical Documentation for the expressvpn version upgrader program</a> is basically the README file within the project repository, on GitHub.</p>
-                
+                <p>The <a href="https://github.com/adebayo10k/expressvpn-version-upgrader/blob/main/README.md"
+                        title="Go to the project README page on GitHub site" target="_blank">Technical Documentation for
+                        the expressvpn version upgrader program</a> is basically the README file within the project
+                    repository, on GitHub.</p>
+
 
                 <header>
                     <h2>Further Work</h2>
                 </header>
-                <p>Here, I'll list some of what would need to happen if this program were to be useful to say, 3 people other than just myself. In no particular order:</p>
+                <p>Here, I'll list some of what would need to happen if this program were to be useful to say, 3 people
+                    other than just myself.</p>
+                <p>In no particular order:</p>
 
                 <ol>
                     <li>
-                        <p>Integrate a Test Driven Development process. Implementation of either BachUnit or ShUnit and a better understanding of BATS Unit Testing.</p>
+                        <p>Integrate a Test Driven Development process. Implementation of either BachUnit or ShUnit and
+                            a better understanding of BATS Unit Testing.</p>
                     </li>
                     <li>
-                        <p>Extend to other Linux platforms, and assume <em>server</em>, rather than <em>desktop</em>. Along with this would come the need for reliable detection of the Linux Platform context.</p>
+                        <p>Extend to the Raspberry Pi Linux platform, and assume <em>server</em>, rather than
+                            <em>desktop</em>.
+                            Perhaps spin up containers of other Linux platforms, for even more development practice.
+                        </p>
                     </li>
                     <li>
-                        <p>Improved use of the controls provided by the expressvpn CLI client.</p>
+                        <p>Improved use of the built-in Linux <code>nmcli</code> network management utility.</p>
                     </li>
                     <li>
-                        <p>Improved use of the built-in Linux network management utilities, like <code>nmcli</code>.</p>
+                        <p> <strike>Improved gpg verification of package file, but still fall back on
+                                visual verification of hashes. Also, improved handling of detached signature
+                                file.</strike>
+                        </p>
                     </li>
                     <li>
-                        <p>Improved automatic verification of package file, in order not to fall back on user visual verification of hashes. Also, improved handling of detached signatures.</p>
+                        <p>Containerise it. Build this utility into a Linux Docker image, along with the expressvpn
+                            client. I noticed <a href="https://github.com/Misioslav/expressvpn"
+                                title="Misioslav expressvpn project" target="_blank">another project</a> that has
+                            already taken that one up.</p>
                     </li>
-                    <li>
-                        <p>Decision whether checking for multiple coexisting package files of different versions is still even necessary.</p>
-                    </li>
-                    <li>
-                        <p>Containerise it. Build this utility into a Linux Docker image, along with the expressvpn client. I noticed <a href="https://github.com/Misioslav/expressvpn" title="Misioslav expressvpn project" target="_blank">another project</a> that has already taken that one up.</p>
-                    </li>
-                    
+
                 </ol>
 
-                <p>All that said, I suppose the party might end (or at least have to move on) if and when expressvpn begin delivering package updates via ppa, which I imagine we'll all be pretty happy about too.
+                <p>All that said, it's worth noting and stating that although this project began a few lines of script
+                    to automate my package installation process, it's now looking almost like an utility package.
+                    However, I
+                    still won't rely on it in any kind of production environment.
                 </p>
-
-                <p>Also, I'm currently working on an expressvpn-ip-egress-rotator project.</p>
-
-
-
 
 
             </section>
