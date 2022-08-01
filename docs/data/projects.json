@@ -29,7 +29,7 @@
         "shortDescription": "A fun, challenging PHP web application to help English speaking, Yoruba language learners test the level of their vocabulary knowledge and skill.",
         "gitHubRepoURL": "http://yorubasystems.com",
         "sitePageURL": "./projects/yoruba-vocab-test.html",
-        "remoteImageURL": "./media/images/project-card-images/code-editor-00-1500.jpg",
+        "remoteImageURL": "./media/images/project-card-images/quiz-white-stamp-on-green-1500.jpg",
         "localImageURL": "",
         "cardImageAlt": "A code editor with php and javascipt columns on screen",
         "cardImageIntrWidth": "1500",
@@ -185,31 +185,6 @@
         ],
         "contexts": [
             "Social Coding",
-            "Mentoring",
-            "Developer"
-        ],
-        "currentStatus": "Pending",
-        "visibility": "public"
-    },
-    {
-        "title": "Solving the Rubiks Cube (in Yoruba)",
-        "devUsername": "algoDiscoDev",
-        "devGitHubURL": "https://github.com/adebayo10k/",
-        "shortDescription": "Resilience, patience, determination... then Glory! Algorithms in Yoruba, iwaju pada, osi siwaju... Get the idea?",
-        "gitHubRepoURL": "https://github.com/adebayo10k/CoderDojo_Projects",
-        "sitePageURL": "./projects/rubiks-yoruba.html",
-        "remoteImageURL": "./media/images/project-card-images/rubiks-cube-04-1500.jpg",
-        "localImageURL": "",
-        "cardImageAlt": "A solved Rubik's cube on wooden floor next to a whiteboard",
-        "cardImageIntrWidth": "1500",
-        "platforms": [
-            "Web Browser"
-        ],
-        "programmingLanguages": [
-            "JavaScript"
-        ],
-        "contexts": [
-            "Yoruba",
             "Mentoring",
             "Developer"
         ],
