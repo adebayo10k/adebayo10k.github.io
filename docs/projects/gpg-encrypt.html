@@ -2,145 +2,208 @@
 <html class="configurable-background" lang="en">
 
 <head>
-  <!-- Basic Page Needs
+    <!-- Basic Page Needs
   ================================================== -->
-  <meta charset="utf-8">
-  <meta name="author" content="damola">
-  <title>GnuPG (gpg) Encryption Using JSON Profiles | Projects | Software Development Life</title>
-  <meta name="description" content="Software Development Projects">
+    <meta charset="utf-8">
+    <meta name="author" content="damola">
+    <title>GnuPG (gpg) Encryption Using JSON Profiles | Projects | Software Development Life</title>
+    <meta name="description" content="Software Development Projects">
 
-  <!-- Mobile Specific Metas
+    <!-- Mobile Specific Metas
   ================================================== -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- CSS
+    <!-- CSS
   ================================================== -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles-desktop-full.css" media="screen">
-  <link rel="stylesheet" href="../css/styles-desktop-minimised.css" media="screen and (max-width: 800px)">
-  <link rel="stylesheet" href="../css/styles-mobile.css" media="screen and (max-width: 400px)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles-desktop-full.css" media="screen">
+    <link rel="stylesheet" href="../css/styles-desktop-minimised.css" media="screen and (max-width: 800px)">
+    <link rel="stylesheet" href="../css/styles-mobile.css" media="screen and (max-width: 400px)">
 
-  <!-- Favicons
+    <!-- Favicons
 	================================================= -->
-  <link rel="icon" href="../media/images/favicon1.ico" type="image/x-icon">
+    <link rel="icon" href="../media/images/favicon1.ico" type="image/x-icon">
 
-  <!-- Scripts
+    <!-- Scripts
 	================================================= -->
-  <script src="../scripts/generic-functions.js" defer></script>
-  <script src="../scripts/page-specific/projects-loader.js" defer></script>
-  <script src="../scripts/dialogs.js" defer></script>
+    <script src="../scripts/generic-functions.js" defer></script>
+    <script src="../scripts/page-specific/projects-loader.js" defer></script>
+    <script src="../scripts/dialogs.js" defer></script>
 
 </head>
 
 <body>
 
-  <!-- Primary Page Layout
+    <!-- Primary Page Layout
   ================================================== -->
 
-  <noscript>
-    <h4>JavaScript is off. Please enable to view full site.</h4>
-  </noscript>
-  <div id="freezeLayer" class="freeze-layer" style="display: none;"></div>
-  <header class="page-head pre">
-    <h2></h2>
-  </header>
-  <header class="page-head">
-    <h1 class="toggled-heading" id="siteLogo">
-      <a href="index.html" title="Site Homepage (Projects)" target="">AlgoDiscoDev Software Development</a>
-    </h1>
-    <h2 class="toggled-heading" id="pageLogo">Projects</h2>
+    <noscript>
+        <h4>JavaScript is off. Please enable to view full site.</h4>
+    </noscript>
+    <div id="freezeLayer" class="freeze-layer" style="display: none;"></div>
+    <header class="page-head pre">
+        <h2></h2>
+    </header>
+    <header class="page-head">
+        <h1 class="toggled-heading" id="siteLogo">
+            <a href="index.html" title="Site Homepage (Projects)" target="">AlgoDiscoDev Software Development</a>
+        </h1>
+        <h2 class="toggled-heading" id="pageLogo">Projects</h2>
 
-    <nav class="header-nav" id="headerNav">
-      <div class="nav-icon-container" title="Show|Hide navigation menu">
-        <div id="nav-icon-hitzone"><i class="fa fa-bars fa-lg" id="burger" aria-hidden="true"></i></div>
-      </div>
-      <!-- REMEMBER: This page is actually being built by Javascript -->
-      <ul class="nav-grid open-grid" id="nav-links">
-        <li>
-          <a href="../index.html" title="projects page">Projects</a>
-        </li>
-        <li>
-          <a href="../skills.html" title="skills page">Skills</a>
-        </li>
-        <li>
-          <a href="../cloud.html" title="cloud research">Cloud</a>
-        </li>
-        <li>
-          <a href="../multimedia.html" title="multimedia page">Multimedia</a>
-        </li>
-        <li>
-          <a href="../yoruba-web.html" title="yoruba language on the web">Yorùbá Web</a>
-        </li>
-        <li>
-          <a href="../research.html" title="research">Research</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+        <nav class="header-nav" id="headerNav">
+            <div class="nav-icon-container" title="Show|Hide navigation menu">
+                <div id="nav-icon-hitzone"><i class="fa fa-bars fa-lg" id="burger" aria-hidden="true"></i></div>
+            </div>
+            <!-- REMEMBER: This page is actually being built by Javascript -->
+            <ul class="nav-grid open-grid" id="nav-links">
+                <li>
+                    <a href="../index.html" title="projects page">Projects</a>
+                </li>
+                <li>
+                    <a href="../skills.html" title="skills page">Skills</a>
+                </li>
+                <li>
+                    <a href="../cloud.html" title="cloud research">Cloud</a>
+                </li>
+                <li>
+                    <a href="../multimedia.html" title="multimedia page">Multimedia</a>
+                </li>
+                <li>
+                    <a href="../yoruba-web.html" title="yoruba language on the web">Yorùbá Web</a>
+                </li>
+                <li>
+                    <a href="../research.html" title="research">Research</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
+    <main>
 
-    <section class="page-content">
+        <section class="page-content">
 
-      <section class="page-intro-para">
-        <header>
-          <!--This header text must match EXACTLY with a title in projects.json -->
-          <!--Changes must be mutually inclusive -->
-          <!--These project pages are being created manually for now-->
-          <h3>GnuPG (gpg) Encryption Using JSON Profiles</h3>
-        </header>
+            <section class="page-intro-para">
+                <header>
+                    <!--This header text must match EXACTLY with a title in projects.json -->
+                    <!--Changes must be mutually inclusive -->
+                    <!--These project pages are being created manually for now-->
+                    <h3>GnuPG (gpg) Encryption Using JSON Profiles</h3>
+                </header>
 
-        <a href="../index.html" title="Return to the Projects page">
-          <span class="hugeFont firaSansMedFont">&lt; pada</span>
-        </a>
 
-      </section>
+                <blockquote>Information Privacy and Security == Freedom of Expression, Freedom of Communication and
+                    ultimately, Freedom of Thought. </blockquote>
 
-      <div class="hero-article-container">
-        <article class="hero-article" id="hero-background-cube-01">
-          <div class="hero-message message-right firaSansRegFont">
-            <h2>Hero message from the &#x0053;&#x0323;&#x00E0;ng&#x00F3;Tech Network.</h2>
-            <h2>"Cloud, Cloud, Cloud."</h2>
-          </div>
-        </article>
-      </div>
+                <p>A bit philosophical, but it's assumed that you're sort of in agreement, otherwise you might be
+                    wondering, what the point of this project.</p>
 
-      <div class="hero-article-container">
-        <article class="hero-article" id="hero-background-cube-02">
-          <div class="hero-message message-left firaSansBoldFont">
-            <h2>Google Cloud</h2>
-            <h2>"Software Development is very nice indeed"</h2>
-          </div>
-        </article>
-      </div>
 
-    </section>
 
-    <!-- Right Sidebar
+
+
+
+
+                <a href="../index.html" title="Return to the Projects page">
+                    <span class="hugeFont firaSansMedFont">&lt; pada</span>
+                </a>
+
+            </section>
+            <!--end  page-intro-para-->
+
+
+            <div class="hero-article-container">
+                <article class="hero-article" id="hero-background-cube-01">
+                    <div class="hero-message message-right firaSansRegFont">
+                        <h2>"Cloud, Cloud, Cloud."</h2>
+                    </div>
+                </article>
+            </div>
+
+
+
+            <section class="project-summary">
+                <header>
+                    <h2>Project Summary</h2>
+                </header>
+                <p>I wrote a GnuPG encryption command generator. Is that good?</p>
+                <p>This program is effectively a source code generator. It uses a template, along with user provided parameters, to generate what in this
+                    instance, is the code to be issued as a gpg command.</p>
+                <p>The funny thing is, before I began writing this report to try to describe what I'd done, I wasn't
+                    really aware that such things existed.</p>
+
+            </section>
+            <!--end  project-summary-->
+
+            <section class="project-report">
+                <header>
+                    <h2>Background</h2>
+                </header>
+                <p>This report does not describe a solution looking for a problem.</p>
+
+                <header>
+                    <h2>The Problem</h2>
+                </header>
+                <p>I once heared it said that if you're not managing the encryption keys for your data, it's not your
+                    data.</p>
+                <p>But organising, managing and using encryption keys properly can get complicated. </p>
+
+                <header>
+                    <h2>The Challenge</h2>
+                </header>
+
+                <header>
+                    <h2>The Solution</h2>
+                </header>
+
+
+
+
+
+            </section>
+            <!--end  project-report-->
+
+
+
+
+
+
+            <div class="hero-article-container">
+                <article class="hero-article" id="hero-background-cube-02">
+                    <div class="hero-message message-left firaSansBoldFont">
+                        <h2>Google Cloud</h2>
+                        <h2>"Software Development is very nice indeed"</h2>
+                    </div>
+                </article>
+            </div>
+
+        </section>
+        <!--end  page-content-->
+
+        <!-- Right Sidebar
 ================================================== -->
-    <aside class="sidebar">
-      <p>Platforms</p>
-      <p>Topics</p>
-      <p>Use Our Code</p>
-      <p>Contact Us</p>
-    </aside>
+        <aside class="sidebar">
+            <p>Platforms</p>
+            <p>Topics</p>
+            <p>Use Our Code</p>
+            <p>Contact Us</p>
+        </aside>
 
-  </main>
+    </main>
 
-  <div id="confirmDialogCont" class="dlg-container">
-    <div class="dlg-header">Let's discuss this...</div>
-    <div id="confirmDialogBody" class="dlg-body"></div>
-    <div class="dlg-footer">
-      <a id="confirmDlgCancelBtn">Cancel</a>
-      <a id="confirmDlgOkBtn">OK</a>
+    <div id="confirmDialogCont" class="dlg-container">
+        <div class="dlg-header">Let's discuss this...</div>
+        <div id="confirmDialogBody" class="dlg-body"></div>
+        <div class="dlg-footer">
+            <a id="confirmDlgCancelBtn">Cancel</a>
+            <a id="confirmDlgOkBtn">OK</a>
+        </div>
     </div>
-  </div>
 
 
-  <!-- Footer
+    <!-- Footer
 ================================================= -->
-  <footer></footer>
+    <footer></footer>
 
 </body>
 
