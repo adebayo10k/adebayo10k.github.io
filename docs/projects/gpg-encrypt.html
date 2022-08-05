@@ -127,33 +127,40 @@
                     <h2>Project Summary</h2>
                 </header>
                 <p>I wrote a GnuPG encryption command generator. Is that good?</p>
-                <p>This program is effectively a <em>source code generator</em>. It uses a template, along with user provided
+                <p>This program is effectively a <em>source code generator</em>. It uses a template, along with user
+                    provided
                     parameters, to generate what in this
                     instance, is the code to be issued as a gpg command.</p>
-                <p>The funny thing is, before I began writing this report to try to describe what I'd done, my knowledge
+                <p>The funny thing is, until I had to start writing this report to try to describe what I'd done, I had
+                    no clue that I'd written what could be called a source code generator. All I knew was that it solved
+                    my problem. My knowledge
                     of source code generators was almost zero.</p>
-                <p>To be honest, when I realised what I'd done, I initially felt a bit disgusted.</p>
+                <p>Actually, when I realised <em>that's</em> what I'd done, I initially felt a bit disgusted...</p>
 
                 <h3>A bit of Research to Classify this Project</h3>
 
                 <p>My only awareness of source code generation was of no-code, low-code, no-idea-how-this-code-works
-                    code, typical of the most instant-results-offering website builders. I'd heared that they can be built
-                    easily and quickly, but attempts to migrate or make changes by hand could break them.</p>
+                    code, typical of the most instant-results-offering website builders. I'd heared that they can be
+                    built
+                    easily and quickly, but attempts to migrate or make changes by hand usually break them.</p>
 
-                <p>I was soon reminded that web application frameworks like Laravel, Ruby on Rails and CodeIgniter are
+                <p>Then I was reminded that web application frameworks like Laravel, Ruby on Rails and CodeIgniter are
                     all template-based, to speed up application development. A bit more research also revealed that
-                    there was once even a project, called [# <a href="" title=""
-                        target="https://argbash.io/">argbash</a> #] - a command-line argument parser for shell scripts.
+                    there was once even a project, called [# <a href="https://argbash.io/"
+                        title="links to the argbash project webpage" target="_blank">argbash</a> #] - a command-line
+                    argument parser for shell scripts.
                 </p>
 
-                <p>The less opinionated the code generator, the more bloated it has to be. Every possible meaning of
-                    that <em>single click</em> by the user has to be branched out.</p>
+                <p>The less opinionated the code generator, the more bloated it has to be. Every possible output of
+                    that <em>single click</em> page maker has to be branched out.</p>
 
-                <p>Ok, if the product of this project <em>is</em> a source code generator, at least its' scope is <em>highly specific</em>.</p>
+                <p>Ok then, if the product of this project <em>is</em> a source code generator, at least its' scope is
+                    <em>highly specific</em>.
+                </p>
 
                 <ul>
                     <li>
-                        It generates a <em>single line</em>  of code.
+                        It only generates a <em>single line</em> of code.
                     </li>
                     <li>
                         It is (so far) <em>highly opinionated</em>, for example, insisting on the best-practice,
@@ -161,7 +168,7 @@
                     </li>
                 </ul>
 
-                <p>Anyway, back to the actual problem I wanted to solve...</p>
+                <p>Anyway, on to the actual problem I wanted to solve...</p>
 
 
             </section>
@@ -199,18 +206,19 @@
                 </p>
                 <p>But organising, managing and using encryption keys properly can get complicated. </p>
 
-                <p>Your need for a solution would assume that:</p>
+                <h3>Use Case</h3>
                 <ol>
-                    <li>You use the Linux command line.</li>                    
+                    <li>You use the Linux command line.</li>
                     <li>You're aware that although encrypted using TLS between you and your email provider, while your
                         email content and attachments are stored for some time (or perhaps indefinitely) on each of
                         the mail servers on their subsequent journey across the world, ...</li>
-                        <li>You sometimes use the GnuPG (gpg) utility to public key encrypt sensitive stuff like passwords,
-                            keys, PII (Personal Identifying Information) and images before emailing to known people/groups.</li>
+                    <li>You sometimes use the GnuPG (gpg) utility to public key encrypt sensitive stuff like passwords,
+                        keys, PII (Personal Identifying Information) and images before emailing to known people/groups.
+                    </li>
                     <li>You do that sort of thing with many different people/groups.</li>
                     <li>You use a different keypair for each person/group.</li>
                     <li>You're able to organise email address and agreed encryption formats for those recipients in a
-                        JSON format document, for future reference.</li>
+                        JSON formatted reference document.</li>
                     <li>You need a tool that will create encryption commands for you, based on that structured JSON
                         data.</li>
                     <li>You're basically <em>me</em>.</li>
@@ -227,7 +235,8 @@
                     </header>
 
                     <p>I wanted to write a tool that abstacted away the detail of issuing a gpg command to encypt.</p>
-                    <p>I wanted the challenge of writing a basic tool that could configure and execute a bespoke command, based on a
+                    <p>I wanted the challenge of writing a basic tool that could configure and execute a bespoke
+                        command, based on a
                         variety of parameters:</p>
                     <ol>
                         <li>Public or Symmetric key encryption.</li>
@@ -247,16 +256,163 @@
                     </header>
 
                     <h3>Technical and User Documentation</h3>
-                    <p>The README document over on Github serves as both technical and user documentation for this project.</p>
+                    <p>The <a href="https://github.com/adebayo10k/gpg-encryption-using-json-profiles"
+                            title="link to GitHub gpg-encryption-using-json-profiles project repo"
+                            target="_blank">README document</a> over on Github
+                        serves as both technical and user documentation for this
+                        project.</p>
 
 
+                    <h3>Encryption Profiles</h3>
+
+                    <p></p>
 
 
+                    <code class="block-displayed-prewrap">
+    {
+        "profileID": "1",
+        "profileName": "local message encryption",
+        "profileDescription": "profile to public key encrypt local files",
+        "encryptionSystem": "public_key",
+        "outputFileFormat": "ascii",
+        "senderUID": "damola@host0.org",
+        "recipientUIDList": [
+            "'damola@host0.org'",
+            "'damola@host1.org'"
+        ]
+    },
+    ...
+                    </code>
+
+
+                    <h3>Why JSON?</h3>
+                    <p>Why not YAML or even XML? All are standardised ways to define configuration files.
+                        JSON sits between the others for strictness, speed of parsing and ease of use.
+                    </p>
+
+                    <p>The security nature of the project seemed to demand minimal scope for introduction of human
+                        error when defining the program's runtime configuration. A validated XML document might
+                        therefore have been maximal for that requirement. Only thing was, I'd forgotten how to implement
+                        XML, so decided JSON would also be good.</p>
+
+
+                    <h3>Running the Program</h3>
+
+                    <p></p>
+
+
+                    <code class="block-displayed"><span class="prompt">damola@host0:~$</span> ls | grep astral
+                        astral0
+                        astral1
+                        astral2                    
+                    </code>
+
+                    <p></p>
+
+
+                    <code
+                        class="block-displayed"><span class="prompt">damola@host0:~$</span> gpg-file-encrypt.sh astral0 astral1</code>
+
+
+                    <p></p>
+
+
+                    <code class="block-displayed-prewrap">
+1) local message encryption	 3) work team roles
+2) project keyfiles dev	 4) project UML diagram images
+Which JSON Profile to use for the encryption? Choose an option : 1
+
+You Selected : local message encryption
+
+Keypair identified for sender damola@host0.org OK
+Keypair identified for recipient damola@host0.org OK
+Keypair identified for recipient damola@host1.org OK
+
+File to encrypt : ./astral0
+
+===specific encryption command string===
+
+gpg --armor --output ./astral0.ENCRYPTED.asc --local-user damola@host0.org --recipient damola@host0.org --recipient damola@host1.org --encrypt ./astral0
+
+1) Yes, looks good. Encrypt it.
+2) No, Quit the Program
+Does that command look good? OK to encrypt? Choose an option : 1
+
+You Selected : Yes, looks good. Encrypt it.
+
+Encrypting file...
+
+ENCRYPTION SUCCESSFUL.
+
+File to encrypt : ./astral1
+
+===specific encryption command string===
+
+gpg --armor --output ./astral1.ENCRYPTED.asc --local-user damola@host0.org --recipient damola@host0.org --recipient damola@host1.org --encrypt ./astral1
+
+1) Yes, looks good. Encrypt it.
+2) No, Quit the Program
+Does that command look good? OK to encrypt? Choose an option : 1
+
+You Selected : Yes, looks good. Encrypt it.
+
+Encrypting file...
+
+ENCRYPTION SUCCESSFUL.
+
+Original plaintext files:
+
+./astral0
+./astral1
+
+1) Yes, shred them all.
+2) No, Keep them and Quit the Program
+OK to Shred the plaintext files? (Best practice)? Choose an option : 1
+
+You Selected : Yes, shred them all.
+
+Attempting Shred...
+
+shred: ./astral0: pass 1/1 (random)...
+shred: ./astral0: removing
+shred: ./astral0: renamed to ./0000000
+shred: ./0000000: renamed to ./000000
+shred: ./000000: renamed to ./00000
+shred: ./00000: renamed to ./0000
+shred: ./0000: renamed to ./000
+shred: ./000: renamed to ./00
+shred: ./00: renamed to ./0
+shred: ./astral0: removed
+shred: ./astral1: pass 1/1 (random)...
+shred: ./astral1: removing
+shred: ./astral1: renamed to ./0000000
+shred: ./0000000: renamed to ./000000
+shred: ./000000: renamed to ./00000
+shred: ./00000: renamed to ./0000
+shred: ./0000: renamed to ./000
+shred: ./000: renamed to ./00
+shred: ./00: renamed to ./0
+shred: ./astral1: removed
+
+SUCCESSFUL SHRED REMOVAL OF FILE:
+./astral0
+
+SUCCESSFUL SHRED REMOVAL OF FILE:
+./astral1
+
+The End.
+</code>
+                    <p></p>
+
+                    <code class="block-displayed"><span class="prompt">damola@host0:~$</span> ls | grep astral
+                        astral0.ENCRYPTED.asc
+                        astral1.ENCRYPTED.asc
+                        astral2                    
+                    </code>
+
+                    <p></p>
 
                 </section>
-
-
-
 
             </section>
             <!--end  project-report-->
