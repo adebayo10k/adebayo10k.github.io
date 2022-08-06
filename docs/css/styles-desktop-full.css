@@ -426,15 +426,6 @@ header.page-head h2 {
     color: #fff;
 }
 
-header.page-head.pre {
-    display: none;
-    background-image: none;
-    color: #fff;
-    background-color: #6495ed;
-    padding: 0.5rem 0rem;
-    text-transform: lowercase;
-}
-
 /*-------------------------------------------------------------*/
 /* header navigation styles*/
 #headerNav ul {
