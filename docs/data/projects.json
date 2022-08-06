@@ -21,7 +21,7 @@
             "Security",
             "Privacy"
         ],
-        "currentStatus": "MVP",
+        "currentStatus": "In-Service",
         "visibility": "public"
     },
     {
@@ -42,7 +42,9 @@
             "BASH"
         ],
         "contexts": [
-            "Developer"
+            "Developer",
+            "Security",
+            "Privacy"
         ],
         "currentStatus": "In-Service",
         "visibility": "public"
