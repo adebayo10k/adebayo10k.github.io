@@ -302,7 +302,7 @@ const openRenderTransaction = (dataStorageObject, requestedURL) => {
 
 const associatePageWithProject = (dbObj) => {
 
-    const pageIntroTitle = document.querySelector(".page-intro-para header h3");
+    const pageIntroTitle = document.querySelector(".page-intro-para header h1");
     console.log(`page intro title: ${pageIntroTitle.textContent}`);
 
     const padaAnchor = document.querySelector(".page-intro-para a");
@@ -436,7 +436,7 @@ window.onload = () => {
                 queryDatabaseIntoArray(jsd, odb, thisURL);
             })
             .catch(err => {
-                console.error(`Caught it! Or did it bubble up? Investigate. Error message: ${err.message}`);
+                console.error(`Caught it! Or did it bubble up 0? Investigate. Error message: ${err.message}`);
             })
     }
     // we're running in one of the project specific pages
@@ -457,7 +457,7 @@ window.onload = () => {
                 associatePageWithProject(odb);
             })
             .catch(err => {
-                console.error(`Caught it! Or did it bubble up? Investigate. Error message: ${err.message}`);
+                console.error(`Caught it! Or did it bubble up 1? Investigate. Error message: ${err.message}`);
             })
 
     }
