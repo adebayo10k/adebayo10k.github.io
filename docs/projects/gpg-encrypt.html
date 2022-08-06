@@ -130,12 +130,13 @@
                 <p>This program is effectively a <em>source code generator</em>. It uses a template, along with user
                     provided
                     parameters, to generate what in this
-                    instance, is the code to be issued as a gpg command.</p>
+                    instance, is the code to be issued as a <code>gpg</code> command.</p>
                 <p>The funny thing is, until I had to start writing this report to try to describe what I'd done, I had
-                    no clue that I'd written what could be called a source code generator. All I knew was that it solved
+                    no clue that I'd written was what could be called a <em>source code generator</em>. All I knew was
+                    that it solved
                     my problem. My knowledge
                     of source code generators was almost zero.</p>
-                <p>Actually, when I realised <em>that's</em> what I'd done, I initially felt a bit disgusted...</p>
+                <p>Actually, when I realised that <em>that's</em> what I'd done, I initially felt a bit disgusted...</p>
 
                 <h3>A bit of Research to Classify this Project</h3>
 
@@ -152,7 +153,7 @@
                 </p>
 
                 <p>The less opinionated the code generator, the more bloated it has to be. Every possible output of
-                    that <em>single click</em> page maker has to be branched out.</p>
+                    that <em>'single click'</em> has to be branched out in code.</p>
 
                 <p>Ok then, if the product of this project <em>is</em> a source code generator, at least its' scope is
                     <em>highly specific</em>.
@@ -160,7 +161,7 @@
 
                 <ul>
                     <li>
-                        It only generates a <em>single line</em> of code.
+                        It only generates a <em>single line</em> of code - a <code>gpg</code> command.
                     </li>
                     <li>
                         It is (so far) <em>highly opinionated</em>, for example, insisting on the best-practice,
@@ -181,13 +182,14 @@
                 <header>
                     <h2>Background</h2>
                 </header>
-                <p>This report does not describe a solution looking for a problem.</p>
+                <p>This report <em>does not</em> describe a solution looking for a problem.</p>
 
                 <p>Being able to control our information and the information with which we're entrusted is no longer
                     just a nice-to-have for professionals in all fields who need to remain trusted as reasonably
                     competent.</p>
 
-                <p>GnuPG is a tool for encrypting stuff. Usually textual documents that we need to communicate. It has
+                <p>GnuPG is a tool for encrypting stuff. Usually documents and images that we need to communicate over
+                    any channel, but particularly email. It has
                     many capabilties that implement security concepts and best practices.</p>
 
                 <p>Email communication is still analogous to sending a postcard.</p>
@@ -217,7 +219,7 @@
                     </li>
                     <li>You do that sort of thing with many different people/groups.</li>
                     <li>You use a different keypair for each person/group.</li>
-                    <li>You're able to organise email address and agreed encryption formats for those recipients in a
+                    <li>You're able to organise email address and agreed encryption formats for those recipients into a
                         JSON formatted reference document.</li>
                     <li>You need a tool that will create encryption commands for you, based on that structured JSON
                         data.</li>
