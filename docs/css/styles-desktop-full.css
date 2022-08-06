@@ -120,7 +120,8 @@ input,
 select,
 textarea,
 footer,
-form {
+form,
+blockquote {
     font-size: 1.75rem;
 }
 
@@ -248,6 +249,7 @@ abbr:hover {
 /* section header h3 */
 /* section p and h3 left margin + padding + border set to line up */
 section header h3,
+h1,
 h2,
 h3,
 h4 {
