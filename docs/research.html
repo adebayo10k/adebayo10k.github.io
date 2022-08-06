@@ -86,7 +86,7 @@
 
     <main>
 
-        <section class="page-content">
+        <div class="page-content">
 
             <section class="page-intro-para">
                 <header>
@@ -278,7 +278,8 @@
 
                 <p>Next, in my setups, with Name-Based virtual hosting, the hostname value assigned to the
                     <samp>Host:</samp> header is used
-                    by the Apache webserver to decide to which virtual host to direct the request.</p>
+                    by the Apache webserver to decide to which virtual host to direct the request.
+                </p>
 
                 <p>Without getting into the NAT-like interfaces involved, let's contrast that process with one in which
                     those webservers are containerised. There are two
@@ -305,7 +306,8 @@
                     entering either an IP
                     address or the <code>localhost</code> value that gets preconfigured on all
                     Linux-based systems.
-                    So using <code>localhost</code> would be fine, but with IP address only, my Apache webservers won't be
+                    So using <code>localhost</code> would be fine, but with IP address only, my Apache webservers won't
+                    be
                     able to route
                     incoming packets to their correct Name-Based Virtual Host destinations.</p>
 
@@ -342,7 +344,7 @@
                 </article>
             </div>
 
-        </section>
+        </div>
 
         <!-- Right Sidebar
 ================================================== -->
