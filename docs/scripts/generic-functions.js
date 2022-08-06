@@ -48,7 +48,7 @@ const siteLogo = document.getElementById("siteLogo");
 const logoText = `AlgoDiscoDev`;
 
 //siteLogo.innerHTML = `${logoText}`;
-siteLogo.innerHTML = `<a href="${pathPre}index.html" title="Site Homepage (Projects)" target="">${logoText}</a>`;
+siteLogo.innerHTML = `<a href="${pathPre}index.html" title="Site Homepage (Projects)" target="_self">${logoText}</a>`;
 
 //===========================================================================================
 // FOOTER // add generic footer content siteLogo-wide
