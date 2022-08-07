@@ -156,59 +156,80 @@
                     <header>
                         <h2>Research</h2>
                     </header>
-                    <p>
-                        In the Linux world, the bash interpreter will take an unix hex unicode code-point from
-                        <samp>stdin</samp> and
-                        give
-                        us back the corresponding unicode character in <samp>stdout</samp>:
-                    </p>
 
-                    <pre>
-                    <samp><kbd>Ctrl + Shift + u + 00e9</kbd></samp> <samp># outputs: é</samp>
-                </pre>
+                    <section>
+                        <h3>Unicode Normal Form</h3>
+                        <p>Ok, just a bit about combining diacritical marks.</p>
+                        <p>The latin character <kbd>é</kbd> has the unicode code-point <code>00e9</code>. The character <kbd>e</kbd> has the code-point <code>0065</code>. It's possible to encode <kbd>é</kbd> using the combined code sequence<code>00650301</code>, where the <code>0301</code>  is for combining the acute mark.  However, since a code-point is already available for <kbd>é</kbd>, it would not be in Unicode Normal Form. HTML validators would complain.</p>
 
-                    <pre>
-                    <samp><kbd><span class="prompt">damola@host:~$</span> echo -e '\u00e9'</kbd></samp>
-                    <samp># (as an escape sequence) outputs: é</samp>
-                </pre>
+                        <p>It's only possible to achieve Unicode Normal Form where a unicode code-point exists.</p>
 
-                    <p>
-                        Developers need to be aware of which unicode hex formats are understood by the various
-                        interpreters
-                        that make up their web applications. For the Yoruba language character set, developers then need
-                        to
-                        use reliable pipelines to encode,
-                        decode, compress, encrypt, input, output, store and transmit data between these different
-                        interpreters.</p>
-                    <p>To be transmitted safely across the Internet, data needs to be encoded using schemes
-                        like base64 or Unicode, then decoded by your application.</p>
-                    <p>
-                        Some of the default escape sequence formats I found were:
-                    </p>
-                    <p>unix hex unicode refs used by bash interpreters: <samp><kbd>\u00E9</kbd></samp></p>
-                    <p>xml unicode code-point used by most interpreters: <samp><kbd>&amp;#x00E9;</kbd></samp></p>
-                    <p>html cer used by browsers (which are interpreters): <samp><kbd>&amp;#233;</kbd></samp></p>
-                    <p>unix-like unicode used by php interpreters: <samp><kbd>\u{00E9}</kbd></samp></p>
+                    </section>
 
-                    <p>
-                        Then, there&apos;s the font support to consider. For reasons of efficiency, some font families
-                        like monospace are specifically designed to implement only core standard unicode. Even correctly
-                        decoded combining diacritical marks are therefore
-                        rendered incorrectly by these fonts.
-                    </p>
+                    <section>
+                        <h3>Interpreting Unicode Characters</h3>
 
-                    <p>As explained in the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp"
-                            title="Links to Mozzilla docs for samp element" target="_blank">Mozzilla docs</a>, some
-                        HTML5
-                        elements like <samp><kbd>&lt;samp&gt;</kbd></samp> are
-                        typically rendered using the browser's default monospaced font.</p>
+                        <p>
+                            In the Linux world, the bash interpreter will take an unix hex unicode code-point from
+                            <samp>stdin</samp> and
+                            give
+                            us back the corresponding unicode character in <samp>stdout</samp>:
+                        </p>
 
-                    <p>
-                        Probably one for further research.</p>
-                    <p>
-                        At this point in the research, my excitement levels had become 'quite high'. The opportunites to
-                        develop services in this space seemed massive.
-                    </p>
+                        <pre>
+                        <samp><kbd>Ctrl + Shift + u 00e9</kbd></samp> <samp># outputs: é</samp>
+                    </pre>
+
+                        <pre>
+                        <samp><kbd><span class="prompt">damola@host:~$</span> echo -e '\u00e9'</kbd></samp>
+                        <samp># (as an escape sequence) outputs: é</samp>
+                    </pre>
+
+                        <p>
+                            Developers need to be aware of which unicode hex formats are understood by the various
+                            interpreters
+                            that make up their web applications. For the Yoruba language character set, developers then
+                            need
+                            to
+                            use reliable pipelines to encode,
+                            decode, compress, encrypt, input, output, store and transmit data between these different
+                            interpreters.</p>
+                        <p>To be transmitted safely across the Internet, data needs to be encoded using schemes
+                            like base64 or Unicode, then decoded by your application.</p>
+                        <p>
+                            Some of the default escape sequence formats I found were:
+                        </p>
+                        <p>unix hex unicode refs used by bash interpreters: <samp><kbd>\u00E9</kbd></samp></p>
+                        <p>xml unicode code-point used by most interpreters: <samp><kbd>&amp;#x00E9;</kbd></samp></p>
+                        <p>html cer used by browsers (which are interpreters): <samp><kbd>&amp;#233;</kbd></samp></p>
+                        <p>unix-like unicode used by php interpreters: <samp><kbd>\u{00E9}</kbd></samp></p>
+
+                        <p>
+                            Then, there&apos;s the font support to consider. For reasons of efficiency, some font
+                            families
+                            like monospace are specifically designed to implement only core standard unicode. Even
+                            correctly
+                            decoded combining diacritical marks are therefore
+                            rendered incorrectly by these fonts.
+                        </p>
+
+                        <p>As explained in the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp"
+                                title="Links to Mozzilla docs for samp element" target="_blank">Mozzilla docs</a>, some
+                            HTML5
+                            elements like <samp><kbd>&lt;samp&gt;</kbd></samp> are
+                            typically rendered using the browser's default monospaced font.</p>
+
+                        <p>
+                            Probably one for further research.</p>
+                        <p>
+                            At this point in the research, my excitement levels had become 'quite high'. The
+                            opportunites to
+                            develop services in this space seemed massive.
+                        </p>
+
+                    </section>
+
+
 
                 </section>
 
@@ -216,7 +237,6 @@
                     <header>
                         <h2>Software Development</h2>
                     </header>
-
 
                     <section>
                         <header>
@@ -227,8 +247,8 @@
                             Next, I had the idea that the simplest form of application, in which the reliable
                             interpreting
                             of
-                            these weird Yoruba characters could be demonstrated, would be a language quiz app. Now doing
-                            software development I created a <a
+                            these weird Yorùbá characters could be demonstrated, would be a language quiz app. Now doing
+                            software development, I created a <a
                                 href="https://github.com/adebayo10k/yoruba-language-quiz-prototype"
                                 title="to the github source code repository (opens in new tab)" target="_blank">yoruba
                                 language
@@ -246,17 +266,33 @@
                         }
                     </code>
 
+                        <section>
+                            <header>
+                                <h4>Terminal Font Configuration</h4>
+                            </header>
+                            <p>Of the 13 pre-installed font styles that can be configured in the Ubuntu Terminal, 7 are
+                                considered Yorùbá-safe. That is, they're able to render Yorùbá character
+                                symbols without errors.</p>
+                            <ul>
+                                <li>Noto Mono</li>
+                                <li>Courier New</li>
+                                <li>FreeMono</li>
+                                <li>Noto Color Emoji</li>
+                                <li>Tlwg Mono</li>
+                                <li>Tlwg Typo</li>
+                                <li>Ubuntu Mono</li>
+                            </ul>
+
+
+                        </section>
+
                         <p>
                             It worked as expected. From that point, I was confident enough to start developing a web
                             application,
                             briefly summarised as follows:
                         </p>
 
-
                     </section>
-
-
-
 
                     <section>
                         <header>
@@ -279,7 +315,7 @@
                             data,
                             so
                             nothing
-                            changed or created by users, I could get away with reading source data from a JSON
+                            changed or created by users, I could have got away with reading source data from a JSON
                             structured
                             data
                             file. Up to a point, this might even perform much better than database reads. However, by
@@ -315,7 +351,7 @@
                             a local development environment. PHPUnit was installed locally to the project using the
                             Composer
                             dependency
-                            manager, then used to conduct suites of unit tests on our classes and object methods as they
+                            manager, and used to conduct suites of unit tests on our classes and object methods as they
                             were
                             being
                             developed.
@@ -333,7 +369,7 @@
                             <abbr title="Public Cloud: A cloud deployment model, implemented by cloud providers">public
                                 cloud</abbr> offerings provided by AWS. A Single EC2 hypervisor
                             instance was launched to virtualise an Ubuntu Linux server OS, on which an Apache
-                            web server, configured with various modules was built by hand (slow, but satisfying). So,
+                            web server, configured with various modules, was built by hand (slow, but satisfying). So,
                             web
                             and database servers running on the same instance as the application itself should be enough
                             for
@@ -356,7 +392,12 @@
                         <header>
                             <h3>Monitoring the App</h3>
                         </header>
-                        <p>Web server logs, ubuntu server logs and AWS Cloudwatch.</p>
+
+                        <ul>
+                            <li>Web server logs <code>/var/log/apache/yorubasystems.com</code></li>
+                            <li>Ubuntu server logs <code>/var/log/syslog</code></li>
+                            <li>AWS Cloudwatch logs</li>
+                        </ul>
                     </section>
 
                     <section>
