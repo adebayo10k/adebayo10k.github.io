@@ -43,7 +43,7 @@
         <h4>JavaScript is off. Please enable to view full site.</h4>
     </noscript>
     <div id="freezeLayer" class="freeze-layer" style="display: none;"></div>
-    
+
     <header class="page-head">
         <h1 class="toggled-heading" id="siteLogo">
             <a href="index.html" title="Site Homepage (Projects)" target="_self">AlgoDiscoDev Software Development</a>
@@ -123,7 +123,7 @@
 
                 <section>
                     <header>
-                        <h3>Background</h3>
+                        <h2>Background</h2>
                     </header>
                     <p>The system of writing the Yoruba language using latin-based characters was not the first, but for
                         historical reasons, has become our de facto standard.</p>
@@ -137,7 +137,7 @@
 
                 <section>
                     <header>
-                        <h3>The Challenge</h3>
+                        <h2>The Challenge</h2>
                     </header>
                     <p> <em>The web</em> is now the way most of the world consumes it's written information - so, not so
                         much
@@ -154,7 +154,7 @@
 
                 <section>
                     <header>
-                        <h3>Research</h3>
+                        <h2>Research</h2>
                     </header>
                     <p>
                         In the Linux world, the bash interpreter will take an unix hex unicode code-point from
@@ -209,129 +209,163 @@
                         At this point in the research, my excitement levels had become 'quite high'. The opportunites to
                         develop services in this space seemed massive.
                     </p>
-                    <p>
-                        Next, I had the idea that the simplest form of application, in which the reliable interpreting
-                        of
-                        these weird Yoruba characters could be demonstrated, would be a language quiz app. Still 'doing
-                        research', I created a <a href="https://github.com/adebayo10k/yoruba-language-quiz-prototype"
-                            title="to the github source code repository (opens in new tab)" target="_blank">yoruba
-                            language
-                            quiz bash
-                            shell program</a> as a kind of
-                        prototype of how such an application would handle JSON source data like this:
-                    </p>
 
-                    <code class="block-displayed">
-                    {    
-                        "englishPhrase": "'hat'",
-                        "yorubaPhrase": "'fil\\u{00E0}'",
-                        "category": "",
-                        "shortAudioFile": ""
-                    }
-                </code>
-
-                    <p>
-                        It worked as expected. From that point, I was confident enough to start developing a web
-                        application,
-                        briefly summarised as follows:
-                    </p>
                 </section>
 
                 <section>
                     <header>
-                        <h3>Application Architecture</h3>
+                        <h2>Software Development</h2>
                     </header>
-                    <p>Classic, monolithic, LAMP stack architecture would do for now. So, something like an Ubuntu Linux
-                        server operating system would be running an Apache http server, on which PHP and MySQL/MariaDB
-                        modules would
-                        need to be installed. All very tightly coupled, I know.</p>
-                </section>
 
-                <section>
-                    <header>
-                        <h3>Database Design</h3>
-                    </header>
-                    <p>
-                        Entity Relationship modelling used to create a Data Model. For an application with static data,
-                        so
-                        nothing
-                        changed or created by users, I could get away with reading source data from a JSON structured
-                        data
-                        file. Up to a point, this might even perform much better than database reads. However, by this
-                        point
-                        I was beginning to develop
-                        'big ideas' about
-                        the destiny of this web app. No point delaying. Only full <abbr
-                            title="Create, Read, Update, Delete. Four basic operations executed on database applications">CRUD</abbr>
-                        functionality would do for where this
-                        application was going! A MySQL relational database, now!
-                    </p>
-                </section>
 
-                <section>
-                    <header>
-                        <h3>Application Software Development</h3>
-                    </header>
-                    <p>UML techniques used to model the quiz domain.</p>
-                </section>
+                    <section>
+                        <header>
+                            <h3>Prototyping as a BASH Shell Program</h3>
+                        </header>
 
-                <section>
-                    <header>
-                        <h3>Implementation</h3>
-                    </header>
-                    <p>
-                        This 'minimum viable product' server-side web app implemented the Front Controller pattern, with
-                        one
-                        main
-                        page as the single entry point of control. The application was coded and database created within
-                        a local development environment. PHPUnit was installed locally to the project using the Composer
-                        dependency
-                        manager, then used to conduct suites of unit tests on our classes and object methods as they
-                        were
-                        being
-                        developed.
-                    </p>
-                </section>
+                        <p>
+                            Next, I had the idea that the simplest form of application, in which the reliable
+                            interpreting
+                            of
+                            these weird Yoruba characters could be demonstrated, would be a language quiz app. Now doing
+                            software development I created a <a
+                                href="https://github.com/adebayo10k/yoruba-language-quiz-prototype"
+                                title="to the github source code repository (opens in new tab)" target="_blank">yoruba
+                                language
+                                quiz bash
+                                shell program</a> as a kind of
+                            prototype of how such an application would handle JSON source data like this:
+                        </p>
 
-                <section>
-                    <header>
-                        <h3>Deployment on AWS Cloud</h3>
-                    </header>
-                    <p>Based on the application architecture I'd decided upon, but also as a bit of a side-challenge, it
-                        looked like I'd be utilising the <abbr
-                            title="Infrastructure as a Service: A cloud service model implemented by cloud providers">IaaS</abbr>,
-                        <abbr title="Public Cloud: A cloud deployment model, implemented by cloud providers">public
-                            cloud</abbr> offerings provided by AWS. A Single EC2 hypervisor
-                        instance was launched to virtualise an Ubuntu Linux server OS, on which an Apache
-                        web server, configured with various modules was built by hand (slow, but satisfying). So, web
-                        and database servers running on the same instance as the application itself should be enough for
-                        now. Or so I thought. I won't
-                        go into that now.
-                    </p>
-                </section>
+                        <code class="block-displayed">
+                        {    
+                            "englishPhrase": "'hat'",
+                            "yorubaPhrase": "'fil\\u{00E0}'",
+                            "category": "",
+                            "shortAudioFile": ""
+                        }
+                    </code>
 
-                <section>
-                    <header>
-                        <h3>Securing the Web App</h3>
-                    </header>
-                    <p>Being a server-side web application gives an inherent layer of security. The most sensitive
-                        application code stays on the server. Additionally, the Apache 'Web Application
-                        Firewall' module mod_security was installed as an Application Layer inspector of web
-                        server traffic.</p>
-                </section>
+                        <p>
+                            It worked as expected. From that point, I was confident enough to start developing a web
+                            application,
+                            briefly summarised as follows:
+                        </p>
 
-                <section>
-                    <header>
-                        <h3>Monitoring the App</h3>
-                    </header>
-                    <p>Web server logs, ubuntu server logs and AWS Cloudwatch.</p>
-                </section>
 
-                <section>
-                    <header>
-                        <h3>Site Analytics and Testing</h3>
-                    </header>
-                    <p>None yet.</p>
+                    </section>
+
+
+
+
+                    <section>
+                        <header>
+                            <h3>Application Architecture</h3>
+                        </header>
+                        <p>Classic, monolithic, LAMP stack architecture would do for now. So, something like an Ubuntu
+                            Linux
+                            server operating system would be running an Apache http server, on which PHP and
+                            MySQL/MariaDB
+                            modules would
+                            need to be installed. All very tightly coupled, I know.</p>
+                    </section>
+
+                    <section>
+                        <header>
+                            <h3>Database Design</h3>
+                        </header>
+                        <p>
+                            Entity Relationship modelling used to create a Data Model. For an application with static
+                            data,
+                            so
+                            nothing
+                            changed or created by users, I could get away with reading source data from a JSON
+                            structured
+                            data
+                            file. Up to a point, this might even perform much better than database reads. However, by
+                            this
+                            point
+                            I was beginning to develop
+                            'big ideas' about
+                            the destiny of this web app. No point delaying. Only full <abbr
+                                title="Create, Read, Update, Delete. Four basic operations executed on database applications">CRUD</abbr>
+                            functionality would do for where this
+                            application was going! A MySQL relational database, now!
+                        </p>
+                    </section>
+
+                    <section>
+                        <header>
+                            <h3>Application Software Development</h3>
+                        </header>
+                        <p>UML techniques used to model the quiz domain.</p>
+                    </section>
+
+                    <section>
+                        <header>
+                            <h3>Implementation</h3>
+                        </header>
+                        <p>
+                            This 'minimum viable product' server-side web app implemented the Front Controller pattern,
+                            with
+                            one
+                            main
+                            page as the single entry point of control. The application was coded and database created
+                            within
+                            a local development environment. PHPUnit was installed locally to the project using the
+                            Composer
+                            dependency
+                            manager, then used to conduct suites of unit tests on our classes and object methods as they
+                            were
+                            being
+                            developed.
+                        </p>
+                    </section>
+
+                    <section>
+                        <header>
+                            <h3>Deployment on AWS Cloud</h3>
+                        </header>
+                        <p>Based on the application architecture I'd decided upon, but also as a bit of a
+                            side-challenge, it
+                            looked like I'd be utilising the <abbr
+                                title="Infrastructure as a Service: A cloud service model implemented by cloud providers">IaaS</abbr>,
+                            <abbr title="Public Cloud: A cloud deployment model, implemented by cloud providers">public
+                                cloud</abbr> offerings provided by AWS. A Single EC2 hypervisor
+                            instance was launched to virtualise an Ubuntu Linux server OS, on which an Apache
+                            web server, configured with various modules was built by hand (slow, but satisfying). So,
+                            web
+                            and database servers running on the same instance as the application itself should be enough
+                            for
+                            now. Or so I thought. I won't
+                            go into that now.
+                        </p>
+                    </section>
+
+                    <section>
+                        <header>
+                            <h3>Securing the Web App</h3>
+                        </header>
+                        <p>Being a server-side web application gives an inherent layer of security. The most sensitive
+                            application code stays on the server. Additionally, the Apache 'Web Application
+                            Firewall' module mod_security was installed as an Application Layer inspector of web
+                            server traffic.</p>
+                    </section>
+
+                    <section>
+                        <header>
+                            <h3>Monitoring the App</h3>
+                        </header>
+                        <p>Web server logs, ubuntu server logs and AWS Cloudwatch.</p>
+                    </section>
+
+                    <section>
+                        <header>
+                            <h3>Site Analytics and Testing</h3>
+                        </header>
+                        <p>None yet.</p>
+                    </section>
+
                 </section>
 
             </div>
