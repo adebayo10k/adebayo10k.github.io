@@ -160,9 +160,11 @@
                     <section>
                         <h3>Unicode Normal Form</h3>
                         <p>Ok, just a bit about combining diacritical marks.</p>
-                        <p>The latin character <kbd>é</kbd> has the unicode code-point <code>00e9</code>. The character <kbd>e</kbd> has the code-point <code>0065</code>. It's possible to encode <kbd>é</kbd> using the combined code sequence<code>00650301</code>, where the <code>0301</code>  is for combining the acute mark.  However, since a code-point is already available for <kbd>é</kbd>, it would not be in Unicode Normal Form. HTML validators would complain.</p>
+                        <p>The latin character <kbd>é</kbd> has the unicode code-point <code>U+00e9</code>. It's base character <kbd>e</kbd> has the code-point <code>U+0065</code>. It's possible to encode <kbd>é</kbd> using the combined code sequence<code>U+0065U+0301</code>, where the <code>U+0301</code>  is for combining the acute mark.  However, since a code-point is already available for <kbd>é</kbd>,  that would not be in Unicode Normal Form. HTML validators would complain.</p>
 
                         <p>It's only possible to achieve Unicode Normal Form where a unicode code-point exists.</p>
+
+                        <p>Read this wikipedia article to learn more about <a href="https://en.wikipedia.org/wiki/Unicode_equivalence" title="links to the wikipedia article on Unicode equivalence" target="_blank">Unicode character composition and decomposition</a>.</p>
 
                     </section>
 
