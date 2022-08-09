@@ -179,59 +179,63 @@
             </section>
             <!--end  project-summary-->
 
-            <section class="project-report">
+            <div class="project-report">
 
-                <header>
-                    <h2>Background</h2>
-                </header>
-                <p>This report <em>does not</em> describe a solution looking for a problem.</p>
+                <section>
+                    <header>
+                        <h2>Background</h2>
+                    </header>
+                    <p>This report <em>does not</em> describe a solution looking for a problem.</p>
 
-                <p>Being able to control our information and the information with which we're entrusted is no longer
-                    just a nice-to-have for professionals in all fields who need to remain trusted as reasonably
-                    competent.</p>
+                    <p>Being able to control our information and the information with which we're entrusted is no longer
+                        just a nice-to-have for professionals in all fields who need to remain trusted as reasonably
+                        competent.</p>
 
-                <p>GnuPG is a tool for encrypting stuff. Usually documents and images that we need to communicate over
-                    any channel, but particularly email. It has
-                    many capabilties that implement security concepts and best practices.</p>
+                    <p>GnuPG is a tool for encrypting stuff. Usually documents and images that we need to communicate
+                        over
+                        any channel, but particularly email. It has
+                        many capabilties that implement security concepts and best practices.</p>
 
-                <p>Email communication is still analogous to sending a postcard.</p>
+                    <p>Email communication is still analogous to sending a postcard.</p>
 
-                <p>The internet is not a trusted network.</p>
+                    <p>The internet is not a trusted network.</p>
 
+                </section>
 
+                <section>
+                    <header>
+                        <h2>The Problem</h2>
+                    </header>
+                    <p>I once heared it said that if you're not managing the encryption keys for your data, it's not
+                        <em>your</em>
+                        data.
+                    </p>
+                    <p>But organising, managing and using encryption keys properly can get complicated. </p>
 
+                    <h3>Use Case</h3>
+                    <ol>
+                        <li>You use the Linux command line.</li>
+                        <li>You're aware that although encrypted using TLS between you and your email provider, while
+                            your
+                            email content and attachments are stored for some time (or perhaps indefinitely) on each of
+                            the mail servers on their subsequent journey across the world, ...</li>
+                        <li>You sometimes use the GnuPG (gpg) utility to public key encrypt sensitive stuff like
+                            passwords,
+                            keys, PII (Personally Identifiable Information) and images before emailing to known
+                            people/groups.
+                        </li>
+                        <li>You do that sort of thing with many different people/groups.</li>
+                        <li>You use a different keypair for each person/group.</li>
+                        <li>You're able to organise email address and agreed encryption formats for those recipients
+                            into a
+                            JSON formatted reference document.</li>
+                        <li>You need a tool that will create encryption commands for you, based on that structured JSON
+                            data.</li>
+                        <li>You're basically <em>me</em>.</li>
+                    </ol>
 
-                <header>
-                    <h2>The Problem</h2>
-                </header>
-                <p>I once heared it said that if you're not managing the encryption keys for your data, it's not
-                    <em>your</em>
-                    data.
-                </p>
-                <p>But organising, managing and using encryption keys properly can get complicated. </p>
-
-                <h3>Use Case</h3>
-                <ol>
-                    <li>You use the Linux command line.</li>
-                    <li>You're aware that although encrypted using TLS between you and your email provider, while your
-                        email content and attachments are stored for some time (or perhaps indefinitely) on each of
-                        the mail servers on their subsequent journey across the world, ...</li>
-                    <li>You sometimes use the GnuPG (gpg) utility to public key encrypt sensitive stuff like passwords,
-                        keys, PII (Personally Identifiable Information) and images before emailing to known
-                        people/groups.
-                    </li>
-                    <li>You do that sort of thing with many different people/groups.</li>
-                    <li>You use a different keypair for each person/group.</li>
-                    <li>You're able to organise email address and agreed encryption formats for those recipients into a
-                        JSON formatted reference document.</li>
-                    <li>You need a tool that will create encryption commands for you, based on that structured JSON
-                        data.</li>
-                    <li>You're basically <em>me</em>.</li>
-                </ol>
-
-                <p>Anyway, moving on...</p>
-
-
+                    <p>Anyway, moving on...</p>
+                </section>
 
 
                 <section>
@@ -260,20 +264,21 @@
                         <h2>The Solution</h2>
                     </header>
 
-                    <h3>Technical and User Documentation</h3>
-                    <p>The <a href="https://github.com/adebayo10k/gpg-encryption-using-json-profiles"
-                            title="link to GitHub gpg-encryption-using-json-profiles project repo"
-                            target="_blank">README document</a> over on Github
-                        serves as both technical and user documentation for this
-                        project.</p>
+                    <section>
+                        <h3>Technical and User Documentation</h3>
+                        <p>The <a href="https://github.com/adebayo10k/gpg-encryption-using-json-profiles"
+                                title="link to GitHub gpg-encryption-using-json-profiles project repo"
+                                target="_blank">README document</a> over on Github
+                            serves as both technical and user documentation for this
+                            project.</p>
+                    </section>
 
+                    <section>
+                        <header>
+                            <h3>Encryption Profiles</h3>
+                        </header>
 
-                    <h3>Encryption Profiles</h3>
-
-                    <p></p>
-
-
-                    <code class="block-displayed-prewrap">
+                        <code class="block-displayed-prewrap">
     {
         "profileID": "1",
         "profileName": "local message encryption",
@@ -289,40 +294,34 @@
     ...
                     </code>
 
+                        <h3>Why JSON?</h3>
+                        <p>Why not YAML or even XML? All are standardised ways to define configuration files.
+                            JSON sits between the others for strictness, speed of parsing and ease of use.
+                        </p>
 
-                    <h3>Why JSON?</h3>
-                    <p>Why not YAML or even XML? All are standardised ways to define configuration files.
-                        JSON sits between the others for strictness, speed of parsing and ease of use.
-                    </p>
+                        <p>The security nature of the project seemed to demand minimal scope for introduction of human
+                            error when defining the program's runtime configuration. A validated XML document might
+                            therefore have been maximal for that requirement. Only thing was, I'd forgotten how to
+                            implement
+                            XML, so decided JSON would also be good.</p>
+                    </section>
 
-                    <p>The security nature of the project seemed to demand minimal scope for introduction of human
-                        error when defining the program's runtime configuration. A validated XML document might
-                        therefore have been maximal for that requirement. Only thing was, I'd forgotten how to implement
-                        XML, so decided JSON would also be good.</p>
+                    <section>
+                        <header>
+                            <h3>Running the Program</h3>
+                        </header>
 
-
-                    <h3>Running the Program</h3>
-
-                    <p></p>
-
-
-                    <code class="block-displayed"><span class="prompt">damola@host0:~$</span> ls | grep astral
+                        <code class="block-displayed"><span class="prompt">damola@host0:~$</span> ls | grep astral
                         astral0
                         astral1
                         astral2                    
                     </code>
 
-                    <p></p>
+                        <code
+                            class="block-displayed"><span class="prompt">damola@host0:~$</span> gpg-file-encrypt.sh astral0 astral1</code>
 
 
-                    <code
-                        class="block-displayed"><span class="prompt">damola@host0:~$</span> gpg-file-encrypt.sh astral0 astral1</code>
-
-
-                    <p></p>
-
-
-                    <code class="block-displayed-prewrap">
+                        <code class="block-displayed-prewrap">
 Which JSON Profile to use for the encryption? Choose an option :
 
 1) local message encryption	 3) work team roles
@@ -415,25 +414,26 @@ SUCCESSFUL SHRED REMOVAL OF FILE:
 
 The End.
 </code>
-                    <p></p>
 
-                    <code class="block-displayed"><span class="prompt">damola@host0:~$</span> ls | grep astral
+
+                        <code class="block-displayed"><span class="prompt">damola@host0:~$</span> ls | grep astral
                         astral0.ENCRYPTED.asc
                         astral1.ENCRYPTED.asc
                         astral2                    
                     </code>
 
-                    <p></p>
 
-                    <code class="block-displayed"><span class="prompt">damola@host0:~$</span> file astral*
+                        <code class="block-displayed"><span class="prompt">damola@host0:~$</span> file astral*
                         astral0.ENCRYPTED.asc: PGP message Public-Key Encrypted Session Key (old)
                         astral1.ENCRYPTED.asc: PGP message Public-Key Encrypted Session Key (old)
                         astral2:               ReStructuredText file, ASCII text, with very long lines
                     </code>
 
+                    </section>
+
                 </section>
 
-            </section>
+            </div>
             <!--end  project-report-->
 
 
