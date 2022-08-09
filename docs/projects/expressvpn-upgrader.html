@@ -104,8 +104,10 @@
                 <p>This program has so far been tested only on 64-bit Ubuntu (20.04) Linux and with its' default,
                     built-in BASH interpreter.</p>
 
-                <p>This program is only meant for hobby and testing environments, as it depends on things that
-                    expressvpn may change at any time.</p>
+                <p>This program is only meant for hobby and testing environments, as it depends on things that <a
+                        href="https://www.expressvpn.com/latest#linux"
+                        title="links to the expressvpn Linux download page" target="_blank">expressvpn</a> may change at
+                    any time.</p>
 
 
 
@@ -143,11 +145,77 @@
                         <h2>Running the Program</h2>
                     </header>
 
+                    <code class="block-displayed"><span class="prompt">damola@host0:~$</span> expressvpn-version-upgrader.sh dev                   
+                    </code>
+
+                    <code class="block-displayed-prewrap">
+Select your OS Platform to check online for VPN client updates (or choose None): 
+1) Ubuntu_64_bit    3) Fedora_64_bit	5) Arch_64_bit	    7) None
+2) Ubuntu_32_bit    4) Fedora_32_bit	6) Raspberry_Pi_OS
+> 1
+
+You Selected the "Ubuntu_64_bit" OS platform.
+
+Currently Installed Version: 3.29.0.10-1
+
+Available Version URL:
+https://www.expressvpn.works/clients/linux/expressvpn_3.29.0.10-1_amd64.deb
+
+Download and Verify this package? Choose an option : 
+
+1) Yes, Download and Verify
+2) No, Quit the Program
+> 1
+
+You Selected : Yes, Download and Verify
+
+Downloading and Verifying...
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 18.5M  100 18.5M    0     0  4121k      0  0:00:04  0:00:04 --:--:-- 4507k
+
+Found a Package Installation file: /home/damola/Downloads/expressvpn_3.29.0.10-1_amd64.deb
+
+Found a Package Signature file: /home/damola/Downloads/expressvpn_3.29.0.10-1_amd64.deb.asc
 
 
+Now checking package file against expressvpn public key...
 
+pub   rsa4096 2016-01-22 [SC]
+      1D0B 09AD 6C93 FEE9 3FDD  BD9D AFF2 A141 5F6A 3A38
+uid           [ unknown] ExpressVPN Release <release@expressvpn.com>
+sub   rsa4096 2016-01-22 [E]
 
+gpg: Signature made Fri 29 Jul 2022 01:49:39 BST
+gpg:                using RSA key 1D0B09AD6C93FEE93FDDBD9DAFF2A1415F6A3A38
+gpg: Good signature from "ExpressVPN Release <release@expressvpn.com>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 1D0B 09AD 6C93 FEE9 3FDD  BD9D AFF2 A141 5F6A 3A38
 
+GPG VERIFICATION SUCCESSFUL. CONFIRM VISUALLY ANYWAY...
+
+Confirm? Do you see "Good signature"? Choose an option : 
+
+1) Yes, Confirmed
+2) No, Quit the Program
+> 1
+
+You Selected : Yes, Confirmed
+
+Continuing...
+
+Proceed with Package Installation? (requires sudo). Choose and option : 
+
+1) Yes, Install
+2) No, Quit the Program
+> 2 
+
+You Selected : No, Quit the Program
+
+<span class="prompt">damola@host0:~$</span>
+                    </code>
                 </section>
 
                 <section>
@@ -184,17 +252,11 @@
                             <p>Containerise it. Build this utility into a Linux Docker image, along with the expressvpn
                                 client. I noticed <a href="https://github.com/Misioslav/expressvpn"
                                     title="Misioslav expressvpn project" target="_blank">another project</a> that has
-                                already taken that one up.</p>
+                                also taken that one up.</p>
                         </li>
 
                     </ol>
 
-                    <p>All that said, it's worth noting and stating that although this project began a few lines of
-                        script
-                        to automate my package installation process, it's now looking almost like an utility package.
-                        However, I
-                        still won't rely on it in any kind of production environment.
-                    </p>
                 </section>
 
             </div>
@@ -205,7 +267,6 @@
             <div class="hero-article-container">
                 <article class="hero-article" id="hero-background-cube-02">
                     <div class="hero-message message-left firaSansBoldFont">
-                        <h2>Hero message from the &#x0053;&#x0323;&#x00E0;ng&#x00F3;Tech Network.</h2>
                         <h2>"Designing software systems is very nice."</h2>
                     </div>
                 </article>
