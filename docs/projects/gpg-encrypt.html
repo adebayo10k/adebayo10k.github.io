@@ -156,7 +156,7 @@
                 </p>
 
                 <p>Rule of thumb: The less opinionated the code generator, the more bloated it has to be. Every possible
-                    output of
+                    intended meaning of
                     that <em>'single click'</em> has to be branched out in advance.</p>
 
                 <p>Ok then, if the product of this project <em>is</em> a source code generator, at least its' scope is
@@ -180,8 +180,6 @@
             <!--end  project-summary-->
 
             <section class="project-report">
-
-
 
                 <header>
                     <h2>Background</h2>
@@ -219,7 +217,8 @@
                         email content and attachments are stored for some time (or perhaps indefinitely) on each of
                         the mail servers on their subsequent journey across the world, ...</li>
                     <li>You sometimes use the GnuPG (gpg) utility to public key encrypt sensitive stuff like passwords,
-                        keys, PII (Personal Identifying Information) and images before emailing to known people/groups.
+                        keys, PII (Personally Identifiable Information) and images before emailing to known
+                        people/groups.
                     </li>
                     <li>You do that sort of thing with many different people/groups.</li>
                     <li>You use a different keypair for each person/group.</li>
@@ -243,8 +242,7 @@
                     <p>I wanted to write a tool that abstacted away some of the predictable details when I issued a gpg
                         command to encypt.</p>
                     <p>I wanted the challenge of writing a basic tool that could configure and execute a bespoke
-                        command, based on a
-                        variety of parameters:</p>
+                        command, based on these parameters:</p>
                     <ol>
                         <li>Public or Symmetric key encryption.</li>
                         <li>The defined list of recipients.</li>
@@ -325,9 +323,11 @@
 
 
                     <code class="block-displayed-prewrap">
+Which JSON Profile to use for the encryption? Choose an option :
+
 1) local message encryption	 3) work team roles
 2) project keyfiles dev	 4) project UML diagram images
-Which JSON Profile to use for the encryption? Choose an option : 1
+> 1
 
 You Selected : local message encryption
 
@@ -341,9 +341,11 @@ File to encrypt : ./astral0
 
 gpg --armor --output ./astral0.ENCRYPTED.asc --local-user damola@host0.org --recipient damola@host0.org --recipient damola@host1.org --encrypt ./astral0
 
+Does that command look good? Encrypt the file? Choose an option :
+
 1) Yes, looks good. Encrypt it.
 2) No, Quit the Program
-Does that command look good? OK to encrypt? Choose an option : 1
+> 1
 
 You Selected : Yes, looks good. Encrypt it.
 
@@ -357,9 +359,11 @@ File to encrypt : ./astral1
 
 gpg --armor --output ./astral1.ENCRYPTED.asc --local-user damola@host0.org --recipient damola@host0.org --recipient damola@host1.org --encrypt ./astral1
 
+Does that command look good? Encrypt the file? Choose an option :
+
 1) Yes, looks good. Encrypt it.
 2) No, Quit the Program
-Does that command look good? OK to encrypt? Choose an option : 1
+> 1
 
 You Selected : Yes, looks good. Encrypt it.
 
@@ -372,9 +376,11 @@ Original plaintext files:
 ./astral0
 ./astral1
 
+Shred the plaintext files? (Best practice). Choose an option :
+
 1) Yes, shred them all.
 2) No, Keep them and Quit the Program
-OK to Shred the plaintext files? (Best practice)? Choose an option : 1
+> 1
 
 You Selected : Yes, shred them all.
 
@@ -418,6 +424,12 @@ The End.
                     </code>
 
                     <p></p>
+
+                    <code class="block-displayed"><span class="prompt">damola@host0:~$</span> file astral*
+                        astral0.ENCRYPTED.asc: PGP message Public-Key Encrypted Session Key (old)
+                        astral1.ENCRYPTED.asc: PGP message Public-Key Encrypted Session Key (old)
+                        astral2:               ReStructuredText file, ASCII text, with very long lines
+                    </code>
 
                 </section>
 
