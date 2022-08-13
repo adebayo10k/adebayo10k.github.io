@@ -61,7 +61,7 @@ const footerText = `<!-- site map -->
             <a href="${pathPre}index.html">Projects</a>
         </li>
         <li>
-            <a href="${pathPre}cloud.html">Cloud</a>
+            <a href="${pathPre}posts-answers.html" title="blog posts and stack exchange answers">Posts and Answers</a>
         </li>
         <li>
             <a href="${pathPre}skills.html">Skills</a>
@@ -111,7 +111,7 @@ navGrid.innerHTML = `
   <a href="${pathPre}index.html" title="Homepage (Projects)">Projects</a>
 </li>
 <li>
-  <a href="${pathPre}cloud.html" title="cloud research">Cloud</a>
+  <a href="${pathPre}posts-answers.html" title="blog posts and stack exchange answers">Posts and Answers</a>
 </li>                    
 <li>
   <a href="${pathPre}skills.html" title="skills page">Skills</a>

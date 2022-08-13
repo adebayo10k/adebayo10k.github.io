@@ -183,6 +183,7 @@ aside.sidebar,
 .project-summary,
 .project-report,
 .research-report,
+.posts-report,
 .hero-article-container {
     grid-column: 1 / 2;
     background-color: #fff;
