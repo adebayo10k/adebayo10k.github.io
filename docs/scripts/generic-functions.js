@@ -201,5 +201,19 @@ else {
 }
 
 //===========================================================================================
+// add a last modified line to pages
+const lastModified = document.getElementById("lastModified"); 
+const lastModifiedStr = new Date(document.lastModified).toString();
+
+// this if condition is needed as not all pages will get this feature
+if (lastModified) {
+
+    const lastModifiedInfo = `<i>Last Updated: ${lastModifiedStr}.</i>`;
+
+    lastModified.innerHTML = lastModifiedInfo;
+
+}
+
+//===========================================================================================
 
 
