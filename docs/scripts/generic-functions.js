@@ -15,17 +15,42 @@ const aside = document.querySelector("aside");
 // this if condition is needed until all pages get the grid layout structure's aside element
 if (aside) {
 
-    const asideLinks = `<section>
+    const asideLinks = `
 
-  <a href="https://github.com/adebayo10k" title="links to GitHub repository of adebayo10k" target="_blank"><p>Use the Code</p></a>
+    <section>  
+    <header>
+    <h2>Site Links</h2>
+    </header>
+    <!--  
+        <section>  
+        <header>
+        <h3>Project Links</h3>
+        </header>    
+        </section>
+    -->
 
-  <a href="http://yorubasystems.com" title="An aws hosted development project site" target="_blank"><p>A Yoruba language vocabulary test web application project</p></a>
-
+        <section>  
+        <header>
+        <h3>Help Links</h3>
+        </header>
+        <p>Report content errors or site use problems</p>
+        <p>How to collaborate with adebayo10k</p>    
+        </section>
   
+    </section>
 
-  <p>Report content errors or site use problems</p>
-  <p>How to collaborate with adebayo10k</p>
-  </section>`;
+
+    
+    <section>    
+    <header>
+    <h2>External Links</h2>
+    </header>
+    <a href="https://github.com/adebayo10k" title="links to GitHub source code repository of adebayo10k" target="_blank"><p>Project Source Code</p></a>
+    <a href="http://yorubasystems.com" title="An aws hosted development project site" target="_blank"><p>A Yoruba language vocabulary test web application project</p></a>
+    </section>
+    
+
+    `;
 
     aside.innerHTML = asideLinks;
 
