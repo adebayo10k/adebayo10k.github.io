@@ -583,7 +583,7 @@ main {
 
 .site-app-card,
 .project-card,
-aside.sidebar,
+.sidebar,
 .skills-update,
 .multimedia-card {
     border: 2px solid #6495ed;
@@ -600,7 +600,7 @@ aside.sidebar,
     width: 60%;
 }
 
-aside.sidebar p {
+.sidebar p {
     line-height: 1.2;
 }
 
