@@ -7,6 +7,16 @@ if (localStorage.getItem("bgColour")) {
     htmlElem.style.backgroundColor = `${localStorage.getItem("bgColour")}`;
 }
 
+//===========================================================================================
+// SET A PATH VARIABLE FOR USE BY ASIDE, HEADER NAV AND FOOTER NAV LINK PATHS
+
+const depth0 = "./"; const depth1 = "../"; const depth2 = "../../";
+let pathPre = depth0; // default case
+
+// if the page is being built in the projects directory
+if (this.location.toString().includes("/projects/")) {
+    pathPre = depth1;
+}
 
 //===========================================================================================
 // ASIDE // adds this list of links to the RHS aside of every page
@@ -21,13 +31,26 @@ if (aside) {
     <header>
     <h2>Site Links</h2>
     </header>
-    <!--  
+      
         <section>  
         <header>
         <h3>Project Links</h3>
-        </header>    
+        </header>
+        
+        <p><a href="${pathPre}projects/gpg-encrypt.html" title="go to a brief summary of this project" target="_self">GnuPG (gpg) Encryption Using JSON Profiles</a></p>
+
+        <p><a href="${pathPre}projects/expressvpn-upgrader.html" title="go to a brief summary of this project" target="_self">Expressvpn CLI Client Package Upgrader</a></p>
+
+        <p><a href="${pathPre}projects/yoruba-vocab-test.html" title="go to a brief summary of this project" target="_self">Vocabulary tests for English speaking Yoruba language learners</a></p>
+
+        <p><a href="${pathPre}projects/ffmpeg-multi.html" title="go to a brief summary of this project" target="_self">Multi AV file converter using ffmpeg</a></p>
+
+        <p><a href="${pathPre}projects/dockerise-github-site.html" title="go to a brief summary of this project" target="_self">Docker Containerisation of this GitHub Pages Site</a></p>
+
+        <p><a href="${pathPre}projects/microbit-morse.html" title="go to a brief summary of this project" target="_self">bbc micro:bit morse code</a></p>
+        
         </section>
-    -->
+    <!---->
 
         <section>  
         <header>
@@ -38,33 +61,22 @@ if (aside) {
         </section>
   
     </section>
-
-
     
     <section>    
     <header>
     <h2>External Links</h2>
     </header>
-    <a href="https://github.com/adebayo10k" title="links to GitHub source code repository of adebayo10k" target="_blank"><p>Project Source Code</p></a>
-    <a href="http://yorubasystems.com" title="An aws hosted development project site" target="_blank"><p>A Yoruba language vocabulary test web application project</p></a>
+    <p>
+    <a href="https://github.com/adebayo10k" title="links to GitHub source code repository of adebayo10k" target="_blank">Project Source Code</a>
+    </p>
+    <p>
+    <a href="http://yorubasystems.com" title="An aws hosted development project site" target="_blank">A Yoruba language vocabulary test web application project</a>
+    </p>
     </section>
-    
-
     `;
 
     aside.innerHTML = asideLinks;
 
-}
-
-//===========================================================================================
-// SET A PATH VARIABLE FOR USE BY HEADER AND FOOTER NAV LINK PATHS
-
-const depth0 = "./"; const depth1 = "../"; const depth2 = "../../";
-let pathPre = depth0; // default case
-
-// if the page is being built in the projects directory
-if (this.location.toString().includes("/projects/")) {
-    pathPre = depth1;
 }
 
 //===========================================================================================
